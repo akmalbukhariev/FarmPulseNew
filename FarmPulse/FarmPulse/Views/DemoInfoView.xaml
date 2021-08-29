@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Views.DemoInfoView">
+
+    <StackLayout Orientation="Horizontal"
+                 Margin="0,10,0,0">
+        <Image Source="demo"
+               WidthRequest="50"
+               HeightRequest="50"
+               Aspect="AspectFit"
+               HorizontalOptions="StartAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Demo_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Source="info"
+               WidthRequest="50"
+               HeightRequest="50"
+               Aspect="AspectFit"
+               HorizontalOptions="EndAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Info_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+    
+</ContentView>

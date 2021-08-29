@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using FarmPulse.Pages;
+
 namespace FarmPulse
 {
     public partial class App : Application
@@ -10,7 +12,7 @@ namespace FarmPulse
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LanguagePage();
         }
 
         protected override void OnStart()
