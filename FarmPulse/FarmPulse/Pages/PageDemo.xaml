@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Pages.PageDemo">
+    <Grid>
+        <Image x:Name="image" 
+               Source="NoVideo" 
+               VerticalOptions="FillAndExpand" 
+               HorizontalOptions="FillAndExpand"
+               IsVisible="false"/>
+        <!--<grView:GradientView StartColor="#E4D9CA" EndColor="#D9C6A8"/>-->
+        <WebView x:Name="webView" 
+                 VerticalOptions="FillAndExpand" 
+                 HorizontalOptions="FillAndExpand"
+                 IsVisible="false"/>
+    </Grid>
+</ContentPage>

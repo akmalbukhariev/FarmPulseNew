@@ -12,7 +12,7 @@ namespace FarmPulse
         {
             InitializeComponent();
 
-            MainPage = new LanguagePage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

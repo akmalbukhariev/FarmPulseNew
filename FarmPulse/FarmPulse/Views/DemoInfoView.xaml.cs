@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FarmPulse.Pages;
+using System; 
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,14 +14,14 @@ namespace FarmPulse.Views
             InitializeComponent();
         }
 
-        private void Demo_Tapped(object sender, EventArgs e)
+        private async void Demo_Tapped(object sender, EventArgs e)
         {
+            await Navigation.PushModalAsync(new PageDemo());
+        }   
 
-        }
-
-        private void Info_Tapped(object sender, EventArgs e)
+        private async void Info_Tapped(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new PageInfo());
         }
     }
 }
