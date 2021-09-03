@@ -39,6 +39,8 @@
                      VerticalOptions="StartAndExpand">
             <Button Text="Login"
                     TextColor="#007A43"
+                    BorderWidth="1"
+                    BorderColor="White"
                     CornerRadius="30"
                     BackgroundColor="#CDBBA3"
                     Command="{Binding ClickLoginCommand}"/>
@@ -46,14 +48,16 @@
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="Start"
                              Spacing="0"> 
-                    <CheckBox HorizontalOptions="EndAndExpand"
+                    <CheckBox x:Name="autoCheckBox" 
+                              HorizontalOptions="EndAndExpand"
                               Color="#007A43"
                               IsChecked="{Binding CheckAutoLogin, Mode=TwoWay}"
                               CheckedChanged="AutoLogin_CheckedChanged"/>
-                    <Label Text="Save ID/Password" 
+                    <Label x:Name="lbAutoLogin" 
+                           Text="Save ID/Password" 
                            TextColor="#007A43"
                            HorizontalOptions="End"
-                           VerticalTextAlignment="Center"/>
+                           VerticalTextAlignment="Center"/> 
                 </StackLayout>
                 <Label x:Name="lbFindPassword" 
                        Text="Find ID/Password"
@@ -61,7 +65,7 @@
                        VerticalTextAlignment="Center"
                        HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="FindLabel_Tapped" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Tapped="Label_Tapped" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
