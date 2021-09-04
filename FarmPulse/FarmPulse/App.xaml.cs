@@ -13,7 +13,7 @@ namespace FarmPulse
         {
             InitializeComponent();
 
-            MainPage = new TransitionNavigationPage(new PurchasePage());
+            MainPage = new TransitionNavigationPage(new SummitClaimPage());
         }
 
         protected override void OnStart()
