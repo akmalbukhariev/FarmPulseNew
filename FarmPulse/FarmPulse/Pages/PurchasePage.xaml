@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             x:Class="FarmPulse.Pages.PurchasePage"
+             BackgroundColor="{StaticResource AppColor}">
+
+    <Grid RowDefinitions="Auto,*">
+        <view:NavigationView Text="Purchase"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <Grid RowDefinitions="*,Auto"
+              ColumnDefinitions="*,310,*"
+              Grid.Row="1">
+            <ScrollView Grid.Column="1">
+                <Grid RowDefinitions="130,130,130" 
+                      ColumnDefinitions="*,*"
+                      RowSpacing="15"
+                      ColumnSpacing="15"
+                      VerticalOptions="CenterAndExpand">
+                    <view:PurchaseItemView ImageSource="contact"
+                                           Text="Insurance"/>
+                    <view:PurchaseItemView ImageSource="spa"
+                                           Text="Index insurance"
+                                           Grid.Column="1"/>
+                    <view:PurchaseItemView ImageSource="trending"
+                                           Text="Estimate rates"
+                                           Grid.Row="1"/>
+                    <view:PurchaseItemView ImageSource="compost"
+                                           Text="Cover"
+                                           Grid.Row="1"
+                                           Grid.Column="1"/>
+                    <view:PurchaseItemView ImageSource="description"
+                                           Text="Submitting Claim"
+                                           Grid.Row="2"/>
+                    <view:PurchaseItemView ImageSource="quora"
+                                           Text="FAQ"
+                                           Grid.Row="2"
+                                           Grid.Column="1"/>
+                </Grid>
+            </ScrollView>
+            <Button Text="Buy Now"
+                    TextColor="Black"
+                    CornerRadius="30"
+                    BackgroundColor="#D3BCA2"
+                    BorderWidth="1"
+                    BorderColor="White"
+                    Margin="0,0,0,20"
+                    Command="{Binding ClickBuyCommand}"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+        </Grid>
+    </Grid>
+    
+</ContentPage>

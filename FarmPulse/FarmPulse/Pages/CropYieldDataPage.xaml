@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:control="clr-namespace:FarmPulse.Control"
+             x:Class="FarmPulse.Pages.CropYieldDataPage">
+
+    <Grid RowDefinitions="Auto,*">
+        <view:NavigationView Text="Purchase"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <Grid RowDefinitions="*,*,*,Auto"
+              ColumnDefinitions="*,330,*">
+            <Label x:Name="lbText"
+                   TextColor="Black"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="1"/>
+            <StackLayout Spacing="10" 
+                         Grid.Row="1" 
+                         Grid.Column="1">
+                <control:CustomPicker x:Name="pickField" 
+                                      Image="show"
+                                      TextColor="White"
+                                      TitleColor="Gray"/>
+                <control:CustomPicker x:Name="pickCrop" Image="show"
+                                      TextColor="White"
+                                      TitleColor="Gray"/>
+            </StackLayout>
+            <Grid RowDefinitions="*,*,*,*"
+                  ColumnDefinitions="*,*,*"
+                  Grid.Row="2" 
+                  Grid.Column="1">
+                
+            </Grid>
+        </Grid>
+    </Grid>
+
+</ContentPage>

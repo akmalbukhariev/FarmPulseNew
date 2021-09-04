@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Views.PurchaseItemView">
+
+    <Frame x:Name="frame"
+           CornerRadius="15"
+           HasShadow="True">
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+        </Frame.GestureRecognizers>
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="0">
+            <Image x:Name="image"
+                   WidthRequest="75"
+                   Aspect="AspectFit"/>
+            <Label x:Name="lbText"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="13"
+                   HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </Frame>
+    
+</ContentView>

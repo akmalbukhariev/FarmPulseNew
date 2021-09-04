@@ -1,13 +1,18 @@
-﻿using System;
+﻿using FarmPulse.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace FarmPulse.ModelView
 {
     public class BaseModel : INotifyPropertyChanged
     {
+        protected INavigation Navigation { get; set; }
+        public Element Parent { get; set; }
+
         private Dictionary<string, object> PropertyList;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,6 +50,14 @@ namespace FarmPulse.ModelView
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void SetTransitionType(TransitionType transitionType)
+        {
+            if (Parent == null) return;
+
+            var transitionNavigationPage = Parent as TransitionNavigationPage;
+            transitionNavigationPage.TransitionType = transitionType;
         }
     }
 }

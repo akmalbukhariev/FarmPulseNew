@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Views.NavigationView">
+    <Grid ColumnDefinitions="Auto,*"
+          HeightRequest="60">
+        <Image Source="back"
+               WidthRequest="30"
+               Aspect="AspectFit"
+               Margin="10,0,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
+                                      NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Label x:Name="lbTitle" 
+               Text="Title"
+               FontSize="20"
+               TextColor="White"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Margin="0,0,25,0"
+               Grid.Column="1"/>
+    </Grid>
+    
+</ContentView>

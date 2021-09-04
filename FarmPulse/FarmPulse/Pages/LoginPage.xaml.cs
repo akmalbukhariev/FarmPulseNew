@@ -13,9 +13,18 @@ namespace FarmPulse.Pages
         public LoginPage()
         {
             InitializeComponent();
-
+            
             model = new LoginPageModelView(Navigation);
             BindingContext = model;
+
+            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.Parent = Parent;
         }
 
         private async void AutoLogin_CheckedChanged(object sender, CheckedChangedEventArgs e)

@@ -5,7 +5,7 @@
 
     <StackLayout Orientation="Horizontal"
                  Margin="0,10,0,0">
-        <Image Source="demo"
+        <Image Source="demo_"
                WidthRequest="50"
                HeightRequest="50"
                Aspect="AspectFit"
@@ -14,7 +14,7 @@
                 <TapGestureRecognizer Tapped="Demo_Tapped"/>
             </Image.GestureRecognizers>
         </Image>
-        <Image Source="info"
+        <Image Source="info_"
                WidthRequest="50"
                HeightRequest="50"
                Aspect="AspectFit"

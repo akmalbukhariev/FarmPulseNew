@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FarmPulse.Pages;
+using FarmPulse.Control;
 
 namespace FarmPulse
 {
@@ -12,7 +13,7 @@ namespace FarmPulse
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TransitionNavigationPage(new PurchasePage());
         }
 
         protected override void OnStart()
