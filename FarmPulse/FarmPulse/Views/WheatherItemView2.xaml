@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Views.WheatherItemView2">
+
+    <Grid RowDefinitions="*,*"
+          ColumnDefinitions="Auto,*,Auto,Auto,Auto"
+          RowSpacing="0">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="lbDayStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="FontAttributes" Value="20"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>
+                </Style>
+                <Style x:Key="lbLabel" TargetType="Label">
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Label x:Name="lbDay"
+               Style="{StaticResource lbDayStyle}"/>
+        <Label x:Name="lbDate"
+               TextColor="White"
+               FontSize="10"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Grid.Row="1"/>
+        <Image x:Name="image"
+               Aspect="AspectFit"
+               WidthRequest="50"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               Grid.RowSpan="2"
+               Grid.Column="1"/>
+        <Label x:Name="lbCel1"
+               Style="{StaticResource lbLabel}"
+               Grid.Column="2"/>
+        <Label x:Name="lbCel2"
+               Style="{StaticResource lbLabel}"
+               Grid.Row="1"
+               Grid.Column="2"/>
+        <Image Source="air_white"
+               Aspect="AspectFit"
+               Grid.Column="3"/>
+        <Image Source="rain_white"
+               Aspect="AspectFit"
+               Grid.Row="1"
+               Grid.Column="3"/>
+        <Label x:Name="lbV1"
+               Style="{StaticResource lbLabel}"
+               Grid.Column="4"/>
+        <Label x:Name="lbV2"
+               Style="{StaticResource lbLabel}"
+               Grid.Row="1"
+               Grid.Column="4"/>
+        <Line BackgroundColor="White" 
+              HeightRequest="2"
+              VerticalOptions="End"
+              Grid.Row="1"
+              Grid.ColumnSpan="5"/>
+    </Grid>
+    
+</ContentView>

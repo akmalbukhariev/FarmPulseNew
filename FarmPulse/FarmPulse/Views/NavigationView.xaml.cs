@@ -58,6 +58,30 @@ namespace FarmPulse.Views
         }
         #endregion
 
+        #region Image icon source
+        public static readonly BindableProperty ImageIconSourceProperty =
+            BindableProperty.Create(nameof(ImageIconSource),
+                                    typeof(string),
+                                    typeof(NavigationView),
+                                    null,
+                                    propertyChanged: ImageIconSourcePropertyChanged);
+
+        public string ImageIconSource
+        {
+            get { return (string)GetValue(ImageIconSourceProperty); }
+            set { SetValue(ImageIconSourceProperty, value); }
+        }
+
+        private static void ImageIconSourcePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (NavigationView)bindable;
+            if (newValue != null)
+            {
+                control.imBack.Source = (string)newValue;
+            }
+        }
+        #endregion
+
         #region Command
         public static readonly BindableProperty CommandProperty =
             BindableProperty.Create(nameof(Command),

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             x:Class="FarmPulse.Pages.ConfirmationPage"
+             BackgroundColor="{StaticResource AppColor}">
+    <Grid RowDefinitions="Auto,*">
+        <view:NavigationView Text="Confirmation"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <Grid RowDefinitions="Auto,*,*"
+              ColumnDefinitions="*,330,*"
+              Grid.Row="1">
+            <Image Source="appLogo2"
+                   Aspect="AspectFit"
+                   WidthRequest="220"
+                   Grid.Column="1"/>
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                         Grid.Row="1" 
+                         Grid.Column="1">
+                <Image Source="confirm"
+                       WidthRequest="130"
+                       Aspect="AspectFit"/>
+                <Label x:Name="lbTitle1"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         Spacing="15"
+                         Grid.Row="2" 
+                         Grid.Column="1">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="btnStyle" TargetType="Button">
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="FontAttributes" Value="Bold"/>
+                            <Setter Property="CornerRadius" Value="30"/>
+                            <Setter Property="BorderColor" Value="White"/>
+                            <Setter Property="BorderWidth" Value="1"/>
+                            <Setter Property="BackgroundColor" Value="#D6BC9F"/>
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Label x:Name="lbTitle2"
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"/>
+                <Button Text="Start New Claim"
+                        Style="{StaticResource btnStyle}"/>
+                <Button Text="Back to Home Screen"
+                        Style="{StaticResource btnStyle}"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

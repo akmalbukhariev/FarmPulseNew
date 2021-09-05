@@ -1,5 +1,4 @@
-﻿using FarmPulse.ModelView;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LanguagePage : ContentPage
+    public partial class WeatherPage : ContentPage
     {
-        public LanguagePage()
+        public WeatherPage()
         {
             InitializeComponent();
-
-            BindingContext = new LanguagePageModelView(Navigation);
 
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);

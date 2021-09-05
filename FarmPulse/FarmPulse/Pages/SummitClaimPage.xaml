@@ -35,50 +35,49 @@
             <ScrollView Grid.Row="1"  
                         Grid.Column="1">
                 <Grid RowDefinitions="*,*,*,*,150" 
-                  RowSpacing="0"
-                  VerticalOptions="CenterAndExpand">
+                      RowSpacing="0"
+                      VerticalOptions="CenterAndExpand">
                     <StackLayout>
                         <Label Text="Farmer filed name"
-                       Style="{StaticResource lbStyle}"/>
+                               Style="{StaticResource lbStyle}"/>
                         <control:CustomPicker x:Name="pickField" 
-                                      Image="show"
-                                      TextColor="White"
-                                      TitleColor="Gray"
-                                      BackgroundColor="White"/>
+                                              Image="show"
+                                              TextColor="White"
+                                              TitleColor="Gray"
+                                              BackgroundColor="White"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>
                             <Label Text="Crop type"
-                               FontAttributes="Bold"
-                               Style="{StaticResource lbStyle}"/>
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                         <StackLayout Grid.Column="1">
                             <Label Text="Area ton/ha"
-                               FontAttributes="Bold"
-                               Style="{StaticResource lbStyle}"/>
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                     </Grid>
                     <StackLayout Grid.Row="2">
                         <Label Text="Farmer Name and Surname"
-                       Style="{StaticResource lbStyle}"/>
+                               Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="3">
                         <Label Text="Farmer phone number"
-                       Style="{StaticResource lbStyle}"/>
+                               Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="4" MinimumHeightRequest="150">
                         <Label Text="Description the claim"
-                       Style="{StaticResource lbStyle}"/>
+                               Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"
-                                    HeightEntryView="150"/>
+                                        HeightEntryView="150"/>
                     </StackLayout>
                 </Grid>
-            </ScrollView>
-            
+            </ScrollView> 
             <Button Text="Submit"
                     TextColor="Black"
                     FontAttributes="Bold"

@@ -4,7 +4,8 @@
              x:Class="FarmPulse.Views.NavigationView">
     <Grid ColumnDefinitions="Auto,*"
           HeightRequest="60">
-        <Image Source="back"
+        <Image x:Name="imBack" 
+               Source="back"
                WidthRequest="30"
                Aspect="AspectFit"
                Margin="10,0,0,0">

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Views.WheatherItemView1">
+    <Grid ColumnDefinitions="*,Auto">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="lbStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <StackLayout Orientation="Horizontal">
+            <Image x:Name="image" 
+                   Source="rain_white"
+                   Aspect="AspectFit"
+                   WidthRequest="45"/>
+            <Label x:Name="lbText1"
+                   Text ="Rain 3 h"
+                   Style="{StaticResource lbStyle}"
+                   VerticalTextAlignment="Center"/>
+        </StackLayout>
+        <Label x:Name="lbText2" Text="0 I/m2"
+               Style="{StaticResource lbStyle}"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="End"
+               Margin="0,0,10,0"
+               Grid.Column="1"/>
+        <Line BackgroundColor="White" 
+              HeightRequest="2"
+              VerticalOptions="End"
+              Grid.ColumnSpan="2"/>
+    </Grid>
+    
+</ContentView>
