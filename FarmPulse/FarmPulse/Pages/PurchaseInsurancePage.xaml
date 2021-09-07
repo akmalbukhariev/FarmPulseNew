@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:control="clr-namespace:FarmPulse.Control"
+             x:Class="FarmPulse.Pages.PurchaseInsurancePage"
+             BackgroundColor="{StaticResource AppColor}">
+
+    <Grid RowDefinitions="Auto,*">
+        <view:NavigationView Text="Confirmation"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <ScrollView Margin="0,0,0,10" Grid.Row="1">
+            <Grid RowDefinitions="Auto,Auto,*,*,*,*,*,*,Auto"
+                  ColumnDefinitions="*,330,*">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="lbStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                    </Style>
+                    <Style x:Key="edStyle" TargetType="view:EntryView">
+                        <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
+                        <Setter Property="CornerRadius" Value="7"/>
+                        <Setter Property="BorderWidth" Value="1"/>
+                        <Setter Property="BorderColor" Value="Gray"/>
+                        <Setter Property="BackgroundColorOfEntry" Value="White"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Image Source="appLogo2"
+                   Aspect="AspectFit"
+                   WidthRequest="220"
+                   Grid.Column="1"/>
+            <Label x:Name="lbTitle"
+                   Text="Make an request"
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Label Text="Farmer filed name"
+                       Style="{StaticResource lbStyle}"/>
+                <control:CustomPicker x:Name="pickField" 
+                                      Image="show"
+                                      TextColor="White"
+                                      TitleColor="Gray"
+                                      BackgroundColor="White"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="1">
+                <Label Text="Crop type"
+                       Style="{StaticResource lbStyle}"/>
+                <view:EntryView Style="{StaticResource edStyle}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="4" Grid.Column="1">
+                <Label Text="Hectars"
+                       Style="{StaticResource lbStyle}"/>
+                <view:EntryView Style="{StaticResource edStyle}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="5" Grid.Column="1">
+                <Label Text="Farmer Name and Surname"
+                       Style="{StaticResource lbStyle}"/>
+                <view:EntryView Style="{StaticResource edStyle}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="6" Grid.Column="1">
+                <Label Text="Farmer phone number"
+                       Style="{StaticResource lbStyle}"/>
+                <view:EntryView Style="{StaticResource edStyle}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="7" Grid.Column="1">
+                <Label Text="Confirm phone number"
+                       Style="{StaticResource lbStyle}"/>
+                <view:EntryView Style="{StaticResource edStyle}"/>
+            </StackLayout>
+            <Button Text="Submit"
+                    TextColor="Black"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    BorderWidth="1"
+                    BorderColor="White"
+                    CornerRadius="30"
+                    BackgroundColor="#D4BDA3"
+                    Grid.Row="8" 
+                    Grid.Column="1"/>
+        </Grid>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
