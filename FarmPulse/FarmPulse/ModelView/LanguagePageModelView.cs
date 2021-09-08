@@ -8,12 +8,13 @@ namespace FarmPulse.ModelView
 {
     public class LanguagePageModelView : BaseModel
     {
-         
-        private INavigation Navigation;
+        public string SelectedLanguage { get => GetValue<string>(); set => SetValue(value); }
+        public List<string> LanguageList { get => GetValue<List<string>>(); set => SetValue(value); }
 
         public LanguagePageModelView(INavigation navigation)
         {
             Navigation = navigation;
+            LanguageList = new List<string>() { "Узбек", "Русский", "English" }; 
         }
 
         public ICommand ClickSaveCommand => new Command(ClickSave);

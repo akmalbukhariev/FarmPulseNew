@@ -40,7 +40,7 @@ namespace FarmPulse.Pages
             }
         }
 
-        private void Label_Tapped(object sender, System.EventArgs e)
+        private void LabelFind_Tapped(object sender, System.EventArgs e)
         { 
             ChangeClickBackColor(lbFindPassword); 
         }

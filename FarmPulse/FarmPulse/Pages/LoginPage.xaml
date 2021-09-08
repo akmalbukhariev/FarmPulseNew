@@ -65,7 +65,7 @@
                        VerticalTextAlignment="Center"
                        HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Label_Tapped" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Tapped="LabelFind_Tapped" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>

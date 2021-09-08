@@ -15,6 +15,8 @@
                Grid.Row="1"
                Grid.Column="1"/>
         <Picker Title="Select Language"
+                ItemsSource="{Binding LanguageList}"
+                SelectedItem="{Binding SelectedLanguage}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand"
                 Grid.Row="2"
