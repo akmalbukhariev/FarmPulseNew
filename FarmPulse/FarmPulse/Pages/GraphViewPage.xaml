@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             x:Class="FarmPulse.Pages.GraphViewPage"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="*,*,Auto"
+          RowSpacing="0">
+        <view:GraphView Region="Cotton(Nurabad)"
+                        MeanValue="Index mean value"/>
+        <view:GraphView Region="Wheat(Nurabad)"
+                        MeanValue="Index mean value"
+                        Grid.Row="1"/>
+        <BoxView BackgroundColor="#2F8F6E"
+                 Grid.Row="2"/>
+        <Button Text="Select index"
+                TextColor="Black"
+                BackgroundColor="White"
+                Margin="20,5,20,5"
+                Grid.Row="2"/>
+    </Grid>
+    
+</ContentPage>
