@@ -11,9 +11,7 @@ namespace FarmPulse.ModelView
     public class LoginPageModelView : BaseModel
     {
         public string InsuranceNumber { get => GetValue<string>(); set => SetValue(value); }
-
         public string Password { get => GetValue<string>(); set => SetValue(value); }
-
         public bool CheckAutoLogin { get => GetValue<bool>(); set => SetValue(value); }
           
         public LoginPageModelView(INavigation navigation)

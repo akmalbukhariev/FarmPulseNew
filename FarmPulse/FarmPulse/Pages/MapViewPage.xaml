@@ -27,8 +27,8 @@
             </ResourceDictionary>
         </Grid.Resources>
         <control:CustomMap HorizontalOptions="FillAndExpand"
-                           VerticalOptions="FillAndExpand"
-                           Margin="0,0,0,50"/>
+                           VerticalOptions="FillAndExpand" 
+                           Margin="0,0,0,50"/> 
         <behaviors:Expander Rotation="180"
                             HorizontalOptions="Start"
                             VerticalOptions="CenterAndExpand"
@@ -96,6 +96,78 @@
                        Style="{StaticResource lbStyle}"/>
             </StackLayout>
         </Grid>
+        <BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 IsVisible="{Binding ShowTimePeriodBox}"
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackBoxCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame CornerRadius="10"
+               WidthRequest="220"
+               BackgroundColor="White"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               IsVisible="{Binding ShowTimePeriodBox}"
+               Grid.RowSpan="2">
+            <Grid RowDefinitions="Auto,Auto,40"
+                  RowSpacing="5">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="lbStyle" TargetType="Label">
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <StackLayout Spacing="0">
+                    <Label Text="Start date"
+                           Style="{StaticResource lbStyle}"/>
+                    <DatePicker/>
+                </StackLayout>
+                <StackLayout Spacing="0" 
+                             Grid.Row="1">
+                    <Label Text="End date"
+                           Style="{StaticResource lbStyle}"/>
+                    <DatePicker/>
+                </StackLayout>
+                <Button Text="Ok"
+                        BackgroundColor="White"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        Command="{Binding ClickTimeBoxOkCommand}"
+                        Grid.Row="2"/>
+            </Grid>
+        </Frame>
+        <Frame WidthRequest="180"
+               HeightRequest="250"
+               BackgroundColor="White"
+               IsVisible="{Binding ShowImages}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               Grid.RowSpan="2">
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding Data}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="2" Margin="0,5,0,5" HeightRequest="30">
+                                <Label Text="{Binding Date}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>    
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
     </Grid>
     
 </ContentPage>

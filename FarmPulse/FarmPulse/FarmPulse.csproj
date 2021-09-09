@@ -91,10 +91,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Views\WheatherItemView1.xaml.cs">
       <DependentUpon>WheatherItemView1.xaml</DependentUpon>
     </Compile>
