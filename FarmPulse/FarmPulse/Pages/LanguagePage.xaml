@@ -14,14 +14,14 @@
                VerticalOptions="CenterAndExpand"
                Grid.Row="1"
                Grid.Column="1"/>
-        <Picker Title="Select Language"
+        <Picker Title="{Binding SelectLanguageTitle}"
                 ItemsSource="{Binding LanguageList}"
                 SelectedItem="{Binding SelectedLanguage}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand"
                 Grid.Row="2"
                 Grid.Column="1"/>
-        <Button Text="Save"
+        <Button Text="{Binding SaveButtonText}"
                 BackgroundColor="#D4BDA3"
                 Margin="0,0,0,10"
                 BorderWidth="2"

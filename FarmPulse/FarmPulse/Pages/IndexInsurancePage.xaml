@@ -2,33 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:control="clr-namespace:FarmPulse.Control"
              x:Class="FarmPulse.Pages.IndexInsurancePage">
 
     <Grid RowDefinitions="*,*,50"
           RowSpacing="0">
-        <view:GraphView Region="Cotton(Nurabad)"
-                        MeanValue="Index mean value"/>
-        <view:GraphView Region="Wheat(Nurabad)"
-                        MeanValue="Index mean value"
+        <view:GraphView Region="{Binding TitleCotton}"
+                        MeanValue="{Binding ActualYield}"/>
+        <view:GraphView Region="{Binding TitleWheat}"
+                        MeanValue="{Binding ActualYield}"
                         Grid.Row="1"/>
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="2"/>
         <Grid ColumnDefinitions="*,1,*" 
-              Grid.Row="2">
-            <Grid.Resources>
-                <ResourceDictionary>
-                    <Style x:Key="lbStyle" TargetType="Button">
-                        <Setter Property="TextColor" Value="Black"/>
-                        <Setter Property="BackgroundColor" Value="White"/>
-                        <Setter Property="Margin" Value="10,5,10,5"/>
-                    </Style>
-                </ResourceDictionary>
-            </Grid.Resources>
-            <Button Text="Select index"
-                    Style="{StaticResource lbStyle}"/>
+              Grid.Row="2"> 
+            <control:CustomPicker Title="{Binding SelectIndexTitle}"
+                                  FontSize="14"
+                                  ChartSyle="False"
+                                  TitleColor="Black"
+                                  TextColor="Black"
+                                  BackgroundColor="White"
+                                  HorizontalTextAlignment="Center"
+                                  VerticalTextAlignment="Center"
+                                  Margin="20,5,20,5"
+                                  ItemsSource="{Binding IndexList}"
+                                  SelectedIndexChanged="Picker_SelectedIndexChanged"
+                                  SelectedItem="{Binding SelectedIndexItem}"/>
             <Line BackgroundColor="Black" Grid.Column="1"/>
             <Button Text="Add crop yield"
-                    Style="{StaticResource lbStyle}"
+                    TextColor="Black"
+                    FontSize="13"
+                    BackgroundColor="White"
+                    Margin="10,5,10,5"
                     Grid.Column="2"/>
         </Grid> 
     </Grid>

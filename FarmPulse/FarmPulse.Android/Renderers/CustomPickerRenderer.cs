@@ -27,18 +27,17 @@ namespace FarmPulse.Droid.Renderers
             if (Control != null && element != null)
             {
                 Control.Gravity = GravityFlags.CenterHorizontal;
-                Control.Background = AddPickerStyles(element.Image);
-
-                //if (element.ChartSyle)
-                //{
-                //    Control.Background = AddPickerStyles(element.Image);
-                //}
-                //else
-                //{
-                //    GradientDrawable gd = new GradientDrawable();
-                //    gd.SetStroke(0, Android.Graphics.Color.Transparent);
-                //    Control.SetBackground(gd);
-                //}
+                
+                if (element.ChartSyle)
+                {
+                    Control.Background = AddPickerStyles(element.Image);
+                }
+                else
+                {
+                    GradientDrawable gd = new GradientDrawable();
+                    gd.SetStroke(0, Android.Graphics.Color.Transparent);
+                    Control.SetBackground(gd);
+                }
             }
         }
 

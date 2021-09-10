@@ -6,7 +6,7 @@
              BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="Purchase"
+        <view:NavigationView Text="{Binding Purchase}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="*,Auto"
@@ -19,27 +19,27 @@
                       ColumnSpacing="15"
                       VerticalOptions="CenterAndExpand">
                     <view:PurchaseItemView ImageSource="contact"
-                                           Text="Insurance"/>
+                                           Text="{Binding Insurance}"/>
                     <view:PurchaseItemView ImageSource="spa"
-                                           Text="Index insurance"
+                                           Text="{Binding IndexInsurance}"
                                            Grid.Column="1"/>
                     <view:PurchaseItemView ImageSource="trending"
-                                           Text="Estimate rates"
+                                           Text="{Binding EstimateRates}"
                                            Grid.Row="1"/>
                     <view:PurchaseItemView ImageSource="compost"
-                                           Text="Cover"
+                                           Text="{Binding Cover}"
                                            Grid.Row="1"
                                            Grid.Column="1"/>
                     <view:PurchaseItemView ImageSource="description"
-                                           Text="Submitting Claim"
+                                           Text="{Binding SubmittingClaim}"
                                            Grid.Row="2"/>
                     <view:PurchaseItemView ImageSource="quora"
-                                           Text="FAQ"
+                                           Text="{Binding FAQ}"
                                            Grid.Row="2"
                                            Grid.Column="1"/>
                 </Grid>
             </ScrollView>
-            <Button Text="Buy Now"
+            <Button Text="{Binding ButtonBuyText}"
                     TextColor="Black"
                     CornerRadius="30"
                     BackgroundColor="#D3BCA2"

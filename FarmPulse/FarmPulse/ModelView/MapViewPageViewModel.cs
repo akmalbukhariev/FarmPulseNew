@@ -14,6 +14,9 @@ namespace FarmPulse.ModelView
 
         public bool ShowTimePeriodBox { get => GetValue<bool>(); set => SetValue(value); }
         public bool ShowImages { get => GetValue<bool>(); set => SetValue(value); }
+        public DateTime StartDate { get => GetValue<DateTime>(); set => SetValue(value); }
+        public DateTime EndDate { get => GetValue<DateTime>(); set => SetValue(value); }
+        public SatelliteData SelectedItem { get => GetValue<SatelliteData>(); set => SetValue(value); }
 
         public MapViewPageViewModel()
         {
@@ -68,19 +71,40 @@ namespace FarmPulse.ModelView
                 Date = "2021.02.08",
                 ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
             });
+
+            StartDate = DateTime.Now.AddDays(-20);
+            EndDate = DateTime.Now;
         }
 
         public ICommand ClickBackBoxCommand => new Command(ClickBack);
+        public ICommand ClickBackShowImageBoxCommand => new Command(ClickBackShowImageBox);
         public ICommand ClickTimeBoxOkCommand => new Command(ClickTimeBoxOk);
+        public ICommand ClickMapTypeCommand => new Command<string>(ClickMapType);
 
         private void ClickBack()
         {
             ShowTimePeriodBox = false;
         }
 
+        private void ClickBackShowImageBox()
+        {
+            ShowImages = false;
+        }
+
         private void ClickTimeBoxOk()
         {
             ShowTimePeriodBox = false;
+        }
+
+        private void ClickMapType(string type)
+        {
+            switch (type)
+            {
+                case "Satellite": break;
+                case "Hybrid": break;
+                case "Normal": break;
+                case "Terrain": break;
+            }
         }
     }
 }

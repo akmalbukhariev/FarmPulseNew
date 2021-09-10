@@ -47,10 +47,26 @@
                 </Image>
             </behaviors:Expander.Header>
             <StackLayout Spacing="15" Margin="10, 20">
-                <Button x:Name="btnSatellite" Text="Satellite" Style="{StaticResource btnStyle}"/>
-                <Button x:Name="btnHybrid" Text="Hybrid" Style="{StaticResource btnStyle}"/>
-                <Button x:Name="btnNormal" Text="Normal" Style="{StaticResource btnStyle}"/>
-                <Button x:Name="btnTerrain" Text="Terrain" Style="{StaticResource btnStyle}"/>
+                <Button x:Name="btnSatellite" 
+                        Text="Satellite" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Satellite"/>
+                <Button x:Name="btnHybrid" 
+                        Text="Hybrid" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Hybrid"/>
+                <Button x:Name="btnNormal" 
+                        Text="Normal" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Normal"/>
+                <Button x:Name="btnTerrain" 
+                        Text="Terrain" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Terrain"/>
             </StackLayout>
         </behaviors:Expander> 
         <Image Source="legend" 
@@ -126,13 +142,13 @@
                 <StackLayout Spacing="0">
                     <Label Text="Start date"
                            Style="{StaticResource lbStyle}"/>
-                    <DatePicker/>
+                    <DatePicker Date="{Binding StartDate}" />
                 </StackLayout>
                 <StackLayout Spacing="0" 
                              Grid.Row="1">
                     <Label Text="End date"
                            Style="{StaticResource lbStyle}"/>
-                    <DatePicker/>
+                    <DatePicker Date="{Binding EndDate}"/>
                 </StackLayout>
                 <Button Text="Ok"
                         BackgroundColor="White"
@@ -142,6 +158,15 @@
                         Grid.Row="2"/>
             </Grid>
         </Frame>
+        <BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 IsVisible="{Binding ShowImages}"
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackShowImageBoxCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
         <Frame WidthRequest="180"
                HeightRequest="250"
                BackgroundColor="White"
@@ -150,7 +175,9 @@
                HorizontalOptions="CenterAndExpand"
                Grid.RowSpan="2">
             <ListView HasUnevenRows="True"
-                      ItemsSource="{Binding Data}">
+                      ItemsSource="{Binding Data}"
+                      ItemSelected="ListView_ItemSelected"
+                      SelectedItem="{Binding SelectedItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

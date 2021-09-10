@@ -9,9 +9,16 @@ namespace FarmPulse.ModelView
 {
     public class MainPageModelView :  BaseModel
     { 
+        public string CropMonitoring { get => GetValue<string>(); set => SetValue(value); }
+        public string CropInsurance { get => GetValue<string>(); set => SetValue(value); }
+        public string WeatherInformation { get => GetValue<string>(); set => SetValue(value); }
         public MainPageModelView(INavigation navigation)
         {
             Navigation = navigation;
+
+            CropMonitoring = "Crop Monitoring";
+            CropInsurance = "Crop Insurance";
+            WeatherInformation = "Weather Information";
         }
 
         public ICommand ClickMonitorCommand => new Command(Monitoring);

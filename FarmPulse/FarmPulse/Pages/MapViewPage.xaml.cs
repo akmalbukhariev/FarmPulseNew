@@ -22,7 +22,7 @@ namespace FarmPulse.Pages
             BindingContext = model;
 
             NavigationPage.SetHasBackButton(this, false);
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false); 
         }
 
         private void Time_Tapped(object sender, EventArgs e)
@@ -44,6 +44,21 @@ namespace FarmPulse.Pages
 
             stack.BackgroundColor = Color.Transparent;
             await Task.Delay(200);
+        }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            try
+            {
+                if (model.SelectedItem != null)
+                {
+                    model.ShowImages = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
     }
 }
