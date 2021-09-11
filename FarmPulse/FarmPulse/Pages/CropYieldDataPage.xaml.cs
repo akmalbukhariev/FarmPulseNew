@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmPulse.ModelView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,14 @@ namespace FarmPulse.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CropYieldDataPage : ContentPage
     {
+        private CropYieldDataPageViewModel model;
         public CropYieldDataPage()
         {
             InitializeComponent();
             InitPage();
+
+            model = new CropYieldDataPageViewModel();
+            BindingContext = model;
 
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);

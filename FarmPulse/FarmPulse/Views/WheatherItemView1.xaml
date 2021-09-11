@@ -16,7 +16,7 @@
             <Image x:Name="image" 
                    Source="rain_white"
                    Aspect="AspectFit"
-                   WidthRequest="45"/>
+                   WidthRequest="40"/>
             <Label x:Name="lbText1"
                    Text ="Rain 3 h"
                    Style="{StaticResource lbStyle}"

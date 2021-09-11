@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FarmPulse.Views.WheatherItemView2">
 
-    <Grid RowDefinitions="*,*"
-          ColumnDefinitions="Auto,*,Auto,Auto,Auto"
+    <Grid RowDefinitions="50,30"
+          ColumnDefinitions="70,*,Auto,Auto,Auto"
+          Margin="0,0,10,0"
           RowSpacing="0">
         <Grid.Resources>
             <ResourceDictionary>
                 <Style x:Key="lbDayStyle" TargetType="Label">
                     <Setter Property="TextColor" Value="White"/>
-                    <Setter Property="FontAttributes" Value="20"/>
+                    <Setter Property="FontSize" Value="25"/>
                     <Setter Property="FontAttributes" Value="Bold"/>
                     <Setter Property="HorizontalTextAlignment" Value="Center"/>
                     <Setter Property="VerticalTextAlignment" Value="Center"/>
@@ -23,7 +24,7 @@
                 </Style>
             </ResourceDictionary>
         </Grid.Resources>
-        <Label x:Name="lbDay"
+        <Label x:Name="lbDay" 
                Style="{StaticResource lbDayStyle}"/>
         <Label x:Name="lbDate"
                TextColor="White"
@@ -46,6 +47,7 @@
                Grid.Row="1"
                Grid.Column="2"/>
         <Image Source="air_white"
+               WidthRequest="30"
                Aspect="AspectFit"
                Grid.Column="3"/>
         <Image Source="rain_white"

@@ -7,7 +7,7 @@
              BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="Summit your claim"
+        <view:NavigationView Text="{Binding Title}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="Auto,*,Auto"
@@ -38,47 +38,48 @@
                       RowSpacing="0"
                       VerticalOptions="CenterAndExpand">
                     <StackLayout>
-                        <Label Text="Farmer filed name"
+                        <Label Text="{Binding FarmerFieldNameText}"
                                Style="{StaticResource lbStyle}"/>
                         <control:CustomPicker x:Name="pickField" 
                                               Image="show"
+                                              ChartSyle="True"
                                               TextColor="White"
                                               TitleColor="Gray"
                                               BackgroundColor="White"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>
-                            <Label Text="Crop type"
+                            <Label Text="{Binding CropTypeText}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                         <StackLayout Grid.Column="1">
-                            <Label Text="Area ton/ha"
+                            <Label Text="{Binding AreaTonText}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                     </Grid>
                     <StackLayout Grid.Row="2">
-                        <Label Text="Farmer Name and Surname"
+                        <Label Text="{Binding FarmerNameSurnameText}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="3">
-                        <Label Text="Farmer phone number"
+                        <Label Text="{Binding FarmerPhoneNumberText}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="4" MinimumHeightRequest="150">
-                        <Label Text="Description the claim"
+                        <Label Text="{Binding DescriptionClaimText}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"
                                         HeightEntryView="150"/>
                     </StackLayout>
                 </Grid>
-            </ScrollView> 
-            <Button Text="Submit"
+            </ScrollView>
+            <Button Text="{Binding SubmitButtonText}"
                     TextColor="Black"
                     FontAttributes="Bold"
                     CornerRadius="30"
@@ -86,6 +87,7 @@
                     BorderWidth="1"
                     BorderColor="White"
                     Margin="0,0,0,20"
+                    Command="{Binding ClickSubmitCommand}"
                     Grid.Row="2"
                     Grid.Column="1"/>
         </Grid>

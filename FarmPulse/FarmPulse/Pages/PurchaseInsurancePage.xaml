@@ -7,7 +7,7 @@
              BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="Confirmation"
+        <view:NavigationView Text="{Binding Title}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <ScrollView Margin="0,0,0,10" Grid.Row="1">
@@ -35,7 +35,7 @@
                    WidthRequest="220"
                    Grid.Column="1"/>
             <Label x:Name="lbTitle"
-                   Text="Make an request"
+                   Text="{Binding Title1}"
                    TextColor="Black"
                    FontSize="20"
                    FontAttributes="Bold"
@@ -44,49 +44,52 @@
                    Grid.Row="1"
                    Grid.Column="1"/>
             <StackLayout Grid.Row="2" Grid.Column="1">
-                <Label Text="Farmer filed name"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding FieldNameText}"
+                           Style="{StaticResource lbStyle}"/>
                 <control:CustomPicker x:Name="pickField" 
                                       Image="show"
+                                      ChartSyle="True"
                                       TextColor="White"
                                       TitleColor="Gray"
-                                      BackgroundColor="White"/>
+                                      BackgroundColor="White"
+                                      ItemsSource="{Binding FieldNameList}"/>
             </StackLayout>
             <StackLayout Grid.Row="3" Grid.Column="1">
-                <Label Text="Crop type"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding CropTypeText}"
+                           Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="4" Grid.Column="1">
-                <Label Text="Hectars"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding HectarsText}"
+                           Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="5" Grid.Column="1">
-                <Label Text="Farmer Name and Surname"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding FarmerNameText}"
+                           Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="6" Grid.Column="1">
-                <Label Text="Farmer phone number"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding FarmerPhoneNumberText}"
+                           Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="7" Grid.Column="1">
-                <Label Text="Confirm phone number"
-                       Style="{StaticResource lbStyle}"/>
+                    <Label Text="{Binding ConfirmPhoneNumberText}"
+                           Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
-            <Button Text="Submit"
-                    TextColor="Black"
-                    FontSize="15"
-                    FontAttributes="Bold"
-                    BorderWidth="1"
-                    BorderColor="White"
-                    CornerRadius="30"
-                    BackgroundColor="#D4BDA3"
-                    Grid.Row="8" 
-                    Grid.Column="1"/>
+                <Button Text="{Binding SubmitButtonText}"
+                        TextColor="Black"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        BorderWidth="1"
+                        BorderColor="White"
+                        CornerRadius="30"
+                        BackgroundColor="#D4BDA3"
+                        Command="{Binding ClickSubmitCommand}"
+                        Grid.Row="8" 
+                        Grid.Column="1"/>
         </Grid>
         </ScrollView>
     </Grid>
