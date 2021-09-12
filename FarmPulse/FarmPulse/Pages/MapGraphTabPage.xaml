@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            x:Class="FarmPulse.Pages.MapGraphTabPage"
+            BarBackgroundColor="White"
+            BarTextColor="#2F8F6E"
+            NavigationPage.IconColor="Black">
+    <NavigationPage.TitleView>
+        <Label x:Name="lbTitle"
+               Text="Samarqand"
+               FontSize="20" 
+               FontAttributes="Bold" 
+               TextColor="Black" 
+               HorizontalTextAlignment="Center" 
+               Margin="0,0,40,0"/>
+    </NavigationPage.TitleView>
+    
+  <page:MapViewPage Title="Map View" />
+  <page:GraphViewPage Title="Graph View" /> 
+</TabbedPage>

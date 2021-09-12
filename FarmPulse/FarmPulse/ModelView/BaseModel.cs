@@ -52,7 +52,7 @@ namespace FarmPulse.ModelView
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected void SetTransitionType(TransitionType transitionType)
+        public void SetTransitionType(TransitionType transitionType)
         {
             if (Parent == null) return;
 

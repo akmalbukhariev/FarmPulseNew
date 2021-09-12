@@ -23,9 +23,10 @@ namespace FarmPulse.ModelView
 
         public ICommand ClickSaveCommand => new Command(ClickSave);
 
-        private void ClickSave()
+        private async void ClickSave()
         {
-            
+            SetTransitionType(TransitionType.SlideFromRight);
+            await Navigation.PushAsync(new Pages.LoginPage());
         }
     }
 }

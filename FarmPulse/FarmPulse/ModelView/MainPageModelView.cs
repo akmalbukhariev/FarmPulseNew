@@ -30,7 +30,7 @@ namespace FarmPulse.ModelView
         /// </summary>
         async void Monitoring()
         {
-            SetTransitionType(TransitionType.SlideFromRight);
+            SetTransitionType(TransitionType.Scale);
             await Navigation.PushAsync(new FieldListPage());
         }
 

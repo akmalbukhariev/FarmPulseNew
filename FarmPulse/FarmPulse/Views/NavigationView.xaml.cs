@@ -82,6 +82,31 @@ namespace FarmPulse.Views
         }
         #endregion
 
+        #region Setting Visible
+        public static readonly BindableProperty SettingProperty =
+            BindableProperty.Create(nameof(IsSettingVisible),
+                                    typeof(bool),
+                                    typeof(NavigationView),
+                                    defaultBindingMode: BindingMode.TwoWay,
+                                    propertyChanged: SettingPropertyChanged);
+
+        public bool IsSettingVisible
+        {
+            get { return (bool)GetValue(SettingProperty); }
+            set { SetValue(SettingProperty, value); }
+        }
+
+        private static void SettingPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (NavigationView)bindable;
+            if (control != null)
+            {
+                control.lbSetting.IsVisible = (bool)newValue;
+                control.lbTitle.IsVisible = false;
+            }
+        }
+        #endregion
+
         #region Command
         public static readonly BindableProperty CommandProperty =
             BindableProperty.Create(nameof(Command),
@@ -113,7 +138,7 @@ namespace FarmPulse.Views
             InitializeComponent();
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void Back_Tapped(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
 
@@ -121,6 +146,15 @@ namespace FarmPulse.Views
             {
                 Command.Execute(CommandParameter);
             }
+        }
+
+        private async void Setting_Tapped(object sender, EventArgs e)
+        {
+            lbSetting.TextColor = Color.White;
+            await Task.Delay(100);
+
+            lbSetting.TextColor = Color.Black;
+            await Task.Delay(200);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace FarmPulse
         {
             InitializeComponent();
 
-            MainPage = new TransitionNavigationPage(new WeatherPage());
+            MainPage = new TransitionNavigationPage(new MainPage());
         }
 
         protected override void OnStart()

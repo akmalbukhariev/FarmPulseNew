@@ -13,14 +13,22 @@ namespace FarmPulse.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LanguagePage : ContentPage
     {
+        private LanguagePageModelView model;
         public LanguagePage()
         {
             InitializeComponent();
 
-            BindingContext = new LanguagePageModelView(Navigation);
+            model = new LanguagePageModelView(Navigation);
+            BindingContext = model;
 
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.Parent = Parent;
         }
     }
 }

@@ -24,7 +24,8 @@
         <Button Text="{Binding SaveButtonText}"
                 BackgroundColor="#D4BDA3"
                 Margin="0,0,0,10"
-                BorderWidth="2"
+                BorderWidth="1"
+                BorderColor="White"
                 Grid.Row="3"
                 Grid.Column="1"
                 Command="{Binding ClickSaveCommand}"/>
