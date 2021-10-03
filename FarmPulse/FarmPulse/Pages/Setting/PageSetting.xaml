@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FarmPulse.Pages.SettingPage"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:page="clr-namespace:FarmPulse.Pages">
+ 
+    <Grid RowDefinitions="Auto,*"
+          RowSpacing="0">
+            <view:NavigationView Text="{Binding Title}"
+                                 TextColor="Black"
+                                 BackgroundColor="#D3BCA2"/>
+        <StackLayout BackgroundColor="#EAD8BD" 
+                     Grid.Row="1">
+            <TableView x:Name="tableSetting" 
+                       HasUnevenRows="False">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell x:Name="cellDemo" 
+                                  Tapped="TableCell_Tapped">
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="lbDemo" 
+                                       Text="{Binding Demo}"
+                                       FontSize="Body" 
+                                       TextColor="Black" 
+                                       HorizontalOptions="StartAndExpand" 
+                                       Margin="10"/>
+                                <Image Source="right_arrow.png" 
+                                       WidthRequest="20" 
+                                       HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell x:Name="cellLanguage" 
+                                  Tapped="TableCell_Tapped">
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="lbLanguage" 
+                                       Text="{Binding Language}"
+                                       FontSize="Body" 
+                                       TextColor="Black" 
+                                       HorizontalOptions="Start" 
+                                       Margin="10"/>
+                                <Image Source="right_arrow.png" 
+                                       WidthRequest="20" 
+                                       HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell x:Name="cellAbout" 
+                                  Tapped="TableCell_Tapped">
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="lbAbout" 
+                                       Text="{Binding About}"
+                                       FontSize="Body" 
+                                       TextColor="Black" 
+                                       HorizontalOptions="StartAndExpand" 
+                                       Margin="10"/>
+                                <Image Source="right_arrow.png" 
+                                       WidthRequest="20" 
+                                       HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button x:Name="btnLogOut" 
+                    TextColor="Red" 
+                    Text="Log out"
+                    Margin="20,0,20,30"
+                    CornerRadius="25"
+                    BackgroundColor="#EAD8BD"
+                    BorderWidth="1"
+                    BorderColor="#BEA786"
+                    VerticalOptions="End"
+                    Clicked="BtnLogOut_Clicked"/>
+        </StackLayout>
+    </Grid>  
+</page:IPage>

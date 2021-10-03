@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:FarmPulse.Control" 
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="FarmPulse.Pages.MapViewPage">
+
+    <Grid RowDefinitions="*, Auto">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="btnStyle" TargetType="Button">
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="FontSize" Value="10"/>
+                    <Setter Property="BorderWidth" Value="1"/>
+                    <Setter Property="BorderColor" Value="Black"/>
+                    <Setter Property="CornerRadius" Value="20"/>
+                    <Setter Property="WidthRequest" Value="65"/>
+                    <Setter Property="HeightRequest" Value="35"/>
+                    <Setter Property="BackgroundColor" Value="LightBlue"/>
+                    <Setter Property="Rotation" Value="180"/>
+                </Style>
+                <Style x:Key="lbExpanderStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="10"/>
+                    <Setter Property="Rotation" Value="180"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <control:CustomMap HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand" 
+                           Margin="0,0,0,50"/> 
+        <behaviors:Expander Rotation="180"
+                            HorizontalOptions="Start"
+                            VerticalOptions="CenterAndExpand"
+                            Margin="10,0,0,0">
+            <behaviors:Expander.Header>
+                <Image Source="mapType2"
+                       Aspect="AspectFit"
+                       WidthRequest="40">
+                    <Image.Triggers>
+                        <DataTrigger TargetType="Image"
+                                     Binding="{Binding Source={RelativeSource AncestorType={x:Type behaviors:Expander}}, Path=IsExpanded}"
+                                     Value="true">
+                            <Setter Property="Source" Value="mapType2.png"/>
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+            </behaviors:Expander.Header>
+            <StackLayout Spacing="15" Margin="10, 20">
+                <Button x:Name="btnSatellite" 
+                        Text="Satellite" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Satellite"/>
+                <Button x:Name="btnHybrid" 
+                        Text="Hybrid" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Hybrid"/>
+                <Button x:Name="btnNormal" 
+                        Text="Normal" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Normal"/>
+                <Button x:Name="btnTerrain" 
+                        Text="Terrain" 
+                        Style="{StaticResource btnStyle}"
+                        Command="{Binding ClickMapTypeCommand}"
+                        CommandParameter="Terrain"/>
+            </StackLayout>
+        </behaviors:Expander> 
+        <Image Source="legend" 
+               WidthRequest="40"
+               Aspect="AspectFit"
+               HorizontalOptions="End"
+               VerticalOptions="CenterAndExpand"
+               Margin="0,0,10,0"/>
+        <Grid ColumnDefinitions="*,1,*"
+              ColumnSpacing="0"
+              BackgroundColor="#2F8F6E"
+              VerticalOptions="End"
+              HeightRequest="50">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="lbStyle" TargetType="Label">
+                        <Setter Property="TextColor" Value="White"/>
+                        <Setter Property="FontSize" Value="17"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <StackLayout x:Name="stackTime"
+                         BackgroundColor="Transparent">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Time_Tapped"
+                                          NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Time period"
+                       Style="{StaticResource lbStyle}"/>
+            </StackLayout>
+            <Line BackgroundColor="Black" Grid.Column="1"/>
+            <StackLayout x:Name="stackImage" 
+                         Grid.Column="2"
+                         BackgroundColor="Transparent">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Image_Tapped"
+                                          NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Available images"
+                       Style="{StaticResource lbStyle}"/>
+            </StackLayout>
+        </Grid>
+        <BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 IsVisible="{Binding ShowTimePeriodBox}"
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackBoxCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame CornerRadius="10"
+               WidthRequest="220"
+               BackgroundColor="White"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               IsVisible="{Binding ShowTimePeriodBox}"
+               Grid.RowSpan="2">
+            <Grid RowDefinitions="Auto,Auto,40"
+                  RowSpacing="5">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="lbStyle" TargetType="Label">
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <StackLayout Spacing="0">
+                    <Label Text="Start date"
+                           Style="{StaticResource lbStyle}"/>
+                    <DatePicker Date="{Binding StartDate}" />
+                </StackLayout>
+                <StackLayout Spacing="0" 
+                             Grid.Row="1">
+                    <Label Text="End date"
+                           Style="{StaticResource lbStyle}"/>
+                    <DatePicker Date="{Binding EndDate}"/>
+                </StackLayout>
+                <Button Text="Ok"
+                        BackgroundColor="White"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        Command="{Binding ClickTimeBoxOkCommand}"
+                        Grid.Row="2"/>
+            </Grid>
+        </Frame>
+        <BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 IsVisible="{Binding ShowImages}"
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackShowImageBoxCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame WidthRequest="180"
+               HeightRequest="250"
+               BackgroundColor="White"
+               IsVisible="{Binding ShowImages}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"
+               Grid.RowSpan="2">
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding Data}"
+                      ItemSelected="ListView_ItemSelected"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="2" Margin="0,5,0,5" HeightRequest="30">
+                                <Label Text="{Binding Date}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>    
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </Grid>
+    
+</page:IPage>

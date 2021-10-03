@@ -1,4 +1,5 @@
-﻿using FarmPulse.Pages;
+﻿using FarmPulse.Control;
+using FarmPulse.Pages;
 using System; 
 
 using Xamarin.Forms;
@@ -9,6 +10,8 @@ namespace FarmPulse.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DemoInfoView : ContentView
     {
+        public Element PageParent { get; set; }
+
         public DemoInfoView()
         {
             InitializeComponent();
@@ -16,12 +19,22 @@ namespace FarmPulse.Views
 
         private async void Demo_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new PageDemo());
+            Slidestyle();
+            await Navigation.PushAsync(new PageDemo());
         }   
 
         private async void Info_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new PageInfo());
+            Slidestyle();
+            await Navigation.PushAsync(new PageInfo());
+        }
+
+        void Slidestyle()
+        {
+            if (PageParent == null) return;
+
+            var transitionNavigationPage = PageParent as TransitionNavigationPage;
+            transitionNavigationPage.TransitionType = TransitionType.SlideFromRight;
         }
     }
 }

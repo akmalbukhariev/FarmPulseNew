@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="FarmPulse.Pages.WeatherPage"
+             BackgroundColor="Black">
+    <Grid RowDefinitions="Auto,*">
+        <view:NavigationView Text="{Binding Title}"
+                             TextColor="White"
+                             ImageIconSource="back_white"
+                             BackgroundColor="Black"/> 
+            <Grid RowDefinitions="Auto,*"
+                  Grid.Row="1">
+                <Image Source="Wheat_photo"
+                       Aspect="AspectFill"
+                       VerticalOptions="StartAndExpand"/>
+                <Label Text="{Binding Title1}"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Label Text="{Binding DateNow}"
+                       FontSize="20"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="End"/>
+                <xct:TabView TabStripPlacement="Top"
+                             TabStripBackgroundColor="Black"
+                             TabStripHeight="30"
+                             TabIndicatorColor="#00BD00"
+                             TabContentBackgroundColor="Black"
+                             Grid.Row="1">
+                        <xct:TabViewItem Text="Currently weather"
+                                         TextColor="Gray"
+                                         TextColorSelected="White"
+                                         FontSize="12">
+                            <ScrollView>
+                                <Grid RowDefinitions="*,*,*,*,*">
+                                    <view:WheatherItemView1 ImageIconSource="rain_white"
+                                                                    Text1="{Binding Item1_Text1}"
+                                                                    Text2="{Binding Item1_Text2}"/>
+                                    <view:WheatherItemView1 ImageIconSource="rain_white"
+                                                                    Text1="{Binding Item2_Text1}"
+                                                                    Text2="{Binding Item2_Text2}"
+                                                                    Grid.Row="1"/>
+                                    <view:WheatherItemView1 ImageIconSource="snow_white"
+                                                                    Text1="{Binding Item3_Text1}"
+                                                                    Text2="{Binding Item3_Text2}"
+                                                                    Grid.Row="2"/>
+                                    <view:WheatherItemView1 ImageIconSource="air_white"
+                                                                    Text1="{Binding Item4_Text1}"
+                                                                    Text2="{Binding Item4_Text2}"
+                                                                    Grid.Row="3"/>
+                                    <view:WheatherItemView1 ImageIconSource="thermostat_white"
+                                                                    Text1="{Binding Item5_Text1}"
+                                                                    Text2="{Binding Item5_Text2}"
+                                                                    Grid.Row="4"/>
+                                </Grid>
+                             </ScrollView>
+                        </xct:TabViewItem> 
+                        <xct:TabViewItem Text="Forecast"
+                                     TextColor="Gray"
+                                     TextColorSelected="White"
+                                     FontSize="12">
+                             <ScrollView>
+                                <Grid RowDefinitions="*,*,*,*,*">
+                                    <view:WheatherItemView2 TextDay="{Binding Mon_Text}"
+                                                            TextDate="{Binding Mon_Text1}"
+                                                            ImageIconSource="cloudy_white"
+                                                            TextCel1="{Binding Mon_Text2}"
+                                                            TextCel2="{Binding Mon_Text3}"
+                                                            TextV1="{Binding Mon_Text4}"
+                                                            TextV2="{Binding Mon_Text5}"/>
+                                    <view:WheatherItemView2 TextDay="{Binding Tue_Text}"
+                                                            TextDate="{Binding Tue_Text1}"
+                                                            ImageIconSource="sunny_white"
+                                                            TextCel1="{Binding Tue_Text2}"
+                                                            TextCel2="{Binding Tue_Text3}"
+                                                            TextV1="{Binding Tue_Text4}"
+                                                            TextV2="{Binding Tue_Text5}"
+                                                            Grid.Row="1"/>
+                                    <view:WheatherItemView2 TextDay="{Binding Wed_Text}"
+                                                            TextDate="{Binding Wed_Text1}"
+                                                            ImageIconSource="snow_white"
+                                                            TextCel1="{Binding Wed_Text2}"
+                                                            TextCel2="{Binding Wed_Text3}"
+                                                            TextV1="{Binding Wed_Text4}"
+                                                            TextV2="{Binding Wed_Text5}"
+                                                            Grid.Row="2"/>
+                                    <view:WheatherItemView2 TextDay="{Binding Thu_Text}"
+                                                            TextDate="{Binding Thu_Text1}"
+                                                            ImageIconSource="rain_white"
+                                                            TextCel1="{Binding Thu_Text2}"
+                                                            TextCel2="{Binding Thu_Text3}"
+                                                            TextV1="{Binding Thu_Text4}"
+                                                            TextV2="{Binding Thu_Text5}"
+                                                            Grid.Row="3"/>
+                                    <view:WheatherItemView2 TextDay="{Binding Fri_Text}"
+                                                        TextDate="{Binding Fri_Text1}"
+                                                        ImageIconSource="sunny_white"
+                                                        TextCel1="{Binding Fri_Text2}"
+                                                        TextCel2="{Binding Fri_Text3}"
+                                                        TextV1="{Binding Fri_Text4}"
+                                                        TextV2="{Binding Fri_Text5}"
+                                                        Grid.Row="4"/>
+                                </Grid>
+                             </ScrollView>
+                </xct:TabViewItem>
+                </xct:TabView>
+            </Grid> 
+    </Grid>
+</page:IPage>

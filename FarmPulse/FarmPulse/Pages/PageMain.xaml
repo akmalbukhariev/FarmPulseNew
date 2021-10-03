@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             x:Class="FarmPulse.Pages.MainPage"
+             BackgroundColor="{StaticResource AppColor}">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,160,160,160"
+              ColumnDefinitions="*,300,*"
+              RowSpacing="30"
+              VerticalOptions="CenterAndExpand">
+            <Image Source="appLogo2"
+                   WidthRequest="220"
+                   Grid.Column="1"/>
+            <view:MainMenuItemView ImageBackSource="Ndvi_photo"
+                                   ImageIconSource="travel"
+                                   Text="{Binding CropMonitoring}"
+                                   Command="{Binding ClickMonitorCommand}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+            <view:MainMenuItemView ImageBackSource="Wheat_photo"
+                                   ImageIconSource="verified"
+                                   Text="{Binding CropInsurance}"
+                                   Command="{Binding ClickInsuranceCommand}"
+                                   Grid.Row="2"
+                                   Grid.Column="1"/>
+            <view:MainMenuItemView ImageBackSource="Cloud_photo"
+                                   ImageIconSource="cloudy"
+                                   Text="{Binding WeatherInformation}"
+                                   Command="{Binding ClickWeatherInformationCommand}"
+                                   Grid.Row="3"
+                                   Grid.Column="1"/> 
+        </Grid>
+    </ScrollView>
+
+</page:IPage>

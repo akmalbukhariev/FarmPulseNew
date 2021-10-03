@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmPulse.Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -132,15 +133,15 @@ namespace FarmPulse.Views
             set => SetValue(CommandParameterProperty, value);
         }
         #endregion
-
+         
         public NavigationView()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private async void Back_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+           await Navigation.PopAsync();
 
             if (Command != null && Command.CanExecute(CommandParameter))
             {
@@ -155,6 +156,11 @@ namespace FarmPulse.Views
 
             lbSetting.TextColor = Color.Black;
             await Task.Delay(200);
+
+            //var transitionNavigationPage = Parent as TransitionNavigationPage;
+            //transitionNavigationPage.TransitionType = TransitionType.SlideFromBottom;
+
+            await Navigation.PushAsync(new Pages.SettingPage());
         }
     }
 }

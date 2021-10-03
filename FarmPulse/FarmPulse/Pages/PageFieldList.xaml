@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             x:Class="FarmPulse.Pages.FieldListPage">
+
+    <Grid RowDefinitions="Auto,*"
+          RowSpacing="0">
+        <view:NavigationView IsSettingVisible="True"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <ListView HasUnevenRows="True"
+                  ItemsSource="{Binding Data}"
+                  ItemSelected="ListView_ItemSelected"
+                  SelectedItem="{Binding SelectedItem}"
+                  SeparatorVisibility="None"
+                  BackgroundColor="#EAD8BD"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <BoxView BackgroundColor="#267948" Margin="8,8,8,8" />
+                            <Grid RowDefinitions="40,40" 
+                                  ColumnDefinitions="*,*"
+                                  BackgroundColor="White" 
+                                  Margin="10">
+                                <Grid.Resources>
+                                    <ResourceDictionary>
+                                        <Style x:Key="lbStyle1" TargetType="Label">
+                                            <Setter Property="TextColor" Value="Black"/>
+                                            <Setter Property="FontSize" Value="17"/>
+                                            <Setter Property="FontAttributes" Value="Bold"/>
+                                            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                                            <Setter Property="VerticalTextAlignment" Value="Center"/>
+                                        </Style>
+                                        <Style x:Key="lbStyle2" TargetType="Label" BasedOn="{StaticResource lbStyle1}">
+                                            <Setter Property="TextColor" Value="Gray"/>
+                                            <Setter Property="FontSize" Value="15"/>
+                                        </Style>
+                                    </ResourceDictionary>
+                                </Grid.Resources>
+                                <Label Text="{Binding FieldName}"
+                                       Style="{StaticResource lbStyle1}"/>
+                                <Label Text="{Binding WUA_Village}"
+                                       Style="{StaticResource lbStyle1}"
+                                       Grid.Row="1"/>
+                                <Label Text="{Binding FieldNameText}"
+                                       Style="{StaticResource lbStyle2}"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding WUA_VillageText}"
+                                       Style="{StaticResource lbStyle2}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</page:IPage>

@@ -19,49 +19,55 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\ConfirmationPage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PageConfirmation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\CropYieldDataPage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PageCropYieldData.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\FieldListPage.xaml">
+    <EmbeddedResource Update="Pages\PageFieldList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\GraphViewPage.xaml">
+    <EmbeddedResource Update="Pages\PageGraphView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\IndexInsurancePage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PageIndexInsurance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\LanguagePage.xaml">
+    <EmbeddedResource Update="Pages\Setting\PageLanguage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\LoginPage.xaml">
+    <EmbeddedResource Update="Pages\PageLogin.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\MapGraphTabPage.xaml">
+    <EmbeddedResource Update="Pages\PageMapGraphTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\MapViewPage.xaml">
+    <EmbeddedResource Update="Pages\PageMapView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\PageDemo.xaml">
+    <EmbeddedResource Update="Pages\Setting\PageDemo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\PageInfo.xaml">
+    <EmbeddedResource Update="Pages\Setting\PageInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\PurchaseInsurancePage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PurchaseInsurancePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\PurchasePage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PageInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\SummitClaimPage.xaml">
+    <EmbeddedResource Update="Pages\Purchase\PurchasePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\WeatherPage.xaml">
+    <EmbeddedResource Update="Pages\Setting\PageSetting.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Purchase\PageSummitClaim.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\PageWeather.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DemoInfoView.xaml">
@@ -94,6 +100,48 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\PageMapView.xaml.cs">
+      <DependentUpon>PageMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageMapGraphTab.xaml.cs">
+      <DependentUpon>PageMapGraphTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageMain.xaml.cs">
+      <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageGraphView.xaml.cs">
+      <DependentUpon>PageGraphView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageFieldList.xaml.cs">
+      <DependentUpon>PageFieldList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\PageInfo.xaml.cs">
+      <DependentUpon>PageInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\PageIndexInsurance.xaml.cs">
+      <DependentUpon>PageIndexInsurance.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\PageCropYieldData.xaml.cs">
+      <DependentUpon>PageCropYieldData.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\PageConfirmation.xaml.cs">
+      <DependentUpon>PageConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\PageSummitClaim.xaml.cs">
+      <DependentUpon>PageSummitClaim.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Setting\PageLanguage.xaml.cs">
+      <DependentUpon>PageLanguage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Setting\PageSetting.xaml.cs">
+      <DependentUpon>PageSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PageWeather.xaml.cs">
+      <DependentUpon>PageWeather.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\WheatherItemView1.xaml.cs">
       <DependentUpon>WheatherItemView1.xaml</DependentUpon>
     </Compile>
