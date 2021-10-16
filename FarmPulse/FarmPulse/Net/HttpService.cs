@@ -25,20 +25,20 @@ namespace FarmPulse.Net
 
         #region User Info
         public static String SERVER_URL = "http://206.81.29.167/api";
-        public static String URL_LOGIN = SERVER_URL;
-        public static String URL_GET_DEMO_VIDEO = SERVER_URL;
-        public static String URL_GET_INFO_ABOUT_APP = SERVER_URL;
-        public static String URL_GET_FIELD_LIST = SERVER_URL;
-        public static String URL_GET_GRAPH_VIEW_INFO = SERVER_URL;
-        public static String URL_GET_CROP_LIST = SERVER_URL;
-        public static String URL_GET_CROP_YIELD_DATA = SERVER_URL;
-        public static String URL_SAVE_CROP_YIELD_DATA = SERVER_URL;
-        public static String URL_GET_AREA_TON_HA = SERVER_URL;
-        public static String URL_SAVE_SUBMIT_CLAIM = SERVER_URL;
-        public static String URL_GET_HISTORY_OF_CLAIM = SERVER_URL;
-        public static String URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL;
-        public static String URL_GET_INSURANCE_INFO = SERVER_URL;
-        public static String URL_BUY_INSURANCE = SERVER_URL;  
+        public static String URL_LOGIN = SERVER_URL + "";
+        public static String URL_GET_DEMO_VIDEO = SERVER_URL + "";
+        public static String URL_GET_INFO_ABOUT_APP = SERVER_URL + "";
+        public static String URL_GET_FIELD_LIST = SERVER_URL + "";
+        public static String URL_GET_GRAPH_VIEW_INFO = SERVER_URL + "";
+        public static String URL_GET_CROP_LIST = SERVER_URL + "";
+        public static String URL_GET_CROP_YIELD_DATA = SERVER_URL + "";
+        public static String URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "";
+        public static String URL_GET_AREA_TON_HA = SERVER_URL + "";
+        public static String URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "";
+        public static String URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "";
+        public static String URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL + "";
+        public static String URL_GET_INSURANCE_INFO = SERVER_URL + "";
+        public static String URL_BUY_INSURANCE = SERVER_URL + "";  
         #endregion
 
         #endregion
@@ -169,7 +169,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_SAVE_SUBMIT_CLAIM, data);
+                var receivedData = await RequestPostMethod(URL_SAVE_SUBMIT_CLAIM, data);
                 response = JsonConvert.DeserializeObject<ResponseSubmitClaim>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseSubmitClaim>(); }
@@ -387,9 +387,7 @@ namespace FarmPulse.Net
         public String error_code { get; set; }
 
         public virtual void Check()
-        {
-            if (result == null)
-                result = "";
+        { 
             if (message == null)
                 message = "";
             if (error_code == null)
@@ -469,7 +467,6 @@ namespace FarmPulse.Net
     {
         
     }
-    #endregion
 
     #region For Agro Monitoring
     public class ReponsePolyognList : ResponseAgro, IResponse
@@ -568,6 +565,8 @@ namespace FarmPulse.Net
     }
     #endregion
 
+    #endregion
+     
     #region Helper classes
     public class UserInfo
     {
@@ -663,7 +662,6 @@ namespace FarmPulse.Net
         public string phoneNumber { get; set; }
         public string description { get; set; }
     }
-    #endregion
 
     #region For Agro Monitoring
     public class Geometry
@@ -868,4 +866,6 @@ namespace FarmPulse.Net
         }
     }
     #endregion
+
+    #endregion 
 }
