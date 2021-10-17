@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             x:Class="FarmPulse.Pages.LanguagePage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.LanguagePage"
+            BackgroundColor="{StaticResource AppColor}">
     <Grid RowDefinitions="Auto,Auto,*,*,Auto"
           ColumnDefinitions="*,330,*">
         <view:NavigationView x:Name="navigationView"
@@ -23,14 +24,14 @@
                VerticalOptions="CenterAndExpand"
                Grid.Row="2"
                Grid.Column="1"/>
-        <Picker Title="{Binding SelectLanguageTitle}"
+        <Picker Title="{x:Static resource:AppResource.SelectLanguage}"
                 ItemsSource="{Binding LanguageList}"
                 SelectedItem="{Binding SelectedLanguage}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand"
                 Grid.Row="3"
                 Grid.Column="1"/>
-        <Button Text="{Binding SaveButtonText}"
+        <Button Text="{x:Static resource:AppResource.Save}"
                 BackgroundColor="#D4BDA3"
                 Margin="0,0,0,10"
                 BorderWidth="1"

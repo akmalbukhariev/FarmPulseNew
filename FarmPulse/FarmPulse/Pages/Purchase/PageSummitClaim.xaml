@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             xmlns:control="clr-namespace:FarmPulse.Control"
-             x:Class="FarmPulse.Pages.SummitClaimPage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            xmlns:control="clr-namespace:FarmPulse.Control"
+            x:Class="FarmPulse.Pages.SummitClaimPage"
+            BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
         <view:NavigationView Text="{Binding Title}"
@@ -39,7 +40,7 @@
                       RowSpacing="0"
                       VerticalOptions="CenterAndExpand">
                     <StackLayout>
-                        <Label Text="{Binding FarmerFieldNameText}"
+                        <Label Text="{x:Static resource:AppResource.FarmerFieldName}"
                                Style="{StaticResource lbStyle}"/>
                         <control:CustomPicker x:Name="pickField" 
                                               Image="show"
@@ -50,37 +51,37 @@
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>
-                            <Label Text="{Binding CropTypeText}"
+                            <Label Text="{x:Static resource:AppResource.CropType}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                         <StackLayout Grid.Column="1">
-                            <Label Text="{Binding AreaTonText}"
+                            <Label Text="{x:Static resource:AppResource.AreaTonHa}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"/>
                         </StackLayout>
                     </Grid>
                     <StackLayout Grid.Row="2">
-                        <Label Text="{Binding FarmerNameSurnameText}"
+                        <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="3">
-                        <Label Text="{Binding FarmerPhoneNumberText}"
+                        <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="4" MinimumHeightRequest="150">
-                        <Label Text="{Binding DescriptionClaimText}"
+                        <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"
                                         HeightEntryView="150"/>
                     </StackLayout>
                 </Grid>
             </ScrollView>
-            <Button Text="{Binding SubmitButtonText}"
+            <Button Text="{x:Static resource:AppResource.Submit}"
                     TextColor="Black"
                     FontAttributes="Bold"
                     CornerRadius="30"

@@ -25,8 +25,8 @@ namespace FarmPulse.ModelView
             TitleWheat = "Wheat(Nurabad)";
             IndexMeanValue = "Index mean value";
 
-            IndexList.Add("Chlorophylle Index");
-            IndexList.Add("NDVI Index");
+            IndexList.Add(RSC.ChlorophylleIndex);
+            IndexList.Add(RSC.NDVIIndex);
         } 
     }
 }

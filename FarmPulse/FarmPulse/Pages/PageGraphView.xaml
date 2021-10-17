@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             xmlns:control="clr-namespace:FarmPulse.Control"
-             x:Class="FarmPulse.Pages.GraphViewPage"
-             BackgroundColor="White">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            xmlns:control="clr-namespace:FarmPulse.Control"
+            x:Class="FarmPulse.Pages.GraphViewPage"
+            BackgroundColor="White">
 
     <Grid RowDefinitions="*,*,Auto"
           RowSpacing="0">
@@ -16,7 +17,7 @@
                         Grid.Row="1"/>
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="2"/>
-        <control:CustomPicker Title="{Binding SelectIndexTitle}"
+        <control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
                               ChartSyle="False"
                               TitleColor="Black"
                               TextColor="Black"

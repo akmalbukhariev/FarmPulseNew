@@ -117,288 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-    <comment>Page Setting</comment>
-  </data>
-  <data name="ActualYield" xml:space="preserve">
-    <value>Actual Yield</value>
-    <comment>Page Index Insurance</comment>
-  </data>
-  <data name="AddCropYield" xml:space="preserve">
-    <value>Add crop yield</value>
-    <comment>Page Index Insurance</comment>
-  </data>
-  <data name="AirTemperature" xml:space="preserve">
-    <value>Air temperature</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="AreaTonHa" xml:space="preserve">
-    <value>Area ton/ha</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="AvailableImages" xml:space="preserve">
-    <value>Available Images</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="BackToHomeScreen" xml:space="preserve">
-    <value>Back to Home Screen</value>
-    <comment>Page Confirmation</comment>
-  </data>
-  <data name="BuyNow" xml:space="preserve">
-    <value>BUY NOW</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
-    <comment>Page Confirmation</comment>
-  </data>
-  <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Your application has been submitted /n sucessfully.</value>
-    <comment>Page Confirmation</comment>
-  </data>
-  <data name="ConfirmationTitle2" xml:space="preserve">
-    <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
-    <comment>Page Confirmation</comment>
-  </data>
-  <data name="Cotton" xml:space="preserve">
-    <value>Cotton</value>
-    <comment>Page Graph View</comment>
-  </data>
-  <data name="Cover" xml:space="preserve">
-    <value>Cover</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="CropInsurance" xml:space="preserve">
-    <value>Crop Insurance</value>
-    <comment>Page Main</comment>
-  </data>
-  <data name="CropMonitoring" xml:space="preserve">
-    <value>Crop Monitoring</value>
-    <comment>Page Main</comment>
-  </data>
-  <data name="CropType" xml:space="preserve">
-    <value>Crop type</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="CropYieldData" xml:space="preserve">
-    <value>Crop yield data</value>
-    <comment>Page Crop yield data</comment>
-  </data>
-  <data name="CurrentlyWeather" xml:space="preserve">
-    <value>CURRENT WEATHER</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Demo" xml:space="preserve">
-    <value>Demo</value>
-    <comment>Page Setting</comment>
-  </data>
-  <data name="DescriptionClaim" xml:space="preserve">
-    <value>Description the claim</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="EstimateRate" xml:space="preserve">
-    <value>Estimate rates</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="FAQ" xml:space="preserve">
-    <value>FAQ</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="FarmerFieldName" xml:space="preserve">
-    <value>Farmer field name</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="FarmerNameAndSurname" xml:space="preserve">
-    <value>Farmer Name and Surname</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="FarmerPhoneNumber" xml:space="preserve">
-    <value>Farmer Phone number</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="FieldName" xml:space="preserve">
-    <value>Field Name</value>
-    <comment>Page Field</comment>
-  </data>
   <data name="FindIdPassword" xml:space="preserve">
-    <value>Find ID/Password</value>
+    <value>Найдите ID / Пароль</value>
     <comment>Page Login</comment>
-  </data>
-  <data name="Forecast" xml:space="preserve">
-    <value>Forecast</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Fri" xml:space="preserve">
-    <value>Fri</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="GraphView" xml:space="preserve">
-    <value>Graph View</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="Hybrid" xml:space="preserve">
-    <value>Hybrid</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="IndexInsurance" xml:space="preserve">
-    <value>Index insurance</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="IndexMeanValue" xml:space="preserve">
-    <value>Index mean value</value>
-    <comment>Page Graph View</comment>
-  </data>
-  <data name="Insurance" xml:space="preserve">
-    <value>Insurance</value>
-    <comment>Page Purchase</comment>
   </data>
   <data name="InsuranceNumber" xml:space="preserve">
-    <value>Insurance Number</value>
+    <value>Номер страховки</value>
     <comment>Page Login</comment>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language</value>
-    <comment>Page Setting</comment>
-  </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Войти</value>
     <comment>Page Login</comment>
   </data>
   <data name="LoginMessage" xml:space="preserve">
-    <value>Please check insurance number or password.</value>
+    <value>Пожалуйста, проверьте номер страховки или пароль.</value>
     <comment>Page Login</comment>
-  </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
-    <comment>Page Setting</comment>
-  </data>
-  <data name="LogOutMessage" xml:space="preserve">
-    <value>Do you really want to exit?</value>
-    <comment>Page Setting</comment>
-  </data>
-  <data name="MapView" xml:space="preserve">
-    <value>Map View</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="Mon" xml:space="preserve">
-    <value>Mon</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
-    <comment>Page Map View</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
     <comment>Page Login</comment>
-  </data>
-  <data name="Purchase" xml:space="preserve">
-    <value>Purchase</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="Rain3h" xml:space="preserve">
-    <value>Rain 3 h</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="RainToday" xml:space="preserve">
-    <value>Rain Today</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Satellite" xml:space="preserve">
-    <value>Satellite</value>
-    <comment>Page Map View</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
     <comment>Page Language</comment>
-  </data>
-  <data name="SaveAndNext" xml:space="preserve">
-    <value>Save and Next</value>
-    <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
-    <value>Save ID/Password</value>
+    <value>Сохранить ID / Пароль</value>
     <comment>Page Login</comment>
   </data>
-  <data name="SelectCrop" xml:space="preserve">
-    <value>Select the crop</value>
-    <comment>Page Crop yield data</comment>
-  </data>
-  <data name="SelectField" xml:space="preserve">
-    <value>Select the field</value>
-    <comment>Page Crop yield data</comment>
-  </data>
-  <data name="SelectIndex" xml:space="preserve">
-    <value>Select index</value>
-    <comment>Page Graph View</comment>
-  </data>
   <data name="SelectLanguage" xml:space="preserve">
-    <value>Select Language</value>
+    <value>Выбрать язык</value>
     <comment>Page Language</comment>
-  </data>
-  <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
-    <comment>Page Field</comment>
-  </data>
-  <data name="SnowYestarday" xml:space="preserve">
-    <value>Snow Yestarday</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="StartNewClaim" xml:space="preserve">
-    <value>Start New Claim</value>
-    <comment>Page Confirmation</comment>
-  </data>
-  <data name="Submit" xml:space="preserve">
-    <value>Submit</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="SubmittingClaim" xml:space="preserve">
-    <value>Submitting Claim</value>
-    <comment>Page Purchase</comment>
-  </data>
-  <data name="SubmitYourClaim" xml:space="preserve">
-    <value>Submit your claim</value>
-    <comment>Page Submit Claim</comment>
-  </data>
-  <data name="Terrian" xml:space="preserve">
-    <value>Terrian</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="Thu" xml:space="preserve">
-    <value>Thu</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="TimePeriod" xml:space="preserve">
-    <value>Time Period</value>
-    <comment>Page Map View</comment>
-  </data>
-  <data name="Tue" xml:space="preserve">
-    <value>Tue</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Weather" xml:space="preserve">
-    <value>Weather</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="WeatherInformation" xml:space="preserve">
-    <value>Weather Information</value>
-    <comment>Page Main</comment>
-  </data>
-  <data name="Wed" xml:space="preserve">
-    <value>Wed</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="Wheat" xml:space="preserve">
-    <value>Wheat</value>
-    <comment>Page Graph View</comment>
-  </data>
-  <data name="WindSpeed" xml:space="preserve">
-    <value>Wind speed</value>
-    <comment>Page Weather</comment>
-  </data>
-  <data name="WuaVillage" xml:space="preserve">
-    <value>WUA/Village</value>
-    <comment>Page Field</comment>
   </data>
 </root>

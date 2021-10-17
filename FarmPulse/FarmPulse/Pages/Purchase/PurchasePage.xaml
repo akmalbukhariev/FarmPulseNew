@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             x:Class="FarmPulse.Pages.PurchasePage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.PurchasePage"
+            BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{Binding Purchase}"
+        <view:NavigationView Text="{x:Static resource:AppResource.Purchase}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="*,Auto"
@@ -20,33 +21,33 @@
                       ColumnSpacing="15"
                       VerticalOptions="CenterAndExpand">
                     <view:PurchaseItemView ImageSource="contact"
-                                           Text="{Binding Insurance}"
+                                           Text="{x:Static resource:AppResource.Insurance}"
                                            Command="{Binding ClickInsuranceCommand}"/>
                     <view:PurchaseItemView ImageSource="spa"
-                                           Text="{Binding IndexInsurance}"
+                                           Text="{x:Static resource:AppResource.IndexInsurance}"
                                            Command="{Binding ClickIndexInsuranceCommand}"
                                            Grid.Column="1"/>
                     <view:PurchaseItemView ImageSource="trending"
-                                           Text="{Binding EstimateRates}"
+                                           Text="{x:Static resource:AppResource.EstimateRate}"
                                            Command="{Binding ClickEstimateCommand}"
                                            Grid.Row="1"/>
                     <view:PurchaseItemView ImageSource="compost"
-                                           Text="{Binding Cover}"
+                                           Text="{x:Static resource:AppResource.Cover}"
                                            Command="{Binding ClickCoverCommand}"
                                            Grid.Row="1"
                                            Grid.Column="1"/>
                     <view:PurchaseItemView ImageSource="description"
-                                           Text="{Binding SubmittingClaim}"
+                                           Text="{x:Static resource:AppResource.SubmittingClaim}"
                                            Command="{Binding ClickSubmitClaimCommand}"
                                            Grid.Row="2"/>
                     <view:PurchaseItemView ImageSource="quora"
-                                           Text="{Binding FAQ}"
+                                           Text="{x:Static resource:AppResource.FAQ}"
                                            Command="{Binding ClickFAQCommand}"
                                            Grid.Row="2"
                                            Grid.Column="1"/>
                 </Grid>
             </ScrollView>
-            <Button Text="{Binding ButtonBuyText}"
+            <Button Text="{x:Static resource:AppResource.BuyNow}"
                     TextColor="Black"
                     CornerRadius="30"
                     BackgroundColor="#D3BCA2"

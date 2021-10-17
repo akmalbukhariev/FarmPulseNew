@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             x:Class="FarmPulse.Pages.LoginPage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.LoginPage"
+            BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*,*,*"
           ColumnDefinitions="*,330,*">
@@ -21,7 +22,7 @@
                      Grid.Column="1"
                      VerticalOptions="EndAndExpand">
             <view:EntryView Text="{Binding InsuranceNumber}" 
-                            PlaceHoldingText="Insurance number"
+                            PlaceHoldingText="{x:Static resource:AppResource.InsuranceNumber}"
                             PlaceHolderTextColor="Gray"
                             TextColor="Black"
                             CornerRadius="30"
@@ -29,7 +30,7 @@
                             BorderColor="#007A43"
                             BackgroundColorOfEntry="White"/>
             <view:EntryView Text="{Binding Password}" 
-                            PlaceHoldingText="Password"
+                            PlaceHoldingText="{x:Static resource:AppResource.Password}"
                             PlaceHolderTextColor="Gray"
                             TextColor="Black"
                             CornerRadius="30"
@@ -41,7 +42,7 @@
                      Grid.Column="1"
                      Margin="0,20,0,0"
                      VerticalOptions="StartAndExpand">
-            <Button Text="Login"
+            <Button Text="{x:Static resource:AppResource.Login}"
                     TextColor="#007A43"
                     BorderWidth="1"
                     BorderColor="White"
@@ -58,13 +59,13 @@
                               IsChecked="{Binding CheckAutoLogin, Mode=TwoWay}"
                               CheckedChanged="AutoLogin_CheckedChanged"/>
                     <Label x:Name="lbAutoLogin" 
-                           Text="Save ID/Password" 
+                           Text="{x:Static resource:AppResource.SaveIdPassword}" 
                            TextColor="#007A43"
                            HorizontalOptions="End"
                            VerticalTextAlignment="Center"/> 
                 </StackLayout>
                 <Label x:Name="lbFindPassword" 
-                       Text="Find ID/Password"
+                       Text="{x:Static resource:AppResource.FindIdPassword}"
                        TextColor="#007A43"
                        VerticalTextAlignment="Center"
                        HorizontalOptions="EndAndExpand">

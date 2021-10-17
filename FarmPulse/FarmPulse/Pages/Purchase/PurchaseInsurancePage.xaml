@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             xmlns:control="clr-namespace:FarmPulse.Control"
-             x:Class="FarmPulse.Pages.PurchaseInsurancePage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            xmlns:control="clr-namespace:FarmPulse.Control"
+            x:Class="FarmPulse.Pages.PurchaseInsurancePage"
+            BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{Binding Title}"
+        <view:NavigationView Text="{x:Static resource:AppResource.PurchaseInsurance}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <ScrollView Margin="0,0,0,10" Grid.Row="1">
@@ -36,7 +37,7 @@
                    WidthRequest="220"
                    Grid.Column="1"/>
             <Label x:Name="lbTitle"
-                   Text="{Binding Title1}"
+                   Text="{x:Static resource:AppResource.MakeRequest}"
                    TextColor="Black"
                    FontSize="20"
                    FontAttributes="Bold"
@@ -45,7 +46,7 @@
                    Grid.Row="1"
                    Grid.Column="1"/>
             <StackLayout Grid.Row="2" Grid.Column="1">
-                    <Label Text="{Binding FieldNameText}"
+                    <Label Text="{x:Static resource:AppResource.FarmerFieldName}"
                            Style="{StaticResource lbStyle}"/>
                 <control:CustomPicker x:Name="pickField" 
                                       Image="show"
@@ -56,31 +57,31 @@
                                       ItemsSource="{Binding FieldNameList}"/>
             </StackLayout>
             <StackLayout Grid.Row="3" Grid.Column="1">
-                    <Label Text="{Binding CropTypeText}"
+                    <Label Text="{x:Static resource:AppResource.CropType}"
                            Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="4" Grid.Column="1">
-                    <Label Text="{Binding HectarsText}"
+                    <Label Text="{x:Static resource:AppResource.Hectars}"
                            Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="5" Grid.Column="1">
-                    <Label Text="{Binding FarmerNameText}"
+                    <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
                            Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="6" Grid.Column="1">
-                    <Label Text="{Binding FarmerPhoneNumberText}"
+                    <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
                            Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
             <StackLayout Grid.Row="7" Grid.Column="1">
-                    <Label Text="{Binding ConfirmPhoneNumberText}"
+                    <Label Text="{x:Static resource:AppResource.ConfirmPhoneNumber}"
                            Style="{StaticResource lbStyle}"/>
                 <view:EntryView Style="{StaticResource edStyle}"/>
             </StackLayout>
-                <Button Text="{Binding SubmitButtonText}"
+                <Button Text="{x:Static resource:AppResource.Submit}"
                         TextColor="Black"
                         FontSize="15"
                         FontAttributes="Bold"

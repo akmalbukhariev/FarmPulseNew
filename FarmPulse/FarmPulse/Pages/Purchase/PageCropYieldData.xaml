@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             xmlns:control="clr-namespace:FarmPulse.Control"
-             x:Class="FarmPulse.Pages.CropYieldDataPage"
-             BackgroundColor="{StaticResource AppColor}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            xmlns:control="clr-namespace:FarmPulse.Control"
+            x:Class="FarmPulse.Pages.CropYieldDataPage"
+            BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{Binding Title}"
+        <view:NavigationView Text="{x:Static resource:AppResource.CropYieldData}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="Auto,Auto,Auto,Auto"
@@ -29,7 +30,7 @@
                                       ChartSyle="True"
                                       TextColor="White"
                                       TitleColor="Gray"
-                                      Title="{Binding FieldTitle}"
+                                      Title="{x:Static resource:AppResource.SelectField}"
                                       ItemsSource="{Binding FieldList}"
                                       BackgroundColor="White"/> 
                 <control:CustomPicker x:Name="pickCrop" 
@@ -37,7 +38,7 @@
                                       ChartSyle="True"
                                       TextColor="White"
                                       TitleColor="Gray"
-                                      Title="{Binding CropTitle}"
+                                      Title="{x:Static resource:AppResource.SelectCrop}"
                                       ItemsSource="{Binding CropList}"
                                       BackgroundColor="White"/>
             </StackLayout>
@@ -138,7 +139,7 @@
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
             </Grid>
-            <Button Text="{Binding SaveButtonText}"
+            <Button Text="{x:Static resource:AppResource.SaveAndNext}"
                     FontAttributes="Bold"
                     BackgroundColor="#D3BCA2"
                     CornerRadius="30"

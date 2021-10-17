@@ -149,6 +149,10 @@
     <value>BUY NOW</value>
     <comment>Page Purchase</comment>
   </data>
+  <data name="ChlorophylleIndex" xml:space="preserve">
+    <value>Chlorophylle Index</value>
+    <comment>Page Graph View</comment>
+  </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
     <comment>Page Confirmation</comment>
@@ -160,6 +164,10 @@
   <data name="ConfirmationTitle2" xml:space="preserve">
     <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
     <comment>Page Confirmation</comment>
+  </data>
+  <data name="ConfirmPhoneNumber" xml:space="preserve">
+    <value>Confirm phone number</value>
+    <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Cotton" xml:space="preserve">
     <value>Cotton</value>
@@ -196,6 +204,10 @@
   <data name="DescriptionClaim" xml:space="preserve">
     <value>Description the claim</value>
     <comment>Page Submit Claim</comment>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End date</value>
+    <comment>Page Map View</comment>
   </data>
   <data name="EstimateRate" xml:space="preserve">
     <value>Estimate rates</value>
@@ -237,6 +249,10 @@
     <value>Graph View</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="Hectars" xml:space="preserve">
+    <value>Hectars</value>
+    <comment>Page Purchase an insurance</comment>
+  </data>
   <data name="Hybrid" xml:space="preserve">
     <value>Hybrid</value>
     <comment>Page Map View</comment>
@@ -277,6 +293,10 @@
     <value>Do you really want to exit?</value>
     <comment>Page Setting</comment>
   </data>
+  <data name="MakeRequest" xml:space="preserve">
+    <value>Make an request</value>
+    <comment>Page Purchase an insurance</comment>
+  </data>
   <data name="MapView" xml:space="preserve">
     <value>Map View</value>
     <comment>Page Map View</comment>
@@ -284,6 +304,10 @@
   <data name="Mon" xml:space="preserve">
     <value>Mon</value>
     <comment>Page Weather</comment>
+  </data>
+  <data name="NDVIIndex" xml:space="preserve">
+    <value>NDVI Index</value>
+    <comment>Page Graph View</comment>
   </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
@@ -296,6 +320,10 @@
   <data name="Purchase" xml:space="preserve">
     <value>Purchase</value>
     <comment>Page Purchase</comment>
+  </data>
+  <data name="PurchaseInsurance" xml:space="preserve">
+    <value>Purchase an insurance</value>
+    <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Rain3h" xml:space="preserve">
     <value>Rain 3 h</value>
@@ -344,6 +372,10 @@
   <data name="SnowYestarday" xml:space="preserve">
     <value>Snow Yestarday</value>
     <comment>Page Weather</comment>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start date</value>
+    <comment>Page Map View</comment>
   </data>
   <data name="StartNewClaim" xml:space="preserve">
     <value>Start New Claim</value>

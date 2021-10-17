@@ -133,6 +133,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chlorophylle Index.
+        /// </summary>
+        internal static string ChlorophylleIndex {
+            get {
+                return ResourceManager.GetString("ChlorophylleIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
         internal static string Confirmation {
@@ -156,6 +165,15 @@ namespace FarmPulse.Resources {
         internal static string ConfirmationTitle2 {
             get {
                 return ResourceManager.GetString("ConfirmationTitle2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm phone number.
+        /// </summary>
+        internal static string ConfirmPhoneNumber {
+            get {
+                return ResourceManager.GetString("ConfirmPhoneNumber", resourceCulture);
             }
         }
         
@@ -237,6 +255,15 @@ namespace FarmPulse.Resources {
         internal static string DescriptionClaim {
             get {
                 return ResourceManager.GetString("DescriptionClaim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End date.
+        /// </summary>
+        internal static string EndDate {
+            get {
+                return ResourceManager.GetString("EndDate", resourceCulture);
             }
         }
         
@@ -331,6 +358,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hectars.
+        /// </summary>
+        internal static string Hectars {
+            get {
+                return ResourceManager.GetString("Hectars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hybrid.
         /// </summary>
         internal static string Hybrid {
@@ -421,6 +457,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make an request.
+        /// </summary>
+        internal static string MakeRequest {
+            get {
+                return ResourceManager.GetString("MakeRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Map View.
         /// </summary>
         internal static string MapView {
@@ -435,6 +480,15 @@ namespace FarmPulse.Resources {
         internal static string Mon {
             get {
                 return ResourceManager.GetString("Mon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NDVI Index.
+        /// </summary>
+        internal static string NDVIIndex {
+            get {
+                return ResourceManager.GetString("NDVIIndex", resourceCulture);
             }
         }
         
@@ -462,6 +516,15 @@ namespace FarmPulse.Resources {
         internal static string Purchase {
             get {
                 return ResourceManager.GetString("Purchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase an insurance.
+        /// </summary>
+        internal static string PurchaseInsurance {
+            get {
+                return ResourceManager.GetString("PurchaseInsurance", resourceCulture);
             }
         }
         
@@ -570,6 +633,15 @@ namespace FarmPulse.Resources {
         internal static string SnowYestarday {
             get {
                 return ResourceManager.GetString("SnowYestarday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start date.
+        /// </summary>
+        internal static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
             }
         }
         

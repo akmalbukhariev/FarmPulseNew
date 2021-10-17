@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FarmPulse.Pages.SettingPage"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="FarmPulse.Pages.SettingPage"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources">
  
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">
-            <view:NavigationView Text="{Binding Title}"
-                                 TextColor="Black"
-                                 BackgroundColor="#D3BCA2"/>
+        <view:NavigationView Text="{x:Static resource:AppResource.Setting}"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
         <StackLayout BackgroundColor="#EAD8BD" 
                      Grid.Row="1">
             <TableView x:Name="tableSetting" 
@@ -20,7 +21,7 @@
                                   Tapped="TableCell_Tapped">
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="lbDemo" 
-                                       Text="{Binding Demo}"
+                                       Text="{x:Static resource:AppResource.Demo}"
                                        FontSize="Body" 
                                        TextColor="Black" 
                                        HorizontalOptions="StartAndExpand" 
@@ -36,7 +37,7 @@
                                   Tapped="TableCell_Tapped">
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="lbLanguage" 
-                                       Text="{Binding Language}"
+                                       Text="{x:Static resource:AppResource.Language}"
                                        FontSize="Body" 
                                        TextColor="Black" 
                                        HorizontalOptions="Start" 
@@ -52,7 +53,7 @@
                                   Tapped="TableCell_Tapped">
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="lbAbout" 
-                                       Text="{Binding About}"
+                                       Text="{x:Static resource:AppResource.About}"
                                        FontSize="Body" 
                                        TextColor="Black" 
                                        HorizontalOptions="StartAndExpand" 
@@ -67,7 +68,7 @@
             </TableView>
             <Button x:Name="btnLogOut" 
                     TextColor="Red" 
-                    Text="Log out"
+                    Text="{x:Static resource:AppResource.LogOut}"
                     Margin="20,0,20,30"
                     CornerRadius="25"
                     BackgroundColor="#EAD8BD"

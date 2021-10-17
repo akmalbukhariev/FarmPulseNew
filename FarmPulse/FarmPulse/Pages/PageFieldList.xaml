@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages"
-             x:Class="FarmPulse.Pages.FieldListPage">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.FieldListPage">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">
@@ -41,9 +42,9 @@
                                         </Style>
                                     </ResourceDictionary>
                                 </Grid.Resources>
-                                <Label Text="{Binding FieldName}"
+                                <Label Text="{x:Static resource:AppResource.FieldName}"
                                        Style="{StaticResource lbStyle1}"/>
-                                <Label Text="{Binding WUA_Village}"
+                                <Label Text="{x:Static resource:AppResource.WuaVillage}"
                                        Style="{StaticResource lbStyle1}"
                                        Grid.Row="1"/>
                                 <Label Text="{Binding FieldNameText}"
