@@ -149,6 +149,10 @@
     <value>BUY NOW</value>
     <comment>Page Purchase</comment>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="ChlorophylleIndex" xml:space="preserve">
     <value>Chlorophylle Index</value>
     <comment>Page Graph View</comment>
@@ -208,6 +212,10 @@
   <data name="EndDate" xml:space="preserve">
     <value>End date</value>
     <comment>Page Map View</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>ControlApp</comment>
   </data>
   <data name="EstimateRate" xml:space="preserve">
     <value>Estimate rates</value>
@@ -273,6 +281,10 @@
     <value>Insurance Number</value>
     <comment>Page Login</comment>
   </data>
+  <data name="Internet" xml:space="preserve">
+    <value>Internet</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
     <comment>Page Setting</comment>
@@ -309,13 +321,25 @@
     <value>NDVI Index</value>
     <comment>Page Graph View</comment>
   </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>No Internet.</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
     <comment>Page Login</comment>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+    <comment>ControlApp</comment>
   </data>
   <data name="Purchase" xml:space="preserve">
     <value>Purchase</value>

@@ -9,7 +9,8 @@ using Xamarin.Forms;
 namespace FarmPulse.ModelView
 {
     public class BaseModel : INotifyPropertyChanged
-    {
+    { 
+        protected ControlApp ControlApp => ControlApp.Instance;
         protected INavigation Navigation { get; set; }
         public Element Parent { get; set; }
 

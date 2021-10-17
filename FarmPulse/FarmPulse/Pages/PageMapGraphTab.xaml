@@ -17,6 +17,6 @@
                Margin="0,0,40,0"/>
     </NavigationPage.TitleView>
 
-    <page:MapViewPage Title="{x:Static resource:AppResource.MapView}" />
-    <page:GraphViewPage Title="{x:Static resource:AppResource.GraphView}" /> 
+    <page:MapViewPage x:Name="mapPage" Title="{x:Static resource:AppResource.MapView}" />
+    <page:GraphViewPage x:Name="graphPage" Title="{x:Static resource:AppResource.GraphView}" /> 
 </TabbedPage>

@@ -29,8 +29,8 @@
                                    Grid.Column="1"/>
             <view:MainMenuItemView ImageBackSource="Cloud_photo"
                                    ImageIconSource="cloudy"
-                                   Text="{Binding WeatherInformation}"
-                                   Command="{x:Static resource:AppResource.WeatherInformation}"
+                                   Text="{x:Static resource:AppResource.WeatherInformation}"
+                                   Command="{Binding ClickWeatherInformationCommand}"
                                    Grid.Row="3"
                                    Grid.Column="1"/> 
         </Grid>

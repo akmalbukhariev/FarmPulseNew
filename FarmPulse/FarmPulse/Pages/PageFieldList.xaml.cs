@@ -18,6 +18,7 @@ namespace FarmPulse.Pages
         public FieldListPage()
         {
             InitializeComponent();
+
             model = new PageFieldListViewModel(Navigation);
             BindingContext = model; 
         }
@@ -26,6 +27,7 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
             model.Parent = Parent;
+            model.RefreshFieldList();
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -33,7 +35,7 @@ namespace FarmPulse.Pages
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new MapGraphTabPage());
+                await Navigation.PushAsync(new MapGraphTabPage(model.SelectedItem));
             }
         }
     }

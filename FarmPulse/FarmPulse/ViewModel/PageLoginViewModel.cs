@@ -1,4 +1,5 @@
 ﻿using FarmPulse.Control;
+using FarmPulse.Net;
 using FarmPulse.Pages;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,26 @@ namespace FarmPulse.ModelView
 
         public ICommand ClickLoginCommand => new Command(ClickLogin);
        
-        private void ClickLogin()
-        { 
-            Application.Current.MainPage = new TransitionNavigationPage(new MainPage());
+        private async void ClickLogin()
+        {
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
+            RequestLogin request = new RequestLogin()
+            {
+                username = InsuranceNumber,
+                password = Password,
+                languageCode = AppSettings.GetLanguageCode
+            };
+            ResponseLogin response = await HttpService.Login(request);
+            if (response.result)
+            {
+                ControlApp.UserInfo = response.userInfo;
+                Application.Current.MainPage = new TransitionNavigationPage(new MainPage());
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
+            }
+            ControlApp.CloseLoadingView();
         } 
     }
 }

@@ -108,7 +108,7 @@ namespace FarmPulse.Net
             return ConvertResponseObj<ResponseAboutInfo>(response); ;
         }
 
-        public async static Task<ResponseField> GetInfoList(RequestField data)
+        public async static Task<ResponseField> GetFieldList(RequestField data)
         {
             Response response = new Response();
             try
@@ -425,7 +425,7 @@ namespace FarmPulse.Net
 
     public class ResponseField : Response, IResponse
     {
-        public List<FieldInfo> fields;
+        public List<Model.FieldInfo> fields;
     }
 
     public class ResponseGraphView : Response, IResponse
@@ -570,60 +570,8 @@ namespace FarmPulse.Net
     #region Helper classes
     public class UserInfo
     {
-        //User info here
-    }
-    public class FieldInfo
-    {
-        public string district_code { get; set; }
-        public string field_id { get; set; }
-        public string name { get; set; }
-        public string polygon { get; set; }
-        public string pol_api_key { get; set; }
-        public string center { get; set; }
-        public string suiv_name { get; set; }
-        public string user_id { get; set; }
-
-        public List<double> GetCenter()
-        {
-            List<double> centerList = new List<double>();
-
-            if (center == null) return centerList;
-            string[] strList = center.Split(',');
-
-            if (strList.Length == 2)
-            {
-                centerList.Add(double.Parse(strList[0], CultureInfo.InvariantCulture));
-                centerList.Add(double.Parse(strList[1], CultureInfo.InvariantCulture));
-            }
-
-            return centerList;
-        }
-
-        public FieldInfo()
-        {
-            Check();
-        }
-
-        public void Check()
-        {
-            if (district_code == null)
-                district_code = "";
-            if (field_id == null)
-                field_id = "";
-            if (name == null)
-                name = "";
-            if (polygon == null)
-                polygon = "";
-            if (pol_api_key == null)
-                pol_api_key = "";
-            if (center == null)
-                center = "";
-            if (suiv_name == null)
-                suiv_name = "";
-            if (user_id == null)
-                user_id = "";
-        }
-    }
+        public string username { get; set; }
+    } 
     public class GraphViewInfo
     {
         public string cropName { get; set; }

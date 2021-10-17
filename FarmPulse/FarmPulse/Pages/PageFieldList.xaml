@@ -47,10 +47,10 @@
                                 <Label Text="{x:Static resource:AppResource.WuaVillage}"
                                        Style="{StaticResource lbStyle1}"
                                        Grid.Row="1"/>
-                                <Label Text="{Binding FieldNameText}"
+                                <Label Text="{Binding name}"
                                        Style="{StaticResource lbStyle2}"
                                        Grid.Column="1"/>
-                                <Label Text="{Binding WUA_VillageText}"
+                                <Label Text="{Binding suiv_name}"
                                        Style="{StaticResource lbStyle2}"
                                        Grid.Row="1"
                                        Grid.Column="1"/>

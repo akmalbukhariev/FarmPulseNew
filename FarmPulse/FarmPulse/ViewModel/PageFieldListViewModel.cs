@@ -1,4 +1,5 @@
 ﻿using FarmPulse.Model;
+using FarmPulse.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,21 +19,43 @@ namespace FarmPulse.ModelView
             Data = new ObservableCollection<FieldInfo>();
             Navigation = navigation;
 
+            #region
             Data.Add(new FieldInfo()
-            {
-                FieldName= "Field Name",
-                WUA_Village = "WUA/Village",
-                FieldNameText = "Field1",
-                WUA_VillageText ="O.Vodiy va Ok bulok"
+            { 
+                name = "Field1",
+                suiv_name = "O.Vodiy va Ok bulok"
             });
 
             Data.Add(new FieldInfo()
-            {
-                FieldName = "Field Name",
-                WUA_Village = "WUA/Village",
-                FieldNameText = "Field2",
-                WUA_VillageText = "Fergana"
+            { 
+                name = "Field2",
+                suiv_name = "Fergana"
             });
+            #endregion 
+        }
+
+        public async void RefreshFieldList()
+        {
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
+            RequestField request = new RequestField()
+            {
+                username = ControlApp.UserInfo.username,
+                languageCode = AppSettings.GetLanguageCode
+            };
+
+            ResponseField response = await HttpService.GetFieldList(request);
+            if (response.result)
+            {   
+                foreach (FieldInfo item in response.fields)
+                {
+                    Data.Add(new FieldInfo(item));
+                }
+            }
+            else 
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
+            }
+            ControlApp.CloseLoadingView();
         }
     }
 }
