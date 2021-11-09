@@ -1,7 +1,8 @@
 ﻿using FarmPulse.Control;
+using FarmPulse.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.ComponentModel; 
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
@@ -10,6 +11,7 @@ namespace FarmPulse.ModelView
 {
     public class BaseModel : INotifyPropertyChanged
     { 
+        protected FieldInfo FieldInfo { get; set; }
         protected ControlApp ControlApp => ControlApp.Instance;
         protected INavigation Navigation { get; set; }
         public Element Parent { get; set; }

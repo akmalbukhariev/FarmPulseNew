@@ -9,7 +9,7 @@
             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{Binding Title}"
+        <view:NavigationView Text="{x:Static resource:AppResource.SubmitYourClaim}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="Auto,*,Auto"
@@ -47,7 +47,8 @@
                                               ChartSyle="True"
                                               TextColor="White"
                                               TitleColor="Gray"
-                                              BackgroundColor="White"/>
+                                              BackgroundColor="White" 
+                                              ItemsSource="{Binding FieldList}"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>

@@ -417,6 +417,10 @@
     <value>Submit your claim</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="Terrian" xml:space="preserve">
     <value>Terrian</value>
     <comment>Page Map View</comment>

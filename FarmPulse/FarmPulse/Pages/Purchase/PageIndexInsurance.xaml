@@ -7,21 +7,28 @@
             xmlns:control="clr-namespace:FarmPulse.Control"
             x:Class="FarmPulse.Pages.IndexInsurancePage">
 
-    <Grid RowDefinitions="Auto,*,*,50"
+    <Grid RowDefinitions="Auto,*,50"
           RowSpacing="10">
-        <view:NavigationView Text="{Binding Title}"
+        <view:NavigationView Text="{x:Static resource:AppResource.IndexInsurance}"
                              TextColor="Black"
                              BackgroundColor="#2F8F6E"/>
-        <view:GraphView Region="{Binding TitleCotton}"
-                        MeanValue="{Binding ActualYield}"
-                        Grid.Row="1"/>
-        <view:GraphView Region="{Binding TitleWheat}"
-                        MeanValue="{Binding ActualYield}"
-                        Grid.Row="2"/>
+        <RefreshView RefreshColor="Black" Grid.Row="1">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <view:GraphView Region="{Binding Title}"
+                                            MeanValue="{Binding IndexMeanValue}"
+                                            ItemSource="{Binding ValueList}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
         <BoxView BackgroundColor="#2F8F6E"
-                 Grid.Row="3"/>
+                 Grid.Row="2"/>
         <Grid ColumnDefinitions="*,1,*" 
-              Grid.Row="3">
+              Grid.Row="2">
             <control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
                                   FontSize="14"
                                   ChartSyle="False"

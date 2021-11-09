@@ -32,6 +32,8 @@
                                       TitleColor="Gray"
                                       Title="{x:Static resource:AppResource.SelectField}"
                                       ItemsSource="{Binding FieldList}"
+                                      SelectedItem="{Binding SelectedFieldItem}"
+                                      SelectedIndexChanged="pickField_SelectedIndexChanged"
                                       BackgroundColor="White"/> 
                 <control:CustomPicker x:Name="pickCrop" 
                                       Image="show"
@@ -40,6 +42,7 @@
                                       TitleColor="Gray"
                                       Title="{x:Static resource:AppResource.SelectCrop}"
                                       ItemsSource="{Binding CropList}"
+                                      SelectedItem="{Binding SelectedCropItem}"
                                       BackgroundColor="White"/>
             </StackLayout>
             <Grid RowDefinitions="70,70,70,70"

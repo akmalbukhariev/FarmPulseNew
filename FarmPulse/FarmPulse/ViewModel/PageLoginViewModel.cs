@@ -17,7 +17,9 @@ namespace FarmPulse.ModelView
           
         public PageLoginViewModel(INavigation navigation)
         {
-            Navigation = navigation; 
+            Navigation = navigation;
+            InsuranceNumber = "998977";
+            Password = "123";
         }
 
         public ICommand ClickLoginCommand => new Command(ClickLogin);
@@ -29,7 +31,7 @@ namespace FarmPulse.ModelView
             {
                 username = InsuranceNumber,
                 password = Password,
-                languageCode = AppSettings.GetLanguageCode
+                langCode = "uz"//AppSettings.GetLanguageCode
             };
             ResponseLogin response = await HttpService.Login(request);
             if (response.result)

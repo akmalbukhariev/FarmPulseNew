@@ -8,15 +8,23 @@
             x:Class="FarmPulse.Pages.GraphViewPage"
             BackgroundColor="White">
 
-    <Grid RowDefinitions="*,*,Auto"
-          RowSpacing="0">
-        <view:GraphView Region="{Binding TitleCotton}"
-                        MeanValue="{Binding IndexMeanValue}"/>
-        <view:GraphView Region="{Binding TitleWheat}"
-                        MeanValue="{Binding IndexMeanValue}"
-                        Grid.Row="1"/>
+    <Grid RowDefinitions="*,Auto"
+          RowSpacing="0"> 
+        <RefreshView RefreshColor="Black">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <view:GraphView Region="{Binding Title}"
+                                            MeanValue="{Binding IndexMeanValue}"
+                                            ItemSource="{Binding ValueList}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
         <BoxView BackgroundColor="#2F8F6E"
-                 Grid.Row="2"/>
+                 Grid.Row="1"/>
         <control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
                               ChartSyle="False"
                               TitleColor="Black"
@@ -27,7 +35,7 @@
                               ItemsSource="{Binding IndexList}"
                               SelectedIndexChanged="Picker_SelectedIndexChanged"
                               SelectedItem="{Binding SelectedIndexItem}"
-                              Grid.Row="2"/>
+                              Grid.Row="1"/>
     </Grid>
     
 </page:IPage>

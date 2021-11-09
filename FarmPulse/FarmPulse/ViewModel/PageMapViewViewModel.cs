@@ -1,4 +1,5 @@
 ﻿using FarmPulse.Model;
+using FarmPulse.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,8 +19,15 @@ namespace FarmPulse.ModelView
         public DateTime EndDate { get => GetValue<DateTime>(); set => SetValue(value); }
         public SatelliteData SelectedItem { get => GetValue<SatelliteData>(); set => SetValue(value); }
 
-        public PageMapViewViewModel()
+        private MapPolygonInfo PolygonInfo { get; set; }
+        private Dictionary<string, string> SatelliteImages = new Dictionary<string, string>();
+        public PageMapViewViewModel(FieldInfo fieldInfo)
         {
+            PolygonInfo = new MapPolygonInfo();
+            PolygonInfo.Polygon = new List<LongLat>();
+
+
+            this.FieldInfo = fieldInfo;
             ShowTimePeriodBox = false;
             Data = new ObservableCollection<SatelliteData>();
 
@@ -91,9 +99,84 @@ namespace FarmPulse.ModelView
             ShowImages = false;
         }
 
-        private void ClickTimeBoxOk()
+        private async void ClickTimeBoxOk()
         {
             ShowTimePeriodBox = false;
+            RequestGetSatelliteImagesInfo request = new RequestGetSatelliteImagesInfo()
+            {
+                start = DateTimeToUnixTimestamp(StartDate).ToString(),
+                end = DateTimeToUnixTimestamp(EndDate).ToString(),
+                polyid = this.FieldInfo.field_id
+            };
+
+            List<ResponseSatelliteImagesInfo> responseImage = await HttpService.GetSatelliteImagesInfo(request);
+            ResponsePolygon responsePolygon = await HttpService.GetPolygonInfo(request.polyid);
+
+            if (string.IsNullOrEmpty(responsePolygon.id))
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, responsePolygon.message, RSC.Ok);
+                ControlApp.CloseLoadingView();
+                return;
+            }
+
+            PolygonInfo.minLat = double.MaxValue;
+            PolygonInfo.minLon = double.MaxValue;
+
+            PolygonInfo.maxLat = double.MinValue;
+            PolygonInfo.maxLon = double.MinValue;
+
+            foreach (List<List<double>> point in responsePolygon.geo_json.geometry.coordinates)
+            {
+                foreach (List<double> p in point)
+                {
+                    LongLat lonlat = new LongLat();
+                    lonlat.Longitude = p[0];
+                    lonlat.Latitude = p[1];
+
+                    PolygonInfo.Polygon.Add(lonlat);
+
+                    if (PolygonInfo.minLat >= lonlat.Latitude)
+                    {
+                        PolygonInfo.minLat = lonlat.Latitude;
+                        PolygonInfo.minLatLon = lonlat.Longitude;
+                    }
+
+                    if (PolygonInfo.minLon >= lonlat.Longitude)
+                    {
+                        PolygonInfo.minLon = lonlat.Longitude;
+                        PolygonInfo.minLonLat = lonlat.Latitude;
+                    }
+
+                    if (PolygonInfo.maxLat <= lonlat.Latitude)
+                    {
+                        PolygonInfo.maxLat = lonlat.Latitude;
+                        PolygonInfo.maxLatLon = lonlat.Longitude;
+                    }
+
+                    if (PolygonInfo.maxLon <= lonlat.Longitude)
+                    {
+                        PolygonInfo.maxLon = lonlat.Longitude;
+                        PolygonInfo.maxLonLat = lonlat.Latitude;
+                    }
+                }
+            }
+
+            PolygonInfo.area = responsePolygon.area;
+            PolygonInfo.Position = new LongLat(responsePolygon.center[1], responsePolygon.center[0]);
+
+            List<string> tempList = new List<string>();
+            for (int i = 0; i < responseImage.Count; i++)
+            {
+                if (responseImage[i].image == null) continue;
+
+                string imDate = UnixTimeStampToDateTime((double)(responseImage[i].dt)).ToString("yyyy-MM-dd");
+
+                if (!SatelliteImages.ContainsKey(imDate))
+                {
+                    SatelliteImages.Add(imDate, responseImage[i].image.ndvi);
+                    tempList.Add(imDate);
+                }
+            }
         }
 
         private void ClickMapType(string type)
@@ -105,6 +188,20 @@ namespace FarmPulse.ModelView
                 case "Normal": break;
                 case "Terrain": break;
             }
+        }
+
+        private double DateTimeToUnixTimestamp(DateTime dateTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            long unixTimeStampInTicks = (dateTime.ToUniversalTime() - unixStart).Ticks;
+            return (double)unixTimeStampInTicks / TimeSpan.TicksPerSecond;
+        }
+
+        public static DateTime UnixTimeStampToDateTime(double unixTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            long unixTimeStampInTicks = (long)(unixTime * TimeSpan.TicksPerSecond);
+            return new DateTime(unixStart.Ticks + unixTimeStampInTicks, System.DateTimeKind.Utc);
         }
     }
 }

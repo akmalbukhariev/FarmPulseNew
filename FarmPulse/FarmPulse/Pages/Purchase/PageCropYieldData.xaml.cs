@@ -23,9 +23,23 @@ namespace FarmPulse.Pages
             BindingContext = model; 
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.GetFields();
+        }
+
         private void InitPage()
         {
             lbText.Text = "Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.";
+        }
+
+        private void pickField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(model.SelectedFieldItem))
+            {
+                //model.RefreshModel(model.SelectedIndexItem, FieldInfo.field_id);
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace FarmPulse.Pages
         public MapViewPage()
         {
             InitializeComponent();
-            model = new PageMapViewViewModel();
+            model = new PageMapViewViewModel(base.FieldInfo);
             BindingContext = model; 
         }
 

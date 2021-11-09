@@ -22,11 +22,17 @@ namespace FarmPulse.Pages
             BindingContext = model; 
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.GetIndexList();
+        }
+
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(model.SelectedIndexItem))
             {
-                
+                model.RefreshGraphViewData(model.SelectedIndexItem, FieldInfo.field_id);
             }
         }
     }

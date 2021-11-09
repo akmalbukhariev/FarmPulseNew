@@ -23,22 +23,23 @@ namespace FarmPulse.Net
         public static String URL_GET_SATELLITE_IMAGES = URL_AGRO_SERVER + "/image/search?start";
         #endregion
 
-        #region User Info
-        public static String SERVER_URL = "http://206.81.29.167/api";
-        public static String URL_LOGIN = SERVER_URL + "";
-        public static String URL_GET_DEMO_VIDEO = SERVER_URL + "";
-        public static String URL_GET_INFO_ABOUT_APP = SERVER_URL + "";
-        public static String URL_GET_FIELD_LIST = SERVER_URL + "";
-        public static String URL_GET_GRAPH_VIEW_INFO = SERVER_URL + "";
-        public static String URL_GET_CROP_LIST = SERVER_URL + "";
-        public static String URL_GET_CROP_YIELD_DATA = SERVER_URL + "";
-        public static String URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "";
-        public static String URL_GET_AREA_TON_HA = SERVER_URL + "";
-        public static String URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "";
-        public static String URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "";
-        public static String URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL + "";
-        public static String URL_GET_INSURANCE_INFO = SERVER_URL + "";
-        public static String URL_BUY_INSURANCE = SERVER_URL + "";  
+        #region User Info                
+        public static string SERVER_URL = "http://206.81.29.167:8090/api/mobile/";
+        public static string URL_LOGIN = SERVER_URL + "login";
+        public static string URL_GET_DEMO_VIDEO = SERVER_URL + "demo";
+        public static string URL_GET_INFO_ABOUT_APP = SERVER_URL + "info";
+        public static string URL_GET_FIELD_LIST = SERVER_URL + "user/fields/";
+        public static string URL_GET_GRAPH_VIEW_INFO = SERVER_URL + "";
+        public static string URL_GET_CROP_LIST = SERVER_URL + "crops";
+        public static string URL_GET_CROP_YIELD_DATA = SERVER_URL + "";
+        public static string URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "";
+        public static string URL_GET_AREA_TON_HA = SERVER_URL + "";
+        public static string URL_GET_INDEX_LIST = SERVER_URL + "";
+        public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "";
+        public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "";
+        public static string URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL + "";
+        public static string URL_GET_INSURANCE_INFO = SERVER_URL + "";
+        public static string URL_BUY_INSURANCE = SERVER_URL + ""; 
         #endregion
 
         #endregion
@@ -108,18 +109,32 @@ namespace FarmPulse.Net
             return ConvertResponseObj<ResponseAboutInfo>(response); ;
         }
 
-        public async static Task<ResponseField> GetFieldList(RequestField data)
+        public async static Task<ResponseField> GetFieldList(string userId)
         {
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_GET_FIELD_LIST, data);
+                var receivedData = await RequestGetMethod(URL_GET_FIELD_LIST + userId);
                 response = JsonConvert.DeserializeObject<ResponseField>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseField>(); }
             catch (HttpRequestException) { return CreateResponseObj<ResponseField>(); }
 
             return ConvertResponseObj<ResponseField>(response); ;
+        }
+
+        public async static Task<ResponseCrop> GetCrops()
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_CROP_LIST);
+                response = JsonConvert.DeserializeObject<ResponseCrop>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseCrop>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseCrop>(); }
+
+            return ConvertResponseObj<ResponseCrop>(response); ;
         }
 
         public async static Task<ResponseGraphView> GetGraphyViewInfo(RequestGraphViewInfo data)
@@ -134,6 +149,20 @@ namespace FarmPulse.Net
             catch (HttpRequestException) { return CreateResponseObj<ResponseGraphView>(); }
 
             return ConvertResponseObj<ResponseGraphView>(response); ;
+        }
+
+        public async static Task<ResponseIndexList> GetIndexList()
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_INDEX_LIST);
+                response = JsonConvert.DeserializeObject<ResponseIndexList>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseIndexList>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseIndexList>(); }
+
+            return ConvertResponseObj<ResponseIndexList>(response);
         }
 
         public async static Task<ResponseCropYieldData> GetCropYieldData(RequestCropYieldData data)
@@ -190,6 +219,23 @@ namespace FarmPulse.Net
             catch (HttpRequestException) { return CreateResponseObj<ResponseBuyInsurance>(); }
 
             return ConvertResponseObj<ResponseBuyInsurance>(response); ;
+        }
+
+        public async static Task<ResponsePolygon> GetPolygonInfo(string polygonId)
+        {
+            ResponseAgro response = new ResponseAgro();
+            try
+            {
+                string url = URL_POLYGON_INFO + "/" + polygonId + "?appid=" + APIKey;
+                var receivedData = await Client.GetAsync(url);
+                string result = await receivedData.Content.ReadAsStringAsync();
+                response = JsonConvert.DeserializeObject<ResponsePolygon>(result, settings);
+                response.StatusCode = receivedData.StatusCode;
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponsePolygon>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponsePolygon>(); }
+
+            return ConvertResponseObj<ResponsePolygon>(response);
         }
 
         public async static Task<List<ResponseSatelliteImagesInfo>> GetSatelliteImagesInfo(RequestGetSatelliteImagesInfo data)
@@ -299,14 +345,24 @@ namespace FarmPulse.Net
             t.Check();
 
             return t;
-        } 
+        }
+
+        private static T ConvertResponseObj<T>(ResponseAgro response) where T : IResponse, new()
+        {
+            T t = (T)Convert.ChangeType(response, typeof(T));
+            if (t == null)
+                t = new T();
+            t.Check();
+
+            return t;
+        }
     }
 
     #region Request
     public class IRequest
     {
         public string username { get; set; }
-        public string languageCode { get; set; }
+        public string langCode { get; set; }
     }
 
     public class RequestLogin : IRequest
@@ -319,9 +375,15 @@ namespace FarmPulse.Net
 
     }
 
-    public class RequestGraphViewInfo : IRequest
+    public class RequestCrop : IRequest
     {
         
+    }
+
+    public class RequestGraphViewInfo : IRequest
+    {
+        public string field_id { get; set; }
+        public string sequence { get; set; } //ex) chloro, ndv 1,2
     }
 
     public class RequestCropYieldData : IRequest
@@ -333,7 +395,18 @@ namespace FarmPulse.Net
     {
         public string fieldName { get; set; }
         public string cropName { get; set; }
-        public List<CropYieldDataYearInfo> yearInfoList { get; set; }
+        public string Text_2010 { get; set; }
+        public string Text_2011 { get; set; }
+        public string Text_2012 { get; set; }
+        public string Text_2013 { get; set; }
+        public string Text_2014 { get; set; }
+        public string Text_2015 { get; set; }
+        public string Text_2016 { get; set; }
+        public string Text_2017 { get; set; }
+        public string Text_2018 { get; set; }
+        public string Text_2019 { get; set; }
+        public string Text_2020 { get; set; }
+        public string Text_2021 { get; set; }
     }
 
     public class RequestSubmitClaim : IRequest
@@ -372,6 +445,7 @@ namespace FarmPulse.Net
         public string end { get; set; }
         public string polyid { get; set; }
     }
+     
     #endregion
 
     #region Response
@@ -412,7 +486,7 @@ namespace FarmPulse.Net
         public string agromon { get; set; }
         public UserInfo userInfo { get; set; }
     }
-
+  
     public class ResponseDemo : Response, IResponse
     {
         public string demoVideoUrl { get; set; }
@@ -428,10 +502,21 @@ namespace FarmPulse.Net
         public List<Model.FieldInfo> fields;
     }
 
+    public class ResponseCrop : Response, IResponse
+    {
+        public List<CropInfo> crops { get; set; }
+    }
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    public class ResponseIndexList : Response, IResponse
+    {
+        public List<IndexInfo> list { get; set; }
+    }
+
     public class ResponseGraphView : Response, IResponse
     {
-        public List<GraphViewInfo> chlorophylleList { get; set; }
-        public List<GraphViewInfo> ndviList { get; set; }  
+        public List<GraphViewInfo> list { get; set; } 
     }
 
     public class ResponseCropYieldData : Response, IResponse
@@ -440,7 +525,18 @@ namespace FarmPulse.Net
         public string selectedCrop { get; set; }
         public List<string> fieldList { get; set; }
         public List<string> cropList { get; set; }
-        public List<CropYieldDataYearInfo> yearInfoList { get; set; }
+        public string Text_2010 { get; set; }
+        public string Text_2011 { get; set; }
+        public string Text_2012 { get; set; }
+        public string Text_2013 { get; set; }
+        public string Text_2014 { get; set; }
+        public string Text_2015 { get; set; }
+        public string Text_2016 { get; set; }
+        public string Text_2017 { get; set; }
+        public string Text_2018 { get; set; }
+        public string Text_2019 { get; set; }
+        public string Text_2020 { get; set; }
+        public string Text_2021 { get; set; }
     }
 
     public class ResponseSubmitClaim : Response, IResponse
@@ -570,18 +666,61 @@ namespace FarmPulse.Net
     #region Helper classes
     public class UserInfo
     {
-        public string username { get; set; }
-    } 
+        public int districtSequence { get; set; }
+        public string email { get; set; }
+        public string insuranceNumber { get; set; }
+        public string name { get; set; }
+        public string password { get; set; }
+        public int regionSequence { get; set; }
+        public int sequence { get; set; }
+        public string surname { get; set; }
+        public int tenantId { get; set; }
+        public int villageSequence { get; set; }
+    }
+    public class CropInfo
+    {
+        public string code { get; set; }
+        public string extraInfo { get; set; }
+        public string name { get; set; }
+    }
+    public class IndexInfo
+    {
+        public string index { get; set; }
+        public string indexName { get; set; }
+    }
     public class GraphViewInfo
+    {
+        public string cropName { get; set; }
+        public List<GraphViewData> chartInfoList { get; set; }
+    }
+    public class GraphViewChartInfo
     {
         public string cropName { get; set; }
         public List<GraphViewData> dataList { get; set; }
     } 
     public class GraphViewData
     {
+        public string cropName { get; set; }
         public string year { get; set; }
         public string value { get; set; }
-         
+
+        public GraphViewData()
+        {
+            
+        }
+
+        public GraphViewData(GraphViewData other)
+        {
+            Copy(other);
+        }
+
+        public void Copy(GraphViewData other)
+        {
+            this.year = other.year;
+            this.value = other.value;
+            this.cropName = other.cropName; 
+        }
+
         public void Check()
         {
             if (year == null)

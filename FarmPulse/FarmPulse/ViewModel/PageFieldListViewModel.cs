@@ -20,17 +20,17 @@ namespace FarmPulse.ModelView
             Navigation = navigation;
 
             #region
-            Data.Add(new FieldInfo()
-            { 
-                name = "Field1",
-                suiv_name = "O.Vodiy va Ok bulok"
-            });
+            //Data.Add(new FieldInfo()
+            //{ 
+            //    name = "Field1",
+            //    suiv_name = "O.Vodiy va Ok bulok"
+            //});
 
-            Data.Add(new FieldInfo()
-            { 
-                name = "Field2",
-                suiv_name = "Fergana"
-            });
+            //Data.Add(new FieldInfo()
+            //{ 
+            //    name = "Field2",
+            //    suiv_name = "Fergana"
+            //});
             #endregion 
         }
 
@@ -39,11 +39,11 @@ namespace FarmPulse.ModelView
             ControlApp.ShowLoadingView(RSC.PleaseWait);
             RequestField request = new RequestField()
             {
-                username = ControlApp.UserInfo.username,
-                languageCode = AppSettings.GetLanguageCode
+                username = ControlApp.UserInfo.insuranceNumber,
+                langCode = AppSettings.GetLanguageCode
             };
 
-            ResponseField response = await HttpService.GetFieldList(request);
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {   
                 foreach (FieldInfo item in response.fields)

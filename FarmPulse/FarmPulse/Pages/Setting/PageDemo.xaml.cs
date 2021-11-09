@@ -26,10 +26,14 @@ namespace FarmPulse.Pages
             ResponseDemo response = await HttpService.GetDemoVidieoUrl();
             if (response.result)
             {
+                image.IsVisible = false;
+                webView.IsVisible = true;
                 webView.Source = response.demoVideoUrl;
             }
             else
             {
+                image.IsVisible = true;
+                webView.IsVisible = false;
                 await DisplayAlert(RSC.Error, response.message, RSC.Ok);
             }
             ControlApp.CloseLoadingView();
