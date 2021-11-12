@@ -1,4 +1,5 @@
-﻿using FarmPulse.Net;
+﻿using FarmPulse.Model;
+using FarmPulse.Net;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,12 +23,9 @@ namespace FarmPulse.ModelView
         public string Text_2019 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2020 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2021 { get => GetValue<string>(); set => SetValue(value); }
-
-        public string SelectedFieldItem { get => GetValue<string>(); set => SetValue(value); }
-        public string SelectedCropItem { get => GetValue<string>(); set => SetValue(value); }
-
-        public List<string> FieldList { get => GetValue<List<string>>(); set => SetValue(value); }
-        public List<string> CropList { get => GetValue<List<string>>(); set => SetValue(value); }
+ 
+        public FieldInfo selectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
+        public List<FieldInfo> FieldList { get => GetValue<List<FieldInfo>>(); set => SetValue(value); }
         #endregion
 
         public PageCropYieldDataViewModel(INavigation navigation)
@@ -50,21 +48,7 @@ namespace FarmPulse.ModelView
             ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
-                RequestCrop requestCrop = new RequestCrop()
-                {
-                    username = ControlApp.UserInfo.insuranceNumber,
-                    langCode = AppSettings.GetLanguageCode
-                };
-
-                //ResponseCrop responseCrop = await HttpService.GetCrops(requestCrop);
-                //if (responseCrop.result)
-                //{
-                //    CropList = responseCrop.list;
-                //}
-                //else
-                //{
-                //    await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
-                //}
+                FieldList = response.fields;
             }
             else
             {
@@ -87,23 +71,24 @@ namespace FarmPulse.ModelView
             ResponseCropYieldData response = await HttpService.GetCropYieldData(request);
             if (response.result)
             {
-                FieldList = response.fieldList;
-                CropList = response.cropList;
-                SelectedFieldItem = response.selectedField;
-                SelectedCropItem = response.selectedCrop;
-
-                Text_2010 = response.Text_2010;
-                Text_2011 = response.Text_2011;
-                Text_2012 = response.Text_2012;
-                Text_2013 = response.Text_2013;
-                Text_2014 = response.Text_2014;
-                Text_2015 = response.Text_2015;
-                Text_2016 = response.Text_2016;
-                Text_2017 = response.Text_2017;
-                Text_2018 = response.Text_2018;
-                Text_2019 = response.Text_2019;
-                Text_2020 = response.Text_2020;
-                Text_2021 = response.Text_2021;
+                foreach (CropYieldDataYearInfo item in response.values)
+                {
+                    switch (item.year.Trim())
+                    {
+                        case nameof(Text_2010): Text_2010 = item.year; break;
+                        case nameof(Text_2011): Text_2011 = item.year; break;
+                        case nameof(Text_2012): Text_2012 = item.year; break;
+                        case nameof(Text_2013): Text_2013 = item.year; break;
+                        case nameof(Text_2014): Text_2014 = item.year; break;
+                        case nameof(Text_2015): Text_2015 = item.year; break;
+                        case nameof(Text_2016): Text_2016 = item.year; break;
+                        case nameof(Text_2017): Text_2017 = item.year; break;
+                        case nameof(Text_2018): Text_2018 = item.year; break;
+                        case nameof(Text_2019): Text_2019 = item.year; break;
+                        case nameof(Text_2020): Text_2020 = item.year; break;
+                        case nameof(Text_2021): Text_2021 = item.year; break;
+                    } 
+                } 
             }
             else
             {
@@ -117,22 +102,22 @@ namespace FarmPulse.ModelView
         {
             RequestCropYieldDataSave request = new RequestCropYieldDataSave()
             {
-                fieldName = SelectedFieldItem,
-                cropName = SelectedCropItem,
-
-                Text_2010 = this.Text_2010,
-                Text_2011 = this.Text_2011,
-                Text_2012 = this.Text_2012,
-                Text_2013 = this.Text_2013,
-                Text_2014 = this.Text_2014,
-                Text_2015 = this.Text_2015,
-                Text_2016 = this.Text_2016,
-                Text_2017 = this.Text_2017,
-                Text_2018 = this.Text_2018,
-                Text_2019 = this.Text_2019,
-                Text_2020 = this.Text_2020,
-                Text_2021 = this.Text_2021
+                 fieldId = selectedField.field_id,
+                 cropName = "" 
             };
+            request.values = new List<CropYieldDataYearInfo>();
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2010), Text_2010));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2011), Text_2011));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2012), Text_2012));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2013), Text_2013));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2014), Text_2014));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2015), Text_2015));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2016), Text_2016));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2017), Text_2017));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2018), Text_2018));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2019), Text_2019));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2020), Text_2020));
+            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2021), Text_2021));
 
             ResponseCropYieldDataSave response = await HttpService.SaveCropYieldData(request);
             if (response.result)

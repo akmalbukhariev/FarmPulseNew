@@ -393,25 +393,26 @@ namespace FarmPulse.Net
 
     public class RequestCropYieldDataSave : IRequest
     {
-        public string fieldName { get; set; }
+        public string fieldId { get; set; } 
         public string cropName { get; set; }
-        public string Text_2010 { get; set; }
-        public string Text_2011 { get; set; }
-        public string Text_2012 { get; set; }
-        public string Text_2013 { get; set; }
-        public string Text_2014 { get; set; }
-        public string Text_2015 { get; set; }
-        public string Text_2016 { get; set; }
-        public string Text_2017 { get; set; }
-        public string Text_2018 { get; set; }
-        public string Text_2019 { get; set; }
-        public string Text_2020 { get; set; }
-        public string Text_2021 { get; set; }
+        public List<CropYieldDataYearInfo> values { get; set; }
     }
 
     public class RequestSubmitClaim : IRequest
     { 
+        public string fieldId { get; set; }
+        public string filedName { get; set; }
+        public string cropType { get; set; }
+        public string areaTon { get; set; }
+        public string farmerName { get; set; }
+        public string farmerPhone { get; set; }
+        public string description { get; set; }
+        public string status { get; set; }
+    }
 
+    public class RequestHistorySubmitClaim : IRequest
+    {
+        
     }
 
     public class RequestSubmitClaimHistory : IRequest
@@ -506,9 +507,7 @@ namespace FarmPulse.Net
     {
         public List<CropInfo> crops { get; set; }
     }
-    /// <summary>
-    /// ////////////////////////////////////////////////////////////////////////////////////////
-    /// </summary>
+     
     public class ResponseIndexList : Response, IResponse
     {
         public List<IndexInfo> list { get; set; }
@@ -521,22 +520,10 @@ namespace FarmPulse.Net
 
     public class ResponseCropYieldData : Response, IResponse
     {
-        public string selectedField { get; set; }
-        public string selectedCrop { get; set; }
-        public List<string> fieldList { get; set; }
-        public List<string> cropList { get; set; }
-        public string Text_2010 { get; set; }
-        public string Text_2011 { get; set; }
-        public string Text_2012 { get; set; }
-        public string Text_2013 { get; set; }
-        public string Text_2014 { get; set; }
-        public string Text_2015 { get; set; }
-        public string Text_2016 { get; set; }
-        public string Text_2017 { get; set; }
-        public string Text_2018 { get; set; }
-        public string Text_2019 { get; set; }
-        public string Text_2020 { get; set; }
-        public string Text_2021 { get; set; }
+        public string fieldId { get; set; }
+        public string fieldName { get; set; }
+        public string cropName { get; set; }
+        public List<CropYieldDataYearInfo> values { get; set; }
     }
 
     public class ResponseSubmitClaim : Response, IResponse
@@ -546,7 +533,14 @@ namespace FarmPulse.Net
 
     public class ResponseSubmitClaimHistory : Response, IResponse
     {
-        
+        public int fieldId { get; set; }
+        public string filedName { get; set; }
+        public string cropType { get; set; }
+        public string areaTon { get; set; }
+        public string farmerName { get; set; }
+        public string farmerPhone { get; set; }
+        public string description { get; set; }
+        public string status { get; set; }
     }
 
     public class ResponseCropYieldDataHistory : Response, IResponse
@@ -731,6 +725,12 @@ namespace FarmPulse.Net
     } 
     public class CropYieldDataYearInfo
     {
+        public CropYieldDataYearInfo(string y, string v)
+        {
+            this.year = y;
+            this.value = v;
+        }
+
         public string year { get; set; }
         public string value { get; set; }
     }

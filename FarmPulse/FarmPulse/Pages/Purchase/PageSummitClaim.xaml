@@ -47,8 +47,10 @@
                                               ChartSyle="True"
                                               TextColor="White"
                                               TitleColor="Gray"
-                                              BackgroundColor="White" 
-                                              ItemsSource="{Binding FieldList}"/>
+                                              BackgroundColor="White"  
+                                              ItemsSource="{Binding FieldList}" 
+                                              ItemDisplayBinding="{Binding name}" 
+                                              SelectedItem="{Binding selectedField}"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>
