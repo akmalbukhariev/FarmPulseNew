@@ -385,6 +385,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        internal static string History {
+            get {
+                return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hybrid.
         /// </summary>
         internal static string Hybrid {
@@ -678,6 +687,15 @@ namespace FarmPulse.Resources {
         internal static string Setting {
             get {
                 return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Submited History.
+        /// </summary>
+        internal static string ShowSubmitedHistory {
+            get {
+                return ResourceManager.GetString("ShowSubmitedHistory", resourceCulture);
             }
         }
         

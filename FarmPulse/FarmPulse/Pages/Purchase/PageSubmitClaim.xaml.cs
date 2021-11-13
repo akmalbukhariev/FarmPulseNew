@@ -8,11 +8,11 @@ namespace FarmPulse.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SummitClaimPage : IPage
     {
-        private PageSummitClaimViewModel model;
+        private PageSubmitClaimViewModel model;
         public SummitClaimPage()
         {
             InitializeComponent();
-            model = new PageSummitClaimViewModel(Navigation);
+            model = new PageSubmitClaimViewModel(Navigation);
             BindingContext = model; 
         }
 

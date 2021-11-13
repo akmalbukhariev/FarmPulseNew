@@ -35,8 +35,8 @@ namespace FarmPulse.Net
         public static string URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "";
         public static string URL_GET_AREA_TON_HA = SERVER_URL + "";
         public static string URL_GET_INDEX_LIST = SERVER_URL + "";
-        public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "";
-        public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "";
+        public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "claim";
+        public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
         public static string URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL + "";
         public static string URL_GET_INSURANCE_INFO = SERVER_URL + "";
         public static string URL_BUY_INSURANCE = SERVER_URL + ""; 
@@ -205,6 +205,20 @@ namespace FarmPulse.Net
             catch (HttpRequestException) { return CreateResponseObj<ResponseSubmitClaim>(); }
 
             return ConvertResponseObj<ResponseSubmitClaim>(response); ;
+        }
+
+        public async static Task<ResponseSubmitedClaimHistory> GetSubmitedClaims(string userName)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_SAVE_SUBMIT_CLAIM + userName);
+                response = JsonConvert.DeserializeObject<ResponseSubmitedClaimHistory>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseSubmitedClaimHistory>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseSubmitedClaimHistory>(); }
+
+            return ConvertResponseObj<ResponseSubmitedClaimHistory>(response); ;
         }
 
         public async static Task<ResponseBuyInsurance> PurchaseInsurance(RequestBuyInsurance data)
@@ -409,17 +423,7 @@ namespace FarmPulse.Net
         public string description { get; set; }
         public string status { get; set; }
     }
-
-    public class RequestHistorySubmitClaim : IRequest
-    {
-        
-    }
-
-    public class RequestSubmitClaimHistory : IRequest
-    {
-        
-    }
-
+     
     public class RequestCropYieldDataHistory : IRequest
     {
 
@@ -531,16 +535,9 @@ namespace FarmPulse.Net
         
     }
 
-    public class ResponseSubmitClaimHistory : Response, IResponse
+    public class ResponseSubmitedClaimHistory : Response, IResponse
     {
-        public int fieldId { get; set; }
-        public string filedName { get; set; }
-        public string cropType { get; set; }
-        public string areaTon { get; set; }
-        public string farmerName { get; set; }
-        public string farmerPhone { get; set; }
-        public string description { get; set; }
-        public string status { get; set; }
+        public List<SubmitedClaimHistoryInfo> claims { get; set; }
     }
 
     public class ResponseCropYieldDataHistory : Response, IResponse
@@ -740,14 +737,19 @@ namespace FarmPulse.Net
         public string cropName { get; set; }
         public List<CropYieldDataYearInfo> yearInfoList { get; set; }
     }
-    public class SubmitClaimHistoryInfo
+    public class SubmitedClaimHistoryInfo
     {
+        public int sequence { get; set; }
+        public string username { get; set; }
+        public int fieldId { get; set; }
         public string fieldName { get; set; }
-        public string cropName { get; set; }
-        public string area_ton_ha { get; set; }
+        public string cropType { get; set; }
+        public string areaTon { get; set; }
         public string farmerName { get; set; }
-        public string phoneNumber { get; set; }
+        public string farmerPhone { get; set; }
         public string description { get; set; }
+        public string status { get; set; }
+        public string date { get; set; }
     }
 
     #region For Agro Monitoring

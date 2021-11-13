@@ -15,6 +15,8 @@ namespace FarmPulse.Model
         public string center { get; set; }
         public string suiv_name { get => GetValue<string>(); set => SetValue(value); }
         public string user_id { get; set; }
+        public string cropType { get; set; }
+        public string areaTon { get; set; }
 
         public List<double> GetCenter()
         {

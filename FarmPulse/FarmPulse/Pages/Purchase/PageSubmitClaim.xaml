@@ -12,7 +12,7 @@
         <view:NavigationView Text="{x:Static resource:AppResource.SubmitYourClaim}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
-        <Grid RowDefinitions="Auto,*,Auto"
+        <Grid RowDefinitions="Auto,*,Auto,Auto"
               ColumnDefinitions="*,330,*"
               Grid.Row="1">
             <Grid.Resources>
@@ -57,13 +57,15 @@
                             <Label Text="{x:Static resource:AppResource.CropType}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
-                            <view:EntryView Style="{StaticResource edStyle}"/>
+                            <view:EntryView Style="{StaticResource edStyle}"
+                                            Text="{Binding selectedField.cropType}"/>
                         </StackLayout>
                         <StackLayout Grid.Column="1">
                             <Label Text="{x:Static resource:AppResource.AreaTonHa}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
-                            <view:EntryView Style="{StaticResource edStyle}"/>
+                            <view:EntryView Style="{StaticResource edStyle}"
+                                            Text="{Binding selectedField.areaTon}"/>
                         </StackLayout>
                     </Grid>
                     <StackLayout Grid.Row="2">
@@ -94,6 +96,17 @@
                     Margin="0,0,0,20"
                     Command="{Binding ClickSubmitCommand}"
                     Grid.Row="2"
+                    Grid.Column="1"/>
+            <Button Text="{x:Static resource:AppResource.ShowSubmitedHistory}"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"
+                    BackgroundColor="#D3BCA2"
+                    BorderWidth="1"
+                    BorderColor="White"
+                    Margin="0,0,0,20"
+                    Command="{Binding ClickSubmitedHistoryCommand}"
+                    Grid.Row="3"
                     Grid.Column="1"/>
         </Grid>
     </Grid>

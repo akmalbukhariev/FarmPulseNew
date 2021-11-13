@@ -36,10 +36,7 @@ namespace FarmPulse.Pages
 
         private void pickField_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(model.SelectedFieldItem))
-            {
-                //model.RefreshModel(model.SelectedIndexItem, FieldInfo.field_id);
-            }
+            
         }
     }
 }

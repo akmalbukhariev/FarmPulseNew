@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using FarmPulse.Pages;
 using FarmPulse.Control;
 using FarmPulse.Resources;
+using FarmPulse.Pages.Purchase;
 
 namespace FarmPulse
 {
@@ -17,7 +18,7 @@ namespace FarmPulse
         {
             InitializeComponent();
              
-            MainPage = new TransitionNavigationPage(new LoginPage());
+            MainPage = new TransitionNavigationPage(new PageShowSubmitedHistory());
         }
 
         protected override void OnStart()

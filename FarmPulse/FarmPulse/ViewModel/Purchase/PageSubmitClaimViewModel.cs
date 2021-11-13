@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace FarmPulse.ModelView
 {
-    public class PageSummitClaimViewModel : BaseModel
+    public class PageSubmitClaimViewModel : BaseModel
     {
         #region Properties 
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
@@ -23,7 +23,7 @@ namespace FarmPulse.ModelView
         public List<FieldInfo> FieldList { get => GetValue<List<FieldInfo>>(); set => SetValue(value); } 
         #endregion
 
-        public PageSummitClaimViewModel(INavigation navigation)
+        public PageSubmitClaimViewModel(INavigation navigation)
         {
             //Title = "Summit your claim";
             //FarmerFieldNameText = "Farmer field name";
@@ -38,6 +38,7 @@ namespace FarmPulse.ModelView
         }
 
         public ICommand ClickSubmitCommand => new Command(Submit);
+        public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
 
         public async void GetFields()
         {
@@ -92,6 +93,11 @@ namespace FarmPulse.ModelView
             }
 
             ControlApp.CloseLoadingView();
+        }
+
+        private async void SubmitedHistory()
+        {
+            
         }
     }
 }

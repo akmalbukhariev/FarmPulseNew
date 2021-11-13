@@ -261,6 +261,10 @@
     <value>Hectars</value>
     <comment>Page Purchase an insurance</comment>
   </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+    <comment>Page Submit Claim</comment>
+  </data>
   <data name="Hybrid" xml:space="preserve">
     <value>Hybrid</value>
     <comment>Page Map View</comment>
@@ -392,6 +396,10 @@
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
     <comment>Page Field</comment>
+  </data>
+  <data name="ShowSubmitedHistory" xml:space="preserve">
+    <value>Show Submited History</value>
+    <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
     <value>Snow Yestarday</value>
