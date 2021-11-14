@@ -1,4 +1,5 @@
 ﻿using FarmPulse.ViewModel.Purchase;
+using FarmPulse.ViewModel.Purchase.SubmitClaim;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FarmPulse.Pages.Purchase
+namespace FarmPulse.Pages.Purchase.SubmitClaim
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageShowSubmitedHistory : IPage
@@ -24,6 +25,16 @@ namespace FarmPulse.Pages.Purchase
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            model.Parent = Parent;
+        }
+
+        private async void ClaimList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (model.SelectedItem != null)
+            {
+                model.SetTransitionType(TransitionType.SlideFromRight);
+                await Navigation.PushAsync(new PageDetailSubmitedClaimHistory(model.SelectedItem));
+            }
         }
     }
 }

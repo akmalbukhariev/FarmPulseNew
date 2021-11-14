@@ -1,9 +1,9 @@
 ﻿using FarmPulse.ModelView;
-  
+using FarmPulse.ModelView.Purchase.SubmitClaim;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FarmPulse.Pages
+namespace FarmPulse.Pages.SubmitClaim
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SummitClaimPage : IPage

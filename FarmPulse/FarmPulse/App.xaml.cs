@@ -5,6 +5,7 @@ using FarmPulse.Pages;
 using FarmPulse.Control;
 using FarmPulse.Resources;
 using FarmPulse.Pages.Purchase;
+using FarmPulse.Pages.Purchase.SubmitClaim;
 
 namespace FarmPulse
 {

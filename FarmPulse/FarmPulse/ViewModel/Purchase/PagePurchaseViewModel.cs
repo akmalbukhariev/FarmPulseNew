@@ -1,5 +1,6 @@
 ﻿using FarmPulse.Pages;
 using FarmPulse.Pages.Purchase;
+using FarmPulse.Pages.SubmitClaim;
 using System;
 using System.Collections.Generic;
 using System.Text;

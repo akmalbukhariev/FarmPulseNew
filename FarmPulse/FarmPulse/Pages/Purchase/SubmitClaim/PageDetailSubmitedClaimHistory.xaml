@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.Purchase.SubmitClaim.PageDetailSubmitedClaimHistory"
+            BackgroundColor="{StaticResource AppColor}">
+
+    <Grid RowDefinitions="Auto,*"
+          RowSpacing='0'>
+        <view:NavigationView Text="{Binding Title}"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <Grid RowDefinitions="Auto,*,Auto,Auto"
+              ColumnDefinitions="*,330,*"
+              Grid.Row="1">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="lbStyle" TargetType="Label">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="15"/>
+                    </Style>
+                    <Style x:Key="lbStyletext" TargetType="Label" BasedOn="{StaticResource lbStyle}">
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Image Source="appLogo2"
+                   WidthRequest="220"
+                   Grid.Column="1"/>
+            <Frame HasShadow="true" 
+                   CornerRadius="10"
+                   Grid.Row="1"  
+                   Grid.Column="1">
+                <ScrollView >
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
+                          RowSpacing="0">
+                        <StackLayout>
+                            <Label Text="{x:Static resource:AppResource.FarmerFieldName}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Label Text="{Binding FieldName}"
+                                   Style="{StaticResource lbStyletext}"/>
+                            <Line BackgroundColor="Black" HeightRequest="1"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1">
+                            <Label Text="{x:Static resource:AppResource.CropType}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Label Text="{Binding CropType}"
+                                   Style="{StaticResource lbStyletext}"/>
+                            <Line BackgroundColor="Black" HeightRequest="1"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2">
+                            <Label Text="{x:Static resource:AppResource.AreaTonHa}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Label Text="{Binding AreaTonHa}"
+                                   Style="{StaticResource lbStyletext}"/>
+                            <Line BackgroundColor="Black" HeightRequest="1"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3">
+                            <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Label Text="{Binding FarmerName}"
+                                   Style="{StaticResource lbStyletext}"/>
+                            <Line BackgroundColor="Black" HeightRequest="1"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="4">
+                            <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Label Text="{Binding PhoneNumber}"
+                                   Style="{StaticResource lbStyletext}"/>
+                            <Line BackgroundColor="Black" HeightRequest="1"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="5">
+                            <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <Frame BorderColor="Black"
+                                   CornerRadius="15"
+                                   HeightRequest="150">
+                                <Label Text="{Binding Description}"
+                                       Style="{StaticResource lbStyle}"
+                                       LineBreakMode ="WordWrap"/>    
+                            </Frame> 
+                        </StackLayout>
+                    </Grid> 
+                </ScrollView>
+            </Frame> 
+            <Button Text="{x:Static resource:AppResource.Ok}"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"
+                    BackgroundColor="#D3BCA2"
+                    BorderWidth="1"
+                    BorderColor="White"
+                    Margin="0,0,0,20"
+                    Command="{Binding ClickSubmitCommand}"
+                    Grid.Row="2"
+                    Grid.Column="1"/> 
+        </Grid>
+    </Grid> 
+</page:IPage>

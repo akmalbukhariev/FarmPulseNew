@@ -5,7 +5,7 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             xmlns:control="clr-namespace:FarmPulse.Control"
-            x:Class="FarmPulse.Pages.SummitClaimPage"
+            x:Class="FarmPulse.Pages.SubmitClaim.SummitClaimPage"
             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
@@ -50,7 +50,7 @@
                                               BackgroundColor="White"  
                                               ItemsSource="{Binding FieldList}" 
                                               ItemDisplayBinding="{Binding name}" 
-                                              SelectedItem="{Binding selectedField}"/>
+                                              SelectedItem="{Binding SelectedField}"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>

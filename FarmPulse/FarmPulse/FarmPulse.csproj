@@ -34,13 +34,16 @@
     <EmbeddedResource Update="Pages\PageGraphView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Purchase\SubmitClaim\PageDetailSubmitedClaimHistory.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Purchase\PageIndexInsurance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Purchase\PagepShowPurchasedHistory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Purchase\PageShowSubmitedClaimHistory.xaml">
+    <EmbeddedResource Update="Pages\Purchase\SubmitClaim\PageShowSubmitedClaimHistory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Setting\PageLanguage.xaml">
@@ -73,7 +76,7 @@
     <EmbeddedResource Update="Pages\Setting\PageSetting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Purchase\PageSubmitClaim.xaml">
+    <EmbeddedResource Update="Pages\Purchase\SubmitClaim\PageSubmitClaim.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\PageWeather.xaml">
@@ -143,10 +146,13 @@
     <Compile Update="Pages\Purchase\PageConfirmation.xaml.cs">
       <DependentUpon>PageConfirmation.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\Purchase\PageShowSubmitedClaimHistory.xaml.cs">
+    <Compile Update="Pages\Purchase\SubmitClaim\PageDetailSubmitedClaimHistory.xaml.cs">
+      <DependentUpon>PageDetailSubmitedClaimHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Purchase\SubmitClaim\PageShowSubmitedClaimHistory.xaml.cs">
       <DependentUpon>PageShowSubmitedClaimHistory.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\Purchase\PageSubmitClaim.xaml.cs">
+    <Compile Update="Pages\Purchase\SubmitClaim\PageSubmitClaim.xaml.cs">
       <DependentUpon>PageSubmitClaim.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\Purchase\PagePurchaseInsurance.xaml.cs">

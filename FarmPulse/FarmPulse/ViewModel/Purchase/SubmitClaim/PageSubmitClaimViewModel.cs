@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace FarmPulse.ModelView
+namespace FarmPulse.ModelView.Purchase.SubmitClaim
 {
     public class PageSubmitClaimViewModel : BaseModel
     {
@@ -16,24 +16,14 @@ namespace FarmPulse.ModelView
         public string AreaTon { get => GetValue<string>(); set => SetValue(value); }
         public string Name { get => GetValue<string>(); set => SetValue(value); }
         public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
-        public string Description { get => GetValue<string>(); set => SetValue(value); }
-        public string SubmitButtonText { get => GetValue<string>(); set => SetValue(value); }
+        public string Description { get => GetValue<string>(); set => SetValue(value); } 
 
-        public FieldInfo selectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
+        public FieldInfo SelectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
         public List<FieldInfo> FieldList { get => GetValue<List<FieldInfo>>(); set => SetValue(value); } 
         #endregion
 
         public PageSubmitClaimViewModel(INavigation navigation)
-        {
-            //Title = "Summit your claim";
-            //FarmerFieldNameText = "Farmer field name";
-            //CropTypeText = "Crop type";
-            //AreaTonText = "Area ton/ha";
-            //FarmerNameSurnameText = "Farmer Name and Surname";
-            //FarmerPhoneNumberText = "Farmer Phone number";
-            //DescriptionClaimText = "Description the claim";
-            //SubmitButtonText = "Submit";
-
+        { 
             Navigation = navigation;
         }
 
@@ -70,8 +60,8 @@ namespace FarmPulse.ModelView
             RequestSubmitClaim request = new RequestSubmitClaim()
             {
                 username = ControlApp.UserInfo.insuranceNumber,
-                filedName = selectedField.name,
-                fieldId = selectedField.field_id,
+                filedName = SelectedField.name,
+                fieldId = SelectedField.field_id,
                 areaTon = AreaTon,
                 cropType = CropType,
                 farmerName = Name,

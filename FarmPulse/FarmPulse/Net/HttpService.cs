@@ -750,6 +750,7 @@ namespace FarmPulse.Net
         public string description { get; set; }
         public string status { get; set; }
         public string date { get; set; }
+        public double statusTextWidth { get; set; }
     }
 
     #region For Agro Monitoring

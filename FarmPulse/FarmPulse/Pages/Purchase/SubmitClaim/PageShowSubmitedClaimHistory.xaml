@@ -4,23 +4,26 @@
              xmlns:view="clr-namespace:FarmPulse.Views"
              xmlns:page="clr-namespace:FarmPulse.Pages"
              xmlns:resource="clr-namespace:FarmPulse.Resources"
-             x:Class="FarmPulse.Pages.Purchase.PageShowSubmitedHistory">
+             x:Class="FarmPulse.Pages.Purchase.SubmitClaim.PageShowSubmitedHistory">
     <Grid RowDefinitions="Auto,*"
           RowSpacing='0'>
         <view:NavigationView Text="{x:Static resource:AppResource.History}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
-        <ListView x:Name="lvMachineInfo" 
-                  VerticalOptions="FillAndExpand" 
+        <ListView VerticalOptions="FillAndExpand" 
                   HasUnevenRows="True" 
                   SeparatorVisibility="Default" 
                   ItemsSource="{Binding DataList}"
+                  SelectedItem="{Binding SelectedItem}"
+                  ItemSelected="ClaimList_ItemSelected"
                   IsPullToRefreshEnabled="True"
                   Grid.Row="1">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid RowDefinitions="Auto,20,Auto"
+                              ColumnDefinitions="*, Auto"
                               Margin="10">
                             <Label Text="{Binding fieldName}"
                                    TextColor="Black"
@@ -28,7 +31,7 @@
                                    FontSize="18"
                                    HorizontalTextAlignment="Start"/>
                             <BoxView BackgroundColor="Green"
-                                     WidthRequest="100"
+                                     WidthRequest="{Binding statusTextWidth}"
                                      CornerRadius="20"
                                      HorizontalOptions="Start"
                                      Grid.Row="1"/>
@@ -37,13 +40,19 @@
                                    FontSize="13"
                                    HorizontalTextAlignment="Start"
                                    VerticalTextAlignment="Center"
-                                   Margin="10,0,0,0"
+                                   Margin="5,0,0,0"
                                    Grid.Row="1"/>
                             <Label Text="{Binding date}"
                                    TextColor="Gray"
                                    FontSize="13"
                                    HorizontalTextAlignment="Start"
                                    Grid.Row="2"/>
+                            <Image Source="right_arrow"
+                                   Aspect="AspectFit"
+                                   WidthRequest="20"
+                                   HorizontalOptions="End"
+                                   Grid.RowSpan="3"
+                                   Grid.Column="1"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

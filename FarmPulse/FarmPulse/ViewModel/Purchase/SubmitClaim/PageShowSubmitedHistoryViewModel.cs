@@ -1,4 +1,5 @@
-﻿ 
+﻿
+using FarmPulse.Interface;
 using FarmPulse.ModelView;
 using FarmPulse.Net;
 using System;
@@ -7,12 +8,12 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace FarmPulse.ViewModel.Purchase
+namespace FarmPulse.ViewModel.Purchase.SubmitClaim
 {
     class PageShowSubmitedHistoryViewModel : BaseModel
-    {
+    { 
         public ObservableCollection<SubmitedClaimHistoryInfo> DataList { get; set; }
-
+        public SubmitedClaimHistoryInfo SelectedItem { get; set; }
         public PageShowSubmitedHistoryViewModel(INavigation navigation)
         {
             Navigation = navigation;
@@ -29,8 +30,9 @@ namespace FarmPulse.ViewModel.Purchase
                 farmerName = "Sherqo'zi",
                 farmerPhone = "998977988989",
                 description = "This is Bla Bla Bla Claim",
-                status = "submitter",
-                date = "2021.11.13"
+                status = "Submited",
+                date = "2021.11.13",
+                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
             };
 
             SubmitedClaimHistoryInfo item2 = new SubmitedClaimHistoryInfo()
@@ -44,8 +46,9 @@ namespace FarmPulse.ViewModel.Purchase
                 farmerName = "Sherqo'zi",
                 farmerPhone = "998977988989",
                 description = "This is Bla Bla Bla Claim",
-                status = "submitter",
-                date = "2022.05.26"
+                status = "Submited",
+                date = "2022.05.26",
+                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
             };
 
             SubmitedClaimHistoryInfo item3 = new SubmitedClaimHistoryInfo()
@@ -59,8 +62,9 @@ namespace FarmPulse.ViewModel.Purchase
                 farmerName = "Sherqo'zi",
                 farmerPhone = "998977988989",
                 description = "This is Bla Bla Bla Claim",
-                status = "submitter",
-                date = "2022.05.26"
+                status = "Submited",
+                date = "2022.05.26",
+                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
             };
 
             SubmitedClaimHistoryInfo item4 = new SubmitedClaimHistoryInfo()
@@ -74,8 +78,9 @@ namespace FarmPulse.ViewModel.Purchase
                 farmerName = "Sherqo'zi",
                 farmerPhone = "998977988989",
                 description = "This is Bla Bla Bla Claim",
-                status = "submitter",
-                date = "2022.05.26"
+                status = "Submited",
+                date = "2022.05.26",
+                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
             };
 
             DataList.Add(item1);
