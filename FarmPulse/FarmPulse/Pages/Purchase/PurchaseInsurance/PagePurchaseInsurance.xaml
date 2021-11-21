@@ -56,32 +56,38 @@
                                           BackgroundColor="White"
                                           ItemsSource="{Binding FieldList}" 
                                           ItemDisplayBinding="{Binding name}" 
-                                          SelectedItem="{Binding SelectedField}"/>
+                                          SelectedItem="{Binding SelectedField}"
+                                          SelectedIndexChanged="pickField_SelectedIndexChanged"/>
                 </StackLayout>
                 <StackLayout Grid.Row="3" Grid.Column="1">
                         <Label Text="{x:Static resource:AppResource.CropType}"
                                Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Style="{StaticResource edStyle}"/>
+                    <view:EntryView Style="{StaticResource edStyle}"
+                                    Text="{Binding CropType}"/>
                 </StackLayout>
                 <StackLayout Grid.Row="4" Grid.Column="1">
                         <Label Text="{x:Static resource:AppResource.Hectars}"
                                Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Style="{StaticResource edStyle}"/>
+                    <view:EntryView Style="{StaticResource edStyle}"
+                                    Text="{Binding Hectars}"/>
                 </StackLayout>
                 <StackLayout Grid.Row="5" Grid.Column="1">
                         <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
                                Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Style="{StaticResource edStyle}"/>
+                    <view:EntryView Style="{StaticResource edStyle}"
+                                    Text="{Binding FarmerName}"/>
                 </StackLayout>
                 <StackLayout Grid.Row="6" Grid.Column="1">
                         <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
                                Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Style="{StaticResource edStyle}"/>
+                    <view:EntryView Style="{StaticResource edStyle}"
+                                    Text="{Binding FarmerPhoneNumber}"/>
                 </StackLayout>
                 <StackLayout Grid.Row="7" Grid.Column="1">
                     <Label Text="{x:Static resource:AppResource.ConfirmPhoneNumber}"
                                Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Style="{StaticResource edStyle}"/>
+                    <view:EntryView Style="{StaticResource edStyle}"
+                                    Text="{Binding ConfirmPhoneNumber}"/>
                 </StackLayout>
                 <Button Text="{x:Static resource:AppResource.Submit}"
                         TextColor="Black"

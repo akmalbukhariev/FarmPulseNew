@@ -24,8 +24,12 @@ namespace FarmPulse.ModelView
 
         public PagePurchaseInsuranceViewModel(INavigation navigation)
         {
-            Navigation = navigation; 
+            Navigation = navigation;
+            FieldList = new List<FieldInfo>();
         }
+         
+        public ICommand ClickSubmitCommand => new Command(Submit);
+        public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
 
         /// <summary>
         /// Clean the model.
@@ -59,9 +63,6 @@ namespace FarmPulse.ModelView
             return ok;
         }
 
-        public ICommand ClickSubmitCommand => new Command(Submit);
-        public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
-
         public async void GetFields()
         {
             Clean();
@@ -82,8 +83,6 @@ namespace FarmPulse.ModelView
 
         private async void Submit()
         {
-            ControlApp.ShowLoadingView(RSC.PleaseWait);
-
             if (!CheckParam())
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the all fields.", RSC.Ok);
@@ -98,15 +97,18 @@ namespace FarmPulse.ModelView
 
             RequestBuyInsurance request = new RequestBuyInsurance()
             {
-                fieldId = SelectedField.field_id,
+                fieldId = SelectedField.fieldId,
                 fieldName = SelectedField.name,
                 cropName = CropType,
                 hectars = Hectars,
                 farmerName = FarmerName,
                 phoneNumber = FarmerPhoneNumber,
-                status = "Submited"
+                status = "Submited",
+                username = "998977",
+                date = DateTime.Now.ToString()
             };
 
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
             ResponseBuyInsurance response = await HttpService.PurchaseInsurance(request);
             if (response.result)
             {

@@ -45,12 +45,13 @@
                         <control:CustomPicker x:Name="pickField" 
                                               Image="show"
                                               ChartSyle="True"
-                                              TextColor="White"
+                                              TextColor="Black"
                                               TitleColor="Gray"
                                               BackgroundColor="White"  
                                               ItemsSource="{Binding FieldList}" 
                                               ItemDisplayBinding="{Binding name}" 
-                                              SelectedItem="{Binding SelectedField}"/>
+                                              SelectedItem="{Binding SelectedField}"
+                                              SelectedIndexChanged="pickField_SelectedIndexChanged"/>
                     </StackLayout>
                     <Grid ColumnDefinitions="*,*" Grid.Row="1">
                         <StackLayout>
@@ -58,30 +59,33 @@
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"
-                                            Text="{Binding selectedField.cropType}"/>
+                                            Text="{Binding CropType}"/>
                         </StackLayout>
                         <StackLayout Grid.Column="1">
                             <Label Text="{x:Static resource:AppResource.AreaTonHa}"
                                    FontAttributes="Bold"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"
-                                            Text="{Binding selectedField.areaTon}"/>
+                                            Text="{Binding AreaTon}"/>
                         </StackLayout>
                     </Grid>
                     <StackLayout Grid.Row="2">
                         <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
                                Style="{StaticResource lbStyle}"/>
-                        <view:EntryView Style="{StaticResource edStyle}"/>
+                        <view:EntryView Style="{StaticResource edStyle}"
+                                        Text="{Binding Name}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="3">
                         <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
                                Style="{StaticResource lbStyle}"/>
-                        <view:EntryView Style="{StaticResource edStyle}"/>
+                        <view:EntryView Style="{StaticResource edStyle}"
+                                        Text="{Binding PhoneNumber}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="4" MinimumHeightRequest="150">
                         <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"
+                                        Text="{Binding Description}"
                                         HeightEntryView="150"/>
                     </StackLayout>
                 </Grid>

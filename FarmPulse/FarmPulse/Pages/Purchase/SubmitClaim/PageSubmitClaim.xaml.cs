@@ -20,6 +20,13 @@ namespace FarmPulse.Pages.Purchase.SubmitClaim
         {
             base.OnAppearing(); 
             model.Parent = Parent;
+            model.GetFields();
+        }
+
+        private void pickField_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            if (model.SelectedField != null)
+                model.CropType = model.SelectedField.cropName;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace FarmPulse.ModelView
 
         private void StartNewClaim()
         {
-            
+            BackToHome();
         }
 
         private async void BackToHome()

@@ -38,7 +38,7 @@ namespace FarmPulse.Net
         public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "claim";
         public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
         public static string URL_GET_HISTORY_OF_PURCHASE = SERVER_URL + "purchases/";
-        public static string URL_BUY_INSURANCE = SERVER_URL + ""; 
+        public static string URL_BUY_INSURANCE = SERVER_URL + "purchase"; 
         #endregion
 
         #endregion
@@ -451,6 +451,7 @@ namespace FarmPulse.Net
         public string farmerName { get; set; }
         public string phoneNumber { get; set; }
         public string status { get; set; }
+        public string date { get; set; }
     }
 
     public class RequestGetSatelliteImagesInfo

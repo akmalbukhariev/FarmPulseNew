@@ -27,5 +27,11 @@ namespace FarmPulse.Pages.Purchase.PurchaseInsurance
             base.OnAppearing();
             model.GetFields();
         }
+
+        private void pickField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (model.SelectedField != null)
+                model.CropType = model.SelectedField.cropName;
+        }
     }
 }

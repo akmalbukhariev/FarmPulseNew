@@ -106,7 +106,7 @@ namespace FarmPulse.ModelView
             {
                 start = DateTimeToUnixTimestamp(StartDate).ToString(),
                 end = DateTimeToUnixTimestamp(EndDate).ToString(),
-                polyid = this.FieldInfo.field_id
+                polyid = this.FieldInfo.fieldId
             };
 
             List<ResponseSatelliteImagesInfo> responseImage = await HttpService.GetSatelliteImagesInfo(request);

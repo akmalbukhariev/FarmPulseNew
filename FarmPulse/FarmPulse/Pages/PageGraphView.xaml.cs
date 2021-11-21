@@ -32,7 +32,7 @@ namespace FarmPulse.Pages
         {
             if (string.IsNullOrEmpty(model.SelectedIndexItem))
             {
-                model.RefreshGraphViewData(model.SelectedIndexItem, FieldInfo.field_id);
+                model.RefreshGraphViewData(model.SelectedIndexItem, FieldInfo.fieldId);
             }
         }
     }

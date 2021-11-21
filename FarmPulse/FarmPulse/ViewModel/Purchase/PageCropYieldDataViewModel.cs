@@ -102,7 +102,7 @@ namespace FarmPulse.ModelView
         {
             RequestCropYieldDataSave request = new RequestCropYieldDataSave()
             {
-                 fieldId = selectedField.field_id,
+                 fieldId = selectedField.fieldId,
                  cropName = "" 
             };
             request.values = new List<CropYieldDataYearInfo>();

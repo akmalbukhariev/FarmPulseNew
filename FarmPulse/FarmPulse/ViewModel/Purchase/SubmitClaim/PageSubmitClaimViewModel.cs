@@ -25,22 +25,48 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
         public PageSubmitClaimViewModel(INavigation navigation)
         { 
             Navigation = navigation;
+            FieldList = new List<FieldInfo>();
         }
 
         public ICommand ClickSubmitCommand => new Command(Submit);
         public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
 
+        /// <summary>
+        /// Clean the model.
+        /// </summary>
+        public void Clean()
+        {
+            CropType = "";
+            AreaTon = ""; 
+            PhoneNumber = "";
+            Description = "";
+
+            SelectedField = null;
+            FieldList.Clear();
+        }
+
+        /// <summary>
+        /// Check the all parameters before submitting.
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckParam()
+        {
+            bool ok = true;
+            if (string.IsNullOrEmpty(CropType)) ok = false;
+            else if (string.IsNullOrEmpty(AreaTon)) ok = false; 
+            else if (string.IsNullOrEmpty(PhoneNumber)) ok = false;
+            else if (string.IsNullOrEmpty(Description)) ok = false;
+            else if (SelectedField == null) ok = false;
+
+            return ok;
+        }
+
         public async void GetFields()
         {
+            Clean();
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            RequestField request = new RequestField()
-            {
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
-            };
-
-            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 FieldList = response.fields; 
@@ -55,13 +81,17 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
 
         private async void Submit()
         {
-            ControlApp.ShowLoadingView(RSC.PleaseWait);
-
+            if (!CheckParam())
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the all fields.", RSC.Ok);
+                return;
+            }
+             
             RequestSubmitClaim request = new RequestSubmitClaim()
             {
-                username = ControlApp.UserInfo.insuranceNumber,
+                username = "998977",
                 filedName = SelectedField.name,
-                fieldId = SelectedField.field_id,
+                fieldId = SelectedField.fieldId,
                 areaTon = AreaTon,
                 cropType = CropType,
                 farmerName = Name,
@@ -71,6 +101,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
                 langCode = AppSettings.GetLanguageCode
             };
 
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
             ResponseSubmitClaim response = await HttpService.SubmitClaim(request);
             if (response.result)
             {

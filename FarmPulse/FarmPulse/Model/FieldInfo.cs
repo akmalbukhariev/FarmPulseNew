@@ -7,16 +7,22 @@ namespace FarmPulse.Model
 {
     public class FieldInfo : ModelView.BaseModel
     {
-        public string district_code { get; set; }
-        public string field_id { get; set; }
-        public string name { get => GetValue<string>(); set => SetValue(value); }
+        #region Properties
+        public string sequence { get; set; }
+        public string tenantId { get; set; }
+        public string fieldId { get; set; }
+        public string username { get; set; } 
+        public string villageSequence { get; set; }
+        public string villageName { get; set; } 
+        public string name { get; set; }
         public string polygon { get; set; }
-        public string pol_api_key { get; set; }
+        public string apiKey { get; set; }
         public string center { get; set; }
-        public string suiv_name { get => GetValue<string>(); set => SetValue(value); }
-        public string user_id { get; set; }
-        public string cropType { get; set; }
-        public string areaTon { get; set; }
+        public string cropId { get; set; }
+        public string cropName { get; set; }
+        public string area { get; set; }
+        public string comment { get; set; }
+        #endregion
 
         public List<double> GetCenter()
         {
@@ -50,41 +56,29 @@ namespace FarmPulse.Model
 
         public void Check()
         {
-            if (district_code == null)
-                district_code = "";
-            if (field_id == null)
-                field_id = "";
-            if (name == null)
-                name = "";
-            if (polygon == null)
-                polygon = "";
-            if (pol_api_key == null)
-                pol_api_key = "";
-            if (center == null)
-                center = "";
-            if (suiv_name == null)
-                suiv_name = "";
-            if (user_id == null)
-                user_id = "";
+             
         }
-
-        //public string FieldNameText { get => GetValue<string>(); set => SetValue(value); }
-        //public string WUA_VillageText { get => GetValue<string>(); set => SetValue(value); }
-
+         
         /// <summary>
         /// Deep copy
         /// </summary>
         /// <param name="other"></param>
         public void Copy(FieldInfo other)
-        {
-            this.district_code = other.district_code;
-            this.field_id = other.field_id;
+        { 
+            this.sequence = other.sequence;
+            this.tenantId = other.tenantId;
+            this.fieldId = other.fieldId;
+            this.username = other.username;
+            this.villageSequence = other.villageSequence;
+            this.villageName = other.villageName;
             this.name = other.name;
             this.polygon = other.polygon;
-            this.pol_api_key = other.pol_api_key;
+            this.apiKey = other.apiKey;
             this.center = other.center;
-            this.suiv_name = other.suiv_name;
-            this.user_id = other.user_id;
+            this.cropId = other.cropId;
+            this.cropName = other.cropName;
+            this.area = other.area;
+            this.comment = other.comment; 
         }
     }
 }
