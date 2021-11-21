@@ -6,26 +6,29 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace FarmPulse.ViewModel.Purchase.SubmitClaim
+namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
 {
-    class PageDetailSubmitedHistoryViewModel : BaseModel
+    class PageDetailPurchasedHistoryViewModel : BaseModel
     {
         public string Title { get => GetValue<string>(); set => SetValue(value); }
         public string FieldName { get => GetValue<string>(); set => SetValue(value); }
-        public string CropType { get => GetValue<string>(); set => SetValue(value); }
-        public string AreaTonHa { get => GetValue<string>(); set => SetValue(value); }
+        public string CropName { get => GetValue<string>(); set => SetValue(value); }
+        public string Hectars { get => GetValue<string>(); set => SetValue(value); }
         public string FarmerName { get => GetValue<string>(); set => SetValue(value); }
         public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
-        public string Description { get => GetValue<string>(); set => SetValue(value); }
-        public PageDetailSubmitedHistoryViewModel(SubmitedClaimHistoryInfo info, INavigation navigation)
+        public string Status { get => GetValue<string>(); set => SetValue(value); }
+        public string Date { get => GetValue<string>(); set => SetValue(value); }
+
+        public PageDetailPurchasedHistoryViewModel(SubmitedPurchaseHistoryInfo info,INavigation navigation)
         {
             Title = info.fieldName;
             FieldName = info.fieldName;
-            CropType = info.cropType;
-            AreaTonHa = info.areaTon;
+            CropName = info.cropName;
+            Hectars = info.hectars;
             FarmerName = info.farmerName;
-            PhoneNumber = info.farmerPhone;
-            Description = info.description;
+            PhoneNumber = info.phoneNumber;
+            Status = info.status;
+            Date = info.date;
 
             Navigation = navigation;
         }

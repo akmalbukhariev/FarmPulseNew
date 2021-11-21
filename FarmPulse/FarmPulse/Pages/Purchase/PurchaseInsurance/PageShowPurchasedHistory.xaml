@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            x:Class="FarmPulse.Pages.Purchase.PurchaseInsurance.PageShowPurchasedHistory">
+
+    <Grid RowDefinitions="Auto,*"
+          RowSpacing='0'>
+        <view:NavigationView Text="{x:Static resource:AppResource.History}"
+                             TextColor="Black"
+                             BackgroundColor="#D3BCA2"/>
+        <ListView VerticalOptions="FillAndExpand" 
+                  HasUnevenRows="True" 
+                  SeparatorVisibility="Default" 
+                  ItemsSource="{Binding DataList}"
+                  SelectedItem="{Binding SelectedItem}"
+                  ItemSelected="Purchased_ItemSelected"
+                  IsPullToRefreshEnabled="True"
+                  Grid.Row="1">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowDefinitions="Auto,Auto,20,Auto"
+                              ColumnDefinitions="*, Auto"
+                              Margin="10">
+                            <Label Text="{Binding fieldName}"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="Start"/>
+                            <Label Text="{Binding cropName}"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="Start"
+                                   Grid.Row="1"/>
+                            <BoxView BackgroundColor="Green"
+                                     WidthRequest="{Binding statusTextWidth}"
+                                     CornerRadius="20"
+                                     HorizontalOptions="Start"
+                                     Grid.Row="2"/>
+                            <Label Text="{Binding status}"
+                                   TextColor="White"
+                                   FontSize="13"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   Margin="5,0,0,0"
+                                   Grid.Row="2"/>
+                            <Label Text="{Binding date}"
+                                   TextColor="Gray"
+                                   FontSize="13"
+                                   HorizontalTextAlignment="Start"
+                                   Grid.Row="3"/>
+                            <Image Source="right_arrow"
+                                   Aspect="AspectFit"
+                                   WidthRequest="20"
+                                   HorizontalOptions="End"
+                                   Grid.RowSpan="4"
+                                   Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+    
+</page:IPage>

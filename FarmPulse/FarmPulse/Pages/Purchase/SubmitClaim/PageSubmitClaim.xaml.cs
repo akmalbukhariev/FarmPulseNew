@@ -3,13 +3,13 @@ using FarmPulse.ModelView.Purchase.SubmitClaim;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FarmPulse.Pages.SubmitClaim
+namespace FarmPulse.Pages.Purchase.SubmitClaim
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SummitClaimPage : IPage
+    public partial class PageSubmitClaim : IPage
     {
         private PageSubmitClaimViewModel model;
-        public SummitClaimPage()
+        public PageSubmitClaim()
         {
             InitializeComponent();
             model = new PageSubmitClaimViewModel(Navigation);
@@ -18,8 +18,7 @@ namespace FarmPulse.Pages.SubmitClaim
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-
+            base.OnAppearing(); 
             model.Parent = Parent;
         }
     }

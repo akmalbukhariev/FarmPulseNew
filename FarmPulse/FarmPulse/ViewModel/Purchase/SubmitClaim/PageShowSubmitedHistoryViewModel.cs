@@ -19,74 +19,100 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
             Navigation = navigation;
             DataList = new ObservableCollection<SubmitedClaimHistoryInfo>();
 
-            SubmitedClaimHistoryInfo item1 = new SubmitedClaimHistoryInfo()
-            {
-                sequence = 1,
-                username = "998977",
-                fieldId = 13,
-                fieldName = "Gallazor",
-                cropType = "1",
-                areaTon = "1",
-                farmerName = "Sherqo'zi",
-                farmerPhone = "998977988989",
-                description = "This is Bla Bla Bla Claim",
-                status = "Submited",
-                date = "2021.11.13",
-                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
-            };
+            #region For the test
+            //SubmitedClaimHistoryInfo item1 = new SubmitedClaimHistoryInfo()
+            //{
+            //    sequence = 1,
+            //    username = "998977",
+            //    fieldId = 13,
+            //    fieldName = "Gallazor",
+            //    cropType = "1",
+            //    areaTon = "1",
+            //    farmerName = "Sherqo'zi",
+            //    farmerPhone = "998977988989",
+            //    description = "This is Bla Bla Bla Claim",
+            //    status = "Submited",
+            //    date = "2021.11.13",
+            //    statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
+            //};
 
-            SubmitedClaimHistoryInfo item2 = new SubmitedClaimHistoryInfo()
-            {
-                sequence = 1,
-                username = "998977",
-                fieldId = 13,
-                fieldName = "Chorshanbe",
-                cropType = "1",
-                areaTon = "1",
-                farmerName = "Sherqo'zi",
-                farmerPhone = "998977988989",
-                description = "This is Bla Bla Bla Claim",
-                status = "Submited",
-                date = "2022.05.26",
-                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
-            };
+            //SubmitedClaimHistoryInfo item2 = new SubmitedClaimHistoryInfo()
+            //{
+            //    sequence = 1,
+            //    username = "998977",
+            //    fieldId = 13,
+            //    fieldName = "Chorshanbe",
+            //    cropType = "1",
+            //    areaTon = "1",
+            //    farmerName = "Sherqo'zi",
+            //    farmerPhone = "998977988989",
+            //    description = "This is Bla Bla Bla Claim",
+            //    status = "Submited",
+            //    date = "2022.05.26",
+            //    statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
+            //};
 
-            SubmitedClaimHistoryInfo item3 = new SubmitedClaimHistoryInfo()
-            {
-                sequence = 1,
-                username = "998977",
-                fieldId = 13,
-                fieldName = "Kitab",
-                cropType = "1",
-                areaTon = "1",
-                farmerName = "Sherqo'zi",
-                farmerPhone = "998977988989",
-                description = "This is Bla Bla Bla Claim",
-                status = "Submited",
-                date = "2022.05.26",
-                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
-            };
+            //SubmitedClaimHistoryInfo item3 = new SubmitedClaimHistoryInfo()
+            //{
+            //    sequence = 1,
+            //    username = "998977",
+            //    fieldId = 13,
+            //    fieldName = "Kitab",
+            //    cropType = "1",
+            //    areaTon = "1",
+            //    farmerName = "Sherqo'zi",
+            //    farmerPhone = "998977988989",
+            //    description = "This is Bla Bla Bla Claim",
+            //    status = "Submited",
+            //    date = "2022.05.26",
+            //    statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
+            //};
 
-            SubmitedClaimHistoryInfo item4 = new SubmitedClaimHistoryInfo()
-            {
-                sequence = 1,
-                username = "998977",
-                fieldId = 13,
-                fieldName = "Miraki",
-                cropType = "1",
-                areaTon = "1",
-                farmerName = "Sherqo'zi",
-                farmerPhone = "998977988989",
-                description = "This is Bla Bla Bla Claim",
-                status = "Submited",
-                date = "2022.05.26",
-                statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
-            };
+            //SubmitedClaimHistoryInfo item4 = new SubmitedClaimHistoryInfo()
+            //{
+            //    sequence = 1,
+            //    username = "998977",
+            //    fieldId = 13,
+            //    fieldName = "Miraki",
+            //    cropType = "1",
+            //    areaTon = "1",
+            //    farmerName = "Sherqo'zi",
+            //    farmerPhone = "998977988989",
+            //    description = "This is Bla Bla Bla Claim",
+            //    status = "Submited",
+            //    date = "2022.05.26",
+            //    statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth("Submited") + 6
+            //};
 
-            DataList.Add(item1);
-            DataList.Add(item2);
-            DataList.Add(item3);
-            DataList.Add(item4);
+            //DataList.Add(item1);
+            //DataList.Add(item2);
+            //DataList.Add(item3);
+            //DataList.Add(item4);
+            #endregion
+        }
+
+        public async void GetSubmitedHistory()
+        {
+            DataList.Clear();
+
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
+
+            ResponseSubmitedClaimHistory response = await HttpService.GetSubmitedClaims("998977");//ControlApp.UserInfo.insuranceNumber);
+            if (response.result)
+            {
+                foreach (SubmitedClaimHistoryInfo item in response.claims)
+                {
+                    SubmitedClaimHistoryInfo newItem = new SubmitedClaimHistoryInfo(item);
+                    newItem.statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth(item.status) + 6;
+                    DataList.Add(newItem);
+                }
+            }
+            else 
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+            }
+
+            ControlApp.CloseLoadingView();
         }
     }
 }

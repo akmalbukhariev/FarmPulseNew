@@ -1,6 +1,5 @@
 ﻿using FarmPulse.Pages;
-using FarmPulse.Pages.Purchase;
-using FarmPulse.Pages.SubmitClaim;
+using FarmPulse.Pages.Purchase; 
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -85,7 +84,7 @@ namespace FarmPulse.ModelView
         private async void ClickSubmitClaim()
         {
             SetTransitionType(TransitionType.SlideFromRight);
-            await Navigation.PushAsync(new SummitClaimPage());
+            await Navigation.PushAsync(new Pages.Purchase.SubmitClaim.PageSubmitClaim());
         }
 
         /// <summary>
@@ -103,7 +102,7 @@ namespace FarmPulse.ModelView
         private async void ClickBuy()
         {
             SetTransitionType(TransitionType.SlideFromRight);
-            await Navigation.PushAsync(new PurchaseInsurancePage());
+            await Navigation.PushAsync(new Pages.Purchase.PurchaseInsurance.PagePurchaseInsurance());
         }
     }
 }

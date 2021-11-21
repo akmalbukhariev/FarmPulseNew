@@ -37,8 +37,7 @@ namespace FarmPulse.Net
         public static string URL_GET_INDEX_LIST = SERVER_URL + "";
         public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "claim";
         public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
-        public static string URL_GET_HISTORY_OF_CROP_YIELD = SERVER_URL + "";
-        public static string URL_GET_INSURANCE_INFO = SERVER_URL + "";
+        public static string URL_GET_HISTORY_OF_PURCHASE = SERVER_URL + "purchases/";
         public static string URL_BUY_INSURANCE = SERVER_URL + ""; 
         #endregion
 
@@ -212,7 +211,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_SAVE_SUBMIT_CLAIM + userName);
+                var receivedData = await RequestGetMethod(URL_GET_HISTORY_OF_CLAIM + userName);
                 response = JsonConvert.DeserializeObject<ResponseSubmitedClaimHistory>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseSubmitedClaimHistory>(); }
@@ -235,6 +234,20 @@ namespace FarmPulse.Net
             return ConvertResponseObj<ResponseBuyInsurance>(response); ;
         }
 
+        public async static Task<ResponsePurchasedHistory> GetPurchasedHistory(string userName)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_HISTORY_OF_PURCHASE + userName);
+                response = JsonConvert.DeserializeObject<ResponsePurchasedHistory>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponsePurchasedHistory>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponsePurchasedHistory>(); }
+
+            return ConvertResponseObj<ResponsePurchasedHistory>(response); ;
+        }
+
         public async static Task<ResponsePolygon> GetPolygonInfo(string polygonId)
         {
             ResponseAgro response = new ResponseAgro();
@@ -251,7 +264,7 @@ namespace FarmPulse.Net
 
             return ConvertResponseObj<ResponsePolygon>(response);
         }
-
+         
         public async static Task<List<ResponseSatelliteImagesInfo>> GetSatelliteImagesInfo(RequestGetSatelliteImagesInfo data)
         {
             List<ResponseSatelliteImagesInfo> responseAlldata = new List<ResponseSatelliteImagesInfo>();
@@ -431,11 +444,13 @@ namespace FarmPulse.Net
 
     public class RequestBuyInsurance : IRequest
     {
+        public string fieldId { get; set; }
         public string fieldName { get; set; }
         public string cropName { get; set; }
         public string hectars { get; set; }
         public string farmerName { get; set; }
         public string phoneNumber { get; set; }
+        public string status { get; set; }
     }
 
     public class RequestGetSatelliteImagesInfo
@@ -538,6 +553,11 @@ namespace FarmPulse.Net
     public class ResponseSubmitedClaimHistory : Response, IResponse
     {
         public List<SubmitedClaimHistoryInfo> claims { get; set; }
+    }
+
+    public class ResponsePurchasedHistory : Response, IResponse
+    {
+        public List<SubmitedPurchaseHistoryInfo> purchases { get; set; }
     }
 
     public class ResponseCropYieldDataHistory : Response, IResponse
@@ -751,6 +771,71 @@ namespace FarmPulse.Net
         public string status { get; set; }
         public string date { get; set; }
         public double statusTextWidth { get; set; }
+
+        /// <summary>
+        /// Deep copy constructure.
+        /// </summary>
+        /// <param name="other"></param>
+        public SubmitedClaimHistoryInfo(SubmitedClaimHistoryInfo other)
+        {
+            this.sequence = other.sequence;
+            this.username = other.username;
+            this.fieldId = other.fieldId;
+            this.fieldName = other.fieldName;
+            this.cropType = other.cropType;
+            this.areaTon = other.areaTon;
+             this.farmerName = other.farmerName;
+            this.farmerPhone = other.farmerPhone;
+            this.description = other.description;
+            this.status = other.status;
+            this.date = other.date;
+            if (string.IsNullOrEmpty(this.date))
+            {
+                this.date = "YYYY.mm.dd";
+            }
+        }
+
+        public SubmitedClaimHistoryInfo()
+        {
+            
+        }
+    } 
+    public class SubmitedPurchaseHistoryInfo
+    {
+        public string fieldId { get; set; }
+        public string fieldName { get; set; }
+        public string cropName { get; set; }
+        public string hectars { get; set; }
+        public string farmerName { get; set; }
+        public string phoneNumber { get; set; }
+        public string status { get; set; }
+        public string date { get; set; }
+        public double statusTextWidth { get; set; }
+
+        /// <summary>
+        /// Deep copy constructor
+        /// </summary>
+        /// <param name="other"></param>
+        public SubmitedPurchaseHistoryInfo(SubmitedPurchaseHistoryInfo other)
+        {
+            this.fieldId = other.fieldId;
+            this.fieldName = other.fieldName;
+            this.cropName = other.cropName;
+            this.hectars = other.hectars;
+            this.farmerName = other.farmerName;
+            this.phoneNumber = other.phoneNumber;
+            this.status = other.status;
+            this.date = this.date;
+            if (string.IsNullOrEmpty(this.date))
+            {
+                this.date = "YYYY.mm.dd";
+            }
+        }
+
+        public SubmitedPurchaseHistoryInfo()
+        {
+            
+        }
     }
 
     #region For Agro Monitoring

@@ -1,5 +1,4 @@
-﻿using FarmPulse.ViewModel.Purchase;
-using FarmPulse.ViewModel.Purchase.SubmitClaim;
+﻿using FarmPulse.ViewModel.Purchase.PurchaseInsurance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +8,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FarmPulse.Pages.Purchase.SubmitClaim
+namespace FarmPulse.Pages.Purchase.PurchaseInsurance
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageShowSubmitedHistory : IPage
+    public partial class PageShowPurchasedHistory : IPage
     {
-        private PageShowSubmitedHistoryViewModel model;
-        public PageShowSubmitedHistory()
+        private PageShowPurchasedHistoryViewModel model;
+        public PageShowPurchasedHistory()
         {
             InitializeComponent();
-            model = new PageShowSubmitedHistoryViewModel(Navigation);
+            model = new PageShowPurchasedHistoryViewModel(Navigation);
             BindingContext = model;
         }
 
@@ -29,12 +28,12 @@ namespace FarmPulse.Pages.Purchase.SubmitClaim
             model.GetSubmitedHistory();
         }
 
-        private async void ClaimList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void Purchased_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new PageDetailSubmitedClaimHistory(model.SelectedItem));
+                await Navigation.PushAsync(new PageDetailPurchasedInsuranceHistory(model.SelectedItem));
             }
         }
     }

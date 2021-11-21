@@ -8,18 +8,24 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FarmPulse.ModelView;
 
-namespace FarmPulse.Pages
+namespace FarmPulse.Pages.Purchase.PurchaseInsurance
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PurchaseInsurancePage : IPage
+    public partial class PagePurchaseInsurance : IPage
     {
         private PagePurchaseInsuranceViewModel model;
 
-        public PurchaseInsurancePage()
+        public PagePurchaseInsurance()
         {
             InitializeComponent();
             model = new PagePurchaseInsuranceViewModel(Navigation);
             BindingContext = model; 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.GetFields();
         }
     }
 }

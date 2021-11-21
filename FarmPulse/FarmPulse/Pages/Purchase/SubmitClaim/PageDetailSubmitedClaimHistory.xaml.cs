@@ -18,7 +18,7 @@ namespace FarmPulse.Pages.Purchase.SubmitClaim
         public PageDetailSubmitedClaimHistory(SubmitedClaimHistoryInfo info)
         {
             InitializeComponent();
-            model = new PageDetailSubmitedHistoryViewModel(info);
+            model = new PageDetailSubmitedHistoryViewModel(info, Navigation);
             BindingContext = model;
         } 
     }

@@ -201,6 +201,10 @@
     <value>CURRENT WEATHER</value>
     <comment>Page Weather</comment>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>ControlApp</comment>
+  </data>
   <data name="Demo" xml:space="preserve">
     <value>Demo</value>
     <comment>Page Setting</comment>

@@ -6,6 +6,7 @@ using FarmPulse.Control;
 using FarmPulse.Resources;
 using FarmPulse.Pages.Purchase;
 using FarmPulse.Pages.Purchase.SubmitClaim;
+using FarmPulse.Pages.Purchase.PurchaseInsurance;
 
 namespace FarmPulse
 {
@@ -19,7 +20,7 @@ namespace FarmPulse
         {
             InitializeComponent();
              
-            MainPage = new TransitionNavigationPage(new PageShowSubmitedHistory());
+            MainPage = new TransitionNavigationPage(new PagePurchaseInsurance());
         }
 
         protected override void OnStart()

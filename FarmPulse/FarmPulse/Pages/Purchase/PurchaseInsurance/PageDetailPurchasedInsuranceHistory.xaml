@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:page="clr-namespace:FarmPulse.Pages"
-            xmlns:view="clr-namespace:FarmPulse.Views"
-            xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.Purchase.SubmitClaim.PageDetailSubmitedClaimHistory"
-            BackgroundColor="{StaticResource AppColor}">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             xmlns:view="clr-namespace:FarmPulse.Views"
+             xmlns:resource="clr-namespace:FarmPulse.Resources"
+             x:Class="FarmPulse.Pages.Purchase.PurchaseInsurance.PageDetailPurchasedInsuranceHistory"
+             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing='0'>
@@ -46,14 +46,14 @@
                         <StackLayout Grid.Row="1">
                             <Label Text="{x:Static resource:AppResource.CropType}"
                                    Style="{StaticResource lbStyle}"/>
-                            <Label Text="{Binding CropType}"
+                            <Label Text="{Binding CropName}"
                                    Style="{StaticResource lbStyletext}"/>
                             <Line BackgroundColor="Black" HeightRequest="1"/>
                         </StackLayout>
                         <StackLayout Grid.Row="2">
                             <Label Text="{x:Static resource:AppResource.AreaTonHa}"
                                    Style="{StaticResource lbStyle}"/>
-                            <Label Text="{Binding AreaTonHa}"
+                            <Label Text="{Binding Hectars}"
                                    Style="{StaticResource lbStyletext}"/>
                             <Line BackgroundColor="Black" HeightRequest="1"/>
                         </StackLayout>
@@ -72,19 +72,14 @@
                             <Line BackgroundColor="Black" HeightRequest="1"/>
                         </StackLayout>
                         <StackLayout Grid.Row="5">
-                            <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
+                            <Label Text="{x:Static resource:AppResource.Date}"
                                    Style="{StaticResource lbStyle}"/>
-                            <Frame BorderColor="Black"
-                                   CornerRadius="15"
-                                   HeightRequest="150">
-                                <Label Text="{Binding Description}"
-                                       Style="{StaticResource lbStyle}"
-                                       LineBreakMode ="WordWrap"/>    
-                            </Frame> 
+                            <Label Text="{Binding Date}"
+                                   Style="{StaticResource lbStyletext}"/>
                         </StackLayout>
-                    </Grid> 
+                    </Grid>
                 </ScrollView>
-            </Frame> 
+            </Frame>
             <Button Text="{x:Static resource:AppResource.Ok}"
                     TextColor="Black"
                     FontAttributes="Bold"
@@ -95,7 +90,8 @@
                     Margin="0,0,0,20"
                     Command="{Binding ClickOkCommand}"
                     Grid.Row="2"
-                    Grid.Column="1"/> 
+                    Grid.Column="1"/>
         </Grid>
-    </Grid> 
+    </Grid>
+
 </page:IPage>

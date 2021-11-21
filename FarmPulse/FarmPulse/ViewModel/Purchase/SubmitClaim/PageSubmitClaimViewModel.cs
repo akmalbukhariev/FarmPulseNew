@@ -87,7 +87,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
 
         private async void SubmitedHistory()
         {
-            
+            await Navigation.PushAsync(new Pages.Purchase.SubmitClaim.PageShowSubmitedHistory());
         }
     }
 }
