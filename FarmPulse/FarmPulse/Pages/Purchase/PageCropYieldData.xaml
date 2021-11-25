@@ -16,6 +16,18 @@
               ColumnDefinitions="*,330,*" 
               RowSpacing="20"
               Grid.Row="1">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="edStyle" TargetType="view:EntryView">
+                        <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
+                        <Setter Property="CornerRadius" Value="7"/>
+                        <Setter Property="BorderWidth" Value="1"/>
+                        <Setter Property="BorderColor" Value="Gray"/>
+                        <Setter Property="BackgroundColorOfEntry" Value="White"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
             <Label x:Name="lbText" 
                    TextColor="Black"
                    FontSize="15"
@@ -28,22 +40,16 @@
                 <control:CustomPicker x:Name="pickField" 
                                       Image="show"
                                       ChartSyle="True"
-                                      TextColor="White"
+                                      TextColor="Black"
                                       TitleColor="Gray"
                                       Title="{x:Static resource:AppResource.SelectField}"
-                                      ItemsSource="{Binding FieldList}"
-                                      SelectedItem="{Binding SelectedFieldItem}"
+                                      ItemsSource="{Binding FieldList}" 
+                                      ItemDisplayBinding="{Binding name}" 
+                                      SelectedItem="{Binding SelectedField}"
                                       SelectedIndexChanged="pickField_SelectedIndexChanged"
-                                      BackgroundColor="White"/> 
-                <control:CustomPicker x:Name="pickCrop" 
-                                      Image="show"
-                                      ChartSyle="True"
-                                      TextColor="White"
-                                      TitleColor="Gray"
-                                      Title="{x:Static resource:AppResource.SelectCrop}"
-                                      ItemsSource="{Binding CropList}"
-                                      SelectedItem="{Binding SelectedCropItem}"
-                                      BackgroundColor="White"/>
+                                      BackgroundColor="White"/>  
+                <view:EntryView Style="{StaticResource edStyle}"
+                                Text="{Binding CropType}"/>
             </StackLayout>
             <Grid RowDefinitions="70,70,70,70"
                   ColumnDefinitions="70,70,70"

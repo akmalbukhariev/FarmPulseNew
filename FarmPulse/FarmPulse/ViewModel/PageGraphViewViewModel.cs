@@ -13,67 +13,50 @@ namespace FarmPulse.ModelView
     {
         public ObservableCollection<GraphViewDataItem> DataList { get; set; }
           
-        public string SelectIndexTitle { get => GetValue<string>(); set => SetValue(value); }
-        public string SelectedIndexItem { get => GetValue<string>(); set => SetValue(value); }
-        public List<string> IndexList { get => GetValue<List<string>>(); set => SetValue(value); }
-
-        private ResponseIndexList responseIndex = null;
+        public string SelectIndexTitle { get => GetValue<string>(); set => SetValue(value); } 
+        public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
+        public List<MetricsInfo> MetricsList { get => GetValue<List<MetricsInfo>>(); set => SetValue(value); }
+         
         public PageGraphViewViewModel()
         {
             DataList = new ObservableCollection<GraphViewDataItem>();
-            IndexList = new List<string>(); 
+            //IndexList = new List<string>(); 
         }
 
         public async void GetIndexList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
-            responseIndex = await HttpService.GetIndexList();
-            if (responseIndex.result)
+            ResponseMetricsList response = await HttpService.GetMetricsList();
+            if (response.result)
             {
-                foreach (IndexInfo item in responseIndex.list)
-                {
-                    IndexList.Add(item.indexName);
-                }
+                MetricsList = response.list;
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
             }
+
             ControlApp.CloseLoadingView();
         }
 
-        public async void RefreshGraphViewData(string indexName, string fieldId)
+        public async void RefreshGraphViewData(string fieldId)
         {
-            IndexInfo tempInfo = responseIndex.list.Find(x => x.indexName == indexName);
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
+
             RequestGraphViewInfo request = new RequestGraphViewInfo()
             {
-                field_id = fieldId,
-                sequence = tempInfo == null ? "" : tempInfo.indexName,
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
+                fieldId = fieldId,
+                metricId = SelectedMetrics.sequence.ToString()
             };
 
-            ControlApp.ShowLoadingView(RSC.PleaseWait);
             ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
             if (response.result)
             {
-                foreach (GraphViewInfo item in response.list)
-                {
-                    GraphViewDataItem newItem = new GraphViewDataItem();
-                    newItem.Title = item.cropName;
-                    newItem.IndexMeanValue = RSC.IndexMeanValue;
 
-                    foreach (GraphViewData info in item.chartInfoList)
-                    {
-                        newItem.ValueList.Add(new GraphViewData(info));
-                    }
-
-                    DataList.Add(newItem);
-                }
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

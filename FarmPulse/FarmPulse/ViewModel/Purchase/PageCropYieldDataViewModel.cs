@@ -23,29 +23,62 @@ namespace FarmPulse.ModelView
         public string Text_2019 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2020 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2021 { get => GetValue<string>(); set => SetValue(value); }
- 
-        public FieldInfo selectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
+
+        public string CropType { get => GetValue<string>(); set => SetValue(value); }
+
+        public FieldInfo SelectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
         public List<FieldInfo> FieldList { get => GetValue<List<FieldInfo>>(); set => SetValue(value); }
         #endregion
 
         public PageCropYieldDataViewModel(INavigation navigation)
         { 
             Navigation = navigation;
+            FieldList = new List<FieldInfo>();
         }
 
         public ICommand ClickSaveCommand => new Command(Save);
 
+        /// <summary>
+        /// Clean the model.
+        /// </summary>
+        public void Clean()
+        {
+            Text_2010 = "";
+            Text_2011 = "";
+            Text_2012 = "";
+            Text_2013 = "";
+            Text_2014 = "";
+            Text_2015 = "";
+            Text_2016 = "";
+            Text_2017 = "";
+            Text_2018 = "";
+            Text_2019 = "";
+            Text_2020 = "";
+            Text_2021 = "";
+
+            SelectedField = null;
+            FieldList.Clear();
+        }
+
+        /// <summary>
+        /// Check the all parameters before submitting.
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckParam()
+        {
+            bool ok = true;
+            if (string.IsNullOrEmpty(CropType)) ok = false; 
+            else if (SelectedField == null) ok = false;
+
+            return ok;
+        }
+
         public async void GetFields()
         {
+            Clean();
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            RequestField request = new RequestField()
-            {
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
-            };
-
-            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 FieldList = response.fields;
@@ -60,33 +93,49 @@ namespace FarmPulse.ModelView
 
         public async void RefreshModel()
         {
+            #region Clean text year
+                Text_2010 = "";
+                Text_2011 = "";
+                Text_2012 = "";
+                Text_2013 = "";
+                Text_2014 = "";
+                Text_2015 = "";
+                Text_2016 = "";
+                Text_2017 = "";
+                Text_2018 = "";
+                Text_2019 = "";
+                Text_2020 = "";
+                Text_2021 = "";
+            #endregion
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
             RequestCropYieldData request = new RequestCropYieldData()
             {
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
+                username = "998977",//ControlApp.UserInfo.insuranceNumber,
+                langCode = AppSettings.GetLanguageCode,
+                fieldId = SelectedField.fieldId
             };
 
             ResponseCropYieldData response = await HttpService.GetCropYieldData(request);
             if (response.result)
             {
+                CropType = response.cropName;
                 foreach (CropYieldDataYearInfo item in response.values)
                 {
                     switch (item.year.Trim())
                     {
-                        case nameof(Text_2010): Text_2010 = item.year; break;
-                        case nameof(Text_2011): Text_2011 = item.year; break;
-                        case nameof(Text_2012): Text_2012 = item.year; break;
-                        case nameof(Text_2013): Text_2013 = item.year; break;
-                        case nameof(Text_2014): Text_2014 = item.year; break;
-                        case nameof(Text_2015): Text_2015 = item.year; break;
-                        case nameof(Text_2016): Text_2016 = item.year; break;
-                        case nameof(Text_2017): Text_2017 = item.year; break;
-                        case nameof(Text_2018): Text_2018 = item.year; break;
-                        case nameof(Text_2019): Text_2019 = item.year; break;
-                        case nameof(Text_2020): Text_2020 = item.year; break;
-                        case nameof(Text_2021): Text_2021 = item.year; break;
+                        case nameof(Text_2010): Text_2010 = item.value; break; //999
+                        case nameof(Text_2011): Text_2011 = item.value; break;
+                        case nameof(Text_2012): Text_2012 = item.value; break;
+                        case nameof(Text_2013): Text_2013 = item.value; break;
+                        case nameof(Text_2014): Text_2014 = item.value; break;
+                        case nameof(Text_2015): Text_2015 = item.value; break;
+                        case nameof(Text_2016): Text_2016 = item.value; break;
+                        case nameof(Text_2017): Text_2017 = item.value; break;
+                        case nameof(Text_2018): Text_2018 = item.value; break;
+                        case nameof(Text_2019): Text_2019 = item.value; break;
+                        case nameof(Text_2020): Text_2020 = item.value; break;
+                        case nameof(Text_2021): Text_2021 = item.value; break;
                     } 
                 } 
             }
@@ -100,10 +149,17 @@ namespace FarmPulse.ModelView
 
         private async void Save()
         {
+            if (!CheckParam())
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the field name and crop name.", RSC.Ok);
+                return;
+            }
+
             RequestCropYieldDataSave request = new RequestCropYieldDataSave()
             {
-                 fieldId = selectedField.fieldId,
-                 cropName = "" 
+                 fieldId = SelectedField.fieldId,
+                 cropName = CropType,
+                 username = "998977"
             };
             request.values = new List<CropYieldDataYearInfo>();
             request.values.Add(new CropYieldDataYearInfo(nameof(Text_2010), Text_2010));
@@ -122,14 +178,13 @@ namespace FarmPulse.ModelView
             ResponseCropYieldDataSave response = await HttpService.SaveCropYieldData(request);
             if (response.result)
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Success, "", RSC.Ok);
+                //await Navigation.PopAsync();
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Okkkkkkkkkkkkkkkkkkk", RSC.Ok);
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
-            }
-
-            await Navigation.PopAsync();
+            } 
         }
     }
 }

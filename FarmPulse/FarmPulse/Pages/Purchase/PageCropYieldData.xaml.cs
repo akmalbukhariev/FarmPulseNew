@@ -36,7 +36,11 @@ namespace FarmPulse.Pages
 
         private void pickField_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (model.SelectedField != null)
+            {
+                model.CropType = model.SelectedField.cropName;
+                model.RefreshModel();
+            }
         }
     }
 }

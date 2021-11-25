@@ -15,9 +15,9 @@
                 <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <view:GraphView Region="{Binding Title}"
+                            <!--<view:GraphView Region="{Binding Title}"
                                             MeanValue="{Binding IndexMeanValue}"
-                                            ItemSource="{Binding ValueList}"/>
+                                            ItemSource="{Binding ValueList}"/>-->
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
@@ -32,9 +32,10 @@
                               BackgroundColor="White"
                               HorizontalTextAlignment="Center"
                               Margin="20,5,20,5"
-                              ItemsSource="{Binding IndexList}"
+                              ItemsSource="{Binding MetricsList}"
+                              ItemDisplayBinding="{Binding name}" 
+                              SelectedItem="{Binding SelectedMetrics}"
                               SelectedIndexChanged="Picker_SelectedIndexChanged"
-                              SelectedItem="{Binding SelectedIndexItem}"
                               Grid.Row="1"/>
     </Grid>
     

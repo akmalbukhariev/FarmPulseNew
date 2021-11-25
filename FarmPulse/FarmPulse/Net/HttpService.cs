@@ -29,12 +29,12 @@ namespace FarmPulse.Net
         public static string URL_GET_DEMO_VIDEO = SERVER_URL + "demo";
         public static string URL_GET_INFO_ABOUT_APP = SERVER_URL + "info";
         public static string URL_GET_FIELD_LIST = SERVER_URL + "user/fields/";
-        public static string URL_GET_GRAPH_VIEW_INFO = SERVER_URL + "";
+        public static string URL_GET_GRAPH_VIEW_INFO = SERVER_URL + "graphview/";
         public static string URL_GET_CROP_LIST = SERVER_URL + "crops";
-        public static string URL_GET_CROP_YIELD_DATA = SERVER_URL + "";
-        public static string URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "";
-        public static string URL_GET_AREA_TON_HA = SERVER_URL + "";
-        public static string URL_GET_INDEX_LIST = SERVER_URL + "";
+        public static string URL_GET_CROP_YIELD_DATA = SERVER_URL + "cropYields/";
+        public static string URL_SAVE_CROP_YIELD_DATA = SERVER_URL + "cropYield";
+        //public static string URL_GET_AREA_TON_HA = SERVER_URL + "";
+        public static string URL_GET_METRICS_LIST = SERVER_URL + "metrics";
         public static string URL_SAVE_SUBMIT_CLAIM = SERVER_URL + "claim";
         public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
         public static string URL_GET_HISTORY_OF_PURCHASE = SERVER_URL + "purchases/";
@@ -141,7 +141,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_GET_GRAPH_VIEW_INFO, data);
+                var receivedData = await RequestGetMethod(URL_GET_GRAPH_VIEW_INFO + data.fieldId + "/" + data.metricId);
                 response = JsonConvert.DeserializeObject<ResponseGraphView>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseGraphView>(); }
@@ -150,18 +150,18 @@ namespace FarmPulse.Net
             return ConvertResponseObj<ResponseGraphView>(response); ;
         }
 
-        public async static Task<ResponseIndexList> GetIndexList()
+        public async static Task<ResponseMetricsList> GetMetricsList()
         {
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_GET_INDEX_LIST);
-                response = JsonConvert.DeserializeObject<ResponseIndexList>(receivedData, settings);
+                var receivedData = await RequestGetMethod(URL_GET_METRICS_LIST);
+                response = JsonConvert.DeserializeObject<ResponseMetricsList>(receivedData, settings);
             }
-            catch (JsonReaderException) { return CreateResponseObj<ResponseIndexList>(); }
-            catch (HttpRequestException) { return CreateResponseObj<ResponseIndexList>(); }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseMetricsList>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseMetricsList>(); }
 
-            return ConvertResponseObj<ResponseIndexList>(response);
+            return ConvertResponseObj<ResponseMetricsList>(response);
         }
 
         public async static Task<ResponseCropYieldData> GetCropYieldData(RequestCropYieldData data)
@@ -169,7 +169,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_GET_CROP_YIELD_DATA, data);
+                var receivedData = await RequestGetMethod(URL_GET_CROP_YIELD_DATA + data.username + "/" + data.fieldId);
                 response = JsonConvert.DeserializeObject<ResponseCropYieldData>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseCropYieldData>(); }
@@ -409,13 +409,13 @@ namespace FarmPulse.Net
 
     public class RequestGraphViewInfo : IRequest
     {
-        public string field_id { get; set; }
-        public string sequence { get; set; } //ex) chloro, ndv 1,2
+        public string fieldId { get; set; }
+        public string metricId { get; set; } //ex) chloro, ndv 1,2
     }
 
     public class RequestCropYieldData : IRequest
     {
-        
+        public string fieldId { get; set; }
     }
 
     public class RequestCropYieldDataSave : IRequest
@@ -528,14 +528,18 @@ namespace FarmPulse.Net
         public List<CropInfo> crops { get; set; }
     }
      
-    public class ResponseIndexList : Response, IResponse
+    public class ResponseMetricsList : Response, IResponse
     {
-        public List<IndexInfo> list { get; set; }
+        public List<MetricsInfo> list { get; set; }
     }
 
     public class ResponseGraphView : Response, IResponse
     {
-        public List<GraphViewInfo> list { get; set; } 
+        public string fieldId { get; set; }
+        public string districtId { get; set; }
+        public string metricId { get; set; }
+        public string metricName { get; set; }
+        public List<GraphViewInfo> values { get; set; } 
     }
 
     public class ResponseCropYieldData : Response, IResponse
@@ -695,24 +699,20 @@ namespace FarmPulse.Net
         public string extraInfo { get; set; }
         public string name { get; set; }
     }
-    public class IndexInfo
+    public class MetricsInfo
     {
-        public string index { get; set; }
-        public string indexName { get; set; }
+        public int sequence { get; set; }
+        public string name { get; set; }
+        public string extraInfo { get; set; }
+        public string code { get; set; }
     }
     public class GraphViewInfo
     {
         public string cropName { get; set; }
         public List<GraphViewData> chartInfoList { get; set; }
-    }
-    public class GraphViewChartInfo
-    {
-        public string cropName { get; set; }
-        public List<GraphViewData> dataList { get; set; }
     } 
     public class GraphViewData
-    {
-        public string cropName { get; set; }
+    { 
         public string year { get; set; }
         public string value { get; set; }
 
@@ -729,8 +729,7 @@ namespace FarmPulse.Net
         public void Copy(GraphViewData other)
         {
             this.year = other.year;
-            this.value = other.value;
-            this.cropName = other.cropName; 
+            this.value = other.value; 
         }
 
         public void Check()

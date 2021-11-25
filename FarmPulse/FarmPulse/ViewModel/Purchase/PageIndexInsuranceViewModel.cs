@@ -18,7 +18,7 @@ namespace FarmPulse.ModelView
         public string SelectedIndexItem { get => GetValue<string>(); set => SetValue(value); } 
         public List<string> IndexList { get => GetValue<List<string>>(); set => SetValue(value); }
         
-        private ResponseIndexList responseIndex = null;
+        private ResponseMetricsList responseIndex = null;
         public PageIndexInsuranceViewModel(INavigation navigation)
         {  
             IndexList = new List<string>(); 
@@ -31,54 +31,54 @@ namespace FarmPulse.ModelView
         public async void GetIndexList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
-            responseIndex = await HttpService.GetIndexList();
-            if (responseIndex.result)
-            {
-                foreach (IndexInfo item in responseIndex.list)
-                {
-                    IndexList.Add(item.indexName);
-                }
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
-            }
+            //responseIndex = await HttpService.GetIndexList();
+            //if (responseIndex.result)
+            //{
+            //    foreach (IndexInfo item in responseIndex.list)
+            //    {
+            //        IndexList.Add(item.indexName);
+            //    }
+            //}
+            //else
+            //{
+            //    await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+            //}
             ControlApp.CloseLoadingView();
         }
 
         public async void RefreshGraphViewData(string indexName, string fieldId)
         {
-            IndexInfo tempInfo = responseIndex.list.Find(x => x.indexName == indexName);
-            RequestGraphViewInfo request = new RequestGraphViewInfo()
-            {
-                field_id = fieldId,
-                sequence = tempInfo == null ? "" : tempInfo.indexName,
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
-            };
+            //IndexInfo tempInfo = responseIndex.list.Find(x => x.indexName == indexName);
+            //RequestGraphViewInfo request = new RequestGraphViewInfo()
+            //{
+            //    field_id = fieldId,
+            //    sequence = tempInfo == null ? "" : tempInfo.indexName,
+            //    username = ControlApp.UserInfo.insuranceNumber,
+            //    langCode = AppSettings.GetLanguageCode
+            //};
 
-            ControlApp.ShowLoadingView(RSC.PleaseWait);
-            ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
-            if (response.result)
-            {
-                foreach (GraphViewInfo item in response.list)
-                {
-                    GraphViewDataItem newItem = new GraphViewDataItem();
-                    newItem.Title = item.cropName;
-                    newItem.IndexMeanValue = RSC.IndexMeanValue;
+            //ControlApp.ShowLoadingView(RSC.PleaseWait);
+            //ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
+            //if (response.result)
+            //{
+            //    foreach (GraphViewInfo item in response.list)
+            //    {
+            //        GraphViewDataItem newItem = new GraphViewDataItem();
+            //        newItem.Title = item.cropName;
+            //        newItem.IndexMeanValue = RSC.IndexMeanValue;
 
-                    foreach (GraphViewData info in item.chartInfoList)
-                    {
-                        newItem.ValueList.Add(new GraphViewData(info));
-                    }
+            //        foreach (GraphViewData info in item.chartInfoList)
+            //        {
+            //            newItem.ValueList.Add(new GraphViewData(info));
+            //        }
 
-                    DataList.Add(newItem);
-                }
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
-            }
+            //        DataList.Add(newItem);
+            //    }
+            //}
+            //else
+            //{
+            //    await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
+            //}
 
             ControlApp.CloseLoadingView();
         }

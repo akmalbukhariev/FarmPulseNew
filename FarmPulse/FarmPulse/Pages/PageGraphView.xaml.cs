@@ -26,13 +26,14 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
             model.GetIndexList();
+            model.Parent = Parent;
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(model.SelectedIndexItem))
+            if (model.SelectedMetrics != null)
             {
-                model.RefreshGraphViewData(model.SelectedIndexItem, FieldInfo.fieldId);
+                model.RefreshGraphViewData(FieldInfo.fieldId);
             }
         }
     }
