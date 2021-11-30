@@ -11,16 +11,52 @@ namespace FarmPulse.ModelView
 {
     public class PageGraphViewViewModel : BaseModel
     {
-        public ObservableCollection<GraphViewDataItem> DataList { get; set; }
-          
-        public string SelectIndexTitle { get => GetValue<string>(); set => SetValue(value); } 
+        public ObservableCollection<GraphViewDataItem> DataList { get; set; } 
         public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
         public List<MetricsInfo> MetricsList { get => GetValue<List<MetricsInfo>>(); set => SetValue(value); }
          
         public PageGraphViewViewModel()
         {
             DataList = new ObservableCollection<GraphViewDataItem>();
-            //IndexList = new List<string>(); 
+
+            GraphViewData data = new GraphViewData();
+            data.year = "2010";
+            data.value = "12";
+            GraphViewDataItem item1 = new GraphViewDataItem();
+            item1.Title = "AAAAAAAAAA";
+            item1.IndexMeanValue = RSC.IndexMeanValue;
+            item1.ValueList.Add(data);
+            item1.ValueList.Add(data);
+            item1.ValueList.Add(data);
+            item1.ValueList.Add(data);
+
+            GraphViewDataItem item2 = new GraphViewDataItem();
+            item2.Title = "BBBBBB";
+            item2.IndexMeanValue = RSC.IndexMeanValue;
+            item2.ValueList.Add(data);
+            item2.ValueList.Add(data);
+            item2.ValueList.Add(data);
+
+            GraphViewDataItem item3 = new GraphViewDataItem();
+            item3.Title = "CCCCCCCC";
+            item3.IndexMeanValue = RSC.IndexMeanValue;
+            item3.ValueList.Add(data);
+            item3.ValueList.Add(data);
+            item3.ValueList.Add(data);
+
+            GraphViewDataItem item4 = new GraphViewDataItem();
+            item4.Title = "XXXXXXXXXXXXX";
+            item4.IndexMeanValue = RSC.IndexMeanValue;
+            item4.ValueList.Add(data);
+            item4.ValueList.Add(data);
+            item4.ValueList.Add(data);
+            item4.ValueList.Add(data);
+            item4.ValueList.Add(data);
+
+            DataList.Add(item1);
+            DataList.Add(item2);
+            DataList.Add(item3);
+            DataList.Add(item4);
         }
 
         public async void GetIndexList()
@@ -41,6 +77,7 @@ namespace FarmPulse.ModelView
 
         public async void RefreshGraphViewData(string fieldId)
         {
+            return;
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
             RequestGraphViewInfo request = new RequestGraphViewInfo()
@@ -52,7 +89,18 @@ namespace FarmPulse.ModelView
             ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
             if (response.result)
             {
+                foreach (GraphViewInfo info in response.values)
+                {
+                    if (info.chartInfoList.Count != 0)
+                    {
+                        GraphViewDataItem newItem = new GraphViewDataItem();
+                        newItem.Title = info.cropName;
+                        newItem.IndexMeanValue = RSC.IndexMeanValue;
+                        newItem.ValueList = info.chartInfoList;
 
+                        DataList.Add(newItem);
+                    }
+                }
             }
             else
             {

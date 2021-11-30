@@ -11,10 +11,10 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ConfirmationPage : IPage
+    public partial class PageConfirmation : IPage
     {
         private PageConfirmationViewModel model;
-        public ConfirmationPage()
+        public PageConfirmation()
         {
             InitializeComponent();
             InitPage();

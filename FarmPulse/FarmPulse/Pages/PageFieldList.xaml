@@ -4,7 +4,7 @@
             xmlns:view="clr-namespace:FarmPulse.Views"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.FieldListPage">
+            x:Class="FarmPulse.Pages.PageFieldList">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">

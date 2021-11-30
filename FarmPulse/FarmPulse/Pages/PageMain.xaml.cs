@@ -4,10 +4,10 @@ using Xamarin.Forms;
 
 namespace FarmPulse.Pages
 {
-    public partial class MainPage : IPage
+    public partial class PageMain : IPage
     {
         PageMainViewModel model;
-        public MainPage()
+        public PageMain()
         {
             InitializeComponent();
             

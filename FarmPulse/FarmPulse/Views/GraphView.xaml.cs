@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+ 
+
 namespace FarmPulse.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -85,16 +87,18 @@ namespace FarmPulse.Views
                 var list = (List<GraphViewData>)newValue;
                 foreach (GraphViewData item in list)
                 {
+                    if (string.IsNullOrEmpty(item.value)) continue;
+
                     ChartEntry chartEntry = new ChartEntry(5);
                     var color = String.Format("#{0:X6}", "007A43");
-                    chartEntry.Color = SKColor.Parse(color);
+                    chartEntry.Label = item.year.Replace("Text_","");
                     chartEntry.ValueLabel = item.value;
-                    chartEntry.Label = item.year;
+                    chartEntry.Color = SKColor.Parse(color);
                     chartEntry.TextColor = SKColor.Parse(color);
 
                     chartDataList.Add(chartEntry);
                 }
-
+                  
                 control.chart.Chart = new BarChart { Entries = chartDataList };
             }
         }

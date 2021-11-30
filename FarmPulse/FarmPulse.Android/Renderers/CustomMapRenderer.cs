@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using FarmPulse.Control;
 using FarmPulse.Droid.Renderers;
+using FarmPulse.Model;
 using Java.Util.Functions;
 using System;
 using System.Collections.Generic;
@@ -38,10 +39,37 @@ namespace FarmPulse.Droid.Renderers
 
                 if (_customMap != null)
                 {
-                    
+                    //_customMap.EventDrawPolygonDel += EventDrawPolygonDel;
                 }
 
                 ((MapView)Control).GetMapAsync(this);
+            }
+        }
+
+        private void EventDrawPolygonDel()
+        {
+            if (_googleMap == null) return;
+
+            MoveMap();
+
+            if (_customMap.Polygon.Count != 0)
+            {
+                PolygonOptions option = new PolygonOptions();
+                option.InvokeFillColor(0x66FF0000);
+
+                foreach (LongLat var in _customMap.Polygon)
+                {
+                    option.Add(new LatLng(var.Latitude, var.Longitude));
+                }
+
+                #region
+                //MarkerOptions markerOpt = new MarkerOptions();
+                //markerOpt.SetPosition(new LatLng(fieldData.Position.Latitude, fieldData.Position.Longitude));
+                //markerOpt.SetTitle(fieldData.FieldName);
+                //_googleMap.AddMarker(markerOpt);
+                #endregion
+
+                _googleMap.AddPolygon(option);
             }
         }
 
@@ -49,6 +77,11 @@ namespace FarmPulse.Droid.Renderers
         {
             _googleMap = googleMap;
             InitGoogleMap();
+            if (_customMap != null)
+            {
+                _customMap.MapHasLoaded();
+                EventDrawPolygonDel();
+            }
         }
 
         private void InitGoogleMap()
@@ -86,33 +119,7 @@ namespace FarmPulse.Droid.Renderers
                     break;
             }
         }
-
-        //private void CustomMap_EventMoveMap(ModelPageField fieldData)
-        //{
-        //    if (_googleMap == null) return;
-
-        //    MoveMap(fieldData);
-
-        //    if (fieldData.Polygon.Count != 0)
-        //    {
-        //        PolygonOptions option = new PolygonOptions();
-        //        option.InvokeFillColor(0x66FF0000);
-
-        //        foreach (LongLat var in fieldData.Polygon)
-        //        {
-        //            option.Add(new LatLng(var.Latitude, var.Longitude));
-        //        }
-
-        //        #region
-        //        //MarkerOptions markerOpt = new MarkerOptions();
-        //        //markerOpt.SetPosition(new LatLng(fieldData.Position.Latitude, fieldData.Position.Longitude));
-        //        //markerOpt.SetTitle(fieldData.FieldName);
-        //        //_googleMap.AddMarker(markerOpt);
-        //        #endregion
-
-        //        _googleMap.AddPolygon(option);
-        //    }
-        //}
+ 
 
         //private void CustomMap_EventoOverlayImage(ModelPageField fieldData)
         //{
@@ -131,20 +138,20 @@ namespace FarmPulse.Droid.Renderers
         //    //MoveMap(fieldData);
         //}
 
-        //private void MoveMap(ModelPageField fieldData)
-        //{
-        //    LatLng location = new LatLng(fieldData.Position.Latitude, fieldData.Position.Longitude);
+        private void MoveMap()
+        {
+            LatLng location = new LatLng(_customMap.Ceneter.Latitude, _customMap.Ceneter.Longitude);
 
-        //    CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
-        //    builder.Target(location);
-        //    builder.Zoom((float)14.5);
-        //    //builder.Bearing(155);
-        //    //builder.Tilt(65);
+            CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
+            builder.Target(location);
+            builder.Zoom((float)14.5);
+            //builder.Bearing(155);
+            //builder.Tilt(65);
 
-        //    CameraPosition cameraPosition = builder.Build();
-        //    CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
-        //    _googleMap.MoveCamera(cameraUpdate);
-        //}
+            CameraPosition cameraPosition = builder.Build();
+            CameraUpdate cameraUpdate = CameraUpdateFactory.NewCameraPosition(cameraPosition);
+            _googleMap.MoveCamera(cameraUpdate);
+        }
 
         public Android.Views.View GetInfoContents(Marker marker)
         {

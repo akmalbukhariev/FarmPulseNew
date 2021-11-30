@@ -12,10 +12,10 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FieldListPage : IPage
+    public partial class PageFieldList : IPage
     {
         private PageFieldListViewModel model;
-        public FieldListPage()
+        public PageFieldList()
         {
             InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace FarmPulse.Pages
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new MapGraphTabPage(model.SelectedItem));
+                await Navigation.PushAsync(new PageMapGraphTab(model.SelectedItem));
             }
         }
     }

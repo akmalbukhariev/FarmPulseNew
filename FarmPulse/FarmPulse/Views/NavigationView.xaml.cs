@@ -160,7 +160,7 @@ namespace FarmPulse.Views
             //var transitionNavigationPage = Parent as TransitionNavigationPage;
             //transitionNavigationPage.TransitionType = TransitionType.SlideFromBottom;
 
-            await Navigation.PushAsync(new Pages.SettingPage());
+            await Navigation.PushAsync(new Pages.PageSetting());
         }
     }
 }

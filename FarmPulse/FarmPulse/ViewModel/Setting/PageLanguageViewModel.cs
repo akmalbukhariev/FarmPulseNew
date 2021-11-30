@@ -34,7 +34,7 @@ namespace FarmPulse.ModelView
                 AppResource.Culture = language;
             }
 
-            Application.Current.MainPage = new TransitionNavigationPage(new Pages.LoginPage());
+            Application.Current.MainPage = new TransitionNavigationPage(new Pages.PageLogin());
         }
 
         private string GetLatinLanguageName(string strLanguage)

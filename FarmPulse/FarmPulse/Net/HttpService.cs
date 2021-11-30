@@ -12,6 +12,10 @@ namespace FarmPulse.Net
 {
     public class HttpService
     {
+        public static String Weather_Clear = "Clear";
+        public static String Weather_Rain = "Rain";
+        public static String Weather_Clouds = "Clouds"; 
+
         #region Url
 
         #region Agro Monitoring
@@ -21,6 +25,8 @@ namespace FarmPulse.Net
         public static String URL_POLYGON_INFO = URL_AGRO_SERVER + "/polygons";
         public static String URL_POLYGON_LIST_INFO = URL_AGRO_SERVER + "/polygons?appid=" + APIKey;
         public static String URL_GET_SATELLITE_IMAGES = URL_AGRO_SERVER + "/image/search?start";
+        public static String URL_GET_CURRENT_WEATHER = URL_AGRO_SERVER + "/weather?";
+        public static String URL_GET_FORECAST_WEATHER = URL_AGRO_SERVER + "/weather/forecast?";
         #endregion
 
         #region User Info                
@@ -248,6 +254,36 @@ namespace FarmPulse.Net
             return ConvertResponseObj<ResponsePurchasedHistory>(response); ;
         }
 
+        #region Agro monitoring
+        public async static Task<ResponseCurrentWeather> GetCurrentWeather(String strLatLon)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_CURRENT_WEATHER + strLatLon);
+                response = JsonConvert.DeserializeObject<ResponseCurrentWeather>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseCurrentWeather>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseCurrentWeather>(); }
+
+            return ConvertResponseObj<ResponseCurrentWeather>(response); ;
+        }
+
+        public async static Task<List<ResponseForecastWeather>> GetForecastWeather(String strLatLon)
+        {
+            List<ResponseForecastWeather> respondAllData = new List<ResponseForecastWeather>();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_FORECAST_WEATHER + strLatLon);
+                respondAllData = JsonConvert.DeserializeObject<List<ResponseForecastWeather>>(receivedData, settings);
+                
+            }
+            catch (JsonReaderException) { return new List<ResponseForecastWeather>(); }
+            catch (HttpRequestException) { return new List<ResponseForecastWeather>(); }
+
+            return respondAllData;
+        }
+
         public async static Task<ResponsePolygon> GetPolygonInfo(string polygonId)
         {
             ResponseAgro response = new ResponseAgro();
@@ -297,6 +333,7 @@ namespace FarmPulse.Net
 
             return responseAlldata;
         }
+        #endregion
 
         /// <summary>
         /// Download the satellite image.
@@ -454,6 +491,12 @@ namespace FarmPulse.Net
         public string date { get; set; }
     }
 
+    public class RequestWeather : IRequest
+    {
+        public double lat { get; set; }
+        public double lon { get; set; }
+    }
+
     public class RequestGetSatelliteImagesInfo
     {
         /// <summary>
@@ -492,6 +535,7 @@ namespace FarmPulse.Net
 
     public class ResponseAgro
     {
+        public bool result { get; set; }
         public int cod { get; set; }
         public string title { get; set; }
         public String message { get; set; }
@@ -641,6 +685,40 @@ namespace FarmPulse.Net
         }
     }
 
+    public class ResponseCurrentWeather : Response, IResponse
+    {
+        public int dt { get; set; }
+        public List<Weather> weather { get; set; }
+        public Main main { get; set; }
+        public Wind wind { get; set; }
+        public Clouds clouds { get; set; }
+        public Rain rain { get; set; }
+    }
+
+    public class ResponseForecastWeather : ResponseAgro, IResponse
+    {
+        public int dt { get; set; }
+        public List<Weather> weather { get; set; }
+        public Main main { get; set; }
+        public Wind wind { get; set; }
+        public Clouds clouds { get; set; }
+        public Rain rain { get; set; }
+
+        public ResponseForecastWeather()
+        {
+            init();
+        }
+
+        public void init()
+        {
+            this.weather = new List<Weather>();
+            this.main = new Main();
+            this.wind = new Wind();
+            this.clouds = new Clouds();
+            this.rain = new Rain();
+        }
+    }
+     
     public class ResponseSatelliteImagesInfo : ResponseAgro, IResponse
     {
         public int dt { get; set; }
@@ -1040,6 +1118,58 @@ namespace FarmPulse.Net
                 ndwi = "";
         }
     }
+
+    public class Clouds
+    {
+        public int all { get; set; }
+    }
+
+    public class Wind
+    {
+        public double speed { get; set; }
+        public int deg { get; set; }
+        public double gust { get; set; }
+    }
+
+    public class Main
+    {
+        public double temp { get; set; }
+        public double feels_like { get; set; }
+        public double temp_min { get; set; }
+        public double temp_max { get; set; }
+        public int pressure { get; set; }
+        public int humidity { get; set; }
+        public int sea_level { get; set; }
+        public int grnd_level { get; set; } 
+        public double temp_kf { get; set; }
+    }
+
+    public class Weather
+    {
+        public int id { get; set; }
+        public string main { get; set; }
+        public string description { get; set; }
+        public string icon { get; set; }
+
+        public Weather(Weather other)
+        {
+            this.id = other.id;
+            this.main = other.main;
+            this.description = other.description;
+            this.icon = other.icon;
+        }
+
+        public Weather()
+        {
+            
+        }
+    }
+
+    public class Rain
+    {
+        public double _3h { get; set; }
+    }
+
     #endregion
 
     #endregion 

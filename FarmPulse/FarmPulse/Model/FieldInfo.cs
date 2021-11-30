@@ -29,6 +29,7 @@ namespace FarmPulse.Model
             List<double> centerList = new List<double>();
 
             if (center == null) return centerList;
+            center = center.Replace("[", "").Replace("]", "");
             string[] strList = center.Split(',');
 
             if (strList.Length == 2)
@@ -79,6 +80,27 @@ namespace FarmPulse.Model
             this.cropName = other.cropName;
             this.area = other.area;
             this.comment = other.comment; 
+        }
+
+        public List<LongLat> String2LongLatList()
+        {
+            List<LongLat> result = new List<LongLat>();
+
+            string[] ll = polygon.Split(':');
+            foreach (string var in ll)
+            {
+                string[] lll = var.Split('+');
+                if (lll.Length == 2)
+                {
+                    LongLat longLat = new LongLat();
+                    longLat.Longitude = double.Parse(lll[0], CultureInfo.InvariantCulture);
+                    longLat.Latitude = double.Parse(lll[1], CultureInfo.InvariantCulture);
+
+                    result.Add(longLat);
+                }
+            }
+
+            return result;
         }
     }
 }

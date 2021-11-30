@@ -8,20 +8,37 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using FarmPulse.ModelView;
+using FarmPulse.Model;
+using System.Globalization;
 
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapViewPage : IPage
+    public partial class PageMapView : IPage
     {
         private PageMapViewViewModel model;
-        public MapViewPage()
+        public PageMapView()
         {
             InitializeComponent();
+            mapView.EventMapHasLoaded += MapView_EventMapHasLoaded;
+        }
+         
+        public void InitModel()
+        {
             model = new PageMapViewViewModel(base.FieldInfo);
-            BindingContext = model; 
+            BindingContext = model;
         }
 
+        private void MapView_EventMapHasLoaded()
+        {
+            List<double> lCenter = FieldInfo.GetCenter();
+            if (lCenter.Count == 2)
+                mapView.Ceneter = new LongLat(lCenter[1], lCenter[0]);
+            mapView.Polygon = FieldInfo.String2LongLatList();
+
+            //mapView.DrawPolygon();
+        }
+         
         private void Time_Tapped(object sender, EventArgs e)
         {
             ChangeClickBackColor(stackTime);

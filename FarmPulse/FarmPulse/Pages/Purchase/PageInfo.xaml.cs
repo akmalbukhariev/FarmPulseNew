@@ -11,10 +11,10 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages.Purchase
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InfoPage : IPage
+    public partial class PageInfo : IPage
     {
         private PageInfoViewModel model;
-        public InfoPage(string title)
+        public PageInfo(string title)
         {
             InitializeComponent(); 
             model = new PageInfoViewModel(Navigation, title);

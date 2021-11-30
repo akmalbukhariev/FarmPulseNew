@@ -2,7 +2,8 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FarmPulse.Views.WheatherItemView1">
-    <Grid ColumnDefinitions="*,Auto">
+    <Grid ColumnDefinitions="*,Auto"
+          Margin="10,0,0,0">
         <Grid.Resources>
             <ResourceDictionary>
                 <Style x:Key="lbStyle" TargetType="Label">

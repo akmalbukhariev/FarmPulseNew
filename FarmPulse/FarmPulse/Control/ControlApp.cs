@@ -14,7 +14,8 @@ namespace FarmPulse.Control
         public bool AppOnResume { get; set; }
         public bool AppOnSleep { get; set; }
         public string UserId { get; set; }
-  
+
+        public string AgromonAPI { get; set; }
         public UserInfo UserInfo { get; set; }
 
         private static ControlApp _instance = null;
@@ -105,6 +106,20 @@ namespace FarmPulse.Control
 
                 return false; // True = Repeat again, False = Stop the timer
             });
-        } 
+        }
+
+        public double DateTimeToUnixTimestamp(DateTime dateTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            long unixTimeStampInTicks = (dateTime.ToUniversalTime() - unixStart).Ticks;
+            return (double)unixTimeStampInTicks / TimeSpan.TicksPerSecond;
+        }
+
+        public DateTime UnixTimeStampToDateTime(double unixTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            long unixTimeStampInTicks = (long)(unixTime * TimeSpan.TicksPerSecond);
+            return new DateTime(unixStart.Ticks + unixTimeStampInTicks, System.DateTimeKind.Utc);
+        }
     }
 }

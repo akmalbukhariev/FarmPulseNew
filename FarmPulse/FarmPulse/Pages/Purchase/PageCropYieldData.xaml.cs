@@ -11,10 +11,10 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CropYieldDataPage : IPage
+    public partial class PageCropYieldData : IPage
     {
         private PageCropYieldDataViewModel model;
-        public CropYieldDataPage()
+        public PageCropYieldData()
         {
             InitializeComponent();
             InitPage();

@@ -7,10 +7,10 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : IPage
+    public partial class PageLogin : IPage
     {
         private PageLoginViewModel model;
-        public LoginPage()
+        public PageLogin()
         {
             InitializeComponent();
             

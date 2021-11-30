@@ -5,7 +5,7 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-            x:Class="FarmPulse.Pages.WeatherPage"
+            x:Class="FarmPulse.Pages.PageWeather"
             BackgroundColor="Black">
     <Grid RowDefinitions="Auto,*">
         <view:NavigationView Text="{x:Static resource:AppResource.Weather}"
@@ -39,27 +39,51 @@
                                          TextColorSelected="White"
                                          FontSize="12">
                             <ScrollView>
-                                <Grid RowDefinitions="*,*,*,*,*">
-                                    <view:WheatherItemView1 ImageIconSource="rain_white"
-                                                                    Text1="{x:Static resource:AppResource.Rain3h}"
-                                                                    Text2="{Binding Item1_Text2}"/>
-                                    <view:WheatherItemView1 ImageIconSource="rain_white"
-                                                                    Text1="{x:Static resource:AppResource.RainToday}"
-                                                                    Text2="{Binding Item2_Text2}"
-                                                                    Grid.Row="1"/>
-                                    <view:WheatherItemView1 ImageIconSource="snow_white"
-                                                                    Text1="{x:Static resource:AppResource.SnowYestarday}"
-                                                                    Text2="{Binding Item3_Text2}"
-                                                                    Grid.Row="2"/>
-                                    <view:WheatherItemView1 ImageIconSource="air_white"
-                                                                    Text1="{x:Static resource:AppResource.WindSpeed}"
-                                                                    Text2="{Binding Item4_Text2}"
-                                                                    Grid.Row="3"/>
+                                <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*">
                                     <view:WheatherItemView1 ImageIconSource="thermostat_white"
-                                                                    Text1="{x:Static resource:AppResource.AirTemperature}"
-                                                                    Text2="{Binding Item5_Text2}"
-                                                                    Grid.Row="4"/>
-                                </Grid>
+                                                            Text1="{x:Static resource:AppResource.AirTemperature}"
+                                                            Text2="{Binding Temp}"/>
+                                    <view:WheatherItemView1 ImageIconSource="thermostat_white"
+                                                            Text1="Feels like"
+                                                            Text2="{Binding FeelsLike}"
+                                                            Grid.Row="1"/>
+                                    <view:WheatherItemView1 ImageIconSource="thermostat_white"
+                                                            Text1="Min temperature"
+                                                            Text2="{Binding MinTemp}"
+                                                            Grid.Row="2"/>
+                                    <view:WheatherItemView1 ImageIconSource="thermostat_white"
+                                                            Text1="Max temperature"
+                                                            Text2="{Binding MaxTemp}"
+                                                            Grid.Row="3"/>
+                                    <view:WheatherItemView1 ImageIconSource="atmospheric_pressure"
+                                                            Text1="Pressure"
+                                                            Text2="{Binding Pressure}"
+                                                            Grid.Row="4"/>
+                                    <view:WheatherItemView1 ImageIconSource="humidity"
+                                                            Text1="humidity"
+                                                            Text2="{Binding Humidity}"
+                                                            Grid.Row="5"/>
+                                    <view:WheatherItemView1 ImageIconSource="sea_level"
+                                                            Text1="Sea level"
+                                                            Text2="{Binding SeaLevel}"
+                                                            Grid.Row="6"/>
+                                    <view:WheatherItemView1 ImageIconSource="ground"
+                                                            Text1="Ground level"
+                                                            Text2="{Binding GroundLevel}"
+                                                            Grid.Row="7"/>
+                                    <view:WheatherItemView1 ImageIconSource="air_white"
+                                                            Text1="Wind speed"
+                                                            Text2="{Binding WindSpeed}"
+                                                            Grid.Row="8"/>
+                                    <view:WheatherItemView1 ImageIconSource="cloudy"
+                                                            Text1="Cloudy"
+                                                            Text2="{Binding Cloudy}"
+                                                            Grid.Row="9"/>
+                                    <view:WheatherItemView1 ImageIconSource="rain_white"
+                                                            Text1="Rain 3 h"
+                                                            Text2="{Binding Rain}"
+                                                            Grid.Row="10"/>
+                        </Grid>
                              </ScrollView>
                         </xct:TabViewItem> 
                         <xct:TabViewItem Text="Forecast"
@@ -67,17 +91,17 @@
                                      TextColorSelected="White"
                                      FontSize="12">
                              <ScrollView>
-                                <Grid RowDefinitions="*,*,*,*,*">
+                                <Grid RowDefinitions="*,*,*,*,*,*">
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Mon}"
                                                             TextDate="{Binding Mon_Text1}"
-                                                            ImageIconSource="cloudy_white"
+                                                            ImageIconSource="{Binding Mon_Icon}"
                                                             TextCel1="{Binding Mon_Text2}"
                                                             TextCel2="{Binding Mon_Text3}"
                                                             TextV1="{Binding Mon_Text4}"
                                                             TextV2="{Binding Mon_Text5}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Tue}"
                                                             TextDate="{Binding Tue_Text1}"
-                                                            ImageIconSource="sunny_white"
+                                                            ImageIconSource="{Binding Tue_Icon}"
                                                             TextCel1="{Binding Tue_Text2}"
                                                             TextCel2="{Binding Tue_Text3}"
                                                             TextV1="{Binding Tue_Text4}"
@@ -85,7 +109,7 @@
                                                             Grid.Row="1"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Wed}"
                                                             TextDate="{Binding Wed_Text1}"
-                                                            ImageIconSource="snow_white"
+                                                            ImageIconSource="{Binding Wed_Icon}"
                                                             TextCel1="{Binding Wed_Text2}"
                                                             TextCel2="{Binding Wed_Text3}"
                                                             TextV1="{Binding Wed_Text4}"
@@ -93,21 +117,29 @@
                                                             Grid.Row="2"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Thu}"
                                                             TextDate="{Binding Thu_Text1}"
-                                                            ImageIconSource="rain_white"
+                                                            ImageIconSource="{Binding Thu_Icon}"
                                                             TextCel1="{Binding Thu_Text2}"
                                                             TextCel2="{Binding Thu_Text3}"
                                                             TextV1="{Binding Thu_Text4}"
                                                             TextV2="{Binding Thu_Text5}"
                                                             Grid.Row="3"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Fri}"
-                                                        TextDate="{Binding Fri_Text1}"
-                                                        ImageIconSource="sunny_white"
-                                                        TextCel1="{Binding Fri_Text2}"
-                                                        TextCel2="{Binding Fri_Text3}"
-                                                        TextV1="{Binding Fri_Text4}"
-                                                        TextV2="{Binding Fri_Text5}"
-                                                        Grid.Row="4"/>
-                                </Grid>
+                                                            TextDate="{Binding Fri_Text1}"
+                                                            ImageIconSource="{Binding Fri_Icon}"
+                                                            TextCel1="{Binding Fri_Text2}"
+                                                            TextCel2="{Binding Fri_Text3}"
+                                                            TextV1="{Binding Fri_Text4}"
+                                                            TextV2="{Binding Fri_Text5}"
+                                                            Grid.Row="4"/>
+                                    <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Sat}"
+                                                            TextDate="{Binding Sat_Text1}"
+                                                            ImageIconSource="{Binding Sat_Icon}"
+                                                            TextCel1="{Binding Sat_Text2}"
+                                                            TextCel2="{Binding Sat_Text3}"
+                                                            TextV1="{Binding Sat_Text4}"
+                                                            TextV2="{Binding Sat_Text5}"
+                                                            Grid.Row="5"/>
+                        </Grid>
                              </ScrollView>
                 </xct:TabViewItem>
                 </xct:TabView>

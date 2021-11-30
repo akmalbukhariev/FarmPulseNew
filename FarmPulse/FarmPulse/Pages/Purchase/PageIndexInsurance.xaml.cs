@@ -12,10 +12,10 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IndexInsurancePage : IPage
+    public partial class PageIndexInsurance : IPage
     {
         private PageIndexInsuranceViewModel model;
-        public IndexInsurancePage()
+        public PageIndexInsurance()
         {
             InitializeComponent();
             model = new PageIndexInsuranceViewModel(Navigation);

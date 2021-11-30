@@ -5,7 +5,8 @@
              x:Class="FarmPulse.Views.GraphView">
 
     <Grid RowDefinitions="Auto,*"
-          Margin="10,0,10,0">
+          Margin="10,0,10,0"
+          HeightRequest="300">
         <Grid.Resources>
             <ResourceDictionary>
                 <Style x:Key="lbStyle" TargetType="Label">

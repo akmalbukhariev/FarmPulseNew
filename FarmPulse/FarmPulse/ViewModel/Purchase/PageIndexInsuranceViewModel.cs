@@ -86,7 +86,7 @@ namespace FarmPulse.ModelView
         private async void CropYield()
         {
             SetTransitionType(TransitionType.SlideFromRight);
-            await Navigation.PushAsync(new CropYieldDataPage());
+            await Navigation.PushAsync(new PageCropYieldData());
         }
     }
 }

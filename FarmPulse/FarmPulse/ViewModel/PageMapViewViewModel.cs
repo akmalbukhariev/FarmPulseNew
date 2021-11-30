@@ -25,60 +25,61 @@ namespace FarmPulse.ModelView
         {
             PolygonInfo = new MapPolygonInfo();
             PolygonInfo.Polygon = new List<LongLat>();
-
-
+             
             this.FieldInfo = fieldInfo;
             ShowTimePeriodBox = false;
             Data = new ObservableCollection<SatelliteData>();
 
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.03.12",
-                ImagePath = "https://samples.agromonitoring.com/image/1.0/02059768a00/5ac22f004b1ae4000b5b97cf?appid=b1b15e88fa797225412429c1c50c122a1"
-            });
+            #region FOr the test
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.03.12",
+            //    ImagePath = "https://samples.agromonitoring.com/image/1.0/02059768a00/5ac22f004b1ae4000b5b97cf?appid=b1b15e88fa797225412429c1c50c122a1"
+            //});
 
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.04.10",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/16061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.04.10",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/16061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
 
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.03.09",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/16061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.03.09",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/16061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
 
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
-            Data.Add(new SatelliteData()
-            {
-                Date = "2021.02.08",
-                ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
-            });
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            //Data.Add(new SatelliteData()
+            //{
+            //    Date = "2021.02.08",
+            //    ImagePath = "http://api.agromonitoring.com/image/1.0/12061219380/6067f8f389177086818f03bc?appid=b5efce714742cc3aba8062b29f8c86f1"
+            //});
+            #endregion
 
             StartDate = DateTime.Now.AddDays(-20);
             EndDate = DateTime.Now;
@@ -104,8 +105,8 @@ namespace FarmPulse.ModelView
             ShowTimePeriodBox = false;
             RequestGetSatelliteImagesInfo request = new RequestGetSatelliteImagesInfo()
             {
-                start = DateTimeToUnixTimestamp(StartDate).ToString(),
-                end = DateTimeToUnixTimestamp(EndDate).ToString(),
+                start = ControlApp.DateTimeToUnixTimestamp(StartDate).ToString(),
+                end = ControlApp.DateTimeToUnixTimestamp(EndDate).ToString(),
                 polyid = this.FieldInfo.fieldId
             };
 
@@ -169,7 +170,7 @@ namespace FarmPulse.ModelView
             {
                 if (responseImage[i].image == null) continue;
 
-                string imDate = UnixTimeStampToDateTime((double)(responseImage[i].dt)).ToString("yyyy-MM-dd");
+                string imDate = ControlApp.UnixTimeStampToDateTime((double)(responseImage[i].dt)).ToString("yyyy-MM-dd");
 
                 if (!SatelliteImages.ContainsKey(imDate))
                 {
@@ -188,20 +189,6 @@ namespace FarmPulse.ModelView
                 case "Normal": break;
                 case "Terrain": break;
             }
-        }
-
-        private double DateTimeToUnixTimestamp(DateTime dateTime)
-        {
-            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            long unixTimeStampInTicks = (dateTime.ToUniversalTime() - unixStart).Ticks;
-            return (double)unixTimeStampInTicks / TimeSpan.TicksPerSecond;
-        }
-
-        public static DateTime UnixTimeStampToDateTime(double unixTime)
-        {
-            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            long unixTimeStampInTicks = (long)(unixTime * TimeSpan.TicksPerSecond);
-            return new DateTime(unixStart.Ticks + unixTimeStampInTicks, System.DateTimeKind.Utc);
-        }
+        } 
     }
 }

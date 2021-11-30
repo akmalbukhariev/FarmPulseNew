@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FarmPulse.Pages.Purchase.InfoPage"
              xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages">
+             xmlns:page="clr-namespace:FarmPulse.Pages"
+             x:Class="FarmPulse.Pages.Purchase.PageInfo">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">

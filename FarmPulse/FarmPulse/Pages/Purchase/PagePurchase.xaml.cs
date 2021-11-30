@@ -12,10 +12,10 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PurchasePage : IPage
+    public partial class PagePurchase : IPage
     {
         private PagePurchaseViewModel model;
-        public PurchasePage()
+        public PagePurchase()
         {
             InitializeComponent();
             model = new PagePurchaseViewModel(Navigation);

@@ -4,7 +4,7 @@
             xmlns:view="clr-namespace:FarmPulse.Views"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.ConfirmationPage"
+            x:Class="FarmPulse.Pages.PageConfirmation"
             BackgroundColor="{StaticResource AppColor}">
     <Grid RowDefinitions="Auto,*">
         <view:NavigationView Text="{x:Static resource:AppResource.Confirmation}"

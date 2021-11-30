@@ -106,7 +106,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
             if (response.result)
             {
                 SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new ConfirmationPage());
+                await Navigation.PushAsync(new PageConfirmation());
             }
             else
             {

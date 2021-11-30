@@ -365,6 +365,10 @@
     <value>Rain Today</value>
     <comment>Page Weather</comment>
   </data>
+  <data name="Sat" xml:space="preserve">
+    <value>Sat</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Satellite" xml:space="preserve">
     <value>Satellite</value>
     <comment>Page Map View</comment>

@@ -11,18 +11,18 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapGraphTabPage : TabbedPage
+    public partial class PageMapGraphTab : TabbedPage
     {
-        public MapGraphTabPage(FieldInfo fieldInfo)
+        public PageMapGraphTab(FieldInfo fieldInfo)
         {
             InitializeComponent();
 
             mapPage.FieldInfo = fieldInfo;
             graphPage.FieldInfo = fieldInfo;
 
-            //NavigationPage.SetHasBackButton(this, false);
-            //NavigationPage.SetHasNavigationBar(this, false);
-
+            mapPage.InitModel();
+            graphPage.InitModel();
+              
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#598E6F");
         }
     }

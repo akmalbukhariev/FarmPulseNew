@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LanguagePage : IPage
+    public partial class PageLanguage : IPage
     {
         private PageLanguageViewModel model;
         
-        public LanguagePage(bool showNavigationView = false)
+        public PageLanguage(bool showNavigationView = false)
         {
             InitializeComponent();
 

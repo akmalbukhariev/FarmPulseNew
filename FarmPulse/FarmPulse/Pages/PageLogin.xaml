@@ -4,7 +4,7 @@
             xmlns:view="clr-namespace:FarmPulse.Views"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.LoginPage"
+            x:Class="FarmPulse.Pages.PageLogin"
             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*,*,*"

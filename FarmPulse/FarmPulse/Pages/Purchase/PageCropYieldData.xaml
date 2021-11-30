@@ -5,7 +5,7 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             xmlns:control="clr-namespace:FarmPulse.Control"
-            x:Class="FarmPulse.Pages.CropYieldDataPage"
+            x:Class="FarmPulse.Pages.PageCropYieldData"
             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">

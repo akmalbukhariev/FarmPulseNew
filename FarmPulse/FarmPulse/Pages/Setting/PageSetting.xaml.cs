@@ -11,10 +11,10 @@ using Xamarin.Forms.Xaml;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingPage : IPage
+    public partial class PageSetting : IPage
     {
         private PageSettingViewModel model;
-        public SettingPage()
+        public PageSetting()
         {
             InitializeComponent();
             model = new PageSettingViewModel(Navigation);
@@ -32,7 +32,7 @@ namespace FarmPulse.Pages
             }
             else if (sender == cellLanguage)
             {
-                await Navigation.PushAsync(new LanguagePage(true));
+                await Navigation.PushAsync(new PageLanguage(true));
             }
             else if (sender == cellAbout)
             {

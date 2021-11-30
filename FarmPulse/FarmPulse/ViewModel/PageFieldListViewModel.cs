@@ -37,13 +37,8 @@ namespace FarmPulse.ModelView
         public async void RefreshFieldList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
-            RequestField request = new RequestField()
-            {
-                username = ControlApp.UserInfo.insuranceNumber,
-                langCode = AppSettings.GetLanguageCode
-            };
-
-            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
+             
+            ResponseField response = await HttpService.GetFieldList("998977");
             if (response.result)
             {   
                 foreach (FieldInfo item in response.fields)

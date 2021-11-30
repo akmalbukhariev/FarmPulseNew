@@ -114,7 +114,7 @@ namespace FarmPulse.ModelView
             {
 
                 SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new ConfirmationPage());
+                await Navigation.PushAsync(new PageConfirmation());
             }
             else
             {

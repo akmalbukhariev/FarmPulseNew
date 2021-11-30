@@ -37,7 +37,7 @@ namespace FarmPulse.ModelView
             if (response.result)
             {
                 ControlApp.UserInfo = response.userInfo;
-                Application.Current.MainPage = new TransitionNavigationPage(new MainPage());
+                Application.Current.MainPage = new TransitionNavigationPage(new PageMain());
             }
             else
             {

@@ -11,14 +11,21 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WeatherPage : IPage
+    public partial class PageWeather : IPage
     {
         private PageWeatherViewModel model;
-        public WeatherPage()
+        public PageWeather()
         {
             InitializeComponent();
             model = new PageWeatherViewModel();
             BindingContext = model; 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.Parent = Parent;
+            model.RefreshModel();
         }
     }
 }

@@ -12,14 +12,18 @@ using FarmPulse.ModelView;
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GraphViewPage : IPage
+    public partial class PageGraphView : IPage
     {
         private PageGraphViewViewModel model;
-        public GraphViewPage()
+        public PageGraphView()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+        }
+
+        public void InitModel()
+        {
             model = new PageGraphViewViewModel();
-            BindingContext = model; 
+            BindingContext = model;
         }
 
         protected override void OnAppearing()
@@ -33,7 +37,7 @@ namespace FarmPulse.Pages
         {
             if (model.SelectedMetrics != null)
             {
-                model.RefreshGraphViewData(FieldInfo.fieldId);
+                model.RefreshGraphViewData("24");// FieldInfo.fieldId);
             }
         }
     }
