@@ -91,7 +91,7 @@
                                      TextColorSelected="White"
                                      FontSize="12">
                              <ScrollView>
-                                <Grid RowDefinitions="*,*,*,*,*,*">
+                                <Grid RowDefinitions="*,*,*,*,*,*,*">
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Mon}"
                                                             TextDate="{Binding Mon_Text1}"
                                                             ImageIconSource="{Binding Mon_Icon}"
@@ -139,6 +139,14 @@
                                                             TextV1="{Binding Sat_Text4}"
                                                             TextV2="{Binding Sat_Text5}"
                                                             Grid.Row="5"/>
+                                    <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Sun}"
+                                                            TextDate="{Binding Sun_Text1}"
+                                                            ImageIconSource="{Binding Sun_Icon}"
+                                                            TextCel1="{Binding Sun_Text2}"
+                                                            TextCel2="{Binding Sun_Text3}"
+                                                            TextV1="{Binding Sun_Text4}"
+                                                            TextV2="{Binding Sun_Text5}"
+                                                            Grid.Row="6"/>
                         </Grid>
                              </ScrollView>
                 </xct:TabViewItem>

@@ -437,6 +437,10 @@
     <value>Success</value>
     <comment>ControlApp</comment>
   </data>
+  <data name="Sun" xml:space="preserve">
+    <value>Sun</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Terrian" xml:space="preserve">
     <value>Terrian</value>
     <comment>Page Map View</comment>

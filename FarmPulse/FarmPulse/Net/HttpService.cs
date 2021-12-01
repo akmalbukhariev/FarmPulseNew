@@ -1122,6 +1122,10 @@ namespace FarmPulse.Net
     public class Clouds
     {
         public int all { get; set; }
+        public Clouds()
+        {
+            all = 0;
+        }
     }
 
     public class Wind
@@ -1129,6 +1133,18 @@ namespace FarmPulse.Net
         public double speed { get; set; }
         public int deg { get; set; }
         public double gust { get; set; }
+
+        public Wind()
+        {
+            init();
+        }
+
+        public void init()
+        {
+            speed = 0;
+            deg = 0;
+            gust = 0;
+        }
     }
 
     public class Main
@@ -1142,6 +1158,24 @@ namespace FarmPulse.Net
         public int sea_level { get; set; }
         public int grnd_level { get; set; } 
         public double temp_kf { get; set; }
+
+        public Main()
+        {
+            init();
+        }
+
+        public void init()
+        {
+            temp = 0; 
+            feels_like = 0;
+            temp_min = 0; 
+            temp_max = 0;
+            pressure = 0;
+            humidity = 0;
+            sea_level = 0;
+            grnd_level = 0;
+            temp_kf = 0;
+        }
     }
 
     public class Weather
@@ -1168,6 +1202,11 @@ namespace FarmPulse.Net
     public class Rain
     {
         public double _3h { get; set; }
+
+        public Rain()
+        {
+            _3h = 0.0;
+        }
     }
 
     #endregion

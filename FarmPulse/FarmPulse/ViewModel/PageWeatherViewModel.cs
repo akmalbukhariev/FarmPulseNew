@@ -30,28 +30,25 @@ namespace FarmPulse.ModelView
         #endregion
 
         #region Forecast
-            #region Monday
-            public string Mon_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Monday 
             public string Mon_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Mon_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Mon_Text3 { get => GetValue<string>(); set => SetValue(value); }
             public string Mon_Text4 { get => GetValue<string>(); set => SetValue(value); }
             public string Mon_Text5 { get => GetValue<string>(); set => SetValue(value); }
             public string Mon_Icon { get => GetValue<string>(); set => SetValue(value); }
-        #endregion
+            #endregion
 
-            #region Tuesday
-            public string Tue_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Tuesday 
             public string Tue_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Tue_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Tue_Text3 { get => GetValue<string>(); set => SetValue(value); }
             public string Tue_Text4 { get => GetValue<string>(); set => SetValue(value); }
             public string Tue_Text5 { get => GetValue<string>(); set => SetValue(value); }
             public string Tue_Icon { get => GetValue<string>(); set => SetValue(value); }
-        #endregion
+            #endregion
 
-            #region Wednesday
-            public string Wed_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Wednesday 
             public string Wed_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Wed_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Wed_Text3 { get => GetValue<string>(); set => SetValue(value); }
@@ -60,8 +57,7 @@ namespace FarmPulse.ModelView
             public string Wed_Icon { get => GetValue<string>(); set => SetValue(value); }
             #endregion
 
-            #region Thursday
-            public string Thu_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Thursday 
             public string Thu_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Thu_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Thu_Text3 { get => GetValue<string>(); set => SetValue(value); }
@@ -70,8 +66,7 @@ namespace FarmPulse.ModelView
             public string Thu_Icon { get => GetValue<string>(); set => SetValue(value); }
             #endregion
 
-            #region Friday
-            public string Fri_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Friday 
             public string Fri_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Fri_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Fri_Text3 { get => GetValue<string>(); set => SetValue(value); }
@@ -80,14 +75,22 @@ namespace FarmPulse.ModelView
             public string Fri_Icon { get => GetValue<string>(); set => SetValue(value); }
             #endregion
 
-            #region Saturday
-            public string Sat_Text { get => GetValue<string>(); set => SetValue(value); }
+            #region Saturday 
             public string Sat_Text1 { get => GetValue<string>(); set => SetValue(value); }
             public string Sat_Text2 { get => GetValue<string>(); set => SetValue(value); }
             public string Sat_Text3 { get => GetValue<string>(); set => SetValue(value); }
             public string Sat_Text4 { get => GetValue<string>(); set => SetValue(value); }
             public string Sat_Text5 { get => GetValue<string>(); set => SetValue(value); }
             public string Sat_Icon { get => GetValue<string>(); set => SetValue(value); }
+        #endregion
+
+            #region Sunday 
+            public string Sun_Text1 { get => GetValue<string>(); set => SetValue(value); }
+            public string Sun_Text2 { get => GetValue<string>(); set => SetValue(value); }
+            public string Sun_Text3 { get => GetValue<string>(); set => SetValue(value); }
+            public string Sun_Text4 { get => GetValue<string>(); set => SetValue(value); }
+            public string Sun_Text5 { get => GetValue<string>(); set => SetValue(value); }
+            public string Sun_Icon { get => GetValue<string>(); set => SetValue(value); }
             #endregion
         #endregion
 
@@ -166,10 +169,10 @@ namespace FarmPulse.ModelView
                         #region Current Weather
                         if (response1.main != null)
                         {
-                            Temp = response1.main.temp.ToString();
+                            Temp = Math.Round(response1.main.temp - 273.15, 2).ToString();
                             FeelsLike = response1.main.feels_like.ToString();
-                            MinTemp = response1.main.temp_min.ToString();
-                            MaxTemp = response1.main.temp_max.ToString();
+                            MinTemp = Math.Round(response1.main.temp_min - 273.15, 2).ToString();
+                            MaxTemp = Math.Round(response1.main.temp_max - 273.15, 2).ToString();
                             Pressure = response1.main.pressure.ToString();
                             Humidity = response1.main.humidity.ToString() + "%";
                             SeaLevel = response1.main.sea_level.ToString() + " hPa";
@@ -212,15 +215,15 @@ namespace FarmPulse.ModelView
                             {
                                 if (wTuesday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Tue_Icon = "sunny_white";
                                 }
                                 else if (wTuesday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Tue_Icon = "rain_white";
                                 }
                                 else if (wTuesday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Tue_Icon = "cloudy";
                                 }
                             }
 
@@ -228,15 +231,15 @@ namespace FarmPulse.ModelView
                             {
                                 if (wWednesday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Wed_Icon = "sunny_white";
                                 }
                                 else if (wWednesday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Wed_Icon = "rain_white";
                                 }
                                 else if (wWednesday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Wed_Icon = "cloudy";
                                 }
                             }
 
@@ -244,15 +247,15 @@ namespace FarmPulse.ModelView
                             {
                                 if (wThursday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Thu_Icon = "sunny_white";
                                 }
                                 else if (wThursday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Thu_Icon = "rain_white";
                                 }
                                 else if (wThursday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Thu_Icon = "cloudy";
                                 }
                             }
 
@@ -260,15 +263,15 @@ namespace FarmPulse.ModelView
                             {
                                 if (wFriday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Fri_Icon = "sunny_white";
                                 }
                                 else if (wFriday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Fri_Icon = "rain_white";
                                 }
                                 else if (wFriday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Fri_Icon = "cloudy";
                                 }
                             }
 
@@ -276,15 +279,15 @@ namespace FarmPulse.ModelView
                             {
                                 if (wSaturday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Sat_Icon = "sunny_white";
                                 }
                                 else if (wSaturday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Sat_Icon = "rain_white";
                                 }
                                 else if (wSaturday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Sat_Icon = "cloudy";
                                 }
                             }
 
@@ -292,17 +295,74 @@ namespace FarmPulse.ModelView
                             {
                                 if (wSunday.weather[0].main.Equals(HttpService.Weather_Clear))
                                 {
-                                    Mon_Icon = "sunny_white";
+                                    Sun_Icon = "sunny_white";
                                 }
                                 else if (wSunday.weather[0].main.Equals(HttpService.Weather_Rain))
                                 {
-                                    Mon_Icon = "rain_white";
+                                    Sun_Icon = "rain_white";
                                 }
                                 else if (wSunday.weather[0].main.Equals(HttpService.Weather_Clouds))
                                 {
-                                    Mon_Icon = "cloudy";
+                                    Sun_Icon = "cloudy";
                                 }
                             }
+
+                            #region Monday
+                            Mon_Text1 = wMonday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wMonday.dt).ToString("MM/dd/yyyy");
+                            Mon_Text2 = wMonday.main.temp_max.ToString();
+                            Mon_Text3 = wMonday.main.temp_min.ToString();
+                            Mon_Text4 = wMonday.wind.speed.ToString();
+                            Mon_Text5 = wMonday.rain._3h.ToString();
+                            #endregion
+
+                            #region Tuesday
+                            Tue_Text1 = wTuesday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wTuesday.dt).ToString("MM/dd/yyyy");
+                            Tue_Text2 = wTuesday.main.temp_max.ToString();
+                            Tue_Text3 = wTuesday.main.temp_min.ToString();
+                            Tue_Text4 = wTuesday.wind.speed.ToString();
+                            Tue_Text5 = wTuesday.rain._3h.ToString();
+                            #endregion
+
+                            #region Wednesday
+                            Wed_Text1 = wWednesday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wWednesday.dt).ToString("MM/dd/yyyy");
+                            Wed_Text2 = wWednesday.main.temp_max.ToString();
+                            Wed_Text3 = wWednesday.main.temp_min.ToString();
+                            Wed_Text4 = wWednesday.wind.speed.ToString();
+                            Wed_Text5 = wWednesday.rain._3h.ToString();
+                            #endregion
+
+                            #region Thursday
+                            Thu_Text1 = wThursday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wThursday.dt).ToString("MM/dd/yyyy");
+                            Thu_Text2 = wThursday.main.temp_max.ToString();
+                            Thu_Text3 = wThursday.main.temp_min.ToString();
+                            Thu_Text4 = wThursday.wind.speed.ToString();
+                            Thu_Text5 = wThursday.rain._3h.ToString();
+                            #endregion
+
+                            #region Friday
+                            Fri_Text1 = wFriday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wFriday.dt).ToString("MM/dd/yyyy");
+                            Fri_Text2 = wFriday.main.temp_max.ToString();
+                            Fri_Text3 = wFriday.main.temp_min.ToString();
+                            Fri_Text4 = wFriday.wind.speed.ToString();
+                            Fri_Text5 = wFriday.rain._3h.ToString();
+                            #endregion
+
+                            #region Saturday
+                            Sat_Text1 = wSaturday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wSaturday.dt).ToString("MM/dd/yyyy");
+                            Sat_Text2 = wSaturday.main.temp_max.ToString();
+                            Sat_Text3 = wSaturday.main.temp_min.ToString();
+                            Sat_Text4 = wSaturday.wind.speed.ToString();
+                            Sat_Text5 = wSaturday.rain._3h.ToString();
+                            #endregion
+
+                            #region Sunday
+                            Sun_Text1 = wSunday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wSunday.dt).ToString("MM/dd/yyyy");
+                            Sun_Text2 = wSunday.main.temp_max.ToString();
+                            Sun_Text3 = wSunday.main.temp_min.ToString();
+                            Sun_Text4 = wSunday.wind.speed.ToString();
+                            Sun_Text5 = wSunday.rain._3h.ToString();
+                            #endregion
+
                         }
                         #endregion
                     }
@@ -318,83 +378,90 @@ namespace FarmPulse.ModelView
 
         ResponseForecastWeather GetDayOfWeekWeather(List<ResponseForecastWeather> list, DayOfWeek dayOfWeek)
         {
-            ResponseForecastWeather result = new ResponseForecastWeather();
-
             List<ResponseForecastWeather> tList = new List<ResponseForecastWeather>();
 
-            if (dayOfWeek == DayOfWeek.Monday)
-            { 
-                foreach (ResponseForecastWeather info in list)
-                { 
-                    if (CheckDayOfWeek(info, DayOfWeek.Monday))
-                    {
-                        tList.Add(info);
-                    }
-                }
-            }
-            else if (dayOfWeek == DayOfWeek.Tuesday)
+            foreach (ResponseForecastWeather info in list)
             {
-                foreach (ResponseForecastWeather info in list)
-                { 
-                    if (CheckDayOfWeek(info, DayOfWeek.Tuesday))
-                    {
-                        tList.Add(info);
-                    }
-                } 
-            }
-            else if (dayOfWeek == DayOfWeek.Wednesday)
-            {
-                foreach (ResponseForecastWeather info in list)
+                if (CheckDayOfWeek(info, dayOfWeek))
                 {
-                    if (CheckDayOfWeek(info, DayOfWeek.Wednesday))
-                    {
-                        tList.Add(info);
-                    }
-                }
-            }
-            else if (dayOfWeek == DayOfWeek.Thursday)
-            {
-                foreach (ResponseForecastWeather info in list)
-                {
-                    if (CheckDayOfWeek(info, DayOfWeek.Thursday))
-                    {
-                        tList.Add(info);
-                    }
-                }
-            }
-            else if (dayOfWeek == DayOfWeek.Friday)
-            {
-                foreach (ResponseForecastWeather info in list)
-                {
-                    if (CheckDayOfWeek(info, DayOfWeek.Friday))
-                    {
-                        tList.Add(info);
-                    }
-                }
-            }
-            else if (dayOfWeek == DayOfWeek.Saturday)
-            {
-                foreach (ResponseForecastWeather info in list)
-                {
-                    if (CheckDayOfWeek(info, DayOfWeek.Saturday))
-                    {
-                        tList.Add(info);
-                    }
-                }
-            }
-            else if (dayOfWeek == DayOfWeek.Sunday)
-            {
-                foreach (ResponseForecastWeather info in list)
-                {
-                    if (CheckDayOfWeek(info, DayOfWeek.Sunday))
-                    {
-                        tList.Add(info);
-                    }
+                    tList.Add(info);
                 }
             }
 
-            result.main.temp_min = double.MaxValue;
-            result.main.temp_max = double.MinValue;
+            #region
+            //if (dayOfWeek == DayOfWeek.Monday)
+            //{
+            //    tList = ExtractDayOfWeek(list, dayOfWeek);
+            //}
+            //else if (dayOfWeek == DayOfWeek.Tuesday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    { 
+            //        if (CheckDayOfWeek(info, DayOfWeek.Tuesday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    } 
+            //}
+            //else if (dayOfWeek == DayOfWeek.Wednesday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    {
+            //        if (CheckDayOfWeek(info, DayOfWeek.Wednesday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    }
+            //}
+            //else if (dayOfWeek == DayOfWeek.Thursday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    {
+            //        if (CheckDayOfWeek(info, DayOfWeek.Thursday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    }
+            //}
+            //else if (dayOfWeek == DayOfWeek.Friday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    {
+            //        if (CheckDayOfWeek(info, DayOfWeek.Friday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    }
+            //}
+            //else if (dayOfWeek == DayOfWeek.Saturday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    {
+            //        if (CheckDayOfWeek(info, DayOfWeek.Saturday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    }
+            //}
+            //else if (dayOfWeek == DayOfWeek.Sunday)
+            //{
+            //    foreach (ResponseForecastWeather info in list)
+            //    {
+            //        if (CheckDayOfWeek(info, DayOfWeek.Sunday))
+            //        {
+            //            tList.Add(info);
+            //        }
+            //    }
+            //}
+            #endregion
+
+            ResponseForecastWeather result = new ResponseForecastWeather();
+
+            if (tList.Count != 0)
+            {
+                result.main.temp_min = double.MaxValue;
+                result.main.temp_max = double.MinValue;
+            }
 
             foreach (ResponseForecastWeather info in tList)
             {
@@ -439,21 +506,24 @@ namespace FarmPulse.ModelView
 
             if (tList.Count != 0)
             {
-                result.main.temp = result.main.temp / tList.Count;
+                result.dt = tList[0].dt;
+                result.main.temp = Math.Round((result.main.temp / tList.Count) - 273.15, 2);
                 result.main.feels_like = result.main.feels_like / tList.Count;
+                result.main.temp_max = Math.Round(result.main.temp_max - 273.15, 2);
+                result.main.temp_min = Math.Round(result.main.temp_min - 273.15, 2);
                 result.main.pressure = result.main.pressure / tList.Count;
                 result.main.sea_level = result.main.sea_level / tList.Count;
                 result.main.grnd_level = result.main.grnd_level / tList.Count;
                 result.main.humidity = result.main.humidity / tList.Count;
                 result.main.temp_kf = result.main.temp_kf / tList.Count;
 
-                result.wind.speed = result.wind.speed / tList.Count;
+                result.wind.speed = Math.Round(result.wind.speed / tList.Count, 2);
                 result.wind.deg = result.wind.deg / tList.Count;
                 result.wind.gust = result.wind.gust / tList.Count;
 
-                result.rain._3h = result.rain._3h / tList.Count;
+                result.rain._3h = Math.Round(result.rain._3h / tList.Count, 2);
 
-                result.clouds.all = result.clouds.all / tList.Count;
+                result.clouds.all = (int)Math.Round((double)(result.clouds.all / tList.Count), 2);
             }
 
             int wMax = 0;
@@ -489,6 +559,21 @@ namespace FarmPulse.ModelView
             return result;
         }
 
+        //List<ResponseForecastWeather> ExtractDayOfWeek(List<ResponseForecastWeather> list, DayOfWeek dayOfWeek)
+        //{
+        //    List<ResponseForecastWeather> tList = new List<ResponseForecastWeather>();
+
+        //    foreach (ResponseForecastWeather info in list)
+        //    {
+        //        if (CheckDayOfWeek(info, dayOfWeek))
+        //        {
+        //            tList.Add(info);
+        //        }
+        //    }
+
+        //    return tList;
+        //}
+
         bool CheckDayOfWeek(ResponseForecastWeather info, DayOfWeek dayOfWeek)
         {
             bool result = false;
@@ -499,5 +584,6 @@ namespace FarmPulse.ModelView
 
             return result;
         }
+
     }
 }
