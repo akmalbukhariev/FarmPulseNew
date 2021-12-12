@@ -9,20 +9,18 @@
             BackgroundColor="White">
 
     <Grid RowDefinitions="*,Auto"
-          RowSpacing="0"> 
-        <!--<RefreshView RefreshColor="Black">-->
-            <ScrollView VerticalOptions="FillAndExpand">
-                <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <view:GraphView Region="{Binding Title}"
-                                            MeanValue="{Binding IndexMeanValue}"
-                                            ItemSource="{Binding ValueList}"/>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
-            </ScrollView>
-        <!--</RefreshView>-->
+          RowSpacing="0">  
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <view:GraphView Region="{Binding Title}"
+                                        MeanValue="{Binding IndexMeanValue}"
+                                        ItemSource="{Binding ValueList}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView> 
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="1"/>
         <control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"

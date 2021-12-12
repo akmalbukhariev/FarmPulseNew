@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace FarmPulse.ModelView
@@ -12,6 +13,7 @@ namespace FarmPulse.ModelView
     {
         public ObservableCollection<FieldInfo> Data { get; }
 
+        public bool IsRefreshing { get => GetValue<bool>(); set => SetValue(value); }
         public FieldInfo SelectedItem { get => GetValue<FieldInfo>(); set => SetValue(value); }
         
         public PageFieldListViewModel(INavigation navigation)
@@ -34,10 +36,13 @@ namespace FarmPulse.ModelView
             #endregion 
         }
 
+        public ICommand ClickRefreshCommand => new Command(RefreshFieldList);
+
         public async void RefreshFieldList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
-             
+
+            Data.Clear();
             ResponseField response = await HttpService.GetFieldList("998977");
             if (response.result)
             {   
@@ -51,6 +56,7 @@ namespace FarmPulse.ModelView
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
             }
             ControlApp.CloseLoadingView();
+            IsRefreshing = false;
         }
     }
 }

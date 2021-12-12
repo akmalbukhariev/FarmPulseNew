@@ -12,10 +12,12 @@ namespace FarmPulse.Model
         public string IndexMeanValue { get => GetValue<string>(); set => SetValue(value); }
 
         public List<GraphViewData> ValueList { get => GetValue<List<GraphViewData>>(); set => SetValue(value); }
+        public List<List<GraphViewData>> ValueListForMultiple { get => GetValue<List<List<GraphViewData>>>(); set => SetValue(value); }
 
         public GraphViewDataItem()
         {
             this.ValueList = new List<GraphViewData>();
+            this.ValueListForMultiple = new List<List<GraphViewData>>();
         }
     }
 }

@@ -11,55 +11,59 @@
         <view:NavigationView IsSettingVisible="True"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
-        <ListView HasUnevenRows="True"
-                  ItemsSource="{Binding Data}"
-                  ItemSelected="ListView_ItemSelected"
-                  SelectedItem="{Binding SelectedItem}"
-                  SeparatorVisibility="None"
-                  BackgroundColor="#EAD8BD"
-                  Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <BoxView BackgroundColor="#267948" Margin="8,8,8,8" />
-                            <Grid RowDefinitions="40,40" 
-                                  ColumnDefinitions="*,*"
-                                  BackgroundColor="White" 
-                                  Margin="10">
-                                <Grid.Resources>
-                                    <ResourceDictionary>
-                                        <Style x:Key="lbStyle1" TargetType="Label">
-                                            <Setter Property="TextColor" Value="Black"/>
-                                            <Setter Property="FontSize" Value="17"/>
-                                            <Setter Property="FontAttributes" Value="Bold"/>
-                                            <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                                            <Setter Property="VerticalTextAlignment" Value="Center"/>
-                                        </Style>
-                                        <Style x:Key="lbStyle2" TargetType="Label" BasedOn="{StaticResource lbStyle1}">
-                                            <Setter Property="TextColor" Value="Gray"/>
-                                            <Setter Property="FontSize" Value="15"/>
-                                        </Style>
-                                    </ResourceDictionary>
-                                </Grid.Resources>
-                                <Label Text="{x:Static resource:AppResource.FieldName}"
-                                       Style="{StaticResource lbStyle1}"/>
-                                <Label Text="{x:Static resource:AppResource.WuaVillage}"
-                                       Style="{StaticResource lbStyle1}"
-                                       Grid.Row="1"/>
-                                <Label Text="{Binding name}"
-                                       Style="{StaticResource lbStyle2}"
-                                       Grid.Column="1"/>
-                                <Label Text="{Binding suiv_name}"
-                                       Style="{StaticResource lbStyle2}"
-                                       Grid.Row="1"
-                                       Grid.Column="1"/>
+        <RefreshView RefreshColor="Black"
+                     IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                     Command="{Binding ClickRefreshCommand}"
+                     Grid.Row="1">
+            <ListView HasUnevenRows="True"
+                      ItemsSource="{Binding Data}"
+                      ItemSelected="ListView_ItemSelected"
+                      SelectedItem="{Binding SelectedItem}"
+                      SeparatorVisibility="None"
+                      BackgroundColor="#EAD8BD">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <BoxView BackgroundColor="#267948" Margin="8,8,8,8" />
+                                <Grid RowDefinitions="40,40" 
+                                      ColumnDefinitions="*,*"
+                                      BackgroundColor="White" 
+                                      Margin="10">
+                                    <Grid.Resources>
+                                        <ResourceDictionary>
+                                            <Style x:Key="lbStyle1" TargetType="Label">
+                                                <Setter Property="TextColor" Value="Black"/>
+                                                <Setter Property="FontSize" Value="17"/>
+                                                <Setter Property="FontAttributes" Value="Bold"/>
+                                                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                                                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                                            </Style>
+                                            <Style x:Key="lbStyle2" TargetType="Label" BasedOn="{StaticResource lbStyle1}">
+                                                <Setter Property="TextColor" Value="Gray"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                            </Style>
+                                        </ResourceDictionary>
+                                    </Grid.Resources>
+                                    <Label Text="{x:Static resource:AppResource.FieldName}"
+                                           Style="{StaticResource lbStyle1}"/>
+                                    <Label Text="{x:Static resource:AppResource.WuaVillage}"
+                                           Style="{StaticResource lbStyle1}"
+                                           Grid.Row="1"/>
+                                    <Label Text="{Binding name}"
+                                           Style="{StaticResource lbStyle2}"
+                                           Grid.Column="1"/>
+                                    <Label Text="{Binding suiv_name}"
+                                           Style="{StaticResource lbStyle2}"
+                                           Grid.Row="1"
+                                           Grid.Column="1"/>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>
     </Grid>
 
 </page:IPage>

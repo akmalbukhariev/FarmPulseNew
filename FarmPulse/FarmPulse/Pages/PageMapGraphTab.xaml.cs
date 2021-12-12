@@ -17,6 +17,7 @@ namespace FarmPulse.Pages
         {
             InitializeComponent();
 
+            lbTitle.Text = fieldInfo.name;
             mapPage.FieldInfo = fieldInfo;
             graphPage.FieldInfo = fieldInfo;
 

@@ -4,12 +4,12 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             x:Class="FarmPulse.Pages.PageMapGraphTab"
-            BarBackgroundColor="White"
+            BarBackgroundColor="LightGray"
             BarTextColor="#2F8F6E"
+            SelectedTabColor="Black"
             NavigationPage.IconColor="Black">
     <NavigationPage.TitleView>
-        <Label x:Name="lbTitle"
-               Text="Samarqand"
+        <Label x:Name="lbTitle" 
                FontSize="20" 
                FontAttributes="Bold" 
                TextColor="Black" 

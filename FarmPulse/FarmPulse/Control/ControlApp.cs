@@ -15,6 +15,8 @@ namespace FarmPulse.Control
         public bool AppOnSleep { get; set; }
         public string UserId { get; set; }
 
+        public LogInOut SystemStatus { get; set; } = LogInOut.LogOut;
+
         public string AgromonAPI { get; set; }
         public UserInfo UserInfo { get; set; }
 

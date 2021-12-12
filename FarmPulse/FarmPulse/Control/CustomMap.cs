@@ -11,8 +11,11 @@ namespace FarmPulse.Control
         public delegate void MapHasLoadedDel();
         public event MapHasLoadedDel EventMapHasLoaded;
 
-        public delegate void DrawPolygonDel();
-        public event DrawPolygonDel EventDrawPolygonDel;
+        //public delegate void DrawPolygonDel();
+        //public event DrawPolygonDel EventDrawPolygonDel;
+
+        public delegate void SetMapTypeDel(CustomMapType type);
+        public event SetMapTypeDel EventSetMapTypeDel;
 
         public List<LongLat> Polygon { get; set;}
         public LongLat Ceneter { get; set; }
@@ -31,9 +34,14 @@ namespace FarmPulse.Control
             EventMapHasLoaded?.Invoke();
         }
 
-        public void DrawPolygon()
+        //public void DrawPolygon()
+        //{
+        //    EventDrawPolygonDel?.Invoke();
+        //}
+
+        public void SetMapType(CustomMapType type)
         {
-            EventDrawPolygonDel?.Invoke();
+            EventSetMapTypeDel?.Invoke(type);
         }
     }
 }

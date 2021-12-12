@@ -19,7 +19,7 @@ namespace FarmPulse.Net
         #region Url
 
         #region Agro Monitoring
-        public static String APIKey = "";//"b5efce714742cc3aba8062b29f8c86f1";//"604b73c1fe1e170ab03912a578e1f522";
+        public static String APIKey = "b5efce714742cc3aba8062b29f8c86f1"; 
         public static String URL_AGRO_SERVER = "http://api.agromonitoring.com/agro/1.0";
         public static String URL_CREATE_POLYGON = URL_AGRO_SERVER + "/polygons?appid=" + APIKey;
         public static String URL_POLYGON_INFO = URL_AGRO_SERVER + "/polygons";
@@ -307,25 +307,26 @@ namespace FarmPulse.Net
             try
             {
                 string strRequest = string.Format("{0}={1}&end={2}&polyid={3}&appid={4}", URL_GET_SATELLITE_IMAGES, data.start, data.end, data.polyid, APIKey);
-                var receivedData = await Client.GetAsync(strRequest);
-                string result = await receivedData.Content.ReadAsStringAsync();
+                var result = await RequestGetMethod(strRequest);
+                //var receivedData = await Client.GetAsync(strRequest);
+                //string result = await receivedData.Content.ReadAsStringAsync();
 
-                if (receivedData.StatusCode == HttpStatusCode.OK)
-                {
+                //if (receivedData.StatusCode == HttpStatusCode.OK)
+                //{
                     responseAlldata = (List<ResponseSatelliteImagesInfo>)JsonConvert.DeserializeObject(result, typeof(List<ResponseSatelliteImagesInfo>));
                     for (int i = 0; i < responseAlldata.Count; i++)
                     {
-                        responseAlldata[i].StatusCode = receivedData.StatusCode;
+                        //responseAlldata[i].StatusCode = receivedData.StatusCode;
                         responseAlldata[i].Check();
                     }
-                }
-                else
-                {
-                    ResponseSatelliteImagesInfo errorData = JsonConvert.DeserializeObject<ResponseSatelliteImagesInfo>(result);
-                    errorData.StatusCode = receivedData.StatusCode;
-                    errorData.Check();
-                    responseAlldata.Add(errorData);
-                }
+                //}
+                //else
+                //{
+                //    ResponseSatelliteImagesInfo errorData = JsonConvert.DeserializeObject<ResponseSatelliteImagesInfo>(result);
+                //    errorData.StatusCode = receivedData.StatusCode;
+                //    errorData.Check();
+                //    responseAlldata.Add(errorData);
+                //}
 
             }
             catch (JsonReaderException) { return new List<ResponseSatelliteImagesInfo>(); }
@@ -786,6 +787,7 @@ namespace FarmPulse.Net
     }
     public class GraphViewInfo
     {
+        public string name { get; set; }
         public string cropName { get; set; }
         public List<GraphViewData> chartInfoList { get; set; }
     } 

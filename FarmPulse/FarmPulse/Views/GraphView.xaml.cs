@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using FarmPulse.Control;
  
 
 namespace FarmPulse.Views
@@ -83,13 +83,17 @@ namespace FarmPulse.Views
             if (control != null)
             {
                 List<ChartEntry> chartDataList = new List<ChartEntry>();
+                List<ChartEntry> chartNdviDataList = new List<ChartEntry>();
 
                 var list = (List<GraphViewData>)newValue;
+                
+                if (list.Count == 0) return;
+
                 foreach (GraphViewData item in list)
                 {
                     if (string.IsNullOrEmpty(item.value)) continue;
 
-                    ChartEntry chartEntry = new ChartEntry(5);
+                    ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
                     var color = String.Format("#{0:X6}", "007A43");
                     chartEntry.Label = item.year.Replace("Text_","");
                     chartEntry.ValueLabel = item.value;
@@ -98,14 +102,86 @@ namespace FarmPulse.Views
 
                     chartDataList.Add(chartEntry);
                 }
-                  
-                control.chart.Chart = new BarChart { Entries = chartDataList };
+  
+                FarmBarChart farmBarChart = new FarmBarChart()
+                {
+                    NdviEntires = chartDataList,
+                    LabelTextSize = 16f,
+                    LabelOrientation = Orientation.Vertical,
+                    IsAnimated = false
+                };
+
+                control.chart.Chart = farmBarChart; 
             }
         }
         #endregion
 
-        //List<ChartEntry> chartCotton = new List<ChartEntry>();
-        //List<ChartEntry> chartWheat = new List<ChartEntry>();
+        #region Itrem source for multiple chart
+        public static readonly BindableProperty ItemSourceForMultipleProperty =
+            BindableProperty.Create(nameof(ItemSourceForMultiple),
+                                    typeof(List<List<GraphViewData>>),
+                                    typeof(GraphView),
+                                    defaultBindingMode: BindingMode.TwoWay,
+                                    propertyChanged: ItemSourceForMultiplePropertyChanged);
+
+        public List<List<GraphViewData>> ItemSourceForMultiple
+        {
+            get { return (List<List<GraphViewData>>)GetValue(ItemSourceProperty); }
+            set { SetValue(ItemSourceProperty, value); }
+        }
+
+        private static void ItemSourceForMultiplePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (GraphView)bindable;
+            if (control != null)
+            {
+                List<ChartEntry> chartDataList = new List<ChartEntry>();
+                List<ChartEntry> chartYieldDataList = new List<ChartEntry>();
+
+                var list = (List<List<GraphViewData>>)newValue;
+
+                if (list.Count != 2) return;
+
+                foreach (GraphViewData item in list[0])
+                {
+                    if (string.IsNullOrEmpty(item.value)) continue;
+
+                    ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
+                    var color = String.Format("#{0:X6}", "007A43");
+                    chartEntry.Label = item.year.Replace("Text_", "");
+                    chartEntry.ValueLabel = item.value;
+                    chartEntry.Color = SKColor.Parse(color);
+                    chartEntry.TextColor = SKColor.Parse(color);
+
+                    chartDataList.Add(chartEntry);
+                }
+
+                foreach (GraphViewData item in list[1])
+                {
+                    if (string.IsNullOrEmpty(item.value)) continue;
+
+                    ChartEntry chartEntry = new ChartEntry(float.Parse(item.value)); 
+                    chartEntry.Label = item.year.Replace("Text_", "");
+                    chartEntry.ValueLabel = item.value;
+                    chartEntry.Color = SKColors.LightBlue;
+                    chartEntry.TextColor = SKColors.Black;
+
+                    chartYieldDataList.Add(chartEntry);
+                }
+
+                FarmLineChart farmBarLineChart = new FarmLineChart()
+                {
+                    NdviEntires = chartDataList,
+                    YieldEntires = chartYieldDataList,
+                    LabelTextSize = 16f,
+                    LabelOrientation = Orientation.Vertical,
+                    IsAnimated = false
+                };
+
+                control.chart.Chart = farmBarLineChart; 
+            }
+        }
+        #endregion
 
         public GraphView()
         {

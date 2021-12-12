@@ -26,6 +26,7 @@ namespace FarmPulse.Pages
         public void InitModel()
         {
             model = new PageMapViewViewModel(base.FieldInfo);
+            model.CustomMap = mapView;
             BindingContext = model;
         }
 
@@ -34,9 +35,8 @@ namespace FarmPulse.Pages
             List<double> lCenter = FieldInfo.GetCenter();
             if (lCenter.Count == 2)
                 mapView.Ceneter = new LongLat(lCenter[1], lCenter[0]);
-            mapView.Polygon = FieldInfo.String2LongLatList();
-
-            //mapView.DrawPolygon();
+            //mapView.SetMapType(Control.CustomMap.CustomMapType.Normal);
+            mapView.Polygon = FieldInfo.String2LongLatList(); 
         }
          
         private void Time_Tapped(object sender, EventArgs e)

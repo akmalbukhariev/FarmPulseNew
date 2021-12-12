@@ -11,9 +11,9 @@
           RowSpacing="10">
         <view:NavigationView Text="{x:Static resource:AppResource.IndexInsurance}"
                              TextColor="Black"
-                             BackgroundColor="#2F8F6E"/>
-        <RefreshView RefreshColor="Black" Grid.Row="1">
-            <ScrollView VerticalOptions="FillAndExpand">
+                             BackgroundColor="#2F8F6E"/> 
+            <ScrollView VerticalOptions="FillAndExpand"
+                        Grid.Row="1">
                 <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
@@ -23,8 +23,7 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
-            </ScrollView>
-        </RefreshView>
+            </ScrollView> 
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="2"/>
         <Grid ColumnDefinitions="*,1,*" 
@@ -38,9 +37,10 @@
                                   HorizontalTextAlignment="Center"
                                   VerticalTextAlignment="Center"
                                   Margin="20,5,20,5"
-                                  ItemsSource="{Binding IndexList}"
-                                  SelectedIndexChanged="Picker_SelectedIndexChanged"
-                                  SelectedItem="{Binding SelectedIndexItem}"/>
+                                  ItemsSource="{Binding MetricsList}"
+                                  ItemDisplayBinding="{Binding name}" 
+                                  SelectedItem="{Binding SelectedMetrics}"
+                                  SelectedIndexChanged="Picker_SelectedIndexChanged"/>
             <Line BackgroundColor="Black" Grid.Column="1"/>
             <Button Text="{x:Static resource:AppResource.AddCropYield}"
                     TextColor="Black"

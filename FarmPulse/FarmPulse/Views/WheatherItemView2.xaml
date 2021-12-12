@@ -4,7 +4,7 @@
              x:Class="FarmPulse.Views.WheatherItemView2">
 
     <Grid RowDefinitions="50,30"
-          ColumnDefinitions="70,*,Auto,Auto,Auto"
+          ColumnDefinitions="70,*,Auto,Auto,40"
           Margin="0,0,10,0"
           RowSpacing="0">
         <Grid.Resources>

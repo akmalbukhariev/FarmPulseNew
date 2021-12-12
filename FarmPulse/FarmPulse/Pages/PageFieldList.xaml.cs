@@ -14,11 +14,12 @@ namespace FarmPulse.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageFieldList : IPage
     {
+        private bool ForIndexInsurance = false;
         private PageFieldListViewModel model;
-        public PageFieldList()
+        public PageFieldList(bool forIndexInsurance = false)
         {
             InitializeComponent();
-
+            ForIndexInsurance = forIndexInsurance;
             model = new PageFieldListViewModel(Navigation);
             BindingContext = model; 
         }
@@ -35,7 +36,14 @@ namespace FarmPulse.Pages
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
-                await Navigation.PushAsync(new PageMapGraphTab(model.SelectedItem));
+                if (ForIndexInsurance)
+                {
+                    PageIndexInsurance indexPage = new PageIndexInsurance();
+                    indexPage.FieldInfo = model.SelectedItem;
+                    await Navigation.PushAsync(indexPage);
+                }
+                else
+                    await Navigation.PushAsync(new PageMapGraphTab(model.SelectedItem));
             }
         }
     }

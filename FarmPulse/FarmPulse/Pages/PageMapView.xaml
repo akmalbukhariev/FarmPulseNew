@@ -52,21 +52,25 @@
             <StackLayout Spacing="15" Margin="10, 20">
                 <Button x:Name="btnSatellite" 
                         Text="Satellite" 
+                        TextColor="{Binding BtnSatelliteTextColor}"
                         Style="{StaticResource btnStyle}"
                         Command="{Binding ClickMapTypeCommand}"
                         CommandParameter="Satellite"/>
                 <Button x:Name="btnHybrid" 
                         Text="Hybrid" 
+                        TextColor="{Binding BtnHybridTextColor}"
                         Style="{StaticResource btnStyle}"
                         Command="{Binding ClickMapTypeCommand}"
                         CommandParameter="Hybrid"/>
                 <Button x:Name="btnNormal" 
                         Text="Normal" 
+                        TextColor="{Binding BtnNormalTextColor}"
                         Style="{StaticResource btnStyle}"
                         Command="{Binding ClickMapTypeCommand}"
                         CommandParameter="Normal"/>
                 <Button x:Name="btnTerrain" 
                         Text="Terrain" 
+                        TextColor="{Binding BtnTerrainTextColor}"
                         Style="{StaticResource btnStyle}"
                         Command="{Binding ClickMapTypeCommand}"
                         CommandParameter="Terrain"/>

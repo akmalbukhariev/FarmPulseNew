@@ -1,4 +1,5 @@
-﻿using FarmPulse.Model;
+﻿using FarmPulse.Control;
+using FarmPulse.Model;
 using FarmPulse.Net;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,22 @@ namespace FarmPulse.ModelView
 {
     public class PageMapViewViewModel : BaseModel
     {
-        public ObservableCollection<SatelliteData> Data { get; }
+        public ObservableCollection<SatelliteData> Data { get; } 
 
         public bool ShowTimePeriodBox { get => GetValue<bool>(); set => SetValue(value); }
         public bool ShowImages { get => GetValue<bool>(); set => SetValue(value); }
+        public Color BtnSatelliteTextColor { get => GetValue<Color>(); set => SetValue(value); }
+        public Color BtnHybridTextColor { get => GetValue<Color>(); set => SetValue(value); }
+        public Color BtnNormalTextColor { get => GetValue<Color>(); set => SetValue(value); }
+        public Color BtnTerrainTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public DateTime StartDate { get => GetValue<DateTime>(); set => SetValue(value); }
         public DateTime EndDate { get => GetValue<DateTime>(); set => SetValue(value); }
         public SatelliteData SelectedItem { get => GetValue<SatelliteData>(); set => SetValue(value); }
 
+        public CustomMap CustomMap;
+
         private MapPolygonInfo PolygonInfo { get; set; }
+
         private Dictionary<string, string> SatelliteImages = new Dictionary<string, string>();
         public PageMapViewViewModel(FieldInfo fieldInfo)
         {
@@ -30,7 +38,12 @@ namespace FarmPulse.ModelView
             ShowTimePeriodBox = false;
             Data = new ObservableCollection<SatelliteData>();
 
-            #region FOr the test
+            BtnSatelliteTextColor = Color.Black;
+            BtnHybridTextColor = Color.Black;
+            BtnNormalTextColor = Color.Red;
+            BtnTerrainTextColor = Color.Black;
+            
+            #region For the test
             //Data.Add(new SatelliteData()
             //{
             //    Date = "2021.03.12",
@@ -182,12 +195,38 @@ namespace FarmPulse.ModelView
 
         private void ClickMapType(string type)
         {
+            if (CustomMap == null) return;
+
             switch (type)
             {
-                case "Satellite": break;
-                case "Hybrid": break;
-                case "Normal": break;
-                case "Terrain": break;
+                case "Satellite":
+                    BtnSatelliteTextColor = Color.Red;
+                    BtnHybridTextColor = Color.Black;
+                    BtnNormalTextColor = Color.Black;
+                    BtnTerrainTextColor = Color.Black;
+                    CustomMap.SetMapType(CustomMap.CustomMapType.Satellite); 
+                    break;
+                case "Hybrid":
+                    BtnSatelliteTextColor = Color.Black;
+                    BtnHybridTextColor = Color.Red;
+                    BtnNormalTextColor = Color.Black;
+                    BtnTerrainTextColor = Color.Black;
+                    CustomMap.SetMapType(CustomMap.CustomMapType.Hybrid); 
+                    break;
+                case "Normal":
+                    BtnSatelliteTextColor = Color.Black;
+                    BtnHybridTextColor = Color.Black;
+                    BtnNormalTextColor = Color.Red;
+                    BtnTerrainTextColor = Color.Black;
+                    CustomMap.SetMapType(CustomMap.CustomMapType.Normal); 
+                    break;
+                case "Terrain":
+                    BtnSatelliteTextColor = Color.Black;
+                    BtnHybridTextColor = Color.Black;
+                    BtnNormalTextColor = Color.Black;
+                    BtnTerrainTextColor = Color.Red;
+                    CustomMap.SetMapType(CustomMap.CustomMapType.Terrain); 
+                    break;
             }
         } 
     }

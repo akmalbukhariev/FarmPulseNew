@@ -12,18 +12,15 @@ namespace FarmPulse.ModelView
 {
     public class PageIndexInsuranceViewModel : BaseModel
     {
-        public ObservableCollection<GraphViewDataItem> DataList { get; set; }
-        public string Title { get => GetValue<string>(); set => SetValue(value); } 
-        public string SelectIndexTitle { get => GetValue<string>(); set => SetValue(value); }
-        public string SelectedIndexItem { get => GetValue<string>(); set => SetValue(value); } 
-        public List<string> IndexList { get => GetValue<List<string>>(); set => SetValue(value); }
-        
-        private ResponseMetricsList responseIndex = null;
-        public PageIndexInsuranceViewModel(INavigation navigation)
-        {  
-            IndexList = new List<string>(); 
+        public ObservableCollection<GraphViewDataItem> DataList { get; set; } 
 
+        public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
+        public List<MetricsInfo> MetricsList { get => GetValue<List<MetricsInfo>>(); set => SetValue(value); }
+ 
+        public PageIndexInsuranceViewModel(INavigation navigation)
+        {   
             Navigation = navigation;
+            DataList = new ObservableCollection<GraphViewDataItem>();
         }
 
         public ICommand ClickCropYieldCommand => new Command(CropYield);
@@ -31,54 +28,59 @@ namespace FarmPulse.ModelView
         public async void GetIndexList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
-            //responseIndex = await HttpService.GetIndexList();
-            //if (responseIndex.result)
-            //{
-            //    foreach (IndexInfo item in responseIndex.list)
-            //    {
-            //        IndexList.Add(item.indexName);
-            //    }
-            //}
-            //else
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
-            //}
+            ResponseMetricsList response = await HttpService.GetMetricsList();
+            if (response.result)
+            {
+                MetricsList = response.list;
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+            }
+
             ControlApp.CloseLoadingView();
         }
 
-        public async void RefreshGraphViewData(string indexName, string fieldId)
+        public async void RefreshGraphViewData(string fieldId)
         {
-            //IndexInfo tempInfo = responseIndex.list.Find(x => x.indexName == indexName);
-            //RequestGraphViewInfo request = new RequestGraphViewInfo()
-            //{
-            //    field_id = fieldId,
-            //    sequence = tempInfo == null ? "" : tempInfo.indexName,
-            //    username = ControlApp.UserInfo.insuranceNumber,
-            //    langCode = AppSettings.GetLanguageCode
-            //};
+            DataList.Clear();
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            //ControlApp.ShowLoadingView(RSC.PleaseWait);
-            //ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
-            //if (response.result)
-            //{
-            //    foreach (GraphViewInfo item in response.list)
-            //    {
-            //        GraphViewDataItem newItem = new GraphViewDataItem();
-            //        newItem.Title = item.cropName;
-            //        newItem.IndexMeanValue = RSC.IndexMeanValue;
+            RequestGraphViewInfo request = new RequestGraphViewInfo()
+            {
+                fieldId = fieldId,
+                metricId = SelectedMetrics.sequence.ToString()
+            };
 
-            //        foreach (GraphViewData info in item.chartInfoList)
-            //        {
-            //            newItem.ValueList.Add(new GraphViewData(info));
-            //        }
+            ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
+            if (response.result)
+            {
+                foreach (GraphViewInfo info in response.values)
+                {
+                    if (info.chartInfoList.Count != 0 && info.name != "cropYield")
+                    {
+                        GraphViewDataItem newItem = new GraphViewDataItem();
+                        newItem.Title = info.cropName;
+                        newItem.IndexMeanValue = RSC.IndexMeanValue;
+                        newItem.ValueListForMultiple.Add(info.chartInfoList);
 
-            //        DataList.Add(newItem);
-            //    }
-            //}
-            //else
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
-            //}
+                        DataList.Add(newItem);
+                    }
+                    else if (info.name == "cropYield")
+                    {
+                        
+                    }
+                }
+
+                for (int i = 0; i < DataList.Count; i++)
+                {
+                    
+                }
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+            }
 
             ControlApp.CloseLoadingView();
         }

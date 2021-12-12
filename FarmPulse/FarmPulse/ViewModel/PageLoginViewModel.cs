@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace FarmPulse.ModelView
@@ -18,25 +19,26 @@ namespace FarmPulse.ModelView
         public PageLoginViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            InsuranceNumber = "998977";
+            InsuranceNumber = "998988";
             Password = "123";
         }
 
         public ICommand ClickLoginCommand => new Command(ClickLogin);
        
-        private async void ClickLogin()
+        public async void ClickLogin()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
             RequestLogin request = new RequestLogin()
             {
                 username = InsuranceNumber,
                 password = Password,
-                langCode = "uz"//AppSettings.GetLanguageCode
+                langCode = AppSettings.GetLanguageCode
             };
             ResponseLogin response = await HttpService.Login(request);
             if (response.result)
             {
                 ControlApp.UserInfo = response.userInfo;
+                ControlApp.SystemStatus = LogInOut.LogIn;
                 Application.Current.MainPage = new TransitionNavigationPage(new PageMain());
             }
             else
@@ -44,6 +46,11 @@ namespace FarmPulse.ModelView
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
             }
             ControlApp.CloseLoadingView();
+
+            if (CheckAutoLogin)
+                Preferences.Set("AutoLogin", $"{InsuranceNumber}/{Password}");
+            else
+                Preferences.Set("AutoLogin", "");
         } 
     }
 }

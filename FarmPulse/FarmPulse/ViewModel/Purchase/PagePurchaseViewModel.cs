@@ -9,29 +9,10 @@ using Xamarin.Forms;
 namespace FarmPulse.ModelView
 {
     public class PagePurchaseViewModel : BaseModel
-    {
-        #region Properties
-        public string Purchase { get => GetValue<string>(); set => SetValue(value); }
-        public string Insurance { get => GetValue<string>(); set => SetValue(value); }
-        public string IndexInsurance { get => GetValue<string>(); set => SetValue(value); }
-        public string EstimateRates { get => GetValue<string>(); set => SetValue(value); }
-        public string Cover { get => GetValue<string>(); set => SetValue(value); }
-        public string SubmittingClaim { get => GetValue<string>(); set => SetValue(value); }
-        public string FAQ { get => GetValue<string>(); set => SetValue(value); }
-        public string ButtonBuyText { get => GetValue<string>(); set => SetValue(value); }
-        #endregion
+    { 
         public PagePurchaseViewModel(INavigation navigation)
         {
-            Navigation = navigation;
-
-            Purchase = "Purchase";
-            Insurance = "Insurance";
-            IndexInsurance = "Index insurance";
-            EstimateRates = "Estimate rates";
-            Cover = "Cover";
-            SubmittingClaim = "Submitting Claim";
-            FAQ = "FAQ";
-            ButtonBuyText = "BUY NOW";
+            Navigation = navigation; 
         }
 
         public ICommand ClickInsuranceCommand => new Command(ClickInsurance);
@@ -57,7 +38,7 @@ namespace FarmPulse.ModelView
         private async void ClickIndexInsurance()
         {
             SetTransitionType(TransitionType.SlideFromRight);
-            await Navigation.PushAsync(new PageIndexInsurance());
+            await Navigation.PushAsync(new PageFieldList(true));
         }
 
         /// <summary>

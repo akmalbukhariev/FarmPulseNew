@@ -14,6 +14,7 @@ namespace FarmPulse.Pages
     public partial class PageCropYieldData : IPage
     {
         private PageCropYieldDataViewModel model;
+
         public PageCropYieldData()
         {
             InitializeComponent();

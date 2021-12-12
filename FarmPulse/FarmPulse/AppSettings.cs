@@ -1,6 +1,10 @@
-﻿using System;
+﻿using FarmPulse.Resources;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text;
+using System.Threading;
 using Xamarin.Essentials;
 
 namespace FarmPulse
@@ -8,11 +12,13 @@ namespace FarmPulse
     public class AppSettings
     {
         public static string Language = "Language";
-
-        private static AppSettings _instance = null;
-  
+         
         public static void SetLanguage(string strLanguage)
         {
+            var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(strLanguage));
+            Thread.CurrentThread.CurrentUICulture = language;
+            AppResource.Culture = language;
+
             Preferences.Set(Language, strLanguage);
         }
 

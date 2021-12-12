@@ -39,14 +39,14 @@ namespace FarmPulse.Droid.Renderers
 
                 if (_customMap != null)
                 {
-                    //_customMap.EventDrawPolygonDel += EventDrawPolygonDel;
+                    _customMap.EventSetMapTypeDel += EventClickMapType;
                 }
 
                 ((MapView)Control).GetMapAsync(this);
             }
         }
 
-        private void EventDrawPolygonDel()
+        private void DrawPolygonDel()
         {
             if (_googleMap == null) return;
 
@@ -80,7 +80,7 @@ namespace FarmPulse.Droid.Renderers
             if (_customMap != null)
             {
                 _customMap.MapHasLoaded();
-                EventDrawPolygonDel();
+                DrawPolygonDel();
             }
         }
 
@@ -95,7 +95,7 @@ namespace FarmPulse.Droid.Renderers
             //_googleMap.UiSettings.MapToolbarEnabled = true;
         }
 
-        private void CustomMap_EventClickMapType(CustomMapType type)
+        private void EventClickMapType(CustomMapType type)
         {
             if (_googleMap == null) return;
 
@@ -144,7 +144,7 @@ namespace FarmPulse.Droid.Renderers
 
             CameraPosition.Builder builder = CameraPosition.InvokeBuilder();
             builder.Target(location);
-            builder.Zoom((float)14.5);
+            builder.Zoom((float)11.5);
             //builder.Bearing(155);
             //builder.Tilt(65);
 

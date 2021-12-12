@@ -170,7 +170,7 @@ namespace FarmPulse.ModelView
                         if (response1.main != null)
                         {
                             Temp = Math.Round(response1.main.temp - 273.15, 2).ToString();
-                            FeelsLike = response1.main.feels_like.ToString();
+                            FeelsLike = Math.Round(response1.main.feels_like - 273.15, 2).ToString();
                             MinTemp = Math.Round(response1.main.temp_min - 273.15, 2).ToString();
                             MaxTemp = Math.Round(response1.main.temp_max - 273.15, 2).ToString();
                             Pressure = response1.main.pressure.ToString();
@@ -195,118 +195,14 @@ namespace FarmPulse.ModelView
                             ResponseForecastWeather wSaturday = GetDayOfWeekWeather(response2, DayOfWeek.Saturday);
                             ResponseForecastWeather wSunday = GetDayOfWeekWeather(response2, DayOfWeek.Sunday);
 
-                            if (wMonday.weather != null && wMonday.weather.Count != 0)
-                            {
-                                if (wMonday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Mon_Icon = "sunny_white";
-                                }
-                                else if (wMonday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Mon_Icon = "rain_white";
-                                }
-                                else if (wMonday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Mon_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wTuesday.weather != null && wTuesday.weather.Count != 0)
-                            {
-                                if (wTuesday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Tue_Icon = "sunny_white";
-                                }
-                                else if (wTuesday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Tue_Icon = "rain_white";
-                                }
-                                else if (wTuesday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Tue_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wWednesday.weather != null && wWednesday.weather.Count != 0)
-                            {
-                                if (wWednesday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Wed_Icon = "sunny_white";
-                                }
-                                else if (wWednesday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Wed_Icon = "rain_white";
-                                }
-                                else if (wWednesday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Wed_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wThursday.weather != null && wThursday.weather.Count != 0)
-                            {
-                                if (wThursday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Thu_Icon = "sunny_white";
-                                }
-                                else if (wThursday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Thu_Icon = "rain_white";
-                                }
-                                else if (wThursday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Thu_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wFriday.weather != null && wFriday.weather.Count != 0)
-                            {
-                                if (wFriday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Fri_Icon = "sunny_white";
-                                }
-                                else if (wFriday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Fri_Icon = "rain_white";
-                                }
-                                else if (wFriday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Fri_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wSaturday.weather != null && wSaturday.weather.Count != 0)
-                            {
-                                if (wSaturday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Sat_Icon = "sunny_white";
-                                }
-                                else if (wSaturday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Sat_Icon = "rain_white";
-                                }
-                                else if (wSaturday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Sat_Icon = "cloudy";
-                                }
-                            }
-
-                            if (wSunday.weather != null && wSunday.weather.Count != 0)
-                            {
-                                if (wSunday.weather[0].main.Equals(HttpService.Weather_Clear))
-                                {
-                                    Sun_Icon = "sunny_white";
-                                }
-                                else if (wSunday.weather[0].main.Equals(HttpService.Weather_Rain))
-                                {
-                                    Sun_Icon = "rain_white";
-                                }
-                                else if (wSunday.weather[0].main.Equals(HttpService.Weather_Clouds))
-                                {
-                                    Sun_Icon = "cloudy";
-                                }
-                            }
-
+                            Mon_Icon = SetIcon(wMonday);
+                            Tue_Icon = SetIcon(wTuesday);
+                            Wed_Icon = SetIcon(wWednesday);
+                            Thu_Icon = SetIcon(wThursday);
+                            Fri_Icon = SetIcon(wFriday);
+                            Sat_Icon = SetIcon(wSaturday);
+                            Sun_Icon = SetIcon(wSunday);
+                             
                             #region Monday
                             Mon_Text1 = wMonday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wMonday.dt).ToString("MM/dd/yyyy");
                             Mon_Text2 = wMonday.main.temp_max.ToString();
@@ -557,6 +453,28 @@ namespace FarmPulse.ModelView
             }
 
             return result;
+        }
+
+        string SetIcon(ResponseForecastWeather wether)
+        {
+            string dayOfIcon = "";
+            if (wether.weather != null && wether.weather.Count != 0)
+            {
+                if (wether.weather[0].main.Equals(HttpService.Weather_Clear))
+                {
+                    dayOfIcon = "sunny_white";
+                }
+                else if (wether.weather[0].main.Equals(HttpService.Weather_Rain))
+                {
+                    dayOfIcon = "rain_white";
+                }
+                else if (wether.weather[0].main.Equals(HttpService.Weather_Clouds))
+                {
+                    dayOfIcon = "cloudy";
+                }
+            }
+
+            return dayOfIcon;
         }
 
         //List<ResponseForecastWeather> ExtractDayOfWeek(List<ResponseForecastWeather> list, DayOfWeek dayOfWeek)

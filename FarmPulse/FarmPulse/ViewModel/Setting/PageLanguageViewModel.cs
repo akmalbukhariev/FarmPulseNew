@@ -32,8 +32,11 @@ namespace FarmPulse.ModelView
                 var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(strLanguage));
                 Thread.CurrentThread.CurrentUICulture = language;
                 AppResource.Culture = language;
+
+                AppSettings.SetLanguage(strLanguage);
             }
 
+            ControlApp.SystemStatus = LogInOut.LogOut;
             Application.Current.MainPage = new TransitionNavigationPage(new Pages.PageLogin());
         }
 

@@ -1,10 +1,11 @@
-﻿using FarmPulse.ModelView;
+﻿using FarmPulse.Control;
+using FarmPulse.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,27 +33,23 @@ namespace FarmPulse.Pages
             }
             else if (sender == cellLanguage)
             {
-                await Navigation.PushAsync(new PageLanguage(true));
+                await Navigation.PushAsync(new PageLanguage(false));
             }
             else if (sender == cellAbout)
             {
                 await Navigation.PushAsync(new PageInfo());
             }
-        }
+        } 
 
-        private void CellLanguage_Tapped(object sender, EventArgs e)
+        private async void BtnLogOut_Clicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void CellAbout_Tapped(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnLogOut_Clicked(object sender, EventArgs e)
-        {
-
+            bool res = await Application.Current.MainPage.DisplayAlert(RSC.LogOut, RSC.LogOutMessage, RSC.Ok, RSC.Cancel);
+            if (res)
+            {
+                Preferences.Set("AutoLogin", "");
+                ControlApp.SystemStatus = LogInOut.LogOut;
+                Application.Current.MainPage = new TransitionNavigationPage(new PageLogin());
+            }
         }
     }
 }

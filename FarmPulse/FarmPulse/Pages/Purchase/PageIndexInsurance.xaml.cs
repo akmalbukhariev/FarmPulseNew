@@ -19,7 +19,7 @@ namespace FarmPulse.Pages
         {
             InitializeComponent();
             model = new PageIndexInsuranceViewModel(Navigation);
-            BindingContext = model; 
+            BindingContext = model;  
         }
 
         protected override void OnAppearing()
@@ -31,10 +31,7 @@ namespace FarmPulse.Pages
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(model.SelectedIndexItem))
-            {
-                model.RefreshGraphViewData(model.SelectedIndexItem, FieldInfo.fieldId);
-            }
+            model.RefreshGraphViewData(FieldInfo.fieldId); 
         }
     }
 }
