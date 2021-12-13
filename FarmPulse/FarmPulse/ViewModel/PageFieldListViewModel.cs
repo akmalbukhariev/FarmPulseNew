@@ -43,7 +43,7 @@ namespace FarmPulse.ModelView
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
             Data.Clear();
-            ResponseField response = await HttpService.GetFieldList("998977");
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {   
                 foreach (FieldInfo item in response.fields)

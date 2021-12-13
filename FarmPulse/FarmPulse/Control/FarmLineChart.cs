@@ -131,7 +131,7 @@ namespace FarmPulse.Control
             paint.TextSize = 20;
 
             canvas.DrawText(_barMax.ToString(), 0, minPoint - 20, paint);
-            canvas.DrawText(_barMin.ToString(), 0, maxPoint - 20, paint);
+            canvas.DrawText(_barMin.ToString(), 0, height - 70, paint);
 
             var step = maxPoint / 4;
             var valueStep = _barMax / 4;
@@ -149,13 +149,14 @@ namespace FarmPulse.Control
         {
             var minPoint = pointLineList.Min(p => p.Y);
             var maxPoint = pointLineList.Max(p => p.Y);
-
+            var rightMargin = 20;
+            
             var paint = new SKPaint();
             paint.Color = SKColors.Black;
             paint.TextSize = 20;
 
-            canvas.DrawText(_lineMax.ToString(), width - 40, minPoint - 20, paint);
-            canvas.DrawText(_lineMin.ToString(), width - 40, maxPoint - 20, paint);
+            canvas.DrawText(_lineMax.ToString(), width - rightMargin, minPoint - 20, paint);
+            canvas.DrawText(_lineMin.ToString(), width - rightMargin, height - 70, paint);
 
             var step = maxPoint / 4;
             var valueStep = _lineMax / 4;
@@ -164,7 +165,7 @@ namespace FarmPulse.Control
                 var temp = (maxPoint - step * i);
                 if (minPoint < temp && Math.Abs(minPoint - temp) >= step)
                 {
-                    canvas.DrawText((valueStep * i).ToString(), width - 40, temp - 20, paint);
+                    canvas.DrawText((valueStep * i).ToString(), width - rightMargin, temp - 20, paint);
                 }
             }
         }

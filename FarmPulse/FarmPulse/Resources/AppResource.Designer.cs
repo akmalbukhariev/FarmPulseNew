@@ -277,6 +277,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units..
+        /// </summary>
+        internal static string DescriptionCropYieldData {
+            get {
+                return ResourceManager.GetString("DescriptionCropYieldData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End date.
         /// </summary>
         internal static string EndDate {

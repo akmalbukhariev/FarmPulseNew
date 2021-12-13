@@ -213,6 +213,10 @@
     <value>Description the claim</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="DescriptionCropYieldData" xml:space="preserve">
+    <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
+    <comment>Page Crop yield data</comment>
+  </data>
   <data name="EndDate" xml:space="preserve">
     <value>End date</value>
     <comment>Page Map View</comment>

@@ -78,7 +78,7 @@ namespace FarmPulse.ModelView
             Clean();
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 FieldList = response.fields;
@@ -89,6 +89,11 @@ namespace FarmPulse.ModelView
             }
 
             ControlApp.CloseLoadingView();
+
+            if (FieldList.Count != 0)
+            {
+                SelectedField = FieldList[0];
+            }
         }
 
         public async void RefreshModel()
@@ -111,7 +116,7 @@ namespace FarmPulse.ModelView
 
             RequestCropYieldData request = new RequestCropYieldData()
             {
-                username = "998977",//ControlApp.UserInfo.insuranceNumber,
+                username = ControlApp.UserInfo.insuranceNumber,
                 langCode = AppSettings.GetLanguageCode,
                 fieldId = SelectedField.fieldId
             };
@@ -159,8 +164,9 @@ namespace FarmPulse.ModelView
             {
                  fieldId = SelectedField.fieldId,
                  cropName = CropType,
-                 username = "998977"
+                 username = ControlApp.UserInfo.insuranceNumber
             };
+
             request.values = new List<CropYieldDataYearInfo>();
             request.values.Add(new CropYieldDataYearInfo(nameof(Text_2010), Text_2010));
             request.values.Add(new CropYieldDataYearInfo(nameof(Text_2011), Text_2011));
@@ -178,8 +184,7 @@ namespace FarmPulse.ModelView
             ResponseCropYieldDataSave response = await HttpService.SaveCropYieldData(request);
             if (response.result)
             {
-                //await Navigation.PopAsync();
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Okkkkkkkkkkkkkkkkkkk", RSC.Ok);
+                await Navigation.PopAsync(); 
             }
             else
             {

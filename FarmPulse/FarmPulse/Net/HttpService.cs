@@ -466,13 +466,14 @@ namespace FarmPulse.Net
     public class RequestSubmitClaim : IRequest
     { 
         public string fieldId { get; set; }
-        public string filedName { get; set; }
+        public string fieldName { get; set; }
         public string cropType { get; set; }
         public string areaTon { get; set; }
         public string farmerName { get; set; }
         public string farmerPhone { get; set; }
         public string description { get; set; }
         public string status { get; set; }
+        public string date { get; set; }
     }
      
     public class RequestCropYieldDataHistory : IRequest

@@ -31,7 +31,10 @@ namespace FarmPulse.Pages
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            model.RefreshGraphViewData(FieldInfo.fieldId); 
+            if (model.SelectedMetrics != null)
+            {
+                model.RefreshGraphViewData(FieldInfo.fieldId);
+            }
         }
     }
 }

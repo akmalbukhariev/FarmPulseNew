@@ -213,6 +213,10 @@
     <value>Описание претензии</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="DescriptionCropYieldData" xml:space="preserve">
+    <value>Пожалуйста, введите информацию об урожайности в \ n порядке для сравнения со значениями страхового индекса \ n. Используйте единицы тонны / га.</value>
+    <comment>Page Crop yield data</comment>
+  </data>
   <data name="EndDate" xml:space="preserve">
     <value>Дата окончания</value>
     <comment>Page Map View</comment>

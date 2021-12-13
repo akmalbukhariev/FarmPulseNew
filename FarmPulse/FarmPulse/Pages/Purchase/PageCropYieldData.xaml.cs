@@ -17,8 +17,7 @@ namespace FarmPulse.Pages
 
         public PageCropYieldData()
         {
-            InitializeComponent();
-            InitPage();
+            InitializeComponent();  
 
             model = new PageCropYieldDataViewModel(Navigation);
             BindingContext = model; 
@@ -29,12 +28,7 @@ namespace FarmPulse.Pages
             base.OnAppearing();
             model.GetFields();
         }
-
-        private void InitPage()
-        {
-            lbText.Text = "Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.";
-        }
-
+  
         private void pickField_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (model.SelectedField != null)

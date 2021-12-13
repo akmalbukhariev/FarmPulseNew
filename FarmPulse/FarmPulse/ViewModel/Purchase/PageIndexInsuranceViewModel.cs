@@ -12,7 +12,7 @@ namespace FarmPulse.ModelView
 {
     public class PageIndexInsuranceViewModel : BaseModel
     {
-        public ObservableCollection<GraphViewDataItem> DataList { get; set; } 
+        public ObservableCollection<GraphViewDataItem> DataList { get => GetValue<ObservableCollection<GraphViewDataItem>>(); set => SetValue(value); }
 
         public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
         public List<MetricsInfo> MetricsList { get => GetValue<List<MetricsInfo>>(); set => SetValue(value); }
@@ -39,6 +39,11 @@ namespace FarmPulse.ModelView
             }
 
             ControlApp.CloseLoadingView();
+
+            if (MetricsList.Count != 0)
+            {
+                SelectedMetrics = MetricsList[0];
+            }
         }
 
         public async void RefreshGraphViewData(string fieldId)
@@ -55,6 +60,8 @@ namespace FarmPulse.ModelView
             ResponseGraphView response = await HttpService.GetGraphyViewInfo(request);
             if (response.result)
             {
+                ObservableCollection<GraphViewDataItem> tempList = new ObservableCollection<GraphViewDataItem>();
+                GraphViewInfo cropYieldInfo = new GraphViewInfo();
                 foreach (GraphViewInfo info in response.values)
                 {
                     if (info.chartInfoList.Count != 0 && info.name != "cropYield")
@@ -64,18 +71,23 @@ namespace FarmPulse.ModelView
                         newItem.IndexMeanValue = RSC.IndexMeanValue;
                         newItem.ValueListForMultiple.Add(info.chartInfoList);
 
-                        DataList.Add(newItem);
+                        tempList.Add(newItem);
                     }
                     else if (info.name == "cropYield")
                     {
-                        
+                        cropYieldInfo = info;
                     }
                 }
 
-                for (int i = 0; i < DataList.Count; i++)
+                for (int i = 0; i < tempList.Count; i++)
                 {
-                    
+                    if (tempList[i].Title.Equals(cropYieldInfo.cropName))
+                    {
+                        tempList[i].ValueListForMultiple.Add(cropYieldInfo.chartInfoList);
+                    }
                 }
+
+                DataList = tempList;
             }
             else
             {

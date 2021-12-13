@@ -126,8 +126,8 @@ namespace FarmPulse.Views
 
         public List<List<GraphViewData>> ItemSourceForMultiple
         {
-            get { return (List<List<GraphViewData>>)GetValue(ItemSourceProperty); }
-            set { SetValue(ItemSourceProperty, value); }
+            get { return (List<List<GraphViewData>>)GetValue(ItemSourceForMultipleProperty); }
+            set { SetValue(ItemSourceForMultipleProperty, value); }
         }
 
         private static void ItemSourceForMultiplePropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -140,7 +140,7 @@ namespace FarmPulse.Views
 
                 var list = (List<List<GraphViewData>>)newValue;
 
-                if (list.Count != 2) return;
+                if (list.Count == 0) return;
 
                 foreach (GraphViewData item in list[0])
                 {
@@ -156,17 +156,20 @@ namespace FarmPulse.Views
                     chartDataList.Add(chartEntry);
                 }
 
-                foreach (GraphViewData item in list[1])
+                if (list.Count == 2)
                 {
-                    if (string.IsNullOrEmpty(item.value)) continue;
+                    foreach (GraphViewData item in list[1])
+                    {
+                        if (string.IsNullOrEmpty(item.value)) continue;
 
-                    ChartEntry chartEntry = new ChartEntry(float.Parse(item.value)); 
-                    chartEntry.Label = item.year.Replace("Text_", "");
-                    chartEntry.ValueLabel = item.value;
-                    chartEntry.Color = SKColors.LightBlue;
-                    chartEntry.TextColor = SKColors.Black;
+                        ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
+                        chartEntry.Label = item.year.Replace("Text_", "");
+                        chartEntry.ValueLabel = item.value;
+                        chartEntry.Color = SKColors.LightBlue;
+                        chartEntry.TextColor = SKColors.Black;
 
-                    chartYieldDataList.Add(chartEntry);
+                        chartYieldDataList.Add(chartEntry);
+                    }
                 }
 
                 FarmLineChart farmBarLineChart = new FarmLineChart()

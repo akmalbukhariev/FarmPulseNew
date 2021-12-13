@@ -68,7 +68,7 @@ namespace FarmPulse.ModelView
             Clean();
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 FieldList = response.fields;
@@ -104,7 +104,7 @@ namespace FarmPulse.ModelView
                 farmerName = FarmerName,
                 phoneNumber = FarmerPhoneNumber,
                 status = "Submited",
-                username = "998977",
+                username = ControlApp.UserInfo.insuranceNumber,
                 date = DateTime.Now.ToString()
             };
 

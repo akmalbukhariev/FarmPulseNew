@@ -19,7 +19,7 @@
                         <DataTemplate>
                             <view:GraphView Region="{Binding Title}"
                                             MeanValue="{Binding IndexMeanValue}"
-                                            ItemSource="{Binding ValueList}"/>
+                                            ItemSourceForMultiple="{Binding ValueListForMultiple}"/>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>

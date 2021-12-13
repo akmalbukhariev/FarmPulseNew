@@ -37,7 +37,8 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
         public void Clean()
         {
             CropType = "";
-            AreaTon = ""; 
+            AreaTon = "";
+            Name = "";
             PhoneNumber = "";
             Description = "";
 
@@ -66,7 +67,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
             Clean();
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 FieldList = response.fields; 
@@ -89,8 +90,8 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
              
             RequestSubmitClaim request = new RequestSubmitClaim()
             {
-                username = "998977",
-                filedName = SelectedField.name,
+                username = ControlApp.UserInfo.insuranceNumber,
+                fieldName = SelectedField.name,
                 fieldId = SelectedField.fieldId,
                 areaTon = AreaTon,
                 cropType = CropType,
@@ -98,6 +99,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
                 farmerPhone = PhoneNumber,
                 description = Description,
                 status = "Summited",
+                date = DateTime.Now.ToString(),
                 langCode = AppSettings.GetLanguageCode
             };
 

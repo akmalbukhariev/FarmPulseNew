@@ -97,7 +97,7 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
 
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponseSubmitedClaimHistory response = await HttpService.GetSubmitedClaims("998977");//ControlApp.UserInfo.insuranceNumber);
+            ResponseSubmitedClaimHistory response = await HttpService.GetSubmitedClaims(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 foreach (SubmitedClaimHistoryInfo item in response.claims)

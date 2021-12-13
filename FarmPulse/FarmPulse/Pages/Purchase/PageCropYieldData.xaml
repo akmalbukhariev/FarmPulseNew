@@ -30,6 +30,7 @@
             </Grid.Resources>
             <Label x:Name="lbText" 
                    TextColor="Black"
+                   Text="{x:Static resource:AppResource.DescriptionCropYieldData}"
                    FontSize="15"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center"
@@ -79,72 +80,96 @@
                     <Label Text="2010"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2010}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="1">
                     <Label Text="2011"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2011}"
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="2">
                     <Label Text="2012"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2012}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1">
                     <Label Text="2013"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2013}"
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="1">
                     <Label Text="2014"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2014}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="2">
                     <Label Text="2015"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2015}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2">
                     <Label Text="2016"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2016}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="1">
                     <Label Text="2017"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2017}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="2">
                     <Label Text="2018"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2018}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3">
                     <Label Text="2019"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2019}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="1">
                     <Label Text="2020"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2020}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="2">
                     <Label Text="2021"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2021}" 
+                                    Keyboard="Numeric"
+                                    MaxLength="3"
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
             </Grid>

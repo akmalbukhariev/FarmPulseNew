@@ -15,10 +15,8 @@
                   SeparatorVisibility="Default" 
                   ItemsSource="{Binding DataList}"
                   SelectedItem="{Binding SelectedItem}"
-                  ItemSelected="ClaimList_ItemSelected"
-                  IsPullToRefreshEnabled="True"
-                  Grid.Row="1">
-            
+                  ItemSelected="ClaimList_ItemSelected" 
+                  Grid.Row="1"> 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

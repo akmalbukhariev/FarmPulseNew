@@ -260,12 +260,60 @@ namespace FarmPulse.Views
         }
         #endregion
 
+        #region Keybord
+        public static readonly BindableProperty KeyboardProperty =
+            BindableProperty.Create(nameof(Keyboard),
+                                    typeof(Keyboard),
+                                    typeof(EntryView),
+                                    null,
+                                    propertyChanged: KeyboardPropertyChanged);
+
+        public Keyboard Keyboard
+        {
+            get { return (Keyboard)GetValue(KeyboardProperty); }
+            set { SetValue(KeyboardProperty, value); }
+        }
+
+        private static void KeyboardPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (EntryView)bindable;
+            if (newValue != null)
+            {
+                control.entry.Keyboard = (Keyboard)newValue;
+            }
+        }
+        #endregion
+
+        #region MaxLength
+        public static readonly BindableProperty MaxLengthProperty =
+            BindableProperty.Create(nameof(MaxLength),
+                                    typeof(int),
+                                    typeof(EntryView),
+                                    null,
+                                    propertyChanged: MaxLengthPropertyChanged);
+
+        public int MaxLength
+        {
+            get { return (int)GetValue(MaxLengthProperty); }
+            set { SetValue(MaxLengthProperty, value); }
+        }
+
+        private static void MaxLengthPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (EntryView)bindable;
+            if (newValue != null)
+            {
+                control.entry.MaxLength = (int)newValue;
+            }
+        }
+        #endregion
+
         public Entry Entry => entry;
           
         public EntryView()
         {
             InitializeComponent();
-            
+             
             this.entry.TextColorForIOS = Color.White;
             this.entry.SetBinding(Entry.TextProperty, new Binding(nameof(Text), source: this));
         } 

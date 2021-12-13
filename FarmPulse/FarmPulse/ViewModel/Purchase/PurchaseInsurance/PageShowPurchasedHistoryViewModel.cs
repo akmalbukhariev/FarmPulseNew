@@ -69,7 +69,7 @@ namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
 
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponsePurchasedHistory response = await HttpService.GetPurchasedHistory("998977");//ControlApp.UserInfo.insuranceNumber);
+            ResponsePurchasedHistory response = await HttpService.GetPurchasedHistory(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 foreach (SubmitedPurchaseHistoryInfo item in response.purchases)
