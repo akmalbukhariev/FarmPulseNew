@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -40,12 +41,13 @@ namespace FarmPulse.Droid.Renderers
                 if (_customMap != null)
                 {
                     _customMap.EventSetMapTypeDel += EventClickMapType;
+                    _customMap.EventSetOverlayImageDel += EventSetOverlayImageDel;
                 }
 
                 ((MapView)Control).GetMapAsync(this);
             }
         }
-
+         
         private void DrawPolygonDel()
         {
             if (_googleMap == null) return;
@@ -119,25 +121,23 @@ namespace FarmPulse.Droid.Renderers
                     break;
             }
         }
- 
 
-        //private void CustomMap_EventoOverlayImage(ModelPageField fieldData)
-        //{
-        //    if (fieldData.OverlayImage.Length == 0) return;
+        private void EventSetOverlayImageDel()
+        {
+            if (_customMap.OverlayImage.Length == 0) return;
 
-        //    Bitmap bmp = BitmapFactory.DecodeByteArray(fieldData.OverlayImage, 0, fieldData.OverlayImage.Length);
-        //    BitmapDescriptor image = BitmapDescriptorFactory.FromBitmap(bmp);
+            _googleMap.Clear();
+            Bitmap bmp = BitmapFactory.DecodeByteArray(_customMap.OverlayImage, 0, _customMap.OverlayImage.Length);
+            BitmapDescriptor image = BitmapDescriptorFactory.FromBitmap(bmp);
 
-        //    float zzz = _googleMap.CameraPosition.Zoom;
-        //    GroundOverlayOptions groundOverlayOptions = new GroundOverlayOptions();
-        //    groundOverlayOptions.Anchor(0, 1);
-        //    groundOverlayOptions.PositionFromBounds(new LatLngBounds(new LatLng(fieldData.minLat, fieldData.minLon), new LatLng(fieldData.maxLat, fieldData.maxLon)));
-        //    groundOverlayOptions.InvokeImage(image);
+            GroundOverlayOptions groundOverlayOptions = new GroundOverlayOptions();
+            groundOverlayOptions.Anchor(0, 1);
+            groundOverlayOptions.PositionFromBounds(new LatLngBounds(new LatLng(_customMap.minLat, _customMap.minLon), new LatLng(_customMap.maxLat, _customMap.maxLon)));
+            groundOverlayOptions.InvokeImage(image);
 
-        //    _googleMap.AddGroundOverlay(groundOverlayOptions);
-        //    //MoveMap(fieldData);
-        //}
-
+            _googleMap.AddGroundOverlay(groundOverlayOptions);
+        }
+          
         private void MoveMap()
         {
             LatLng location = new LatLng(_customMap.Ceneter.Latitude, _customMap.Ceneter.Longitude);

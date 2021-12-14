@@ -67,6 +67,7 @@ namespace FarmPulse.Pages
                 if (model.SelectedItem != null)
                 {
                     model.ShowImages = false;
+                    model.DownloadSatelliteImage();
                 }
             }
             catch (Exception ex)

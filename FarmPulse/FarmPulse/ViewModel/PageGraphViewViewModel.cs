@@ -78,6 +78,11 @@ namespace FarmPulse.ModelView
             }
 
             ControlApp.CloseLoadingView();
+
+            if (MetricsList.Count != 0)
+            {
+                SelectedMetrics = MetricsList[0];
+            }
         }
 
         public async void RefreshGraphViewData(string fieldId)

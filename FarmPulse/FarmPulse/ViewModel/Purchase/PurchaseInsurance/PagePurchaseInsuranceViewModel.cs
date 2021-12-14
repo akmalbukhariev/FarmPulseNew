@@ -97,15 +97,15 @@ namespace FarmPulse.ModelView
 
             RequestBuyInsurance request = new RequestBuyInsurance()
             {
+                cropName = CropType,
+                date = DateTime.Now.ToString(),
+                farmerName = FarmerName,
                 fieldId = SelectedField.fieldId,
                 fieldName = SelectedField.name,
-                cropName = CropType,
-                hectars = Hectars,
-                farmerName = FarmerName,
+                hectares = Hectars, 
                 phoneNumber = FarmerPhoneNumber,
                 status = "Submited",
                 username = ControlApp.UserInfo.insuranceNumber,
-                date = DateTime.Now.ToString()
             };
 
             ControlApp.ShowLoadingView(RSC.PleaseWait);

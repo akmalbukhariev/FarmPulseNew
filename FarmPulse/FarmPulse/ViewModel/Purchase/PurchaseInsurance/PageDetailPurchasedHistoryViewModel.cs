@@ -24,7 +24,7 @@ namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
             Title = info.fieldName;
             FieldName = info.fieldName;
             CropName = info.cropName;
-            Hectars = info.hectars;
+            Hectars = info.hectares;
             FarmerName = info.farmerName;
             PhoneNumber = info.phoneNumber;
             Status = info.status;

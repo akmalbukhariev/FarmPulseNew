@@ -25,15 +25,9 @@ namespace FarmPulse.ModelView
         public SatelliteData SelectedItem { get => GetValue<SatelliteData>(); set => SetValue(value); }
 
         public CustomMap CustomMap;
-
-        private MapPolygonInfo PolygonInfo { get; set; }
-
-        private Dictionary<string, string> SatelliteImages = new Dictionary<string, string>();
+         
         public PageMapViewViewModel(FieldInfo fieldInfo)
-        {
-            PolygonInfo = new MapPolygonInfo();
-            PolygonInfo.Polygon = new List<LongLat>();
-             
+        { 
             this.FieldInfo = fieldInfo;
             ShowTimePeriodBox = false;
             Data = new ObservableCollection<SatelliteData>();
@@ -115,14 +109,16 @@ namespace FarmPulse.ModelView
 
         private async void ClickTimeBoxOk()
         {
+            Data.Clear();
             ShowTimePeriodBox = false;
             RequestGetSatelliteImagesInfo request = new RequestGetSatelliteImagesInfo()
             {
                 start = ControlApp.DateTimeToUnixTimestamp(StartDate).ToString(),
                 end = ControlApp.DateTimeToUnixTimestamp(EndDate).ToString(),
-                polyid = this.FieldInfo.fieldId
+                polyid = this.FieldInfo.apiKey
             };
 
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
             List<ResponseSatelliteImagesInfo> responseImage = await HttpService.GetSatelliteImagesInfo(request);
             ResponsePolygon responsePolygon = await HttpService.GetPolygonInfo(request.polyid);
 
@@ -132,12 +128,12 @@ namespace FarmPulse.ModelView
                 ControlApp.CloseLoadingView();
                 return;
             }
+             
+            CustomMap.minLat = double.MaxValue;
+            CustomMap.minLon = double.MaxValue;
 
-            PolygonInfo.minLat = double.MaxValue;
-            PolygonInfo.minLon = double.MaxValue;
-
-            PolygonInfo.maxLat = double.MinValue;
-            PolygonInfo.maxLon = double.MinValue;
+            CustomMap.maxLat = double.MinValue;
+            CustomMap.maxLon = double.MinValue;
 
             foreach (List<List<double>> point in responsePolygon.geo_json.geometry.coordinates)
             {
@@ -147,50 +143,57 @@ namespace FarmPulse.ModelView
                     lonlat.Longitude = p[0];
                     lonlat.Latitude = p[1];
 
-                    PolygonInfo.Polygon.Add(lonlat);
+                    //PolygonInfo.Polygon.Add(lonlat);
 
-                    if (PolygonInfo.minLat >= lonlat.Latitude)
+                    if (CustomMap.minLat >= lonlat.Latitude)
                     {
-                        PolygonInfo.minLat = lonlat.Latitude;
-                        PolygonInfo.minLatLon = lonlat.Longitude;
+                        CustomMap.minLat = lonlat.Latitude;
+                        CustomMap.minLatLon = lonlat.Longitude;
                     }
 
-                    if (PolygonInfo.minLon >= lonlat.Longitude)
+                    if (CustomMap.minLon >= lonlat.Longitude)
                     {
-                        PolygonInfo.minLon = lonlat.Longitude;
-                        PolygonInfo.minLonLat = lonlat.Latitude;
+                        CustomMap.minLon = lonlat.Longitude;
+                        CustomMap.minLonLat = lonlat.Latitude;
                     }
 
-                    if (PolygonInfo.maxLat <= lonlat.Latitude)
+                    if (CustomMap.maxLat <= lonlat.Latitude)
                     {
-                        PolygonInfo.maxLat = lonlat.Latitude;
-                        PolygonInfo.maxLatLon = lonlat.Longitude;
+                        CustomMap.maxLat = lonlat.Latitude;
+                        CustomMap.maxLatLon = lonlat.Longitude;
                     }
 
-                    if (PolygonInfo.maxLon <= lonlat.Longitude)
+                    if (CustomMap.maxLon <= lonlat.Longitude)
                     {
-                        PolygonInfo.maxLon = lonlat.Longitude;
-                        PolygonInfo.maxLonLat = lonlat.Latitude;
+                        CustomMap.maxLon = lonlat.Longitude;
+                        CustomMap.maxLonLat = lonlat.Latitude;
                     }
                 }
             }
 
-            PolygonInfo.area = responsePolygon.area;
-            PolygonInfo.Position = new LongLat(responsePolygon.center[1], responsePolygon.center[0]);
+            //PolygonInfo.area = responsePolygon.area;
+            //PolygonInfo.Position = new LongLat(responsePolygon.center[1], responsePolygon.center[0]); 
 
-            List<string> tempList = new List<string>();
             for (int i = 0; i < responseImage.Count; i++)
             {
                 if (responseImage[i].image == null) continue;
 
                 string imDate = ControlApp.UnixTimeStampToDateTime((double)(responseImage[i].dt)).ToString("yyyy-MM-dd");
 
-                if (!SatelliteImages.ContainsKey(imDate))
-                {
-                    SatelliteImages.Add(imDate, responseImage[i].image.ndvi);
-                    tempList.Add(imDate);
-                }
+                Data.Add(new SatelliteData(imDate, responseImage[i].image.ndvi)); 
             }
+            ControlApp.CloseLoadingView();
+
+            if (Data.Count != 0)
+                ShowImages = true;
+        }
+
+        public async void DownloadSatelliteImage()
+        {
+            ControlApp.ShowLoadingView(RSC.PleaseWait);
+            CustomMap.OverlayImage = await HttpService.GetSatelliteImagery(SelectedItem.ImagePath);
+            CustomMap.SetOverlayImage();
+            ControlApp.CloseLoadingView();
         }
 
         private void ClickMapType(string type)

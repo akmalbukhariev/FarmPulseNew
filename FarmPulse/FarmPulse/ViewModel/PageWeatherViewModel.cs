@@ -150,10 +150,10 @@ namespace FarmPulse.ModelView
          
         public async void RefreshModel()
         {
-            Control.ControlApp.Instance.AgromonAPI = "b5efce714742cc3aba8062b29f8c86f1";
+            //Control.ControlApp.Instance.AgromonAPI = "b5efce714742cc3aba8062b29f8c86f1";
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
-            ResponseField response = await HttpService.GetFieldList("998977");// ControlApp.UserInfo.insuranceNumber);
+            ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
             if (response.result)
             {
                 if (response.fields.Count != 0)
@@ -283,74 +283,7 @@ namespace FarmPulse.ModelView
                     tList.Add(info);
                 }
             }
-
-            #region
-            //if (dayOfWeek == DayOfWeek.Monday)
-            //{
-            //    tList = ExtractDayOfWeek(list, dayOfWeek);
-            //}
-            //else if (dayOfWeek == DayOfWeek.Tuesday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    { 
-            //        if (CheckDayOfWeek(info, DayOfWeek.Tuesday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    } 
-            //}
-            //else if (dayOfWeek == DayOfWeek.Wednesday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    {
-            //        if (CheckDayOfWeek(info, DayOfWeek.Wednesday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    }
-            //}
-            //else if (dayOfWeek == DayOfWeek.Thursday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    {
-            //        if (CheckDayOfWeek(info, DayOfWeek.Thursday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    }
-            //}
-            //else if (dayOfWeek == DayOfWeek.Friday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    {
-            //        if (CheckDayOfWeek(info, DayOfWeek.Friday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    }
-            //}
-            //else if (dayOfWeek == DayOfWeek.Saturday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    {
-            //        if (CheckDayOfWeek(info, DayOfWeek.Saturday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    }
-            //}
-            //else if (dayOfWeek == DayOfWeek.Sunday)
-            //{
-            //    foreach (ResponseForecastWeather info in list)
-            //    {
-            //        if (CheckDayOfWeek(info, DayOfWeek.Sunday))
-            //        {
-            //            tList.Add(info);
-            //        }
-            //    }
-            //}
-            #endregion
-
+             
             ResponseForecastWeather result = new ResponseForecastWeather();
 
             if (tList.Count != 0)
@@ -476,22 +409,7 @@ namespace FarmPulse.ModelView
 
             return dayOfIcon;
         }
-
-        //List<ResponseForecastWeather> ExtractDayOfWeek(List<ResponseForecastWeather> list, DayOfWeek dayOfWeek)
-        //{
-        //    List<ResponseForecastWeather> tList = new List<ResponseForecastWeather>();
-
-        //    foreach (ResponseForecastWeather info in list)
-        //    {
-        //        if (CheckDayOfWeek(info, dayOfWeek))
-        //        {
-        //            tList.Add(info);
-        //        }
-        //    }
-
-        //    return tList;
-        //}
-
+         
         bool CheckDayOfWeek(ResponseForecastWeather info, DayOfWeek dayOfWeek)
         {
             bool result = false;
@@ -501,7 +419,6 @@ namespace FarmPulse.ModelView
                 result = true;
 
             return result;
-        }
-
+        } 
     }
 }

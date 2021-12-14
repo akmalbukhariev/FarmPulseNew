@@ -183,8 +183,8 @@
                Grid.RowSpan="2">
             <ListView HasUnevenRows="True"
                       ItemsSource="{Binding Data}"
-                      ItemSelected="ListView_ItemSelected"
-                      SelectedItem="{Binding SelectedItem}">
+                      SelectedItem="{Binding SelectedItem}"
+                      ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

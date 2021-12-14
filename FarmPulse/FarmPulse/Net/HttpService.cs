@@ -50,7 +50,7 @@ namespace FarmPulse.Net
         #endregion
 
         private static HttpStatusCode StatusCode;
-        private static readonly HttpClient Client = new HttpClient();
+        //private static readonly HttpClient Client = new HttpClient();
         private static readonly WebClient webClient = new WebClient();
         private static JsonSerializerSettings settings = new JsonSerializerSettings
         {
@@ -79,6 +79,7 @@ namespace FarmPulse.Net
             if (responseLogin.result == true)
             {
                 APIKey = responseLogin.agromon;
+                Control.ControlApp.Instance.AgromonAPI = APIKey;
                 URL_CREATE_POLYGON = URL_AGRO_SERVER + "/polygons?appid=" + APIKey;
                 URL_POLYGON_LIST_INFO = URL_AGRO_SERVER + "/polygons?appid=" + APIKey;
             }
@@ -289,11 +290,9 @@ namespace FarmPulse.Net
             ResponseAgro response = new ResponseAgro();
             try
             {
-                string url = URL_POLYGON_INFO + "/" + polygonId + "?appid=" + APIKey;
-                var receivedData = await Client.GetAsync(url);
-                string result = await receivedData.Content.ReadAsStringAsync();
-                response = JsonConvert.DeserializeObject<ResponsePolygon>(result, settings);
-                response.StatusCode = receivedData.StatusCode;
+                string strRequest = URL_POLYGON_INFO + "/" + polygonId + "?appid=" + APIKey;  
+                string result = await RequestGetMethod(strRequest);
+                response = JsonConvert.DeserializeObject<ResponsePolygon>(result, settings); 
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponsePolygon>(); }
             catch (HttpRequestException) { return CreateResponseObj<ResponsePolygon>(); }
@@ -307,27 +306,12 @@ namespace FarmPulse.Net
             try
             {
                 string strRequest = string.Format("{0}={1}&end={2}&polyid={3}&appid={4}", URL_GET_SATELLITE_IMAGES, data.start, data.end, data.polyid, APIKey);
-                var result = await RequestGetMethod(strRequest);
-                //var receivedData = await Client.GetAsync(strRequest);
-                //string result = await receivedData.Content.ReadAsStringAsync();
-
-                //if (receivedData.StatusCode == HttpStatusCode.OK)
-                //{
-                    responseAlldata = (List<ResponseSatelliteImagesInfo>)JsonConvert.DeserializeObject(result, typeof(List<ResponseSatelliteImagesInfo>));
-                    for (int i = 0; i < responseAlldata.Count; i++)
-                    {
-                        //responseAlldata[i].StatusCode = receivedData.StatusCode;
-                        responseAlldata[i].Check();
-                    }
-                //}
-                //else
-                //{
-                //    ResponseSatelliteImagesInfo errorData = JsonConvert.DeserializeObject<ResponseSatelliteImagesInfo>(result);
-                //    errorData.StatusCode = receivedData.StatusCode;
-                //    errorData.Check();
-                //    responseAlldata.Add(errorData);
-                //}
-
+                var result = await RequestGetMethod(strRequest); 
+                responseAlldata = (List<ResponseSatelliteImagesInfo>)JsonConvert.DeserializeObject(result, typeof(List<ResponseSatelliteImagesInfo>));
+                for (int i = 0; i < responseAlldata.Count; i++)
+                { 
+                    responseAlldata[i].Check();
+                } 
             }
             catch (JsonReaderException) { return new List<ResponseSatelliteImagesInfo>(); }
             catch (HttpRequestException) { return new List<ResponseSatelliteImagesInfo>(); }
@@ -483,14 +467,14 @@ namespace FarmPulse.Net
 
     public class RequestBuyInsurance : IRequest
     {
+        public string cropName { get; set; }
+        public string date { get; set; }
+        public string farmerName { get; set; }
         public string fieldId { get; set; }
         public string fieldName { get; set; }
-        public string cropName { get; set; }
-        public string hectars { get; set; }
-        public string farmerName { get; set; }
+        public string hectares { get; set; } 
         public string phoneNumber { get; set; }
         public string status { get; set; }
-        public string date { get; set; }
     }
 
     public class RequestWeather : IRequest
@@ -886,7 +870,7 @@ namespace FarmPulse.Net
         public string fieldId { get; set; }
         public string fieldName { get; set; }
         public string cropName { get; set; }
-        public string hectars { get; set; }
+        public string hectares { get; set; }
         public string farmerName { get; set; }
         public string phoneNumber { get; set; }
         public string status { get; set; }
@@ -902,11 +886,11 @@ namespace FarmPulse.Net
             this.fieldId = other.fieldId;
             this.fieldName = other.fieldName;
             this.cropName = other.cropName;
-            this.hectars = other.hectars;
+            this.hectares = other.hectares;
             this.farmerName = other.farmerName;
             this.phoneNumber = other.phoneNumber;
             this.status = other.status;
-            this.date = this.date;
+            this.date = other.date;
             if (string.IsNullOrEmpty(this.date))
             {
                 this.date = "YYYY.mm.dd";
