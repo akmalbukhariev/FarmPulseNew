@@ -259,6 +259,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date of birth.
+        /// </summary>
+        internal static string DateOfBirth {
+            get {
+                return ResourceManager.GetString("DateOfBirth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Demo.
         /// </summary>
         internal static string Demo {
@@ -282,6 +291,15 @@ namespace FarmPulse.Resources {
         internal static string DescriptionCropYieldData {
             get {
                 return ResourceManager.GetString("DescriptionCropYieldData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to District.
+        /// </summary>
+        internal static string District {
+            get {
+                return ResourceManager.GetString("District", resourceCulture);
             }
         }
         
@@ -363,6 +381,33 @@ namespace FarmPulse.Resources {
         internal static string FindIdPassword {
             get {
                 return ResourceManager.GetString("FindIdPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find Insuracne.
+        /// </summary>
+        internal static string FindInsuracne {
+            get {
+                return ResourceManager.GetString("FindInsuracne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find Insurance and Password.
+        /// </summary>
+        internal static string FindInsurancePassword {
+            get {
+                return ResourceManager.GetString("FindInsurancePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find Password.
+        /// </summary>
+        internal static string FindPassword {
+            get {
+                return ResourceManager.GetString("FindPassword", resourceCulture);
             }
         }
         
@@ -579,6 +624,15 @@ namespace FarmPulse.Resources {
         internal static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        internal static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
             }
         }
         

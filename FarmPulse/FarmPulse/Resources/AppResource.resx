@@ -205,6 +205,10 @@
     <value>Date</value>
     <comment>ControlApp</comment>
   </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Date of birth</value>
+    <comment>Page Find Insurance</comment>
+  </data>
   <data name="Demo" xml:space="preserve">
     <value>Demo</value>
     <comment>Page Setting</comment>
@@ -216,6 +220,10 @@
   <data name="DescriptionCropYieldData" xml:space="preserve">
     <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
     <comment>Page Crop yield data</comment>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>District</value>
+    <comment>Page Find Insurance</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
     <value>End date</value>
@@ -251,6 +259,18 @@
   </data>
   <data name="FindIdPassword" xml:space="preserve">
     <value>Find ID/Password</value>
+    <comment>Page Login</comment>
+  </data>
+  <data name="FindInsuracne" xml:space="preserve">
+    <value>Find Insuracne</value>
+    <comment>Page Login</comment>
+  </data>
+  <data name="FindInsurancePassword" xml:space="preserve">
+    <value>Find Insurance and Password</value>
+    <comment>Page Login</comment>
+  </data>
+  <data name="FindPassword" xml:space="preserve">
+    <value>Find Password</value>
     <comment>Page Login</comment>
   </data>
   <data name="Forecast" xml:space="preserve">
@@ -348,6 +368,10 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
     <comment>Page Login</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+    <comment>Page Find Insurance</comment>
   </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Please wait...</value>

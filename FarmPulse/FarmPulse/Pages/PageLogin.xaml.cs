@@ -1,5 +1,7 @@
 ﻿
+using Acr.UserDialogs;
 using FarmPulse.ModelView;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -61,9 +63,17 @@ namespace FarmPulse.Pages
             }
         }
 
-        private void LabelFind_Tapped(object sender, System.EventArgs e)
+        private async void LabelFind_Tapped(object sender, System.EventArgs e)
         { 
-            ChangeClickBackColor(lbFindPassword); 
+            ChangeClickBackColor(lbFindPassword);
+
+            var choices = new[] { RSC.FindInsuracne, RSC.FindPassword };
+            var choice = await UserDialogs.Instance.ActionSheetAsync(RSC.FindInsurancePassword, RSC.Ok, RSC.Cancel, CancellationToken.None, choices);
+
+            if (!string.IsNullOrEmpty(choice))
+            {
+                
+            }
         }
 
         private async void ChangeClickBackColor(Label label)

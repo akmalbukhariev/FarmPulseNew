@@ -20,11 +20,13 @@ namespace FarmPulse
     {
         public App()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            MainPage = new TransitionNavigationPage(new PageFindPassword());
         }
 
         protected override void OnStart()
         {
+            return;
             ControlApp.Instance.AppStarting = true;
             ControlApp.Instance.AppOnResume = false;
             ControlApp.Instance.AppOnSleep = false;
