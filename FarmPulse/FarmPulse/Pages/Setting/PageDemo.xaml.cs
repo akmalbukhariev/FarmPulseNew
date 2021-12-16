@@ -22,6 +22,9 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
 
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             ControlApp.ShowLoadingView(RSC.PleaseWait);
             ResponseDemo response = await HttpService.GetDemoVidieoUrl();
             if (response.result)

@@ -27,6 +27,9 @@ namespace FarmPulse.ModelView
        
         public async void ClickLogin()
         {
+            if (!ControlApp.Instance.InternetOk())
+                return;
+
             ControlApp.ShowLoadingView(RSC.PleaseWait);
             RequestLogin request = new RequestLogin()
             {

@@ -30,6 +30,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         async void Monitoring()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new PageFieldList());
         }
@@ -39,6 +42,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         async void Insurance()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new PagePurchase());
         }
@@ -48,6 +54,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         async void WeatherInfo()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new PageWeather());
         }

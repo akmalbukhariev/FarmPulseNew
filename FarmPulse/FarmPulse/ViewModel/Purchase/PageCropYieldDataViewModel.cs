@@ -154,6 +154,9 @@ namespace FarmPulse.ModelView
 
         private async void Save()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (!CheckParam())
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the field name and crop name.", RSC.Ok);

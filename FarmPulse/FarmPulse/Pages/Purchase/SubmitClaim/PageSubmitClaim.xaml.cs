@@ -20,6 +20,10 @@ namespace FarmPulse.Pages.Purchase.SubmitClaim
         {
             base.OnAppearing(); 
             model.Parent = Parent;
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetFields();
         }
 

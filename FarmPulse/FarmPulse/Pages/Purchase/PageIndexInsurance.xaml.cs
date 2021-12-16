@@ -26,11 +26,18 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
             model.Parent = Parent;
+            
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetIndexList();
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedMetrics != null)
             {
                 model.RefreshGraphViewData(FieldInfo.fieldId);

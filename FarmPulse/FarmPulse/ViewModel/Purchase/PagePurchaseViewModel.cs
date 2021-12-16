@@ -28,6 +28,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickInsurance()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             //await Navigation.PushAsync(new PageInfo("Insurance"));
         }
@@ -37,6 +40,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickIndexInsurance()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new PageFieldList(true));
         }
@@ -46,6 +52,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickEstimate()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             //await Navigation.PushAsync(new PageInfo("Estimate"));
         }
@@ -55,6 +64,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickCover()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             //await Navigation.PushAsync(new PageInfo("Cover"));
         }
@@ -64,6 +76,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickSubmitClaim()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new Pages.Purchase.SubmitClaim.PageSubmitClaim());
         }
@@ -73,6 +88,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickFAQ()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             //await Navigation.PushAsync(new PageInfo("FAQ"));
         }
@@ -82,6 +100,9 @@ namespace FarmPulse.ModelView
         /// </summary>
         private async void ClickBuy()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             SetTransitionType(TransitionType.SlideFromRight);
             await Navigation.PushAsync(new Pages.Purchase.PurchaseInsurance.PagePurchaseInsurance());
         }

@@ -26,11 +26,18 @@ namespace FarmPulse.Pages.Purchase.SubmitClaim
         {
             base.OnAppearing();
             model.Parent = Parent;
+            
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetSubmitedHistory();
         }
 
         private async void ClaimList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);

@@ -26,11 +26,18 @@ namespace FarmPulse.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetFields();
         }
   
         private void pickField_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedField != null)
             {
                 model.CropType = model.SelectedField.cropName;

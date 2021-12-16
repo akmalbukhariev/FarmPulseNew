@@ -28,11 +28,18 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
             model.Parent = Parent;
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.RefreshFieldList();
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);

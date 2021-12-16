@@ -19,12 +19,18 @@ namespace FarmPulse.Views
 
         private async void Demo_Tapped(object sender, EventArgs e)
         {
+            if (!ControlApp.Instance.InternetOk())
+                return;
+
             Slidestyle();
             await Navigation.PushAsync(new PageDemo());
         }   
 
         private async void Info_Tapped(object sender, EventArgs e)
         {
+            if (!ControlApp.Instance.InternetOk())
+                return;
+
             Slidestyle();
             await Navigation.PushAsync(new PageInfo());
         }
@@ -34,7 +40,8 @@ namespace FarmPulse.Views
             if (PageParent == null) return;
 
             var transitionNavigationPage = PageParent as TransitionNavigationPage;
-            transitionNavigationPage.TransitionType = TransitionType.SlideFromRight;
+            if (transitionNavigationPage != null)
+                transitionNavigationPage.TransitionType = TransitionType.SlideFromRight;
         }
     }
 }

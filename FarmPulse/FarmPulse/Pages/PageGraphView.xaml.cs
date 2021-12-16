@@ -29,12 +29,19 @@ namespace FarmPulse.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            model.GetIndexList();
             model.Parent = Parent;
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+            
+            model.GetIndexList();
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedMetrics != null)
             {
                 model.RefreshGraphViewData(FieldInfo.fieldId);

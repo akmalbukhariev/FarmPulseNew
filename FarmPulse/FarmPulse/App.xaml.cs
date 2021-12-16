@@ -34,7 +34,7 @@ namespace FarmPulse
             string strLanguage = AppSettings.GetLanguage();
             if (strLanguage == string.Empty)
             {
-                MainPage = new PageLanguage();
+                MainPage = new TransitionNavigationPage(new PageLanguage());
             }
             else
             {

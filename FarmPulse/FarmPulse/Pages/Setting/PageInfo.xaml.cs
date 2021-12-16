@@ -21,6 +21,9 @@ namespace FarmPulse.Pages
 
         protected async override void OnAppearing()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             base.OnAppearing();
 
             ControlApp.ShowLoadingView(RSC.PleaseWait);

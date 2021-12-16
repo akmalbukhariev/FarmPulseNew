@@ -45,9 +45,15 @@ namespace FarmPulse.Pages
             model.ShowTimePeriodBox = true;
         }
 
-        private void Image_Tapped(object sender, EventArgs e)
+        private async void Image_Tapped(object sender, EventArgs e)
         {
             ChangeClickBackColor(stackImage);
+
+            if (model.Data.Count == 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, "There is not image", RSC.Ok);
+                return;
+            }
             model.ShowImages = true;
         }
 

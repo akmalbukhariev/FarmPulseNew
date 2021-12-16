@@ -109,6 +109,9 @@ namespace FarmPulse.ModelView
 
         private async void ClickTimeBoxOk()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             Data.Clear();
             ShowTimePeriodBox = false;
             RequestGetSatelliteImagesInfo request = new RequestGetSatelliteImagesInfo()
@@ -190,6 +193,9 @@ namespace FarmPulse.ModelView
 
         public async void DownloadSatelliteImage()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             ControlApp.ShowLoadingView(RSC.PleaseWait);
             CustomMap.OverlayImage = await HttpService.GetSatelliteImagery(SelectedItem.ImagePath);
             CustomMap.SetOverlayImage();

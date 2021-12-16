@@ -60,7 +60,8 @@ namespace FarmPulse.ModelView
             if (Parent == null) return;
 
             var transitionNavigationPage = Parent as TransitionNavigationPage;
-            transitionNavigationPage.TransitionType = transitionType;
+            if (transitionNavigationPage != null)
+                transitionNavigationPage.TransitionType = transitionType;
         }
     }
 }

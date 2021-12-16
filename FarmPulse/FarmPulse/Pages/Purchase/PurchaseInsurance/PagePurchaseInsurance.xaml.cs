@@ -25,6 +25,10 @@ namespace FarmPulse.Pages.Purchase.PurchaseInsurance
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetFields();
         }
 

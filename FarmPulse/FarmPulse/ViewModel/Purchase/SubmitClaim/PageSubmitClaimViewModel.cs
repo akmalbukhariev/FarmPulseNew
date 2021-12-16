@@ -82,6 +82,9 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
 
         private async void Submit()
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (!CheckParam())
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the all fields.", RSC.Ok);

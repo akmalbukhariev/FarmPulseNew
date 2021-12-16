@@ -25,11 +25,18 @@ namespace FarmPulse.Pages.Purchase.PurchaseInsurance
         {
             base.OnAppearing();
             model.Parent = Parent;
+
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             model.GetSubmitedHistory();
         }
 
         private async void Purchased_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (!Control.ControlApp.Instance.InternetOk())
+                return;
+
             if (model.SelectedItem != null)
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
