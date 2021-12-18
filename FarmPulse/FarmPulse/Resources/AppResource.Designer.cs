@@ -295,15 +295,6 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to District.
-        /// </summary>
-        internal static string District {
-            get {
-                return ResourceManager.GetString("District", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to End date.
         /// </summary>
         internal static string EndDate {
@@ -727,11 +718,29 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select country.
+        /// </summary>
+        internal static string SelectCountry {
+            get {
+                return ResourceManager.GetString("SelectCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the crop.
         /// </summary>
         internal static string SelectCrop {
             get {
                 return ResourceManager.GetString("SelectCrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select district.
+        /// </summary>
+        internal static string SelectDistrict {
+            get {
+                return ResourceManager.GetString("SelectDistrict", resourceCulture);
             }
         }
         
@@ -759,6 +768,15 @@ namespace FarmPulse.Resources {
         internal static string SelectLanguage {
             get {
                 return ResourceManager.GetString("SelectLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select region.
+        /// </summary>
+        internal static string SelectRegion {
+            get {
+                return ResourceManager.GetString("SelectRegion", resourceCulture);
             }
         }
         
@@ -939,6 +957,24 @@ namespace FarmPulse.Resources {
         internal static string WuaVillage {
             get {
                 return ResourceManager.GetString("WuaVillage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;r insurance number is.
+        /// </summary>
+        internal static string YourInsuranceNumber {
+            get {
+                return ResourceManager.GetString("YourInsuranceNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;r password is.
+        /// </summary>
+        internal static string YourPassword {
+            get {
+                return ResourceManager.GetString("YourPassword", resourceCulture);
             }
         }
     }

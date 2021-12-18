@@ -72,7 +72,16 @@ namespace FarmPulse.Pages
 
             if (!string.IsNullOrEmpty(choice))
             {
-                
+                model.SetTransitionType(TransitionType.SlideFromRight);
+
+                if (choice.Equals(RSC.FindInsuracne))
+                {
+                    await Navigation.PushAsync(new PageFindInsurance());
+                }
+                else
+                {
+                    await Navigation.PushAsync(new PageFindPassword());
+                }
             }
         }
 

@@ -45,12 +45,17 @@ namespace FarmPulse.Net
         public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
         public static string URL_GET_HISTORY_OF_PURCHASE = SERVER_URL + "purchases/";
         public static string URL_BUY_INSURANCE = SERVER_URL + "purchase"; 
+        public static string URL_FIND_INSURANCE = SERVER_URL + "purchase";
+        public static string URL_FIND_PASSWORD = SERVER_URL + "purchase";
+
+        public static string URL_GET_COUNTRY = SERVER_URL + "countries";
+        public static string URL_GET_REGIONS = SERVER_URL + "regions/";//{countryId}";
+        public static string URL_GET_DISTRICTS = SERVER_URL + "districts/";//{regionId}";
         #endregion
 
         #endregion
 
-        private static HttpStatusCode StatusCode;
-        //private static readonly HttpClient Client = new HttpClient();
+        private static HttpStatusCode StatusCode; 
         private static readonly WebClient webClient = new WebClient();
         private static JsonSerializerSettings settings = new JsonSerializerSettings
         {
@@ -253,6 +258,76 @@ namespace FarmPulse.Net
             catch (HttpRequestException) { return CreateResponseObj<ResponsePurchasedHistory>(); }
 
             return ConvertResponseObj<ResponsePurchasedHistory>(response); ;
+        }
+
+        public async static Task<ResponseFindInsurance> FindInsurance(RequestFindInsurance data)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_FIND_INSURANCE);
+                response = JsonConvert.DeserializeObject<ResponseFindInsurance>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseFindInsurance>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseFindInsurance>(); }
+
+            return ConvertResponseObj<ResponseFindInsurance>(response); ;
+        }
+
+        public async static Task<ResponseFindPassword> FindPassword(RequestFindPassword data)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_FIND_PASSWORD);
+                response = JsonConvert.DeserializeObject<ResponseFindPassword>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseFindPassword>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseFindPassword>(); }
+
+            return ConvertResponseObj<ResponseFindPassword>(response); ;
+        }
+
+        public async static Task<ResponseCountries> GetCountrys()
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_COUNTRY);
+                response = JsonConvert.DeserializeObject<ResponseCountries>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseCountries>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseCountries>(); }
+
+            return ConvertResponseObj<ResponseCountries>(response); ;
+        }
+
+        public async static Task<ResponseRegions> GetRegions(string countryId)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_REGIONS + countryId);
+                response = JsonConvert.DeserializeObject<ResponseRegions>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseRegions>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseRegions>(); }
+
+            return ConvertResponseObj<ResponseRegions>(response);
+        }
+
+        public async static Task<ResponseDistrict> GetDistricts(string regionId)
+        {
+            Response response = new Response();
+            try
+            {
+                var receivedData = await RequestGetMethod(URL_GET_DISTRICTS + regionId);
+                response = JsonConvert.DeserializeObject<ResponseDistrict>(receivedData, settings);
+            }
+            catch (JsonReaderException) { return CreateResponseObj<ResponseDistrict>(); }
+            catch (HttpRequestException) { return CreateResponseObj<ResponseDistrict>(); }
+
+            return ConvertResponseObj<ResponseDistrict>(response); 
         }
 
         #region Agro monitoring
@@ -495,7 +570,22 @@ namespace FarmPulse.Net
         public string end { get; set; }
         public string polyid { get; set; }
     }
-     
+
+    public class RequestFindInsurance : IRequest
+    {
+        public string birthday { get; set; } //YYYY.MM.DD
+        public string phoneNumber { get; set; }
+        public string districtId { get; set; }
+    }
+
+    public class RequestFindPassword : IRequest
+    {
+        public string insurance { get; set; }
+        public string birthday { get; set; } //YYYY.MM.DD
+        public string phoneNumber { get; set; }
+        public string districtId { get; set; }
+    }
+
     #endregion
 
     #region Response
@@ -608,6 +698,35 @@ namespace FarmPulse.Net
     public class ResponseBuyInsurance : Response, IResponse
     {
         
+    }
+
+    public class ResponseFindInsurance : Response, IResponse
+    {
+        public string insurance { get; set; }
+    }
+
+    public class ResponseFindPassword : Response, IResponse
+    {
+        public string password { get; set; }
+    }
+
+    public class ResponseCountries : Response, IResponse
+    {
+        public List<Country> countries { get; set; }
+        public ResponseCountries()
+        {
+            countries = new List<Country>();
+        }
+    }
+
+    public class ResponseRegions : Response, IResponse
+    {
+        public List<Region> regions { get; set; }
+    }
+
+    public class ResponseDistrict : Response, IResponse
+    {
+        public List<District> districts { get; set; }
     }
 
     #region For Agro Monitoring
@@ -756,6 +875,9 @@ namespace FarmPulse.Net
         public string surname { get; set; }
         public int tenantId { get; set; }
         public int villageSequence { get; set; }
+        public string dateOfBirth { get; set; }
+        public string phoneNumber { get; set; }
+        public string extraInfo { get; set; }
     }
     public class CropInfo
     {
@@ -900,6 +1022,54 @@ namespace FarmPulse.Net
         public SubmitedPurchaseHistoryInfo()
         {
             
+        }
+    }
+
+    public class Country
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+
+        public Country()
+        {
+        }
+
+        public Country(Country other)
+        {
+            id = other.id;
+            name = other.name;
+        }
+    }
+
+    public class Region
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+
+        public Region(Region other)
+        {
+            id = other.id;
+            name = other.name;
+        }
+
+        public Region()
+        {
+        }
+    }
+
+    public class District
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+
+        public District(District other)
+        {
+            id = other.id;
+            name = other.name;
+        }
+
+        public District()
+        {
         }
     }
 

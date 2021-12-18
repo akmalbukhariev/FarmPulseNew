@@ -221,10 +221,6 @@
     <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
     <comment>Page Crop yield data</comment>
   </data>
-  <data name="District" xml:space="preserve">
-    <value>District</value>
-    <comment>Page Find Insurance</comment>
-  </data>
   <data name="EndDate" xml:space="preserve">
     <value>End date</value>
     <comment>Page Map View</comment>
@@ -413,9 +409,17 @@
     <value>Save ID/Password</value>
     <comment>Page Login</comment>
   </data>
+  <data name="SelectCountry" xml:space="preserve">
+    <value>Select country</value>
+    <comment>Page Find Insurance</comment>
+  </data>
   <data name="SelectCrop" xml:space="preserve">
     <value>Select the crop</value>
     <comment>Page Crop yield data</comment>
+  </data>
+  <data name="SelectDistrict" xml:space="preserve">
+    <value>Select district</value>
+    <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectField" xml:space="preserve">
     <value>Select the field</value>
@@ -428,6 +432,10 @@
   <data name="SelectLanguage" xml:space="preserve">
     <value>Select Language</value>
     <comment>Page Language</comment>
+  </data>
+  <data name="SelectRegion" xml:space="preserve">
+    <value>Select region</value>
+    <comment>Page Find Insurance</comment>
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
@@ -508,5 +516,13 @@
   <data name="WuaVillage" xml:space="preserve">
     <value>WUA/Village</value>
     <comment>Page Field</comment>
+  </data>
+  <data name="YourInsuranceNumber" xml:space="preserve">
+    <value>You'r insurance number is</value>
+    <comment>Page Find Insurance</comment>
+  </data>
+  <data name="YourPassword" xml:space="preserve">
+    <value>You'r password is</value>
+    <comment>Page Find Insurance</comment>
   </data>
 </root>

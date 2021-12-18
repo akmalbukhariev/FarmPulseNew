@@ -4,10 +4,11 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:control="clr-namespace:FarmPulse.Control"
             x:Class="FarmPulse.Pages.PageFindInsurance"
             BackgroundColor="{StaticResource AppColor}">
 
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
           ColumnDefinitions="*,330,*">
         <Grid.Resources>
             <ResourceDictionary>
@@ -31,26 +32,63 @@
                              BackgroundColor="#D3BCA2"
                              Grid.Column="0"
                              Grid.ColumnSpan="3"/>
+
         <StackLayout Grid.Row="1"
+                     Grid.Column="1">
+            <Label Text="{x:Static resource:AppResource.SelectCountry}"
+                   Style="{StaticResource lbStyle}"/>
+            <control:CustomPicker x:Name="pickCountry" 
+                                  ChartSyle="True"
+                                  Image="show"
+                                  TextColor="Black"
+                                  TitleColor="Gray"
+                                  BackgroundColor="White"  
+                                  ItemsSource="{Binding Countries}" 
+                                  ItemDisplayBinding="{Binding name}" 
+                                  SelectedItem="{Binding SelectedCountry}"
+                                  SelectedIndexChanged="SelectedIndexChanged"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2"
+                     Grid.Column="1">
+            <Label Text="{x:Static resource:AppResource.SelectRegion}"
+                   Style="{StaticResource lbStyle}"/>
+            <control:CustomPicker x:Name="pickRegion"
+                                  ChartSyle="True"
+                                  Image="show"
+                                  TextColor="Black"
+                                  TitleColor="Gray"
+                                  BackgroundColor="White"  
+                                  ItemsSource="{Binding Regions}" 
+                                  ItemDisplayBinding="{Binding name}" 
+                                  SelectedItem="{Binding SelectedRegion}"
+                                  SelectedIndexChanged="SelectedIndexChanged"/>
+        </StackLayout>
+        <StackLayout Grid.Row="3"
+                     Grid.Column="1">
+            <Label Text="{x:Static resource:AppResource.SelectDistrict}"
+                   Style="{StaticResource lbStyle}"/>
+            <control:CustomPicker x:Name="pickDistrict"
+                                  ChartSyle="True"
+                                  Image="show"
+                                  TextColor="Black"
+                                  TitleColor="Gray"
+                                  BackgroundColor="White"  
+                                  ItemsSource="{Binding Districts}" 
+                                  ItemDisplayBinding="{Binding name}"/>
+        </StackLayout>
+        <StackLayout Grid.Row="4"
                      Grid.Column="1">
             <Label Text="{x:Static resource:AppResource.DateOfBirth}"
                    Style="{StaticResource lbStyle}"/>
             <DatePicker Date="{Binding Date}"/>
         </StackLayout>
-        <StackLayout Grid.Row="2"
+        <StackLayout Grid.Row="5"
                      Grid.Column="1">
             <Label Text="{x:Static resource:AppResource.PhoneNumber}"
                    Style="{StaticResource lbStyle}"/>
             <view:EntryView Style="{StaticResource edStyle}"
                             Text="{Binding PhoneNumber}"/>
-        </StackLayout>
-        <StackLayout Grid.Row="3"
-                     Grid.Column="1">
-            <Label Text="{x:Static resource:AppResource.District}"
-                   Style="{StaticResource lbStyle}"/>
-            <view:EntryView Style="{StaticResource edStyle}"
-                            Text="{Binding District}"/>
-        </StackLayout>
+        </StackLayout> 
         <Button Text="{x:Static resource:AppResource.Ok}"
                 TextColor="Black"
                 FontSize="15"
@@ -60,7 +98,8 @@
                 BorderWidth="1"
                 BackgroundColor="#D6BC9F"
                 VerticalOptions="CenterAndExpand"
-                Grid.Row="4"
+                Command="{Binding ClickOkCommand}"
+                Grid.Row="6"
                 Grid.Column="1"/>
     </Grid>
     

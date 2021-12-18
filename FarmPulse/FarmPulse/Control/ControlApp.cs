@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using FarmPulse.Net;
+using Plugin.LocalNotification;
 using System; 
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -108,6 +109,21 @@ namespace FarmPulse.Control
 
                 return false; // True = Repeat again, False = Stop the timer
             });
+        }
+
+        public void ShowNotification(string desctirption, string title)
+        {
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = desctirption,
+                Title = title,
+                ReturningData = "Dummy",
+                NotificationId = 113,
+                Schedule = new NotificationRequestSchedule() { NotifyTime = DateTime.Now.AddSeconds(3) }
+            };
+
+            NotificationCenter.Current.Show(notification);
         }
 
         public double DateTimeToUnixTimestamp(DateTime dateTime)

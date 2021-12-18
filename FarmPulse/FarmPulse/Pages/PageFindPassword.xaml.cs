@@ -18,6 +18,27 @@ namespace FarmPulse.Pages
         {
             InitializeComponent();
             model = new PageFindPasswordViewModel(Navigation);
+            BindingContext = model;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.GetCountrys();
+        }
+
+        private void SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender == pickCountry)
+            {
+                if (model.SelectedCountry != null)
+                    model.GetRegions();
+            }
+            else if (sender == pickRegion)
+            {
+                if (model.SelectedRegion != null)
+                    model.GetDistricts();
+            }
         }
     }
 }
