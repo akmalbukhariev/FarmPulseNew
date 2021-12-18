@@ -32,7 +32,7 @@ namespace FarmPulse.ModelView
                 return;
 
             SetTransitionType(TransitionType.SlideFromRight);
-            //await Navigation.PushAsync(new PageInfo("Insurance"));
+            await Navigation.PushAsync(new Pages.Purchase.PageInfo(Pages.Purchase.PageInfo.PageId.P_Insurance));
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace FarmPulse.ModelView
                 return;
 
             SetTransitionType(TransitionType.SlideFromRight);
-            //await Navigation.PushAsync(new PageInfo("Estimate"));
+            await Navigation.PushAsync(new Pages.Purchase.PageInfo(Pages.Purchase.PageInfo.PageId.P_Estimate));
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace FarmPulse.ModelView
                 return;
 
             SetTransitionType(TransitionType.SlideFromRight);
-            //await Navigation.PushAsync(new PageInfo("Cover"));
+            await Navigation.PushAsync(new Pages.Purchase.PageInfo(Pages.Purchase.PageInfo.PageId.P_Cover));
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace FarmPulse.ModelView
                 return;
 
             SetTransitionType(TransitionType.SlideFromRight);
-            //await Navigation.PushAsync(new PageInfo("FAQ"));
+            await Navigation.PushAsync(new Pages.Purchase.PageInfo(Pages.Purchase.PageInfo.PageId.P_Faq));
         }
 
         /// <summary>

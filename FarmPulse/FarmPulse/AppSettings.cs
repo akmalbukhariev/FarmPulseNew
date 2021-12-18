@@ -11,6 +11,11 @@ namespace FarmPulse
 {
     public class AppSettings
     {
+        public static string LanUz = "uz";
+        public static string LanEn = "en";
+        public static string LanRu = "ru";
+        public static string LanMn = "mn";
+
         public static string Language = "Language";
          
         public static void SetLanguage(string strLanguage)

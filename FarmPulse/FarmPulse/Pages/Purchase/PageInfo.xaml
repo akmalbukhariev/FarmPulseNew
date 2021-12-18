@@ -7,11 +7,13 @@
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">
-        <view:NavigationView Text="{Binding Title}" 
+        <view:NavigationView x:Name="navigation" 
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
-        <Label Text="{Binding InfoText}"
-               Grid.Row="1"/>
+        <WebView x:Name="webView"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Grid.Row="1"/>
     </Grid>
 
 </page:IPage>
