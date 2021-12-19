@@ -109,7 +109,7 @@ namespace FarmPulse.ModelView
 
         private async void ClickTimeBoxOk()
         {
-            if (!Control.ControlApp.Instance.InternetOk())
+            if (!ControlApp.Instance.InternetOk())
                 return;
 
             Data.Clear();
@@ -193,7 +193,7 @@ namespace FarmPulse.ModelView
 
         public async void DownloadSatelliteImage()
         {
-            if (!Control.ControlApp.Instance.InternetOk())
+            if (!ControlApp.Instance.InternetOk())
                 return;
 
             ControlApp.ShowLoadingView(RSC.PleaseWait);

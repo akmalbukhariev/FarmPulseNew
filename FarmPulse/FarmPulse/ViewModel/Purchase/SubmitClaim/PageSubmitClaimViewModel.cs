@@ -14,8 +14,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
         #region Properties 
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
         public string AreaTon { get => GetValue<string>(); set => SetValue(value); }
-        public string Name { get => GetValue<string>(); set => SetValue(value); }
-        public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
+        public string Name { get => GetValue<string>(); set => SetValue(value); } 
         public string Description { get => GetValue<string>(); set => SetValue(value); } 
 
         public FieldInfo SelectedField { get => GetValue<FieldInfo>(); set => SetValue(value); }
@@ -74,7 +73,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetField}: {response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -87,7 +86,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
 
             if (!CheckParam())
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the all fields.", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage1, RSC.Ok);
                 return;
             }
              
@@ -115,7 +114,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.SubmitFailed} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

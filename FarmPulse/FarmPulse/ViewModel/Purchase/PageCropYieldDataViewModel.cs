@@ -85,7 +85,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);    
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetField}: {response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -146,7 +146,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetCropYielddata} :{response.message}", RSC.Ok);
             }
              
             ControlApp.CloseLoadingView();
@@ -159,7 +159,7 @@ namespace FarmPulse.ModelView
 
             if (!CheckParam())
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the field name and crop name.", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage1, RSC.Ok);
                 return;
             }
 
@@ -191,7 +191,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.SaveCropYielddata} :{response.message}", RSC.Ok);
             } 
         }
     }

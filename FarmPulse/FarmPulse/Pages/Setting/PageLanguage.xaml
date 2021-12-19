@@ -10,7 +10,7 @@
           ColumnDefinitions="*,330,*">
         <view:NavigationView x:Name="navigationView"
                              IsVisible="false" 
-                             Text="Language"
+                             Text="{x:Static resource:AppResource.Language}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"
                              Grid.ColumnSpan="3"/>

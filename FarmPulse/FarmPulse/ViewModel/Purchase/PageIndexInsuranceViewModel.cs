@@ -35,7 +35,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetIndex}: {response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -91,7 +91,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetGraphData} : {response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

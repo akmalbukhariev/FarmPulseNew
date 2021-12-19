@@ -81,7 +81,7 @@ namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.PurchasedGetHistoryFailed} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

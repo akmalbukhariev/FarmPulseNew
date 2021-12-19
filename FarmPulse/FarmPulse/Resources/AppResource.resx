@@ -137,6 +137,14 @@
     <value>Area ton/ha</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="AutoLogin" xml:space="preserve">
+    <value>Auto login</value>
+    <comment>Page Login</comment>
+  </data>
+  <data name="AutoLogMessage" xml:space="preserve">
+    <value>If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <comment>Page Login</comment>
+  </data>
   <data name="AvailableImages" xml:space="preserve">
     <value>Available Images</value>
     <comment>Page Map View</comment>
@@ -233,6 +241,38 @@
     <value>Estimate rates</value>
     <comment>Page Purchase</comment>
   </data>
+  <data name="FailedGetCountry" xml:space="preserve">
+    <value>Failed to get the country</value>
+    <comment>Model Base</comment>
+  </data>
+  <data name="FailedGetCropYielddata" xml:space="preserve">
+    <value>Failed to get crop yield data</value>
+    <comment>Page Crop yield data</comment>
+  </data>
+  <data name="FailedGetDemoUrl" xml:space="preserve">
+    <value>Failed to get demo video url!</value>
+    <comment>Page Demo</comment>
+  </data>
+  <data name="FailedGetDistrict" xml:space="preserve">
+    <value>Failed to get the district</value>
+    <comment>Model Base</comment>
+  </data>
+  <data name="FailedGetField" xml:space="preserve">
+    <value>Failed to get field</value>
+    <comment>Page Field</comment>
+  </data>
+  <data name="FailedGetGraphData" xml:space="preserve">
+    <value>Failed to get graph data</value>
+    <comment>Page Graph View</comment>
+  </data>
+  <data name="FailedGetIndex" xml:space="preserve">
+    <value>Failed to get index</value>
+    <comment>Page Graph View</comment>
+  </data>
+  <data name="FailedGetRegion" xml:space="preserve">
+    <value>Failed to get the region</value>
+    <comment>Model Base</comment>
+  </data>
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
     <comment>Page Purchase</comment>
@@ -260,6 +300,14 @@
   <data name="FindInsuracne" xml:space="preserve">
     <value>Find Insuracne</value>
     <comment>Page Login</comment>
+  </data>
+  <data name="FindInsuranceMessage1" xml:space="preserve">
+    <value>Please fill out all information!</value>
+    <comment>Page Find Insurance</comment>
+  </data>
+  <data name="FindInsuranceMessage2" xml:space="preserve">
+    <value>Could not find the user!</value>
+    <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsurancePassword" xml:space="preserve">
     <value>Find Insurance and Password</value>
@@ -377,6 +425,10 @@
     <value>Purchase</value>
     <comment>Page Purchase</comment>
   </data>
+  <data name="PurchasedGetHistoryFailed" xml:space="preserve">
+    <value>Failed to get purchased history.</value>
+    <comment>Page Purchase History </comment>
+  </data>
   <data name="PurchaseInsurance" xml:space="preserve">
     <value>Purchase an insurance</value>
     <comment>Page Purchase an insurance</comment>
@@ -403,6 +455,10 @@
   </data>
   <data name="SaveAndNext" xml:space="preserve">
     <value>Save and Next</value>
+    <comment>Page Crop yield data</comment>
+  </data>
+  <data name="SaveCropYielddata" xml:space="preserve">
+    <value>Save has field!</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
@@ -461,6 +517,14 @@
     <value>Submit</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="SubmitedGetHistoryFailed" xml:space="preserve">
+    <value>Failed to get submited history.</value>
+    <comment>Page Submited History </comment>
+  </data>
+  <data name="SubmitFailed" xml:space="preserve">
+    <value>Submit has failed.</value>
+    <comment>Page Submit Claim</comment>
+  </data>
   <data name="SubmittingClaim" xml:space="preserve">
     <value>Submitting Claim</value>
     <comment>Page Purchase</comment>
@@ -479,6 +543,10 @@
   </data>
   <data name="Terrian" xml:space="preserve">
     <value>Terrian</value>
+    <comment>Page Map View</comment>
+  </data>
+  <data name="ThereIsNotIMage" xml:space="preserve">
+    <value>There is not image</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
@@ -500,6 +568,10 @@
   <data name="WeatherInformation" xml:space="preserve">
     <value>Weather Information</value>
     <comment>Page Main</comment>
+  </data>
+  <data name="WeatherMessage1" xml:space="preserve">
+    <value>Coudl not get the weather information!</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
     <value>Wed</value>

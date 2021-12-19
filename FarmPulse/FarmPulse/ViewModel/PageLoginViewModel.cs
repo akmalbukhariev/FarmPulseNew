@@ -46,7 +46,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, response.message, RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.LoginMessage, RSC.Ok);
             }
             ControlApp.CloseLoadingView();
 

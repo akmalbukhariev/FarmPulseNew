@@ -149,8 +149,7 @@ namespace FarmPulse.ModelView
         }
          
         public async void RefreshModel()
-        {
-            //Control.ControlApp.Instance.AgromonAPI = "b5efce714742cc3aba8062b29f8c86f1";
+        { 
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
             ResponseField response = await HttpService.GetFieldList(ControlApp.UserInfo.insuranceNumber);
@@ -266,7 +265,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetField} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

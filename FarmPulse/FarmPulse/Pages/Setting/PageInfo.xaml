@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:IPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FarmPulse.Pages.PageInfo"
-             xmlns:view="clr-namespace:FarmPulse.Views"
-             xmlns:page="clr-namespace:FarmPulse.Pages">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="FarmPulse.Pages.PageInfo"
+            xmlns:view="clr-namespace:FarmPulse.Views"
+            xmlns:page="clr-namespace:FarmPulse.Pages"
+            xmlns:resource="clr-namespace:FarmPulse.Resources">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing="0">
-        <view:NavigationView Text="About" 
+        <view:NavigationView Text="{x:Static resource:AppResource.About}" 
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <StackLayout x:Name="textView" 

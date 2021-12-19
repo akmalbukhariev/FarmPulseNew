@@ -99,7 +99,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetCountry} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -118,7 +118,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetRegion} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -137,7 +137,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetDistrict} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

@@ -106,6 +106,24 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto login.
+        /// </summary>
+        internal static string AutoLogin {
+            get {
+                return ResourceManager.GetString("AutoLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?.
+        /// </summary>
+        internal static string AutoLogMessage {
+            get {
+                return ResourceManager.GetString("AutoLogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Available Images.
         /// </summary>
         internal static string AvailableImages {
@@ -322,6 +340,78 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to get the country.
+        /// </summary>
+        internal static string FailedGetCountry {
+            get {
+                return ResourceManager.GetString("FailedGetCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get crop yield data.
+        /// </summary>
+        internal static string FailedGetCropYielddata {
+            get {
+                return ResourceManager.GetString("FailedGetCropYielddata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get demo video url!.
+        /// </summary>
+        internal static string FailedGetDemoUrl {
+            get {
+                return ResourceManager.GetString("FailedGetDemoUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get the district.
+        /// </summary>
+        internal static string FailedGetDistrict {
+            get {
+                return ResourceManager.GetString("FailedGetDistrict", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get field.
+        /// </summary>
+        internal static string FailedGetField {
+            get {
+                return ResourceManager.GetString("FailedGetField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get graph data.
+        /// </summary>
+        internal static string FailedGetGraphData {
+            get {
+                return ResourceManager.GetString("FailedGetGraphData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get index.
+        /// </summary>
+        internal static string FailedGetIndex {
+            get {
+                return ResourceManager.GetString("FailedGetIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get the region.
+        /// </summary>
+        internal static string FailedGetRegion {
+            get {
+                return ResourceManager.GetString("FailedGetRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         internal static string FAQ {
@@ -381,6 +471,24 @@ namespace FarmPulse.Resources {
         internal static string FindInsuracne {
             get {
                 return ResourceManager.GetString("FindInsuracne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill out all information!.
+        /// </summary>
+        internal static string FindInsuranceMessage1 {
+            get {
+                return ResourceManager.GetString("FindInsuranceMessage1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not find the user!.
+        /// </summary>
+        internal static string FindInsuranceMessage2 {
+            get {
+                return ResourceManager.GetString("FindInsuranceMessage2", resourceCulture);
             }
         }
         
@@ -646,6 +754,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to get purchased history..
+        /// </summary>
+        internal static string PurchasedGetHistoryFailed {
+            get {
+                return ResourceManager.GetString("PurchasedGetHistoryFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase an insurance.
         /// </summary>
         internal static string PurchaseInsurance {
@@ -705,6 +822,15 @@ namespace FarmPulse.Resources {
         internal static string SaveAndNext {
             get {
                 return ResourceManager.GetString("SaveAndNext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save has field!.
+        /// </summary>
+        internal static string SaveCropYielddata {
+            get {
+                return ResourceManager.GetString("SaveCropYielddata", resourceCulture);
             }
         }
         
@@ -835,6 +961,24 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to get submited history..
+        /// </summary>
+        internal static string SubmitedGetHistoryFailed {
+            get {
+                return ResourceManager.GetString("SubmitedGetHistoryFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit has failed..
+        /// </summary>
+        internal static string SubmitFailed {
+            get {
+                return ResourceManager.GetString("SubmitFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submitting Claim.
         /// </summary>
         internal static string SubmittingClaim {
@@ -880,6 +1024,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is not image.
+        /// </summary>
+        internal static string ThereIsNotIMage {
+            get {
+                return ResourceManager.GetString("ThereIsNotIMage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thu.
         /// </summary>
         internal static string Thu {
@@ -921,6 +1074,15 @@ namespace FarmPulse.Resources {
         internal static string WeatherInformation {
             get {
                 return ResourceManager.GetString("WeatherInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coudl not get the weather information!.
+        /// </summary>
+        internal static string WeatherMessage1 {
+            get {
+                return ResourceManager.GetString("WeatherMessage1", resourceCulture);
             }
         }
         

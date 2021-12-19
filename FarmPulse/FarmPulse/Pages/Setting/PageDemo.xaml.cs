@@ -37,7 +37,7 @@ namespace FarmPulse.Pages
             {
                 image.IsVisible = true;
                 webView.IsVisible = false;
-                await DisplayAlert(RSC.Error, response.message, RSC.Ok);
+                await DisplayAlert(RSC.Error, $"{RSC.FailedGetDemoUrl} :{response.message}", RSC.Ok);
             }
             ControlApp.CloseLoadingView();
         }

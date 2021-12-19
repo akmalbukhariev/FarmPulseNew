@@ -24,7 +24,7 @@ namespace FarmPulse.ViewModel
         { 
             if (SelectedDistrict == null || string.IsNullOrEmpty(Insurance) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(Date))
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage1, RSC.Ok);
                 return;
             }
 
@@ -47,7 +47,7 @@ namespace FarmPulse.ViewModel
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage2, RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

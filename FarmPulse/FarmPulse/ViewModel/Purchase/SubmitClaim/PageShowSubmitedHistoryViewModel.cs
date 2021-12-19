@@ -109,7 +109,7 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
             }
             else 
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.SubmitedGetHistoryFailed} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

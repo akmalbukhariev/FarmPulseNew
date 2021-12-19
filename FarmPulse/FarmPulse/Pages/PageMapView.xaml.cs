@@ -51,7 +51,7 @@ namespace FarmPulse.Pages
 
             if (model.Data.Count == 0)
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "There is not image", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.ThereIsNotIMage, RSC.Ok);
                 return;
             }
             model.ShowImages = true;

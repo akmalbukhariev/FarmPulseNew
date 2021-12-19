@@ -14,8 +14,7 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
         public string FieldName { get => GetValue<string>(); set => SetValue(value); }
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
         public string AreaTonHa { get => GetValue<string>(); set => SetValue(value); }
-        public string FarmerName { get => GetValue<string>(); set => SetValue(value); }
-        public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
+        public string FarmerName { get => GetValue<string>(); set => SetValue(value); } 
         public string Description { get => GetValue<string>(); set => SetValue(value); }
         public PageDetailSubmitedHistoryViewModel(SubmitedClaimHistoryInfo info, INavigation navigation)
         {

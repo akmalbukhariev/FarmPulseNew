@@ -54,7 +54,7 @@ namespace FarmPulse.Pages
 
             if (!model.CheckAutoLogin) return;
 
-            bool res = await DisplayAlert("Auto login", "If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?", "Ok", "Cancel");
+            bool res = await DisplayAlert(RSC.AutoLogin, RSC.AutoLogMessage, RSC.Ok, RSC.Cancel);
             if (!res)
             {
                 model.CheckAutoLogin = false;

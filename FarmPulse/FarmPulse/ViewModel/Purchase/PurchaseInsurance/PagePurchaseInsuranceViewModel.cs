@@ -75,7 +75,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.FailedGetField}: {response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();
@@ -88,7 +88,7 @@ namespace FarmPulse.ModelView
 
             if (!CheckParam())
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please fill the all fields.", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage1, RSC.Ok);
                 return;
             }
 
@@ -121,7 +121,7 @@ namespace FarmPulse.ModelView
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.SubmitFailed} :{response.message}", RSC.Ok);
             }
 
             ControlApp.CloseLoadingView();

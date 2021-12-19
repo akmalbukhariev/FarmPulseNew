@@ -14,10 +14,8 @@ namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
         public string FieldName { get => GetValue<string>(); set => SetValue(value); }
         public string CropName { get => GetValue<string>(); set => SetValue(value); }
         public string Hectars { get => GetValue<string>(); set => SetValue(value); }
-        public string FarmerName { get => GetValue<string>(); set => SetValue(value); }
-        public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
-        public string Status { get => GetValue<string>(); set => SetValue(value); }
-        public string Date { get => GetValue<string>(); set => SetValue(value); }
+        public string FarmerName { get => GetValue<string>(); set => SetValue(value); } 
+        public string Status { get => GetValue<string>(); set => SetValue(value); } 
 
         public PageDetailPurchasedHistoryViewModel(SubmitedPurchaseHistoryInfo info,INavigation navigation)
         {
