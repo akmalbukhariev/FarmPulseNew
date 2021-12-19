@@ -325,6 +325,10 @@
     <value>Fri</value>
     <comment>Page Weather</comment>
   </data>
+  <data name="GooglePlayServiceAvailable" xml:space="preserve">
+    <value>Please install google play service.</value>
+    <comment>Page Field</comment>
+  </data>
   <data name="GraphView" xml:space="preserve">
     <value>Graph View</value>
     <comment>Page Map View</comment>

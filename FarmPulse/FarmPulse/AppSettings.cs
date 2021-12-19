@@ -17,7 +17,8 @@ namespace FarmPulse
         public static string LanMn = "mn";
 
         public static string Language = "Language";
-         
+        public static bool IsGooglePlayServiceAvailable { get; set; }
+
         public static void SetLanguage(string strLanguage)
         {
             var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(strLanguage));

@@ -40,6 +40,12 @@ namespace FarmPulse.ModelView
 
         public async void RefreshFieldList()
         {
+            if (!AppSettings.IsGooglePlayServiceAvailable)
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, $"{RSC.GooglePlayServiceAvailable}", RSC.Ok);
+                return;
+            }
+
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
             Data.Clear();

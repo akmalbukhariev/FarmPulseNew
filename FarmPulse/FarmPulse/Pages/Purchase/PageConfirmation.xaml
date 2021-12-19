@@ -6,6 +6,7 @@
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             x:Class="FarmPulse.Pages.PageConfirmation"
             BackgroundColor="{StaticResource AppColor}">
+    
     <Grid RowDefinitions="Auto,*">
         <view:NavigationView Text="{x:Static resource:AppResource.Confirmation}"
                              TextColor="Black"

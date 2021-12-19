@@ -5,7 +5,8 @@
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             xmlns:control="clr-namespace:FarmPulse.Control"
-            x:Class="FarmPulse.Pages.PageIndexInsurance">
+            x:Class="FarmPulse.Pages.PageIndexInsurance"
+            BackgroundColor="White">
 
     <Grid RowDefinitions="Auto,*,50"
           RowSpacing="10">

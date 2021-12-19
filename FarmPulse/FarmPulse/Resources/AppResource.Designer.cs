@@ -529,6 +529,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please install google play service..
+        /// </summary>
+        internal static string GooglePlayServiceAvailable {
+            get {
+                return ResourceManager.GetString("GooglePlayServiceAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Graph View.
         /// </summary>
         internal static string GraphView {

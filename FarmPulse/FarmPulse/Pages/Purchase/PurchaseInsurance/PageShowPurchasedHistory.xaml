@@ -4,7 +4,8 @@
             xmlns:view="clr-namespace:FarmPulse.Views"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.Purchase.PurchaseInsurance.PageShowPurchasedHistory">
+            x:Class="FarmPulse.Pages.Purchase.PurchaseInsurance.PageShowPurchasedHistory"
+            BackgroundColor="White">
 
     <Grid RowDefinitions="Auto,*"
           RowSpacing='0'>
