@@ -115,7 +115,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?.
+        ///   Looks up a localized string similar to If to use automatic login, you do not need to enter your member ID and password next time. Do you want to use automatic login?.
         /// </summary>
         internal static string AutoLogMessage {
             get {
@@ -178,7 +178,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your application has been submitted /n sucessfully..
+        ///   Looks up a localized string similar to Application sucessfully submitted..
         /// </summary>
         internal static string ConfirmationTitle1 {
             get {
@@ -187,7 +187,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please note: The insurance agent as soon as /n will get in touch within 5 business days..
+        ///   Looks up a localized string similar to Please note: The insurance agent will get in touch within 5 business days..
         /// </summary>
         internal static string ConfirmationTitle2 {
             get {
@@ -304,7 +304,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units..
+        ///   Looks up a localized string similar to Please, enter the crop yield information in order to compare with insurance index values. Use ton/ha units..
         /// </summary>
         internal static string DescriptionCropYieldData {
             get {
@@ -529,7 +529,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please install google play service..
+        ///   Looks up a localized string similar to Please install Google Play service..
         /// </summary>
         internal static string GooglePlayServiceAvailable {
             get {
@@ -664,7 +664,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make an request.
+        ///   Looks up a localized string similar to Make request.
         /// </summary>
         internal static string MakeRequest {
             get {
@@ -835,7 +835,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save has field!.
+        ///   Looks up a localized string similar to Saving failed!.
         /// </summary>
         internal static string SaveCropYielddata {
             get {
@@ -925,7 +925,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Submited History.
+        ///   Looks up a localized string similar to Show Submition History.
         /// </summary>
         internal static string ShowSubmitedHistory {
             get {
@@ -934,7 +934,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Snow Yestarday.
+        ///   Looks up a localized string similar to Snow Yesterday.
         /// </summary>
         internal static string SnowYestarday {
             get {
@@ -979,7 +979,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit has failed..
+        ///   Looks up a localized string similar to Submition has failed..
         /// </summary>
         internal static string SubmitFailed {
             get {
@@ -1033,7 +1033,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There is not image.
+        ///   Looks up a localized string similar to There is no image.
         /// </summary>
         internal static string ThereIsNotIMage {
             get {
@@ -1087,7 +1087,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coudl not get the weather information!.
+        ///   Looks up a localized string similar to Coud not get the weather information!.
         /// </summary>
         internal static string WeatherMessage1 {
             get {
@@ -1132,7 +1132,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You&apos;r insurance number is.
+        ///   Looks up a localized string similar to Your insurance number.
         /// </summary>
         internal static string YourInsuranceNumber {
             get {
@@ -1141,7 +1141,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You&apos;r password is.
+        ///   Looks up a localized string similar to Your password.
         /// </summary>
         internal static string YourPassword {
             get {

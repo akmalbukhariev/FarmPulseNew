@@ -142,7 +142,7 @@
     <comment>Page Login</comment>
   </data>
   <data name="AutoLogMessage" xml:space="preserve">
-    <value>If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <value>If to use automatic login, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
     <comment>Page Login</comment>
   </data>
   <data name="AvailableImages" xml:space="preserve">
@@ -170,11 +170,11 @@
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Your application has been submitted /n sucessfully.</value>
+    <value>Application sucessfully submitted.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
-    <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
+    <value>Please note: The insurance agent will get in touch within 5 business days.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmPhoneNumber" xml:space="preserve">
@@ -226,7 +226,7 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="DescriptionCropYieldData" xml:space="preserve">
-    <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
+    <value>Please, enter the crop yield information in order to compare with insurance index values. Use ton/ha units.</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
@@ -326,7 +326,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="GooglePlayServiceAvailable" xml:space="preserve">
-    <value>Please install google play service.</value>
+    <value>Please install Google Play service.</value>
     <comment>Page Field</comment>
   </data>
   <data name="GraphView" xml:space="preserve">
@@ -386,7 +386,7 @@
     <comment>Page Setting</comment>
   </data>
   <data name="MakeRequest" xml:space="preserve">
-    <value>Make an request</value>
+    <value>Make request</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="MapView" xml:space="preserve">
@@ -462,7 +462,7 @@
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveCropYielddata" xml:space="preserve">
-    <value>Save has field!</value>
+    <value>Saving failed!</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
@@ -502,11 +502,11 @@
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Show Submited History</value>
+    <value>Show Submition History</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
-    <value>Snow Yestarday</value>
+    <value>Snow Yesterday</value>
     <comment>Page Weather</comment>
   </data>
   <data name="StartDate" xml:space="preserve">
@@ -526,7 +526,7 @@
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
-    <value>Submit has failed.</value>
+    <value>Submition has failed.</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmittingClaim" xml:space="preserve">
@@ -550,7 +550,7 @@
     <comment>Page Map View</comment>
   </data>
   <data name="ThereIsNotIMage" xml:space="preserve">
-    <value>There is not image</value>
+    <value>There is no image</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
@@ -574,7 +574,7 @@
     <comment>Page Main</comment>
   </data>
   <data name="WeatherMessage1" xml:space="preserve">
-    <value>Coudl not get the weather information!</value>
+    <value>Coud not get the weather information!</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
@@ -594,11 +594,11 @@
     <comment>Page Field</comment>
   </data>
   <data name="YourInsuranceNumber" xml:space="preserve">
-    <value>You'r insurance number is</value>
+    <value>Your insurance number</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="YourPassword" xml:space="preserve">
-    <value>You'r password is</value>
+    <value>Your password</value>
     <comment>Page Find Insurance</comment>
   </data>
 </root>

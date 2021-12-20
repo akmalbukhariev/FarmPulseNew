@@ -118,219 +118,221 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Дастур ҳақида</value>
     <comment>Page Setting</comment>
   </data>
   <data name="ActualYield" xml:space="preserve">
-    <value>Actual Yield</value>
+    <value>Ҳақиқий ҳосил
+</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AddCropYield" xml:space="preserve">
-    <value>Add crop yield</value>
+    <value>Екин қўшин</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Air temperature</value>
+    <value>Ҳаво ҳарорати
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
-    <value>Area ton/ha</value>
+    <value>Майдон тонна/га</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="AutoLogin" xml:space="preserve">
-    <value>Auto login</value>
+    <value>Aвтоматик кириш</value>
     <comment>Page Login</comment>
   </data>
   <data name="AutoLogMessage" xml:space="preserve">
-    <value>If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <value>Aгар aвтоматик киришдан фойдалансангиз, кейинги сафар фойдаланувчи ИД ва паролингизни киритишингиз шарт емас. Aвтоматик киришдан фойдаланмоқчимисиз?</value>
     <comment>Page Login</comment>
   </data>
   <data name="AvailableImages" xml:space="preserve">
-    <value>Available Images</value>
+    <value>Мавжуд расмлар</value>
     <comment>Page Map View</comment>
   </data>
   <data name="BackToHomeScreen" xml:space="preserve">
-    <value>Back to Home Screen</value>
+    <value>Бош екранга қайтиш</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="BuyNow" xml:space="preserve">
-    <value>BUY NOW</value>
+    <value>ҲОЗИР ХAРИД ҚИЛИШ</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Бекор қилиш</value>
     <comment>ControlApp</comment>
   </data>
   <data name="ChlorophylleIndex" xml:space="preserve">
-    <value>Chlorophylle Index</value>
+    <value>Хлорофил индекси</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>Тасдиқлаш</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Your application has been submitted /n sucessfully.</value>
+    <value>Сизнинг аризангиз муваффақиятли юборилди.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
-    <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
+    <value>Еътибор беринг: суғурта агенти 5 иш куни ичида сиз билан боғланади.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmPhoneNumber" xml:space="preserve">
-    <value>Confirm phone number</value>
+    <value>Телефон рақамингизни тасдиқланг.</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Cotton" xml:space="preserve">
-    <value>Cotton</value>
+    <value>Пахта</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Cover" xml:space="preserve">
-    <value>Cover</value>
+    <value>Қоплаш</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="CropInsurance" xml:space="preserve">
-    <value>Crop Insurance</value>
+    <value>Ҳосил суғуртаcи</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropMonitoring" xml:space="preserve">
-    <value>Crop Monitoring</value>
+    <value>Ҳосил мониторинги</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropType" xml:space="preserve">
-    <value>Crop type</value>
+    <value>Ҳосил тури</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="CropYieldData" xml:space="preserve">
-    <value>Crop yield data</value>
+    <value>Ҳосилдорлик маълумотлари</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="CurrentlyWeather" xml:space="preserve">
-    <value>CURRENT WEATHER</value>
+    <value>Ҳозирги об-ҳаво</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Cана</value>
     <comment>ControlApp</comment>
   </data>
   <data name="DateOfBirth" xml:space="preserve">
-    <value>Date of birth</value>
+    <value>Туғилган кун</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Demo" xml:space="preserve">
-    <value>Demo</value>
+    <value>Намойиш</value>
     <comment>Page Setting</comment>
   </data>
   <data name="DescriptionClaim" xml:space="preserve">
-    <value>Description the claim</value>
+    <value>Даъво тавсифи</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="DescriptionCropYieldData" xml:space="preserve">
-    <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
+    <value>Илтимос, суғурта индекси қийматлари билан солиштириш учун Ҳосилдорлик маълумотларини киритинг. Тонна/га бирликлардан фойдаланинг.</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
-    <value>End date</value>
+    <value>Tугаш муддати</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Хато</value>
     <comment>ControlApp</comment>
   </data>
   <data name="EstimateRate" xml:space="preserve">
-    <value>Estimate rates</value>
+    <value>Улчовни аникланг</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FailedGetCountry" xml:space="preserve">
-    <value>Failed to get the country</value>
+    <value>Мамлакат топилмади</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetCropYielddata" xml:space="preserve">
-    <value>Failed to get crop yield data</value>
+    <value>Ҳосилдорлик маълумотларини топиб бўлмади!</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="FailedGetDemoUrl" xml:space="preserve">
-    <value>Failed to get demo video url!</value>
+    <value>Демо видеонинг УРЛ манзили олинмади!</value>
     <comment>Page Demo</comment>
   </data>
   <data name="FailedGetDistrict" xml:space="preserve">
-    <value>Failed to get the district</value>
+    <value>Ҳудуд топилмади</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetField" xml:space="preserve">
-    <value>Failed to get field</value>
+    <value>Майдон топилмади</value>
     <comment>Page Field</comment>
   </data>
   <data name="FailedGetGraphData" xml:space="preserve">
-    <value>Failed to get graph data</value>
+    <value>График маълумотларини топиб бўлмади</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetIndex" xml:space="preserve">
-    <value>Failed to get index</value>
+    <value>Индекс топилмади</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetRegion" xml:space="preserve">
-    <value>Failed to get the region</value>
+    <value>Ҳудуд топилмади</value>
     <comment>Model Base</comment>
   </data>
   <data name="FAQ" xml:space="preserve">
-    <value>FAQ</value>
+    <value>Савол-жавоблар</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FarmerFieldName" xml:space="preserve">
-    <value>Farmer field name</value>
+    <value>Фермер дала номи</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerNameAndSurname" xml:space="preserve">
-    <value>Farmer Name and Surname</value>
+    <value>Фермер исм ва фамилияси</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerPhoneNumber" xml:space="preserve">
-    <value>Farmer Phone number</value>
+    <value>Фермер телефон рақами</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FieldName" xml:space="preserve">
-    <value>Field Name</value>
+    <value>Майдон номи</value>
     <comment>Page Field</comment>
   </data>
   <data name="FindIdPassword" xml:space="preserve">
-    <value>Find ID/Password</value>
+    <value>ИД/паролни топинг</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuracne" xml:space="preserve">
-    <value>Find Insuracne</value>
+    <value>Суғуртани топинг</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuranceMessage1" xml:space="preserve">
-    <value>Please fill out all information!</value>
+    <value>Илтимос, барча маълумотларни тўлдиринг!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsuranceMessage2" xml:space="preserve">
-    <value>Could not find the user!</value>
+    <value>Фойдаланувчи топилмади!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsurancePassword" xml:space="preserve">
-    <value>Find Insurance and Password</value>
+    <value>Суғурта ва паролни топинг</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindPassword" xml:space="preserve">
-    <value>Find Password</value>
+    <value>Паролни топинг</value>
     <comment>Page Login</comment>
   </data>
   <data name="Forecast" xml:space="preserve">
-    <value>Forecast</value>
+    <value>Прогноз</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Fri" xml:space="preserve">
-    <value>Fri</value>
+    <value>Жума</value>
     <comment>Page Weather</comment>
   </data>
   <data name="GraphView" xml:space="preserve">
-    <value>Graph View</value>
+    <value>График кўриниши</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Hectars" xml:space="preserve">
-    <value>Hectars</value>
+    <value>Гектар</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="History" xml:space="preserve">
@@ -338,215 +340,215 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Hybrid" xml:space="preserve">
-    <value>Hybrid</value>
+    <value>Гибрид</value>
     <comment>Page Map View</comment>
   </data>
   <data name="IndexInsurance" xml:space="preserve">
-    <value>Index insurance</value>
+    <value>Cуғурта Индекси</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="IndexMeanValue" xml:space="preserve">
-    <value>Index mean value</value>
+    <value>Индекснинг ўртача қиймати</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Insurance</value>
+    <value>Суғурта</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="InsuranceNumber" xml:space="preserve">
-    <value>Insurance Number</value>
+    <value>Суғурта рақами</value>
     <comment>Page Login</comment>
   </data>
   <data name="Internet" xml:space="preserve">
-    <value>Internet</value>
+    <value>Интернет</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Тил</value>
     <comment>Page Setting</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Кириш</value>
     <comment>Page Login</comment>
   </data>
   <data name="LoginMessage" xml:space="preserve">
-    <value>Please check insurance number or password.</value>
+    <value>Илтимос, суғурта рақамингизни ёки паролингизни текширинг.</value>
     <comment>Page Login</comment>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+    <value>Тизимдан чиқиш</value>
     <comment>Page Setting</comment>
   </data>
   <data name="LogOutMessage" xml:space="preserve">
-    <value>Do you really want to exit?</value>
+    <value>Ҳақиқатан ҳам чиқишни хоҳлайсизми?</value>
     <comment>Page Setting</comment>
   </data>
   <data name="MakeRequest" xml:space="preserve">
-    <value>Make an request</value>
+    <value>Сўров юборинг</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="MapView" xml:space="preserve">
-    <value>Map View</value>
+    <value>Харита кўриниши</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Mon" xml:space="preserve">
-    <value>Mon</value>
+    <value>Дyшб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="NDVIIndex" xml:space="preserve">
-    <value>NDVI Index</value>
+    <value>НДВИ индекси</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No Internet.</value>
+    <value>Интернет йўқ.</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>Нормал</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Парол</value>
     <comment>Page Login</comment>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>Phone number</value>
+    <value>Телефон рақам</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="PleaseWait" xml:space="preserve">
-    <value>Please wait...</value>
+    <value>Илтимос кутинг...</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Purchase" xml:space="preserve">
-    <value>Purchase</value>
+    <value>Харид</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="PurchasedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get purchased history.</value>
+    <value>Харид тарихини юклаб бўлмади.</value>
     <comment>Page Purchase History </comment>
   </data>
   <data name="PurchaseInsurance" xml:space="preserve">
-    <value>Purchase an insurance</value>
+    <value>Суғурта Хариди</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Rain3h" xml:space="preserve">
-    <value>Rain 3 h</value>
+    <value>Ёмғир 3 соат</value>
     <comment>Page Weather</comment>
   </data>
   <data name="RainToday" xml:space="preserve">
-    <value>Rain Today</value>
+    <value>Бугун ёмғир</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Sat" xml:space="preserve">
-    <value>Sat</value>
+    <value>Шaнб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Satellite" xml:space="preserve">
-    <value>Satellite</value>
+    <value>Сунъий йўлдош</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сақлаш</value>
     <comment>Page Language</comment>
   </data>
   <data name="SaveAndNext" xml:space="preserve">
-    <value>Save and Next</value>
+    <value>Сақлаш ва Кейингиcига утиш </value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveCropYielddata" xml:space="preserve">
-    <value>Save has field!</value>
+    <value>Сақлаш муваффақияциз амалга оширлди!</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
-    <value>Save ID/Password</value>
+    <value>ИД / паролни сақланг</value>
     <comment>Page Login</comment>
   </data>
   <data name="SelectCountry" xml:space="preserve">
-    <value>Select country</value>
+    <value>Mамлакатни танланг</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectCrop" xml:space="preserve">
-    <value>Select the crop</value>
+    <value>Хосилни танланг</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectDistrict" xml:space="preserve">
-    <value>Select district</value>
+    <value>Ҳудудни танланг</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectField" xml:space="preserve">
-    <value>Select the field</value>
+    <value>Майдонни танланг</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectIndex" xml:space="preserve">
-    <value>Select index</value>
+    <value>Индексни танланг</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="SelectLanguage" xml:space="preserve">
-    <value>Select Language</value>
+    <value>Тилни танланг</value>
     <comment>Page Language</comment>
   </data>
   <data name="SelectRegion" xml:space="preserve">
-    <value>Select region</value>
+    <value>Минтақани танланг</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>Параметр</value>
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Show Submited History</value>
+    <value>Юбориш тарихин кўриш</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
-    <value>Snow Yestarday</value>
+    <value>Кеча қор ёғди</value>
     <comment>Page Weather</comment>
   </data>
   <data name="StartDate" xml:space="preserve">
-    <value>Start date</value>
+    <value>Бошланиш санаси</value>
     <comment>Page Map View</comment>
   </data>
   <data name="StartNewClaim" xml:space="preserve">
-    <value>Start New Claim</value>
+    <value>Янги Даъво юбориш</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>Submit</value>
+    <value>Юбориш</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmitedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get submited history.</value>
+    <value>Юборлган тарихни юклаб бўлмади.</value>
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
-    <value>Submit has failed.</value>
+    <value>Юборилмади.</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmittingClaim" xml:space="preserve">
-    <value>Submitting Claim</value>
+    <value>Даъво юбориш</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="SubmitYourClaim" xml:space="preserve">
-    <value>Submit your claim</value>
+    <value>Даъвоингизни юборинг</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Муваффақиятли амалга оширилди</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
-    <value>Sun</value>
+    <value>Якшб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
-    <value>Terrian</value>
+    <value>Терриан</value>
     <comment>Page Map View</comment>
   </data>
   <data name="ThereIsNotIMage" xml:space="preserve">
-    <value>There is not image</value>
+    <value>Расм йўқ</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
@@ -554,47 +556,47 @@
     <comment>Page Weather</comment>
   </data>
   <data name="TimePeriod" xml:space="preserve">
-    <value>Time Period</value>
+    <value>Вақт даври</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Tue" xml:space="preserve">
-    <value>Tue</value>
+    <value>Сешб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Weather" xml:space="preserve">
-    <value>Weather</value>
+    <value>Об-ҳаво</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WeatherInformation" xml:space="preserve">
-    <value>Weather Information</value>
+    <value>Об-ҳаво маълумотлари</value>
     <comment>Page Main</comment>
   </data>
   <data name="WeatherMessage1" xml:space="preserve">
-    <value>Coudl not get the weather information!</value>
+    <value>Об-ҳаво маълумотларини олинмади!</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
-    <value>Wed</value>
+    <value>Чоршб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wheat" xml:space="preserve">
-    <value>Wheat</value>
+    <value>Буғдой</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="WindSpeed" xml:space="preserve">
-    <value>Wind speed</value>
+    <value>Шамол тезлиги</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WuaVillage" xml:space="preserve">
-    <value>WUA/Village</value>
+    <value>WУA / Қишлоқ</value>
     <comment>Page Field</comment>
   </data>
   <data name="YourInsuranceNumber" xml:space="preserve">
-    <value>You'r insurance number is</value>
+    <value>Сизнинг суғурта рақамингиз</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="YourPassword" xml:space="preserve">
-    <value>You'r password is</value>
+    <value>Сизнинг паролингиз</value>
     <comment>Page Find Insurance</comment>
   </data>
 </root>

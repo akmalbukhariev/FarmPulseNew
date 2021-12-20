@@ -118,483 +118,518 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>О программе</value>
     <comment>Page Setting</comment>
   </data>
   <data name="ActualYield" xml:space="preserve">
-    <value>Actual Yield</value>
+    <value>Фактический Урожай</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AddCropYield" xml:space="preserve">
-    <value>Add crop yield</value>
+    <value>Добавить урожай</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Air temperature</value>
+    <value>Температура воздуха</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
-    <value>Area ton/ha</value>
+    <value>Площадь тонна / га</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="AutoLogin" xml:space="preserve">
-    <value>Auto login</value>
+    <value>Автоматический вход</value>
     <comment>Page Login</comment>
   </data>
   <data name="AutoLogMessage" xml:space="preserve">
-    <value>If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <value>Если используете автоматический вход, вам не нужно будет ввести свой идентификатор пользователя и пароль в следующий раз. Вы хотите использовать автоматический вход?</value>
     <comment>Page Login</comment>
   </data>
   <data name="AvailableImages" xml:space="preserve">
-    <value>Available Images</value>
+    <value>Доступные изображения</value>
     <comment>Page Map View</comment>
   </data>
   <data name="BackToHomeScreen" xml:space="preserve">
-    <value>Back to Home Screen</value>
+    <value>Вернуться на главный экран</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="BuyNow" xml:space="preserve">
-    <value>BUY NOW</value>
+    <value>КУПИТЬ СЕЙЧАС</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
     <comment>ControlApp</comment>
   </data>
   <data name="ChlorophylleIndex" xml:space="preserve">
-    <value>Chlorophylle Index</value>
+    <value>Индекс хлорофилла</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>Подтверждение</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Your application has been submitted /n sucessfully.</value>
+    <value>Ваша заявка успешно отправлена.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
-    <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
+    <value>Обратите внимание: страховой агент свяжется с вами в течение 5 рабочих дней.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmPhoneNumber" xml:space="preserve">
-    <value>Confirm phone number</value>
+    <value>Подтвердите номер телефона.</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Cotton" xml:space="preserve">
-    <value>Cotton</value>
+    <value>Хлопок</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Cover" xml:space="preserve">
-    <value>Cover</value>
+    <value>Обложка</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="CropInsurance" xml:space="preserve">
-    <value>Crop Insurance</value>
+    <value>Страхование урожая</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropMonitoring" xml:space="preserve">
-    <value>Crop Monitoring</value>
+    <value>Мониторинг урожая</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropType" xml:space="preserve">
-    <value>Crop type</value>
+    <value>Тип урожая</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="CropYieldData" xml:space="preserve">
-    <value>Crop yield data</value>
+    <value>Данные об урожайности</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="CurrentlyWeather" xml:space="preserve">
-    <value>CURRENT WEATHER</value>
+    <value>Погода сейчас</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Дата
+</value>
     <comment>ControlApp</comment>
   </data>
   <data name="DateOfBirth" xml:space="preserve">
-    <value>Date of birth</value>
+    <value>Дата рождения
+</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Demo" xml:space="preserve">
-    <value>Demo</value>
+    <value>Демо</value>
     <comment>Page Setting</comment>
   </data>
   <data name="DescriptionClaim" xml:space="preserve">
-    <value>Description the claim</value>
+    <value>Описание претензии</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="DescriptionCropYieldData" xml:space="preserve">
-    <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
+    <value>Пожалуйста, введите информацию об урожайности для сравнения со значениями страхового индекса. Используйте единицы тонны / га.</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
-    <value>End date</value>
+    <value>Дата окончания</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка
+</value>
     <comment>ControlApp</comment>
   </data>
   <data name="EstimateRate" xml:space="preserve">
-    <value>Estimate rates</value>
+    <value>Оценить ставки</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FailedGetCountry" xml:space="preserve">
-    <value>Failed to get the country</value>
+    <value>Не удалось найти страну</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetCropYielddata" xml:space="preserve">
-    <value>Failed to get crop yield data</value>
+    <value>Не удалось найти данные об урожайности</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="FailedGetDemoUrl" xml:space="preserve">
-    <value>Failed to get demo video url!</value>
+    <value>Не удалось получить URL демонстрационного видео!</value>
     <comment>Page Demo</comment>
   </data>
   <data name="FailedGetDistrict" xml:space="preserve">
-    <value>Failed to get the district</value>
+    <value>Не удалось найти район</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetField" xml:space="preserve">
-    <value>Failed to get field</value>
+    <value>Не удалось найти поле</value>
     <comment>Page Field</comment>
   </data>
   <data name="FailedGetGraphData" xml:space="preserve">
-    <value>Failed to get graph data</value>
+    <value>Не удалось найти данные графика
+</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetIndex" xml:space="preserve">
-    <value>Failed to get index</value>
+    <value>Не удалось найти индекс
+</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetRegion" xml:space="preserve">
-    <value>Failed to get the region</value>
+    <value>Не удалось найти регион</value>
     <comment>Model Base</comment>
   </data>
   <data name="FAQ" xml:space="preserve">
-    <value>FAQ</value>
+    <value>Вопросы-Ответы</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FarmerFieldName" xml:space="preserve">
-    <value>Farmer field name</value>
+    <value>Название поля фермера</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerNameAndSurname" xml:space="preserve">
-    <value>Farmer Name and Surname</value>
+    <value>Имя и фамилия фермера</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerPhoneNumber" xml:space="preserve">
-    <value>Farmer Phone number</value>
+    <value>Номер телефона фермера</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FieldName" xml:space="preserve">
-    <value>Field Name</value>
+    <value>Имя поля</value>
     <comment>Page Field</comment>
   </data>
   <data name="FindIdPassword" xml:space="preserve">
-    <value>Find ID/Password</value>
+    <value>Найти идентификатор/пароль</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuracne" xml:space="preserve">
-    <value>Find Insuracne</value>
+    <value>Найти страховку</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuranceMessage1" xml:space="preserve">
-    <value>Please fill out all information!</value>
+    <value>Пожалуйста, заполните всю информацию!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsuranceMessage2" xml:space="preserve">
-    <value>Could not find the user!</value>
+    <value>Не удалось найти пользователя!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsurancePassword" xml:space="preserve">
-    <value>Find Insurance and Password</value>
+    <value>Найти страховку и пароль</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindPassword" xml:space="preserve">
-    <value>Find Password</value>
+    <value>Найти пароль</value>
     <comment>Page Login</comment>
   </data>
   <data name="Forecast" xml:space="preserve">
-    <value>Forecast</value>
+    <value>Прогноз
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Fri" xml:space="preserve">
-    <value>Fri</value>
+    <value>Пят</value>
     <comment>Page Weather</comment>
   </data>
   <data name="GraphView" xml:space="preserve">
-    <value>Graph View</value>
+    <value>Просмотр графика
+</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Hectars" xml:space="preserve">
-    <value>Hectars</value>
+    <value>Гектаров</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="History" xml:space="preserve">
-    <value>History</value>
+    <value>История
+
+</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Hybrid" xml:space="preserve">
-    <value>Hybrid</value>
+    <value>Гибридный</value>
     <comment>Page Map View</comment>
   </data>
   <data name="IndexInsurance" xml:space="preserve">
-    <value>Index insurance</value>
+    <value>Страхование индекса</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="IndexMeanValue" xml:space="preserve">
-    <value>Index mean value</value>
+    <value>Среднее значение индекса</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Insurance</value>
+    <value>Страхование</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="InsuranceNumber" xml:space="preserve">
-    <value>Insurance Number</value>
+    <value>Номер страховки
+</value>
     <comment>Page Login</comment>
   </data>
   <data name="Internet" xml:space="preserve">
-    <value>Internet</value>
+    <value>Интернет
+</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Язык</value>
     <comment>Page Setting</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Логин</value>
     <comment>Page Login</comment>
   </data>
   <data name="LoginMessage" xml:space="preserve">
-    <value>Please check insurance number or password.</value>
+    <value>Пожалуйста, проверьте номер страховки или пароль.</value>
     <comment>Page Login</comment>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+    <value>Выйти</value>
     <comment>Page Setting</comment>
   </data>
   <data name="LogOutMessage" xml:space="preserve">
-    <value>Do you really want to exit?</value>
+    <value>Вы действительно хотите выйти?</value>
     <comment>Page Setting</comment>
   </data>
   <data name="MakeRequest" xml:space="preserve">
-    <value>Make an request</value>
+    <value>Сделать запрос</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="MapView" xml:space="preserve">
-    <value>Map View</value>
+    <value>Просмотр карты
+</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Mon" xml:space="preserve">
-    <value>Mon</value>
+    <value>Пн
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="NDVIIndex" xml:space="preserve">
-    <value>NDVI Index</value>
+    <value>Индекс NDVI</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No Internet.</value>
+    <value>Нет интернета.
+Нормальный
+В порядке
+Пароль
+Телефонный номер</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>Нормальный
+</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>OK</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>
+Пароль</value>
     <comment>Page Login</comment>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>Phone number</value>
+    <value>Телефонный номер</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="PleaseWait" xml:space="preserve">
-    <value>Please wait...</value>
+    <value>Пожалуйста подождите...</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Purchase" xml:space="preserve">
-    <value>Purchase</value>
+    <value>Покупка</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="PurchasedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get purchased history.</value>
+    <value>Не удалось получить историю покупок.</value>
     <comment>Page Purchase History </comment>
   </data>
   <data name="PurchaseInsurance" xml:space="preserve">
-    <value>Purchase an insurance</value>
+    <value>Приобрести страховку</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Rain3h" xml:space="preserve">
-    <value>Rain 3 h</value>
+    <value>Дождь  3 ч 
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="RainToday" xml:space="preserve">
-    <value>Rain Today</value>
+    <value>Cегодня Дождь</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Sat" xml:space="preserve">
-    <value>Sat</value>
+    <value>Суб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Satellite" xml:space="preserve">
-    <value>Satellite</value>
+    <value>Cпутник</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранять</value>
     <comment>Page Language</comment>
   </data>
   <data name="SaveAndNext" xml:space="preserve">
-    <value>Save and Next</value>
+    <value>Сохранить и Далее
+</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveCropYielddata" xml:space="preserve">
-    <value>Save has field!</value>
+    <value>Не удалось сохранить</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
-    <value>Save ID/Password</value>
+    <value>Сохранить идентификатор / пароль
+</value>
     <comment>Page Login</comment>
   </data>
   <data name="SelectCountry" xml:space="preserve">
-    <value>Select country</value>
+    <value>Выберите страну</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectCrop" xml:space="preserve">
-    <value>Select the crop</value>
+    <value>Выберите урожай</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectDistrict" xml:space="preserve">
-    <value>Select district</value>
+    <value>Выберите район
+</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectField" xml:space="preserve">
-    <value>Select the field</value>
+    <value>Выберите поле
+</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectIndex" xml:space="preserve">
-    <value>Select index</value>
+    <value>Выбрать индекс
+</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="SelectLanguage" xml:space="preserve">
-    <value>Select Language</value>
+    <value>Выберите язык</value>
     <comment>Page Language</comment>
   </data>
   <data name="SelectRegion" xml:space="preserve">
-    <value>Select region</value>
+    <value>Выберите регион</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>Параметр
+</value>
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Show Submited History</value>
+    <value>Показать историю отправки</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
-    <value>Snow Yestarday</value>
+    <value>Вчера был снег</value>
     <comment>Page Weather</comment>
   </data>
   <data name="StartDate" xml:space="preserve">
-    <value>Start date</value>
+    <value>Дата начала</value>
     <comment>Page Map View</comment>
   </data>
   <data name="StartNewClaim" xml:space="preserve">
-    <value>Start New Claim</value>
+    <value>Начать новую заявку</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>Submit</value>
+    <value>Отправить</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmitedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get submited history.</value>
+    <value>Не удалось получить отправленную историю.</value>
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
-    <value>Submit has failed.</value>
+    <value>Отправить не удалось.</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmittingClaim" xml:space="preserve">
-    <value>Submitting Claim</value>
+    <value>Подача претензии</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="SubmitYourClaim" xml:space="preserve">
-    <value>Submit your claim</value>
+    <value>Подать заявку
+</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Успешно завершилась</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
-    <value>Sun</value>
+    <value>Вoс
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
-    <value>Terrian</value>
+    <value>Терриан
+</value>
     <comment>Page Map View</comment>
   </data>
   <data name="ThereIsNotIMage" xml:space="preserve">
-    <value>There is not image</value>
+    <value>Нет изображения
+</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
-    <value>Thu</value>
+    <value>Чeт</value>
     <comment>Page Weather</comment>
   </data>
   <data name="TimePeriod" xml:space="preserve">
-    <value>Time Period</value>
+    <value>Временной период</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Tue" xml:space="preserve">
-    <value>Tue</value>
+    <value>Вт
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Weather" xml:space="preserve">
-    <value>Weather</value>
+    <value>Погода
+</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WeatherInformation" xml:space="preserve">
-    <value>Weather Information</value>
+    <value>Информация о погоде
+</value>
     <comment>Page Main</comment>
   </data>
   <data name="WeatherMessage1" xml:space="preserve">
-    <value>Coudl not get the weather information!</value>
+    <value>Не удалось получить информацию о погоде!</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
-    <value>Wed</value>
+    <value>Cр</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wheat" xml:space="preserve">
-    <value>Wheat</value>
+    <value>Пшеница
+</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="WindSpeed" xml:space="preserve">
-    <value>Wind speed</value>
+    <value>Скорость ветра</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WuaVillage" xml:space="preserve">
-    <value>WUA/Village</value>
+    <value>АВП / Деревня</value>
     <comment>Page Field</comment>
   </data>
   <data name="YourInsuranceNumber" xml:space="preserve">
-    <value>You'r insurance number is</value>
+    <value>Ваш страховой номер
+</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="YourPassword" xml:space="preserve">
-    <value>You'r password is</value>
+    <value>Ваш пароль</value>
     <comment>Page Find Insurance</comment>
   </data>
 </root>
