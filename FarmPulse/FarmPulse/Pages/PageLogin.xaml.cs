@@ -67,10 +67,9 @@ namespace FarmPulse.Pages
         { 
             ChangeClickBackColor(lbFindPassword);
 
-            var choices = new[] { RSC.FindInsuracne, RSC.FindPassword };
-            var choice = await UserDialogs.Instance.ActionSheetAsync(RSC.FindInsurancePassword, RSC.Ok, RSC.Cancel, CancellationToken.None, choices);
-
-            if (!string.IsNullOrEmpty(choice))
+            var choices = new[] { RSC.FindInsuracne, RSC.FindPassword }; 
+            var choice = await DisplayActionSheet(RSC.FindInsurancePassword, RSC.Cancel, null, choices);
+            if (!string.IsNullOrEmpty(choice) && (choice == RSC.FindInsuracne || choice == RSC.FindIdPassword))
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
 

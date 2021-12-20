@@ -331,6 +331,10 @@
     <value>Пят</value>
     <comment>Page Weather</comment>
   </data>
+  <data name="GooglePlayServiceAvailable" xml:space="preserve">
+    <value>Please install Google Play service.</value>
+    <comment>Page Field</comment>
+  </data>
   <data name="GraphView" xml:space="preserve">
     <value>Просмотр графика
 </value>
@@ -341,9 +345,7 @@
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="History" xml:space="preserve">
-    <value>История
-
-</value>
+    <value>История</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Hybrid" xml:space="preserve">
@@ -428,8 +430,7 @@
     <comment>ControlApp</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>
-Пароль</value>
+    <value>Пароль</value>
     <comment>Page Login</comment>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
@@ -593,8 +594,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Weather" xml:space="preserve">
-    <value>Погода
-</value>
+    <value>Погода</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WeatherInformation" xml:space="preserve">

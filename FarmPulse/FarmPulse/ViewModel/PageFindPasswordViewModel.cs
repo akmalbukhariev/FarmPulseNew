@@ -15,14 +15,15 @@ namespace FarmPulse.ViewModel
 
         public PageFindPasswordViewModel(INavigation navigation)
         {
-            Navigation = navigation; 
+            Navigation = navigation;
+            //PhoneNumber = "+998977995665";
         }
 
         public ICommand ClickOkCommand => new Command(ClickOk);
   
         private async void ClickOk()
         { 
-            if (SelectedDistrict == null || string.IsNullOrEmpty(Insurance) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(Date))
+            if (SelectedDistrict == null || string.IsNullOrEmpty(Insurance) || string.IsNullOrEmpty(PhoneNumber) || string.IsNullOrEmpty(Date.ToString()))
             {
                 await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.FindInsuranceMessage1, RSC.Ok);
                 return;
@@ -32,7 +33,7 @@ namespace FarmPulse.ViewModel
             RequestFindPassword request = new RequestFindPassword()
             {
                 insurance = Insurance,
-                birthday = Date,
+                birthday = Date.ToString("yyyy.dd.MM"),
                 phoneNumber = PhoneNumber,
                 districtId = SelectedDistrict.id.ToString(),
                 langCode = AppSettings.GetLanguageCode

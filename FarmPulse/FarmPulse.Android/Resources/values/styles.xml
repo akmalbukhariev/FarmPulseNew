@@ -42,8 +42,7 @@
 		<item name="android:textColorTertiary">#fafafa</item>
 		<!--background-->
 		<item name="android:background">#F2E8D9</item>
-	</style>
-
+	</style> 
 	<style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
 		<item name="colorAccent">#FF4081</item>
 	</style>

@@ -1,4 +1,5 @@
 ﻿using FarmPulse.ModelView.Purchase;
+using FarmPulse.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,22 +66,22 @@ namespace FarmPulse.Pages.Purchase
 
             if (AppSettings.GetLanguageCode == AppSettings.LanUz)
             {
-                strUrl = $"file:///android_asset/Content/{strId}_uz.html";
+                strUrl = $"{HttpService.INFO_HTML}{strId}_uz.html";
             }
             else if (AppSettings.GetLanguageCode == AppSettings.LanEn)
             {
-                strUrl = $"file:///android_asset/Content/{strId}_en.html";
+                strUrl = $"{HttpService.INFO_HTML}{strId}_en.html";
             }
             else if (AppSettings.GetLanguageCode == AppSettings.LanRu)
             {
-                strUrl = $"file:///android_asset/Content/{strId}_ru.html";
+                strUrl = $"{HttpService.INFO_HTML}{strId}_ru.html";
             }
             else if (AppSettings.GetLanguageCode == AppSettings.LanMn)
             {
-                strUrl = $"file:///android_asset/Content/{strId}_mn.html";
+                strUrl = $"{HttpService.INFO_HTML}{strId}_mn.html";
             }
 
-            return strUrl;
+            return strUrl.Trim();
         }
     }
 }

@@ -29,7 +29,8 @@ namespace FarmPulse.Net
         public static String URL_GET_FORECAST_WEATHER = URL_AGRO_SERVER + "/weather/forecast?";
         #endregion
 
-        #region User Info                
+        #region User Info              
+        public static string INFO_HTML = "http://206.81.29.167:8090/htmlViews/";
         public static string SERVER_URL = "http://206.81.29.167:8090/api/mobile/";
         public static string URL_LOGIN = SERVER_URL + "login";
         public static string URL_GET_DEMO_VIDEO = SERVER_URL + "demo";
@@ -45,8 +46,8 @@ namespace FarmPulse.Net
         public static string URL_GET_HISTORY_OF_CLAIM = SERVER_URL + "claims/";
         public static string URL_GET_HISTORY_OF_PURCHASE = SERVER_URL + "purchases/";
         public static string URL_BUY_INSURANCE = SERVER_URL + "purchase"; 
-        public static string URL_FIND_INSURANCE = SERVER_URL + "purchase";
-        public static string URL_FIND_PASSWORD = SERVER_URL + "purchase";
+        public static string URL_FIND_INSURANCE = SERVER_URL + "findInsurance";
+        public static string URL_FIND_PASSWORD = SERVER_URL + "findPassword";
 
         public static string URL_GET_COUNTRY = SERVER_URL + "countries";
         public static string URL_GET_REGIONS = SERVER_URL + "regions/";//{countryId}";
@@ -265,7 +266,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_FIND_INSURANCE);
+                var receivedData = await RequestPostMethod(URL_FIND_INSURANCE, data);
                 response = JsonConvert.DeserializeObject<ResponseFindInsurance>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseFindInsurance>(); }
@@ -279,7 +280,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_FIND_PASSWORD);
+                var receivedData = await RequestPostMethod(URL_FIND_PASSWORD, data);
                 response = JsonConvert.DeserializeObject<ResponseFindPassword>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseFindPassword>(); }
@@ -437,7 +438,7 @@ namespace FarmPulse.Net
 
             return response.Content;
         }
-
+         
         private static async Task<string> RequestGetMethod(string url, Object data)
         {
             //string sss = JsonConvert.SerializeObject(data).ToString();

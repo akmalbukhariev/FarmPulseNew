@@ -21,7 +21,7 @@ namespace FarmPulse.ModelView
         public Net.Region SelectedRegion { get => GetValue<Net.Region>(); set => SetValue(value); }
         public District SelectedDistrict { get => GetValue<District>(); set => SetValue(value); }
 
-        public string Date { get => GetValue<string>(); set => SetValue(value); }
+        public DateTime Date { get => GetValue<DateTime>(); set => SetValue(value); }
         public string PhoneNumber { get => GetValue<string>(); set => SetValue(value); }
 
         protected BaseModel()
@@ -30,7 +30,7 @@ namespace FarmPulse.ModelView
             Regions = new ObservableCollection<Net.Region>();
             Districts = new ObservableCollection<District>();
 
-            Date = DateTime.Now.ToString("yyyy.dd.MM");
+            Date = DateTime.Now;
         }
 
         protected FieldInfo FieldInfo { get; set; }

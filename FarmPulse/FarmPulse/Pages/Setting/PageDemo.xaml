@@ -4,7 +4,8 @@
             x:Class="FarmPulse.Pages.PageDemo"
             xmlns:view="clr-namespace:FarmPulse.Views"
             xmlns:page="clr-namespace:FarmPulse.Pages"
-            xmlns:resource="clr-namespace:FarmPulse.Resources">
+            xmlns:resource="clr-namespace:FarmPulse.Resources"
+            BackgroundColor="White">
     
     <Grid RowDefinitions="Auto,*">
         <view:NavigationView x:Name="navigationView" 
