@@ -34,7 +34,7 @@
                              TabIndicatorColor="#00BD00"
                              TabContentBackgroundColor="Black"
                              Grid.Row="1">
-                        <xct:TabViewItem Text="Currently weather"
+                        <xct:TabViewItem Text="{x:Static resource:AppResource.CurrentlyWeather}"
                                          TextColor="Gray"
                                          TextColorSelected="White"
                                          FontSize="12">
@@ -44,52 +44,52 @@
                                                             Text1="{x:Static resource:AppResource.AirTemperature}"
                                                             Text2="{Binding Temp}"/>
                                     <view:WheatherItemView1 ImageIconSource="thermostat_white"
-                                                            Text1="Feels like"
+                                                            Text1="{x:Static resource:AppResource.FeelsLike}"
                                                             Text2="{Binding FeelsLike}"
                                                             Grid.Row="1"/>
                                     <view:WheatherItemView1 ImageIconSource="thermostat_white"
-                                                            Text1="Min temperature"
+                                                            Text1="{x:Static resource:AppResource.MinTemperature}"
                                                             Text2="{Binding MinTemp}"
                                                             Grid.Row="2"/>
                                     <view:WheatherItemView1 ImageIconSource="thermostat_white"
-                                                            Text1="Max temperature"
+                                                            Text1="{x:Static resource:AppResource.MaxTemperature}"
                                                             Text2="{Binding MaxTemp}"
                                                             Grid.Row="3"/>
                                     <view:WheatherItemView1 ImageIconSource="atmospheric_pressure"
-                                                            Text1="Pressure"
+                                                            Text1="{x:Static resource:AppResource.Pressure}"
                                                             Text2="{Binding Pressure}"
                                                             Grid.Row="4"/>
                                     <view:WheatherItemView1 ImageIconSource="humidity"
-                                                            Text1="humidity"
+                                                            Text1="{x:Static resource:AppResource.Humidity}"
                                                             Text2="{Binding Humidity}"
                                                             Grid.Row="5"/>
                                     <view:WheatherItemView1 ImageIconSource="sea_level"
-                                                            Text1="Sea level"
+                                                            Text1="{x:Static resource:AppResource.SeaLevel}"
                                                             Text2="{Binding SeaLevel}"
                                                             Grid.Row="6"/>
                                     <view:WheatherItemView1 ImageIconSource="ground"
-                                                            Text1="Ground level"
+                                                            Text1="{x:Static resource:AppResource.GroundLevel}"
                                                             Text2="{Binding GroundLevel}"
                                                             Grid.Row="7"/>
                                     <view:WheatherItemView1 ImageIconSource="air_white"
-                                                            Text1="Wind speed"
+                                                            Text1="{x:Static resource:AppResource.WindSpeed}"
                                                             Text2="{Binding WindSpeed}"
                                                             Grid.Row="8"/>
                                     <view:WheatherItemView1 ImageIconSource="cloudy"
-                                                            Text1="Cloudy"
+                                                            Text1="{x:Static resource:AppResource.Cloudy}"
                                                             Text2="{Binding Cloudy}"
                                                             Grid.Row="9"/>
                                     <view:WheatherItemView1 ImageIconSource="rain_white"
-                                                            Text1="Rain 3 h"
+                                                            Text1="{x:Static resource:AppResource.Rain3h}"
                                                             Text2="{Binding Rain}"
                                                             Grid.Row="10"/>
                         </Grid>
                              </ScrollView>
-                        </xct:TabViewItem> 
-                        <xct:TabViewItem Text="Forecast"
-                                     TextColor="Gray"
-                                     TextColorSelected="White"
-                                     FontSize="12">
+                        </xct:TabViewItem>
+                        <xct:TabViewItem Text="{x:Static resource:AppResource.Forecast}"
+                                         TextColor="Gray"
+                                         TextColorSelected="White"
+                                         FontSize="12">
                              <ScrollView>
                                 <Grid RowDefinitions="*,*,*,*,*,*,*">
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Mon}"
@@ -147,7 +147,7 @@
                                                             TextV1="{Binding Sun_Text4}"
                                                             TextV2="{Binding Sun_Text5}"
                                                             Grid.Row="6"/>
-                        </Grid>
+                                </Grid>
                              </ScrollView>
                 </xct:TabViewItem>
                 </xct:TabView>

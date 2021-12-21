@@ -169,6 +169,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cloudy.
+        /// </summary>
+        internal static string Cloudy {
+            get {
+                return ResourceManager.GetString("Cloudy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
         internal static string Confirmation {
@@ -448,6 +457,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Feels like.
+        /// </summary>
+        internal static string FeelsLike {
+            get {
+                return ResourceManager.GetString("FeelsLike", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field Name.
         /// </summary>
         internal static string FieldName {
@@ -547,6 +565,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ground level.
+        /// </summary>
+        internal static string GroundLevel {
+            get {
+                return ResourceManager.GetString("GroundLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hectars.
         /// </summary>
         internal static string Hectars {
@@ -561,6 +588,15 @@ namespace FarmPulse.Resources {
         internal static string History {
             get {
                 return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humidity.
+        /// </summary>
+        internal static string Humidity {
+            get {
+                return ResourceManager.GetString("Humidity", resourceCulture);
             }
         }
         
@@ -682,6 +718,24 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max temperature.
+        /// </summary>
+        internal static string MaxTemperature {
+            get {
+                return ResourceManager.GetString("MaxTemperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min temperature.
+        /// </summary>
+        internal static string MinTemperature {
+            get {
+                return ResourceManager.GetString("MinTemperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mon.
         /// </summary>
         internal static string Mon {
@@ -750,6 +804,15 @@ namespace FarmPulse.Resources {
         internal static string PleaseWait {
             get {
                 return ResourceManager.GetString("PleaseWait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure.
+        /// </summary>
+        internal static string Pressure {
+            get {
+                return ResourceManager.GetString("Pressure", resourceCulture);
             }
         }
         
@@ -849,6 +912,15 @@ namespace FarmPulse.Resources {
         internal static string SaveIdPassword {
             get {
                 return ResourceManager.GetString("SaveIdPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sea level.
+        /// </summary>
+        internal static string SeaLevel {
+            get {
+                return ResourceManager.GetString("SeaLevel", resourceCulture);
             }
         }
         

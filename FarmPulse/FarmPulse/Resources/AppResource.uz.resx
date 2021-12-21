@@ -122,8 +122,7 @@
     <comment>Page Setting</comment>
   </data>
   <data name="ActualYield" xml:space="preserve">
-    <value>Ҳақиқий ҳосил
-</value>
+    <value>Ҳақиқий ҳосил</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AddCropYield" xml:space="preserve">
@@ -131,8 +130,7 @@
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Ҳаво ҳарорати
-</value>
+    <value>Ҳаво ҳарорати</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
@@ -166,6 +164,10 @@
   <data name="ChlorophylleIndex" xml:space="preserve">
     <value>Хлорофил индекси</value>
     <comment>Page Graph View</comment>
+  </data>
+  <data name="Cloudy" xml:space="preserve">
+    <value>Булутли</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Тасдиқлаш</value>
@@ -291,6 +293,10 @@
     <value>Фермер телефон рақами</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="FeelsLike" xml:space="preserve">
+    <value>Туйилади</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="FieldName" xml:space="preserve">
     <value>Майдон номи</value>
     <comment>Page Field</comment>
@@ -335,6 +341,10 @@
     <value>График кўриниши</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="GroundLevel" xml:space="preserve">
+    <value>Йер даражаси</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Hectars" xml:space="preserve">
     <value>Гектар</value>
     <comment>Page Purchase an insurance</comment>
@@ -342,6 +352,10 @@
   <data name="History" xml:space="preserve">
     <value>History</value>
     <comment>Page Submit Claim</comment>
+  </data>
+  <data name="Humidity" xml:space="preserve">
+    <value>Намлик</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Hybrid" xml:space="preserve">
     <value>Гибрид</value>
@@ -395,6 +409,14 @@
     <value>Харита кўриниши</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="MaxTemperature" xml:space="preserve">
+    <value>Максимал ҳарорат</value>
+    <comment>Page Weather</comment>
+  </data>
+  <data name="MinTemperature" xml:space="preserve">
+    <value>Минимал ҳарорат</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Mon" xml:space="preserve">
     <value>Дyшб</value>
     <comment>Page Weather</comment>
@@ -426,6 +448,10 @@
   <data name="PleaseWait" xml:space="preserve">
     <value>Илтимос кутинг...</value>
     <comment>ControlApp</comment>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Босим</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Purchase" xml:space="preserve">
     <value>Харид</value>
@@ -470,6 +496,10 @@
   <data name="SaveIdPassword" xml:space="preserve">
     <value>ИД / паролни сақланг</value>
     <comment>Page Login</comment>
+  </data>
+  <data name="SeaLevel" xml:space="preserve">
+    <value>Денгиз сатҳи</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="SelectCountry" xml:space="preserve">
     <value>Mамлакатни танланг</value>

@@ -165,6 +165,10 @@
     <value>Chlorophylle Index</value>
     <comment>Page Graph View</comment>
   </data>
+  <data name="Cloudy" xml:space="preserve">
+    <value>Cloudy</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
     <comment>Page Confirmation</comment>
@@ -289,6 +293,10 @@
     <value>Farmer Phone number</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="FeelsLike" xml:space="preserve">
+    <value>Feels like</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="FieldName" xml:space="preserve">
     <value>Field Name</value>
     <comment>Page Field</comment>
@@ -333,6 +341,10 @@
     <value>Graph View</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="GroundLevel" xml:space="preserve">
+    <value>Ground level</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Hectars" xml:space="preserve">
     <value>Hectars</value>
     <comment>Page Purchase an insurance</comment>
@@ -340,6 +352,10 @@
   <data name="History" xml:space="preserve">
     <value>History</value>
     <comment>Page Submit Claim</comment>
+  </data>
+  <data name="Humidity" xml:space="preserve">
+    <value>Humidity</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Hybrid" xml:space="preserve">
     <value>Hybrid</value>
@@ -393,6 +409,14 @@
     <value>Map View</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="MaxTemperature" xml:space="preserve">
+    <value>Max temperature</value>
+    <comment>Page Weather</comment>
+  </data>
+  <data name="MinTemperature" xml:space="preserve">
+    <value>Min temperature</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Mon" xml:space="preserve">
     <value>Mon</value>
     <comment>Page Weather</comment>
@@ -424,6 +448,10 @@
   <data name="PleaseWait" xml:space="preserve">
     <value>Please wait...</value>
     <comment>ControlApp</comment>
+  </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Pressure</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="Purchase" xml:space="preserve">
     <value>Purchase</value>
@@ -468,6 +496,10 @@
   <data name="SaveIdPassword" xml:space="preserve">
     <value>Save ID/Password</value>
     <comment>Page Login</comment>
+  </data>
+  <data name="SeaLevel" xml:space="preserve">
+    <value>Sea level</value>
+    <comment>Page Weather</comment>
   </data>
   <data name="SelectCountry" xml:space="preserve">
     <value>Select country</value>
