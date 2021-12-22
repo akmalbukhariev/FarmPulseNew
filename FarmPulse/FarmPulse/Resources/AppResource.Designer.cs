@@ -718,7 +718,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max temperature.
+        ///   Looks up a localized string similar to Max. temperature.
         /// </summary>
         internal static string MaxTemperature {
             get {
@@ -727,7 +727,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min temperature.
+        ///   Looks up a localized string similar to Min. temperature.
         /// </summary>
         internal static string MinTemperature {
             get {

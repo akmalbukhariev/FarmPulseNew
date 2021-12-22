@@ -410,11 +410,11 @@
     <comment>Page Map View</comment>
   </data>
   <data name="MaxTemperature" xml:space="preserve">
-    <value>Max temperature</value>
+    <value>Max. temperature</value>
     <comment>Page Weather</comment>
   </data>
   <data name="MinTemperature" xml:space="preserve">
-    <value>Min temperature</value>
+    <value>Min. temperature</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Mon" xml:space="preserve">

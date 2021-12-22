@@ -130,7 +130,7 @@
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Температура воздуха</value>
+    <value>Температура</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Page Crop yield data</comment>
   </data>
   <data name="CurrentlyWeather" xml:space="preserve">
-    <value>Погода сейчас</value>
+    <value>Cейчас</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Date" xml:space="preserve">
@@ -290,7 +290,7 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerPhoneNumber" xml:space="preserve">
-    <value>Номер телефона фермера</value>
+    <value>Tел. номер  фермера</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FeelsLike" xml:space="preserve">
@@ -330,11 +330,11 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Fri" xml:space="preserve">
-    <value>Пят</value>
+    <value>Пт</value>
     <comment>Page Weather</comment>
   </data>
   <data name="GooglePlayServiceAvailable" xml:space="preserve">
-    <value>Please install Google Play service.</value>
+    <value>Пожалуйста, установите сервис Google Play.</value>
     <comment>Page Field</comment>
   </data>
   <data name="GraphView" xml:space="preserve">
@@ -410,11 +410,11 @@
     <comment>Page Map View</comment>
   </data>
   <data name="MaxTemperature" xml:space="preserve">
-    <value>Макс температура</value>
+    <value>Макс. температура</value>
     <comment>Page Weather</comment>
   </data>
   <data name="MinTemperature" xml:space="preserve">
-    <value>Мин. Температура</value>
+    <value>Мин. температура</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Mon" xml:space="preserve">
@@ -474,7 +474,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Sat" xml:space="preserve">
-    <value>Суб</value>
+    <value>Сб</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Satellite" xml:space="preserve">
@@ -574,7 +574,7 @@
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
-    <value>Вoс</value>
+    <value>Вс</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
-    <value>Чeт</value>
+    <value>Чт</value>
     <comment>Page Weather</comment>
   </data>
   <data name="TimePeriod" xml:space="preserve">

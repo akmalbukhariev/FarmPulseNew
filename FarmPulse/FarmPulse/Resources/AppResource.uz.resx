@@ -130,7 +130,7 @@
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Ҳаво ҳарорати</value>
+    <value>Ҳарорат</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Сизнинг аризангиз муваффақиятли юборилди.</value>
+    <value>Aризангиз муваффақиятли юборилди.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
@@ -182,7 +182,7 @@
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmPhoneNumber" xml:space="preserve">
-    <value>Телефон рақамингизни тасдиқланг.</value>
+    <value>Тел. рақамингизни тасдиқланг.</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Cotton" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Page Crop yield data</comment>
   </data>
   <data name="CurrentlyWeather" xml:space="preserve">
-    <value>Ҳозирги об-ҳаво</value>
+    <value>Ҳозир</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Date" xml:space="preserve">
@@ -330,11 +330,11 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Fri" xml:space="preserve">
-    <value>Жума</value>
+    <value>Жум</value>
     <comment>Page Weather</comment>
   </data>
   <data name="GooglePlayServiceAvailable" xml:space="preserve">
-    <value>Please install Google Play service.</value>
+    <value>Google Play хизматини ўрнатинг.</value>
     <comment>Page Field</comment>
   </data>
   <data name="GraphView" xml:space="preserve">
@@ -390,7 +390,7 @@
     <comment>Page Login</comment>
   </data>
   <data name="LoginMessage" xml:space="preserve">
-    <value>Илтимос, суғурта рақамингизни ёки паролингизни текширинг.</value>
+    <value>Илтимос, суғурта рақамингиз ёки паролингизни текширинг.</value>
     <comment>Page Login</comment>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -398,7 +398,7 @@
     <comment>Page Setting</comment>
   </data>
   <data name="LogOutMessage" xml:space="preserve">
-    <value>Ҳақиқатан ҳам чиқишни хоҳлайсизми?</value>
+    <value>Чиқишни хоҳлайсизми?</value>
     <comment>Page Setting</comment>
   </data>
   <data name="MakeRequest" xml:space="preserve">
@@ -410,15 +410,15 @@
     <comment>Page Map View</comment>
   </data>
   <data name="MaxTemperature" xml:space="preserve">
-    <value>Максимал ҳарорат</value>
+    <value>Макс. ҳарорат</value>
     <comment>Page Weather</comment>
   </data>
   <data name="MinTemperature" xml:space="preserve">
-    <value>Минимал ҳарорат</value>
+    <value>Мин. ҳарорат</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Mon" xml:space="preserve">
-    <value>Дyшб</value>
+    <value>Дyш</value>
     <comment>Page Weather</comment>
   </data>
   <data name="NDVIIndex" xml:space="preserve">
@@ -474,7 +474,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Sat" xml:space="preserve">
-    <value>Шaнб</value>
+    <value>Шaн</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Satellite" xml:space="preserve">
@@ -530,11 +530,11 @@
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Параметр</value>
+    <value>Созлаш</value>
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Юбориш тарихин кўриш</value>
+    <value>Юбориш тарихини кўриш</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
@@ -554,7 +554,7 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmitedGetHistoryFailed" xml:space="preserve">
-    <value>Юборлган тарихни юклаб бўлмади.</value>
+    <value>Юборилган тарихни юклаб бўлмади.</value>
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
@@ -574,7 +574,7 @@
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
-    <value>Якшб</value>
+    <value>Якш</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
-    <value>Thu</value>
+    <value>Пай</value>
     <comment>Page Weather</comment>
   </data>
   <data name="TimePeriod" xml:space="preserve">
@@ -594,7 +594,7 @@
     <comment>Page Map View</comment>
   </data>
   <data name="Tue" xml:space="preserve">
-    <value>Сешб</value>
+    <value>Сеш</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Weather" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
-    <value>Чоршб</value>
+    <value>Чор</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wheat" xml:space="preserve">
