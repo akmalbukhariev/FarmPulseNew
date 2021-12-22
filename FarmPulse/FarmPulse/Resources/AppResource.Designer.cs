@@ -799,6 +799,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select the language.
+        /// </summary>
+        internal static string PleaseSelectLanguage {
+            get {
+                return ResourceManager.GetString("PleaseSelectLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait....
         /// </summary>
         internal static string PleaseWait {

@@ -879,6 +879,7 @@ namespace FarmPulse.Net
         public string dateOfBirth { get; set; }
         public string phoneNumber { get; set; }
         public string extraInfo { get; set; }
+        public string region { get; set; }
     }
     public class CropInfo
     {
@@ -958,6 +959,7 @@ namespace FarmPulse.Net
         public string description { get; set; }
         public string status { get; set; }
         public string date { get; set; }
+        public Xamarin.Forms.Color statusColor { get; set; }
         public double statusTextWidth { get; set; }
 
         /// <summary>

@@ -24,17 +24,20 @@ namespace FarmPulse.ModelView
 
         public ICommand ClickSaveCommand => new Command(ClickSave);
 
-        private void ClickSave()
+        private async void ClickSave()
         {
-            if (!string.IsNullOrEmpty(SelectedLanguage))
+            if (string.IsNullOrEmpty(SelectedLanguage))
             {
-                string strLanguage = GetLatinLanguageName(SelectedLanguage);
-                var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(strLanguage));
-                Thread.CurrentThread.CurrentUICulture = language;
-                AppResource.Culture = language;
-
-                AppSettings.SetLanguage(strLanguage);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.PleaseSelectLanguage, RSC.Ok);
+                return;
             }
+
+            string strLanguage = GetLatinLanguageName(SelectedLanguage);
+            var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(element => element.EnglishName.Contains(strLanguage));
+            Thread.CurrentThread.CurrentUICulture = language;
+            AppResource.Culture = language;
+
+            AppSettings.SetLanguage(strLanguage);
 
             ControlApp.SystemStatus = LogInOut.LogOut;
             Application.Current.MainPage = new TransitionNavigationPage(new Pages.PageLogin());

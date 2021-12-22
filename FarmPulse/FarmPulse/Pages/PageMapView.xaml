@@ -7,7 +7,8 @@
             xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
             x:Class="FarmPulse.Pages.PageMapView">
 
-    <Grid RowDefinitions="*, Auto">
+    <Grid RowDefinitions="*, Auto"
+          RowSpacing="0">
         <Grid.Resources>
             <ResourceDictionary>
                 <Style x:Key="btnStyle" TargetType="Button">
@@ -85,7 +86,7 @@
         <Grid ColumnDefinitions="*,1,*"
               ColumnSpacing="0"
               BackgroundColor="#2F8F6E"
-              VerticalOptions="End"
+              VerticalOptions="EndAndExpand"
               HeightRequest="50">
             <Grid.Resources>
                 <ResourceDictionary>

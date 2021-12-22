@@ -17,7 +17,7 @@
                 <Image Source="Wheat_photo"
                        Aspect="AspectFill"
                        VerticalOptions="StartAndExpand"/>
-                <Label Text="{Binding Title1}"
+                <Label Text="{Binding Title}"
                        FontSize="30"
                        FontAttributes="Bold"
                        TextColor="White"

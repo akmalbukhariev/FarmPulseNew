@@ -69,7 +69,7 @@ namespace FarmPulse.Pages
 
             var choices = new[] { RSC.FindInsuracne, RSC.FindPassword }; 
             var choice = await DisplayActionSheet(RSC.FindInsurancePassword, RSC.Cancel, null, choices);
-            if (!string.IsNullOrEmpty(choice) && (choice == RSC.FindInsuracne || choice == RSC.FindIdPassword))
+            if (!string.IsNullOrEmpty(choice) && (choice == RSC.FindInsuracne || choice == RSC.FindPassword))
             {
                 model.SetTransitionType(TransitionType.SlideFromRight);
 

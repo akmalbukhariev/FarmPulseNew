@@ -9,8 +9,7 @@ namespace FarmPulse.ModelView
 {
     public class PageWeatherViewModel : BaseModel
     {
-        public string Title { get => GetValue<string>(); set => SetValue(value); }
-        public string Title1 { get => GetValue<string>(); set => SetValue(value); }
+        public string Title { get => GetValue<string>(); set => SetValue(value); } 
         public string DateNow { get => GetValue<string>(); set => SetValue(value); }
         public string CurrentlyWeather { get => GetValue<string>(); set => SetValue(value); }
         public string Forecast { get => GetValue<string>(); set => SetValue(value); }
@@ -96,8 +95,8 @@ namespace FarmPulse.ModelView
 
         public PageWeatherViewModel()
         {
-            Title = "Weather";
-            Title1 = "Hella";
+            Title = ControlApp.UserInfo.region;
+            
             DateNow = DateTime.Now.ToString("hh:mm tt");
             CurrentlyWeather = "Currently weather";
             Forecast = "Forecast";

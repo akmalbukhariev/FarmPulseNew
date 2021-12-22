@@ -100,7 +100,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
                 farmerName = Name,
                 farmerPhone = PhoneNumber,
                 description = Description,
-                status = "Summited",
+                status = Constant.Submited,
                 date = DateTime.Now.ToString(),
                 langCode = AppSettings.GetLanguageCode
             };

@@ -90,7 +90,7 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
             //DataList.Add(item4);
             #endregion
         }
-
+        
         public async void GetSubmitedHistory()
         {
             DataList.Clear();
@@ -104,6 +104,14 @@ namespace FarmPulse.ViewModel.Purchase.SubmitClaim
                 {
                     SubmitedClaimHistoryInfo newItem = new SubmitedClaimHistoryInfo(item);
                     newItem.statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth(item.status) + 6;
+                     
+                    if (newItem.status == Constant.Submited)
+                        newItem.statusColor = Color.Orange;
+                    else if (newItem.status == Constant.Approved)
+                        newItem.statusColor = Color.Green;
+                    else if (newItem.status == Constant.Rejected)
+                        newItem.statusColor = Color.Red;
+
                     DataList.Add(newItem);
                 }
             }
