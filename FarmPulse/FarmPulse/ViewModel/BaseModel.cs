@@ -33,7 +33,7 @@ namespace FarmPulse.ModelView
             Date = DateTime.Now;
         }
 
-        protected FieldInfo FieldInfo { get; set; }
+        public FieldInfo FieldInfo { get; set; }
         protected ControlApp ControlApp => ControlApp.Instance;
         protected INavigation Navigation { get; set; }
         public Element Parent { get; set; }

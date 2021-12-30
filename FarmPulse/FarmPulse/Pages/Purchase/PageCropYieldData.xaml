@@ -40,6 +40,8 @@
                          Grid.Column="1">    
                 <control:CustomPicker x:Name="pickField" 
                                       Image="show"
+                                      FontSize="15"
+                                      VerticalTextAlignment="Center"
                                       ChartSyle="True"
                                       TextColor="Black"
                                       TitleColor="Gray"

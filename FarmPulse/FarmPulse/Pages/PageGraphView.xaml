@@ -23,7 +23,7 @@
         </ScrollView> 
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="1"/>
-        <control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
+        <!--<control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
                               ChartSyle="False"
                               TitleColor="Black"
                               TextColor="Black"
@@ -34,7 +34,59 @@
                               ItemDisplayBinding="{Binding name}" 
                               SelectedItem="{Binding SelectedMetrics}"
                               SelectedIndexChanged="Picker_SelectedIndexChanged"
-                              Grid.Row="1"/>
+                              Grid.Row="1"/>-->
+        <Button Text="{Binding TextSelectMetrics}"
+                TextColor="Black"
+                BackgroundColor="White"
+                Command="{Binding ClickSelectMetricsCommand}"
+                Margin="20,5,20,5"
+                Grid.Row="1"/>
+        <BoxView BackgroundColor="Black"
+                 IsVisible="{Binding ShowBox}"
+                 Opacity="0.5" 
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickBackGroundBoxCommand}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame IsVisible="{Binding ShowBox}"
+               WidthRequest="220"
+               HeightRequest="200"
+               BackgroundColor="White" 
+               Grid.RowSpan="2"
+               CornerRadius="10"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand">
+            <Grid RowDefinitions="Auto,Auto,Auto" 
+                  RowSpacing="0">
+                <Label Text="{x:Static resource:AppResource.SelectIndex}"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+                <ListView x:Name="lsView"  
+                          HasUnevenRows="True" 
+                          ItemsSource="{Binding MetricsList}"
+                          SelectedItem="{Binding SelectedMetrics}"
+                          ItemSelected="lsView_ItemSelected"
+                          VerticalOptions="End"
+                          Grid.Row="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="2" Margin="0,5,0,5" 
+                                      HeightRequest="30">
+                                    <Label Text="{Binding name}"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Frame>
     </Grid>
     
 </page:IPage>

@@ -11,6 +11,8 @@ namespace FarmPulse.ModelView
 {
     public class PageGraphViewViewModel : BaseModel
     {
+        public bool ShowBox { get => GetValue<bool>(); set => SetValue(value); }
+        public string TextSelectMetrics { get => GetValue<string>(); set => SetValue(value); }
         public ObservableCollection<GraphViewDataItem> DataList { get; set; } 
         public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
         public List<MetricsInfo> MetricsList { get => GetValue<List<MetricsInfo>>(); set => SetValue(value); }
@@ -18,6 +20,9 @@ namespace FarmPulse.ModelView
         public PageGraphViewViewModel()
         {
             DataList = new ObservableCollection<GraphViewDataItem>();
+
+            ShowBox = false;
+            TextSelectMetrics = RSC.SelectIndex;
 
             #region For the test
             //GraphViewDataItem item1 = new GraphViewDataItem();
@@ -64,6 +69,19 @@ namespace FarmPulse.ModelView
             #endregion
         }
 
+        public ICommand ClickSelectMetricsCommand => new Command(ClickSelectMetrics);
+        public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
+
+        private void ClickSelectMetrics()
+        {
+            ShowBox = true;
+        }
+
+        private void ClickBackGroundBox()
+        {
+            ShowBox = false;
+        }
+
         public async void GetIndexList()
         {
             ControlApp.ShowLoadingView(RSC.PleaseWait);
@@ -82,6 +100,8 @@ namespace FarmPulse.ModelView
             if (MetricsList.Count != 0)
             {
                 SelectedMetrics = MetricsList[0];
+                TextSelectMetrics = SelectedMetrics.name;
+                RefreshGraphViewData(FieldInfo.fieldId);
             }
         }
 

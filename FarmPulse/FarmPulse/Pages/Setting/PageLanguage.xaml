@@ -6,6 +6,7 @@
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             x:Class="FarmPulse.Pages.PageLanguage"
             BackgroundColor="{StaticResource AppColor}">
+    
     <Grid RowDefinitions="Auto,Auto,*,*,Auto"
           ColumnDefinitions="*,330,*">
         <view:NavigationView x:Name="navigationView"
@@ -24,13 +25,26 @@
                VerticalOptions="CenterAndExpand"
                Grid.Row="2"
                Grid.Column="1"/>
-        <Picker Title="{x:Static resource:AppResource.SelectLanguage}"
+        <!--<Picker Title="{x:Static resource:AppResource.SelectLanguage}"
                 ItemsSource="{Binding LanguageList}"
                 SelectedItem="{Binding SelectedLanguage}"
                 HorizontalTextAlignment="Center"
                 VerticalOptions="CenterAndExpand"
                 Grid.Row="3"
+                Grid.Column="1"/>-->
+        <Button Text="{Binding TextSelectLanguage}" 
+                BackgroundColor="Transparent"
+                IsVisible="{Binding ShowSelectLanguage}" 
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding ClickSelectCommand}"
+                Grid.Row="3"
                 Grid.Column="1"/>
+        <Line BackgroundColor="Black" 
+              HeightRequest="1"
+              VerticalOptions="CenterAndExpand"
+              Margin="20,25,20,0"
+              Grid.Row="3"
+              Grid.Column="1"/>
         <Button Text="{x:Static resource:AppResource.Save}"
                 BackgroundColor="#D4BDA3"
                 Margin="0,0,0,10"
@@ -39,5 +53,53 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 Command="{Binding ClickSaveCommand}"/>
+        <BoxView BackgroundColor="Black"
+                 IsVisible="{Binding ShowBox}"
+                 Opacity="0.5"
+                 Grid.ColumnSpan="3"
+                 Grid.RowSpan="5">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickBackGroundBoxCommand}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame IsVisible="{Binding ShowBox}"
+               WidthRequest="220"
+               HeightRequest="220"
+               BackgroundColor="White"
+               Grid.ColumnSpan="3"
+               Grid.RowSpan="5"
+               CornerRadius="10"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand">
+            <Grid RowDefinitions="Auto,Auto,Auto" 
+                  RowSpacing="0">
+                <Label Text="{x:Static resource:AppResource.SelectLanguage}"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+                <ListView x:Name="lsView"  
+                          HasUnevenRows="True" 
+                          ItemsSource="{Binding LanguageList}"
+                          SelectedItem="{Binding SelectedLanguage}"
+                          ItemSelected="lsView_ItemSelected"
+                          VerticalOptions="End"
+                          Grid.Row="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="2" Margin="0,5,0,5" 
+                                      HeightRequest="30">
+                                    <Label Text="{Binding Name}"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView> 
+            </Grid>
+        </Frame>
     </Grid>
 </page:IPage>

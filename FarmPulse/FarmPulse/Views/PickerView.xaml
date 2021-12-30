@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:FarmPulse.Resources"
+             x:Class="FarmPulse.Views.PickerView">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 Grid.RowSpan="3">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackGroundCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Label x:Name="lbTitle"
+               FontSize="13"
+               FontAttributes="Bold"/>
+        <ListView x:Name="lsView"
+                  Grid.Row="1"/>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="btnStyle" TargetType="Button">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="HorizontalOptions" Value="End"/>
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Button x:Name="btnCancel"
+                    Text="{x:Static resource:AppResource.Cancel}"
+                    Style="{StaticResource btnStyle}"
+                    Clicked="btnCancel_Clicked"/>
+            <Button x:Name="btnOk"
+                    Text="{x:Static resource:AppResource.Ok}"
+                    Style="{StaticResource btnStyle}"
+                    Clicked="btnOk_Clicked"/>
+        </StackLayout>
+
+    </Grid>
+    
+</ContentView>

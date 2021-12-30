@@ -31,5 +31,15 @@ namespace FarmPulse.Pages
             model.Parent = Parent;
             demoInfoView.PageParent = Parent;
         }
+
+        private void lsView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (model.SelectedLanguage != null)
+            {
+                model.ShowBox = false;
+                model.ShowSelectLanguage = true;
+                model.TextSelectLanguage = model.SelectedLanguage.Name;
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@
             </ResourceDictionary>
         </Grid.Resources>
         <control:CustomMap x:Name="mapView" 
+                           BackgroundColor="White"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="FillAndExpand" 
                            Margin="0,0,0,50"/> 
@@ -122,7 +123,7 @@
         </Grid>
         <BoxView BackgroundColor="Black"
                  Opacity="0.5"
-                 IsVisible="{Binding ShowTimePeriodBox}"
+                 IsVisible="{Binding ShowBackBoxView}"
                  Grid.RowSpan="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding ClickBackBoxCommand}"
@@ -150,13 +151,15 @@
                 <StackLayout Spacing="0">
                     <Label Text="{x:Static resource:AppResource.StartDate}"
                            Style="{StaticResource lbStyle}"/>
-                    <DatePicker Date="{Binding StartDate}" />
+                    <DatePicker Date="{Binding StartDate}"
+                                Format="dd/MM/yyyy"/>
                 </StackLayout>
                 <StackLayout Spacing="0" 
                              Grid.Row="1">
                     <Label Text="{x:Static resource:AppResource.EndDate}"
                            Style="{StaticResource lbStyle}"/>
-                    <DatePicker Date="{Binding EndDate}"/>
+                    <DatePicker Date="{Binding EndDate}"
+                                Format="dd/MM/yyyy"/>
                 </StackLayout>
                 <Button Text="Ok"
                         BackgroundColor="White"
@@ -166,17 +169,9 @@
                         Grid.Row="2"/>
             </Grid>
         </Frame>
-        <BoxView BackgroundColor="Black"
-                 Opacity="0.5"
-                 IsVisible="{Binding ShowImages}"
-                 Grid.RowSpan="2">
-            <BoxView.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ClickBackShowImageBoxCommand}"
-                                      NumberOfTapsRequired="1"/>
-            </BoxView.GestureRecognizers>
-        </BoxView>
-        <Frame WidthRequest="180"
-               HeightRequest="250"
+        <Frame CornerRadius="10"
+               HeightRequest="220"
+               WidthRequest="220"
                BackgroundColor="White"
                IsVisible="{Binding ShowImages}"
                VerticalOptions="CenterAndExpand"
@@ -195,14 +190,22 @@
                                        FontAttributes="Bold"
                                        TextColor="Black"
                                        VerticalTextAlignment="Center"
-                                       HorizontalTextAlignment="Center"/>    
+                                       HorizontalTextAlignment="Center"/>
                             </Grid>
-                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Frame>
+        <!--<BoxView BackgroundColor="Black"
+                 Opacity="0.5"
+                 IsVisible="{Binding ShowImages}"
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ClickBackShowImageBoxCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>--> 
     </Grid>
     
 </page:IPage>

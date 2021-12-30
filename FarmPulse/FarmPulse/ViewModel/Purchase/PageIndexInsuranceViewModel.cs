@@ -12,6 +12,8 @@ namespace FarmPulse.ModelView
 {
     public class PageIndexInsuranceViewModel : BaseModel
     {
+        public bool ShowBox { get => GetValue<bool>(); set => SetValue(value); }
+        public string TextSelectMetrics { get => GetValue<string>(); set => SetValue(value); }
         public ObservableCollection<GraphViewDataItem> DataList { get => GetValue<ObservableCollection<GraphViewDataItem>>(); set => SetValue(value); }
 
         public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
@@ -21,9 +23,22 @@ namespace FarmPulse.ModelView
         {   
             Navigation = navigation;
             DataList = new ObservableCollection<GraphViewDataItem>();
+
+            TextSelectMetrics = RSC.SelectIndex;
         }
 
         public ICommand ClickCropYieldCommand => new Command(CropYield);
+        public ICommand ClickSelectMetricsCommand => new Command(ClickSelectMetrics);
+        public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
+        private void ClickSelectMetrics()
+        {
+            ShowBox = true;
+        }
+
+        private void ClickBackGroundBox()
+        {
+            ShowBox = false;
+        }
 
         public async void GetIndexList()
         {
@@ -43,6 +58,8 @@ namespace FarmPulse.ModelView
             if (MetricsList.Count != 0)
             {
                 SelectedMetrics = MetricsList[0];
+                TextSelectMetrics = SelectedMetrics.name;
+                RefreshGraphViewData(FieldInfo.fieldId);
             }
         }
 

@@ -16,6 +16,7 @@ namespace FarmPulse.ModelView
 
         public bool ShowTimePeriodBox { get => GetValue<bool>(); set => SetValue(value); }
         public bool ShowImages { get => GetValue<bool>(); set => SetValue(value); }
+        public bool ShowBackBoxView { get => GetValue<bool>(); set => SetValue(value); }
         public Color BtnSatelliteTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnHybridTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnNormalTextColor { get => GetValue<Color>(); set => SetValue(value); }
@@ -36,7 +37,7 @@ namespace FarmPulse.ModelView
             BtnHybridTextColor = Color.Black;
             BtnNormalTextColor = Color.Red;
             BtnTerrainTextColor = Color.Black;
-            
+
             #region For the test
             //Data.Add(new SatelliteData()
             //{
@@ -92,19 +93,22 @@ namespace FarmPulse.ModelView
             EndDate = DateTime.Now;
         }
 
-        public ICommand ClickBackBoxCommand => new Command(ClickBack);
+        public ICommand ClickBackBoxCommand => new Command(ClickBackBox);
         public ICommand ClickBackShowImageBoxCommand => new Command(ClickBackShowImageBox);
         public ICommand ClickTimeBoxOkCommand => new Command(ClickTimeBoxOk);
         public ICommand ClickMapTypeCommand => new Command<string>(ClickMapType);
 
-        private void ClickBack()
+        private void ClickBackBox()
         {
             ShowTimePeriodBox = false;
+            ShowImages = false;
+            ShowBackBoxView = false;
         }
 
         private void ClickBackShowImageBox()
         {
             ShowImages = false;
+            ShowBackBoxView = false;
         }
 
         private async void ClickTimeBoxOk()
@@ -112,8 +116,10 @@ namespace FarmPulse.ModelView
             if (!ControlApp.Instance.InternetOk())
                 return;
 
-            Data.Clear();
             ShowTimePeriodBox = false;
+            ShowBackBoxView = false;
+
+            Data.Clear();
             RequestGetSatelliteImagesInfo request = new RequestGetSatelliteImagesInfo()
             {
                 start = ControlApp.DateTimeToUnixTimestamp(StartDate).ToString(),
