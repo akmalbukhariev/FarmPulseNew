@@ -33,6 +33,8 @@ namespace FarmPulse.ModelView
             Date = DateTime.Now;
         }
 
+        public bool ShowBackBoxView { get => GetValue<bool>(); set => SetValue(value); }
+
         public FieldInfo FieldInfo { get; set; }
         protected ControlApp ControlApp => ControlApp.Instance;
         protected INavigation Navigation { get; set; }

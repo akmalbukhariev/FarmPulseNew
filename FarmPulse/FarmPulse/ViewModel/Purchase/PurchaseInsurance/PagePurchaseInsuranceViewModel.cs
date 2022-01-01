@@ -12,7 +12,9 @@ namespace FarmPulse.ModelView
     public class PagePurchaseInsuranceViewModel : BaseModel
     {
         #region Properties 
+        public bool ShowFieldNameBox { get => GetValue<bool>(); set => SetValue(value); }
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
+        public string TextSelectFieldName { get => GetValue<string>(); set => SetValue(value); }
         public string Hectars { get => GetValue<string>(); set => SetValue(value); }
         public string FarmerName { get => GetValue<string>(); set => SetValue(value); }
         public string FarmerPhoneNumber { get => GetValue<string>(); set => SetValue(value); }
@@ -26,10 +28,14 @@ namespace FarmPulse.ModelView
         {
             Navigation = navigation;
             FieldList = new List<FieldInfo>();
+
+            TextSelectFieldName = " ";
         }
          
         public ICommand ClickSubmitCommand => new Command(Submit);
+        public ICommand ClickSelectFieldCommand => new Command(SelectField);
         public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
+        public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
 
         /// <summary>
         /// Clean the model.
@@ -81,6 +87,15 @@ namespace FarmPulse.ModelView
             ControlApp.CloseLoadingView();
         }
 
+        private void SelectField()
+        {
+            ShowFieldNameBox = true;
+        }
+
+        private void ClickBackGroundBox()
+        {
+            ShowFieldNameBox = false;
+        }
         private async void Submit()
         {
             if (!Control.ControlApp.Instance.InternetOk())

@@ -16,7 +16,6 @@ namespace FarmPulse.ModelView
 
         public bool ShowTimePeriodBox { get => GetValue<bool>(); set => SetValue(value); }
         public bool ShowImages { get => GetValue<bool>(); set => SetValue(value); }
-        public bool ShowBackBoxView { get => GetValue<bool>(); set => SetValue(value); }
         public Color BtnSatelliteTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnHybridTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnNormalTextColor { get => GetValue<Color>(); set => SetValue(value); }

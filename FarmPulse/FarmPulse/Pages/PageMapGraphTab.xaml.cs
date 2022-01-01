@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms.PlatformConfiguration;
+
 namespace FarmPulse.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageMapGraphTab : TabbedPage
+    public partial class PageMapGraphTab : Xamarin.Forms.TabbedPage
     {
         public PageMapGraphTab(FieldInfo fieldInfo)
         {
@@ -23,8 +26,11 @@ namespace FarmPulse.Pages
 
             mapPage.InitModel();
             graphPage.InitModel();
-              
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#598E6F");
+
+            //On<Android>().SetBarItemColor(Color.Red);           // Unselected image+text color
+            //On<Android>().SetBarSelectedItemColor(Color.White); // Selected image+text color
+
+            ((NavigationPage)Xamarin.Forms.Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#598E6F");
         }
     }
 }

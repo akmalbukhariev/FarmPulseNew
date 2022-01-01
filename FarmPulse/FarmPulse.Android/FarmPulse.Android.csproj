@@ -94,6 +94,7 @@
     <Compile Include="Renderers\CustomEntryRenderer.cs" />
     <Compile Include="Renderers\CustomMapRenderer.cs" />
     <Compile Include="Renderers\CustomPickerRenderer.cs" />
+    <Compile Include="Renderers\CustomTabbedPageRenderer.cs" />
     <Compile Include="Renderers\TransitionNavigationPageRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,9 +282,8 @@
     <AndroidResource Include="Resources\drawable\sea_level.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Content\Insurance_en.html" />
+    <AndroidResource Include="Resources\drawable\tab_background.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
   </ItemGroup>
@@ -346,6 +346,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tab_background_selected.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tab_background_unselected.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

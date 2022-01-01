@@ -31,11 +31,15 @@ namespace FarmPulse.Pages.Purchase.PurchaseInsurance
 
             model.GetFields();
         }
-
-        private void pickField_SelectedIndexChanged(object sender, EventArgs e)
+  
+        private void lsView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (model.SelectedField != null)
+            {
+                model.ShowFieldNameBox = false;
+                model.TextSelectFieldName = model.SelectedField.name;
                 model.CropType = model.SelectedField.cropName;
+            }
         }
     }
 }

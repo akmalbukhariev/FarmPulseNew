@@ -12,7 +12,9 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
     public class PageSubmitClaimViewModel : BaseModel
     {
         #region Properties 
+        public bool ShowFieldNameBox { get => GetValue<bool>(); set => SetValue(value); }
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
+        public string TextSelectFieldName { get => GetValue<string>(); set => SetValue(value); }
         public string AreaTon { get => GetValue<string>(); set => SetValue(value); }
         public string Name { get => GetValue<string>(); set => SetValue(value); } 
         public string Description { get => GetValue<string>(); set => SetValue(value); } 
@@ -25,10 +27,14 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
         { 
             Navigation = navigation;
             FieldList = new List<FieldInfo>();
+
+            TextSelectFieldName = " ";
         }
 
         public ICommand ClickSubmitCommand => new Command(Submit);
+        public ICommand ClickSelectFieldCommand => new Command(SelectField);
         public ICommand ClickSubmitedHistoryCommand => new Command(SubmitedHistory);
+        public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
 
         /// <summary>
         /// Clean the model.
@@ -59,6 +65,16 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
             else if (SelectedField == null) ok = false;
 
             return ok;
+        }
+
+        private void SelectField()
+        {
+            ShowFieldNameBox = true;
+        }
+
+        private void ClickBackGroundBox()
+        {
+            ShowFieldNameBox = false;
         }
 
         public async void GetFields()

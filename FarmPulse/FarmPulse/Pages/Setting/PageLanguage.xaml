@@ -76,7 +76,8 @@
                 <Label Text="{x:Static resource:AppResource.SelectLanguage}"
                        FontSize="13"
                        HorizontalTextAlignment="Center"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       Margin="0,0,0,10"/>
                 <ListView x:Name="lsView"  
                           HasUnevenRows="True" 
                           ItemsSource="{Binding LanguageList}"

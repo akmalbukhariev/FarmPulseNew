@@ -32,14 +32,16 @@ namespace FarmPulse.Pages
 
             model.GetFields();
         }
-  
-        private void pickField_SelectedIndexChanged(object sender, EventArgs e)
+    
+        private void lsView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (!Control.ControlApp.Instance.InternetOk())
                 return;
 
             if (model.SelectedField != null)
             {
+                model.TextSelectFieldName = model.SelectedField.name;
+                model.ShowFieldNameBox = false;
                 model.CropType = model.SelectedField.cropName;
                 model.RefreshModel();
             }

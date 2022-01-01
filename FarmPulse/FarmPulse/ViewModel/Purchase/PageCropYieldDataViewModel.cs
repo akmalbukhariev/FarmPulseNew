@@ -11,6 +11,8 @@ namespace FarmPulse.ModelView
     public class PageCropYieldDataViewModel : BaseModel
     {
         #region Properties 
+        public bool ShowFieldNameBox { get => GetValue<bool>(); set => SetValue(value); }
+        public string TextSelectFieldName { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2010 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2011 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2012 { get => GetValue<string>(); set => SetValue(value); }
@@ -34,10 +36,13 @@ namespace FarmPulse.ModelView
         { 
             Navigation = navigation;
             FieldList = new List<FieldInfo>();
+
+            TextSelectFieldName = " ";
         }
 
         public ICommand ClickSaveCommand => new Command(Save);
-
+        public ICommand ClickSelectFieldCommand => new Command(SelectField);
+        public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
         /// <summary>
         /// Clean the model.
         /// </summary>
@@ -94,6 +99,16 @@ namespace FarmPulse.ModelView
             {
                 SelectedField = FieldList[0];
             }
+        }
+
+        private void SelectField()
+        {
+            ShowFieldNameBox = true;
+        }
+
+        private void ClickBackGroundBox()
+        {
+            ShowFieldNameBox = false;
         }
 
         public async void RefreshModel()

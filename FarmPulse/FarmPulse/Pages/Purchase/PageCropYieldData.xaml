@@ -38,7 +38,7 @@
                    Grid.Column="1"/>
             <StackLayout Grid.Row="1" 
                          Grid.Column="1">    
-                <control:CustomPicker x:Name="pickField" 
+                <!--<control:CustomPicker x:Name="pickField" 
                                       Image="show"
                                       FontSize="15"
                                       VerticalTextAlignment="Center"
@@ -50,7 +50,16 @@
                                       ItemDisplayBinding="{Binding name}" 
                                       SelectedItem="{Binding SelectedField}"
                                       SelectedIndexChanged="pickField_SelectedIndexChanged"
-                                      BackgroundColor="White"/>  
+                                      BackgroundColor="White"/>-->
+                <Button Text="{Binding TextSelectFieldName}" 
+                        HeightRequest="45"
+                        ImageSource="Show"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        ContentLayout="Right,0"
+                        Command="{Binding ClickSelectFieldCommand}"/>
                 <view:EntryView Style="{StaticResource edStyle}"
                                 Text="{Binding CropType}"/>
             </StackLayout>
@@ -68,110 +77,88 @@
                             <Setter Property="HorizontalTextAlignment" Value="Center"/>
                         </Style>
                         <Style x:Key="edStyle" TargetType="view:EntryView">
-                            <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
-                            <Setter Property="CornerRadius" Value="7"/>
-                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="MaxLength" Value="5"/>
                             <Setter Property="BorderWidth" Value="1"/>
+                            <Setter Property="CornerRadius" Value="7"/>
+                            <Setter Property="Keyboard" Value="Numeric"/>
+                            <Setter Property="TextColor" Value="Black"/>
                             <Setter Property="BorderColor" Value="Gray"/>
-                            <Setter Property="BackgroundColorOfEntry" Value="White"/>
                             <Setter Property="PlaceHoldingText" Value="00:00"/>
+                            <Setter Property="BackgroundColorOfEntry" Value="White"/>
+                            <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
                         </Style>
                     </ResourceDictionary>
                 </Grid.Resources>
                 <StackLayout Spacing="0">
                     <Label Text="2010"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2010}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2010, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="1">
                     <Label Text="2011"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2011}"
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2011, StringFormat='{0:F2}'}" 
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="2">
                     <Label Text="2012"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2012}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2012, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1">
                     <Label Text="2013"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2013}"
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2013, StringFormat='{0:F2}'}" 
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="1">
                     <Label Text="2014"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2014}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2014, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="2">
                     <Label Text="2015"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2015}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2015, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2">
                     <Label Text="2016"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2016}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2016, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="1">
                     <Label Text="2017"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2017}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2017, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="2">
                     <Label Text="2018"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2018}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2018, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3">
                     <Label Text="2019"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2019}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2019, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="1">
                     <Label Text="2020"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2020}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2020, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="2">
                     <Label Text="2021"
                            Style="{StaticResource lbStyle}"/>
-                    <view:EntryView Text="{Binding Text_2021}" 
-                                    Keyboard="Numeric"
-                                    MaxLength="3"
+                    <view:EntryView Text="{Binding Text_2021, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
             </Grid>
@@ -186,6 +173,53 @@
                     Grid.Row="3"
                     Grid.Column="1"/>
         </Grid>
+        <BoxView BackgroundColor="Black"
+                 IsVisible="{Binding ShowFieldNameBox}"
+                 Opacity="0.5" 
+                 Grid.RowSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickBackGroundBoxCommand}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Frame IsVisible="{Binding ShowFieldNameBox}"
+               WidthRequest="220"
+               HeightRequest="200"
+               BackgroundColor="White" 
+               Grid.RowSpan="2"
+               CornerRadius="10"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand">
+            <Grid RowDefinitions="Auto,Auto,Auto" 
+                  RowSpacing="0">
+                <Label Text="{x:Static resource:AppResource.SelectField}"
+                       FontSize="13"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,10"/>
+                <ListView x:Name="lsView"  
+                          HasUnevenRows="True" 
+                          ItemsSource="{Binding FieldList}"
+                          SelectedItem="{Binding SelectedField}"
+                          ItemSelected="lsView_ItemSelected"
+                          VerticalOptions="End"
+                          Grid.Row="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="2" Margin="0,5,0,5" 
+                                      HeightRequest="30">
+                                    <Label Text="{Binding name}"
+                                           FontSize="15"
+                                           TextColor="Black"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Frame>
     </Grid>
 
 </page:IPage>

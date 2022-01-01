@@ -3,10 +3,9 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.PageMapGraphTab"
-            BarBackgroundColor="LightGray"
-            BarTextColor="#2F8F6E"
-            SelectedTabColor="Black"
+            x:Class="FarmPulse.Pages.PageMapGraphTab" 
+            BarTextColor="#2F8F6E" 
+            BarBackgroundColor="#D3D3D3" 
             NavigationPage.IconColor="Black">
     <NavigationPage.TitleView>
         <Label x:Name="lbTitle" 
@@ -15,8 +14,7 @@
                TextColor="Black" 
                HorizontalTextAlignment="Center" 
                Margin="0,0,40,0"/>
-    </NavigationPage.TitleView>
-
+    </NavigationPage.TitleView> 
     <page:PageMapView x:Name="mapPage" Title="{x:Static resource:AppResource.MapView}" />
     <page:PageGraphView x:Name="graphPage" Title="{x:Static resource:AppResource.GraphView}" /> 
 </TabbedPage>

@@ -4,7 +4,7 @@
              xmlns:chart="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="FarmPulse.Views.GraphView">
 
-    <Grid RowDefinitions="Auto,*"
+    <Grid RowDefinitions="Auto,250"
           Margin="10,0,10,0"
           HeightRequest="300">
         <Grid.Resources>
@@ -15,17 +15,17 @@
                 </Style>
             </ResourceDictionary>
         </Grid.Resources>
-        <Grid ColumnDefinitions="*,50,Auto"
+        <Grid ColumnDefinitions="*,50,Auto" 
               VerticalOptions="Start">
             <Label x:Name="lbRegion" 
                    Text="Cotton(Nurabad)"
                    Style="{StaticResource lbStyle}"
                    HorizontalTextAlignment="Start"/>
             <BoxView BackgroundColor="Red" 
-                  HeightRequest="2"
-                  VerticalOptions="CenterAndExpand"
-                  HorizontalOptions="EndAndExpand"
-                  Grid.Column="1"/>
+                     HeightRequest="2"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="EndAndExpand"
+                     Grid.Column="1"/>
             <Label x:Name="lbMeanValue" 
                    Text="Index mean value"
                    Style="{StaticResource lbStyle}"
