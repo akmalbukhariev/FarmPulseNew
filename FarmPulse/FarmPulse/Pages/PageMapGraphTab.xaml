@@ -3,9 +3,10 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:page="clr-namespace:FarmPulse.Pages"
             xmlns:resource="clr-namespace:FarmPulse.Resources"
-            x:Class="FarmPulse.Pages.PageMapGraphTab" 
-            BarTextColor="#2F8F6E" 
+            x:Class="FarmPulse.Pages.PageMapGraphTab"  
             BarBackgroundColor="#D3D3D3" 
+            SelectedTabColor="Black"
+            UnselectedTabColor="#2F8F6E"
             NavigationPage.IconColor="Black">
     <NavigationPage.TitleView>
         <Label x:Name="lbTitle" 

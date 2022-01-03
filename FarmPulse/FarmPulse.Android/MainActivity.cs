@@ -6,7 +6,7 @@ using Android.Runtime;
 using Android.OS;
 using Acr.UserDialogs;
 using Plugin.LocalNotification;
-using Android.Gms.Common;
+using Android.Gms.Common; 
 
 namespace FarmPulse.Droid
 {
@@ -23,7 +23,7 @@ namespace FarmPulse.Droid
             UserDialogs.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
+              
             Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#D9C6A8"));
             AppSettings.IsGooglePlayServiceAvailable = ConnectionResult.Success == GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
             LoadApplication(new App());
