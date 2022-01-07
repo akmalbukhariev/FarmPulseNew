@@ -76,6 +76,14 @@ namespace FarmPulse.ViewModel.Purchase.PurchaseInsurance
                 {
                     SubmitedPurchaseHistoryInfo newItem = new SubmitedPurchaseHistoryInfo(item);
                     newItem.statusTextWidth = DependencyService.Get<ICalculateTextWidth>().calculateWidth(item.status) + 6;
+
+                    if (newItem.status == Constant.Submited)
+                        newItem.statusColor = Color.Orange;
+                    else if (newItem.status == Constant.Approved)
+                        newItem.statusColor = Color.Green;
+                    else if (newItem.status == Constant.Rejected)
+                        newItem.statusColor = Color.Red;
+
                     DataList.Add(newItem);
                 }
             }

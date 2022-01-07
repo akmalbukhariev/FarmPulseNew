@@ -122,7 +122,7 @@ namespace FarmPulse.ModelView
                 fieldName = SelectedField.name,
                 hectares = Hectars, 
                 phoneNumber = FarmerPhoneNumber,
-                status = "Submited",
+                status = Constant.Submited,
                 username = ControlApp.UserInfo.insuranceNumber,
             };
 

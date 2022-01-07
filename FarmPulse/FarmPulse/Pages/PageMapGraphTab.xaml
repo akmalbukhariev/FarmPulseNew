@@ -5,8 +5,8 @@
             xmlns:resource="clr-namespace:FarmPulse.Resources"
             x:Class="FarmPulse.Pages.PageMapGraphTab"  
             BarBackgroundColor="#D3D3D3" 
-            SelectedTabColor="Black"
-            UnselectedTabColor="#2F8F6E"
+            SelectedTabColor="#2F8F6E"
+            UnselectedTabColor="Black"
             NavigationPage.IconColor="Black">
     <NavigationPage.TitleView>
         <Label x:Name="lbTitle" 

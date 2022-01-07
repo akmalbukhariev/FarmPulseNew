@@ -38,7 +38,7 @@
                                    FontSize="18"
                                    HorizontalTextAlignment="Start"
                                    Grid.Row="1"/>
-                            <BoxView BackgroundColor="Green"
+                            <BoxView BackgroundColor="{Binding statusColor}"
                                      WidthRequest="{Binding statusTextWidth}"
                                      CornerRadius="20"
                                      HorizontalOptions="Start"

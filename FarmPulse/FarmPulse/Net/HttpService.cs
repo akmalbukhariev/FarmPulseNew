@@ -1000,6 +1000,7 @@ namespace FarmPulse.Net
         public string phoneNumber { get; set; }
         public string status { get; set; }
         public string date { get; set; }
+        public Xamarin.Forms.Color statusColor { get; set; }
         public double statusTextWidth { get; set; }
 
         /// <summary>

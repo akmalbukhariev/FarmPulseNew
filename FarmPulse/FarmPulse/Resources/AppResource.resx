@@ -142,7 +142,7 @@
     <comment>Page Login</comment>
   </data>
   <data name="AutoLogMessage" xml:space="preserve">
-    <value>If to use automatic login, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <value>If you select automatic login, you will be logged in automatically and will not have to enter password and username every time at the log in screen.</value>
     <comment>Page Login</comment>
   </data>
   <data name="AvailableImages" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>ControlApp</comment>
   </data>
   <data name="ChlorophylleIndex" xml:space="preserve">
-    <value>Chlorophylle Index</value>
+    <value>Chlorophyll Index</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Cloudy" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Application sucessfully submitted.</value>
+    <value>Application successfully submitted.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
@@ -226,11 +226,11 @@
     <comment>Page Setting</comment>
   </data>
   <data name="DescriptionClaim" xml:space="preserve">
-    <value>Description the claim</value>
+    <value>Description of the claim</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="DescriptionCropYieldData" xml:space="preserve">
-    <value>Please, enter the crop yield information in order to compare with insurance index values. Use ton/ha units.</value>
+    <value>Please, enter the crop yield information in order to compare with insurance index values. Use units of ton/ha.</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
@@ -306,7 +306,7 @@
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuracne" xml:space="preserve">
-    <value>Find Insuracne</value>
+    <value>Find Insurance number</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuranceMessage1" xml:space="preserve">
@@ -346,7 +346,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Hectars" xml:space="preserve">
-    <value>Hectars</value>
+    <value>Hectares</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="History" xml:space="preserve">
@@ -426,7 +426,7 @@
     <comment>Page Graph View</comment>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No Internet.</value>
+    <value>No Internet</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Normal" xml:space="preserve">
@@ -538,7 +538,7 @@
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Show Submition History</value>
+    <value>Show Submission History</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
@@ -558,11 +558,11 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmitedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get submited history.</value>
+    <value>Failed to get submitted history.</value>
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
-    <value>Submition has failed.</value>
+    <value>Submission has failed.</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmittingClaim" xml:space="preserve">
@@ -574,7 +574,7 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Successfully</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
@@ -582,7 +582,7 @@
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
-    <value>Terrian</value>
+    <value>Terrain</value>
     <comment>Page Map View</comment>
   </data>
   <data name="ThereIsNotIMage" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Page Main</comment>
   </data>
   <data name="WeatherMessage1" xml:space="preserve">
-    <value>Coud not get the weather information!</value>
+    <value>Could not get weather information!</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">

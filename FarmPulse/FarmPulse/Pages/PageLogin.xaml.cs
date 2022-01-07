@@ -28,8 +28,14 @@ namespace FarmPulse.Pages
         {
             base.OnAppearing();
 
-            if (!ControlApp.AppStarting) return;
-            ControlApp.AppStarting = false;
+            model.Parent = Parent;
+            demoInfoView.Parent = Parent;
+
+            if (ControlApp.AppOnResume)
+            {
+                ControlApp.AppOnResume = false;
+                return;
+            }
 
             appeared = false;
             model.CheckAutoLogin = false;
@@ -38,14 +44,15 @@ namespace FarmPulse.Pages
             {
                 model.InsuranceNumber = ll[0];
                 model.Password = ll[1];
-                model.ClickLogin();
                 model.CheckAutoLogin = true;
+
+                appeared = true;
+                model.ClickLogin();
             }
-
-            appeared = true;
-
-            model.Parent = Parent;
-            demoInfoView.Parent = Parent;
+            else
+            {
+                appeared = true;
+            }
         }
 
         private async void AutoLogin_CheckedChanged(object sender, CheckedChangedEventArgs e)

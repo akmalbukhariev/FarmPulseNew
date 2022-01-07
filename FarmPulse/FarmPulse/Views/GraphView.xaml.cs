@@ -106,7 +106,7 @@ namespace FarmPulse.Views
                 FarmBarChart farmBarChart = new FarmBarChart()
                 {
                     NdviEntires = chartDataList,
-                    LabelTextSize = 17f,
+                    LabelTextSize = 18f,
                     LabelOrientation = Orientation.Vertical,
                     IsAnimated = false
                 };

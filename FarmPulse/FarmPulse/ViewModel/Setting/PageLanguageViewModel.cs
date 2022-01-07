@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace FarmPulse.ModelView
@@ -63,6 +64,7 @@ namespace FarmPulse.ModelView
             AppResource.Culture = language;
 
             AppSettings.SetLanguage(strLanguage);
+            Preferences.Set("AutoLogin", "");
 
             ControlApp.SystemStatus = LogInOut.LogOut;
             Application.Current.MainPage = new TransitionNavigationPage(new Pages.PageLogin());
