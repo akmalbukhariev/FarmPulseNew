@@ -565,6 +565,10 @@
     <value>Жўнатилмади.</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="SubmitMessage" xml:space="preserve">
+    <value>Илтимос, телефон рақамини текширинг</value>
+    <comment>Page Purchase</comment>
+  </data>
   <data name="SubmittingClaim" xml:space="preserve">
     <value>Аризани жўнатиш</value>
     <comment>Page Purchase</comment>

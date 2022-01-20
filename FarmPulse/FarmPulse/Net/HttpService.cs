@@ -413,7 +413,7 @@ namespace FarmPulse.Net
         /// <param name="obj"></param>
         /// <returns></returns>
         private static async Task<string> RequestPostMethod(string url, Object obj)
-        {
+        { 
             var client = new RestClient(url);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);

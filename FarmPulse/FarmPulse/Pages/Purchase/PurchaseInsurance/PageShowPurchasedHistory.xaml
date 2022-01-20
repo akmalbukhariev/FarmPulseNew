@@ -18,7 +18,7 @@
                   ItemsSource="{Binding DataList}"
                   SelectedItem="{Binding SelectedItem}"
                   ItemSelected="Purchased_ItemSelected"
-                  IsPullToRefreshEnabled="True"
+                  IsPullToRefreshEnabled="False"
                   Grid.Row="1">
 
             <ListView.ItemTemplate>

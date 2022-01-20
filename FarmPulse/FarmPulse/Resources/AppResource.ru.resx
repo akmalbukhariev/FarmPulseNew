@@ -565,6 +565,10 @@
     <value>Отправка не удалась.</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="SubmitMessage" xml:space="preserve">
+    <value>Пожалуйста, проверьте номер телефона</value>
+    <comment>Page Purchase</comment>
+  </data>
   <data name="SubmittingClaim" xml:space="preserve">
     <value>Подача заявления</value>
     <comment>Page Purchase</comment>

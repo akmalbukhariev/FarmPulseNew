@@ -70,7 +70,7 @@ namespace FarmPulse.Control
             var points = base.CalculatePoints(itemSize, origin, 100);
             this.pointBarList.AddRange(points);
 
-            DrawBars(canvas, points, itemSize, origin, 100);
+            DrawBars(canvas, points, itemSize, origin, 10);
 
             DrawBarAreas(canvas, points, itemSize, 100);
             DrawFooter(canvas, NdviEntires.Select(x => x.Label).ToArray(), valueLableSizes, points, itemSize, height, footerHeight);
@@ -84,15 +84,18 @@ namespace FarmPulse.Control
                 this.pointLineList.AddRange(points1);
                 DrawLines(canvas, width, height);
                 DrawRightLegends(canvas, width, height);
+
+                DrawNDVICropYieldLegends(canvas, width, height);
             }
         }
 
         private void DrawLines(SKCanvas canvas, int width, int height)
         {
             SKPaint paint = new SKPaint();
+            var color = String.Format("#{0:X6}", "8FAADC");
             paint.Style = SKPaintStyle.Stroke;
-            paint.Color = SKColors.Blue;
-            paint.StrokeWidth = 5; ;
+            paint.Color = SKColor.Parse(color);
+            paint.StrokeWidth = 7;
             paint.IsAntialias = true;
 
             for (int i = 1; i < pointLineList.Count; i++)
@@ -119,6 +122,31 @@ namespace FarmPulse.Control
             }
 
             return result.ToArray();
+        }
+
+        private void DrawNDVICropYieldLegends(SKCanvas canvas, int width, int height)
+        {
+            var color1 = String.Format("#{0:X6}", "007A43");
+            var color2 = String.Format("#{0:X6}", "8FAADC");
+            SKColor barColor = SKColor.Parse(color1);
+            SKColor lineColor = SKColor.Parse(color2);
+
+            var barPaint = new SKPaint();
+            barPaint.Color = barColor;
+            barPaint.TextSize = 20;
+
+            var linePaint = new SKPaint();
+            linePaint.Color = lineColor;
+            linePaint.TextSize = 20;
+
+            float x1 = width / 2 - 20;
+
+            canvas.DrawRect(x1, 20, 50, 15, barPaint);
+            canvas.DrawText("NDVI", x1 + 52, 35, barPaint);
+
+            float x2 = x1 + 52 + 60;
+            canvas.DrawRect(x2, 20, 50, 15, linePaint);
+            canvas.DrawText("Crop yield", x2 + 52, 35, linePaint);
         }
 
         private void DrawLeftLegends(SKCanvas canvas, int width, int height)
@@ -183,7 +211,7 @@ namespace FarmPulse.Control
             average = average / avCount;
             var paint = new SKPaint();
             paint.Color = SKColors.Red;
-            paint.StrokeWidth = 5;
+            paint.StrokeWidth = 10;
 
             canvas.DrawLine(0, average, width, average, paint);
         }

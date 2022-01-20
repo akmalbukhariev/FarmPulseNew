@@ -147,7 +147,7 @@ namespace FarmPulse.Views
                     if (string.IsNullOrEmpty(item.value)) continue;
 
                     ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
-                    var color = String.Format("#{0:X6}", "007A43");
+                    var color = String.Format("#{0:X6}", "548235");
                     chartEntry.Label = item.year.Replace("Text_", "");
                     chartEntry.ValueLabel = item.value;
                     chartEntry.Color = SKColor.Parse(color);
@@ -162,10 +162,11 @@ namespace FarmPulse.Views
                     {
                         if (string.IsNullOrEmpty(item.value)) continue;
 
-                        ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
+                        ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));//8FAADC
+                        var color1 = String.Format("#{0:X6}", "8FAADC");
                         chartEntry.Label = item.year.Replace("Text_", "");
                         chartEntry.ValueLabel = item.value;
-                        chartEntry.Color = SKColors.LightBlue;
+                        chartEntry.Color = SKColor.Parse(color1);
                         chartEntry.TextColor = SKColors.Black;
 
                         chartYieldDataList.Add(chartEntry);

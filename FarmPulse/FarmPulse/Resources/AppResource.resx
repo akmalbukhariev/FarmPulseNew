@@ -565,6 +565,10 @@
     <value>Submission has failed.</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="SubmitMessage" xml:space="preserve">
+    <value>Please check the phone number</value>
+    <comment>Page Purchase</comment>
+  </data>
   <data name="SubmittingClaim" xml:space="preserve">
     <value>Submitting Claim</value>
     <comment>Page Purchase</comment>

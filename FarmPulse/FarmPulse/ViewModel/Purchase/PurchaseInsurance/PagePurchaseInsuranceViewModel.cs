@@ -109,14 +109,14 @@ namespace FarmPulse.ModelView
 
             if (FarmerPhoneNumber != ConfirmPhoneNumber)
             {
-                await Application.Current.MainPage.DisplayAlert(RSC.Error, "Please check the phone number", RSC.Ok);
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, RSC.SubmitMessage, RSC.Ok);
                 return;
             }
 
             RequestBuyInsurance request = new RequestBuyInsurance()
             {
                 cropName = CropType,
-                date = DateTime.Now.ToString(),
+                date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
                 farmerName = FarmerName,
                 fieldId = SelectedField.fieldId,
                 fieldName = SelectedField.name,

@@ -74,7 +74,7 @@
                         <StackLayout Grid.Row="5">
                             <Label Text="{x:Static resource:AppResource.Date}"
                                    Style="{StaticResource lbStyle}"/>
-                            <Label Text="{Binding Date}"
+                            <Label Text="{Binding StrDate}"
                                    Style="{StaticResource lbStyletext}"/>
                         </StackLayout>
                     </Grid>

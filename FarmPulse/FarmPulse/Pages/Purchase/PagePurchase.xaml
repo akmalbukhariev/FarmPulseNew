@@ -8,7 +8,7 @@
             BackgroundColor="{StaticResource AppColor}">
 
     <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{x:Static resource:AppResource.Purchase}"
+        <view:NavigationView Text="{x:Static resource:AppResource.CropInsurance}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
         <Grid RowDefinitions="*,Auto"
