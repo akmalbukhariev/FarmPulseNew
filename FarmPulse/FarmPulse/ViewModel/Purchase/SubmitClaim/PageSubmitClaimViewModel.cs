@@ -117,7 +117,7 @@ namespace FarmPulse.ModelView.Purchase.SubmitClaim
                 farmerPhone = PhoneNumber,
                 description = Description,
                 status = Constant.Submited,
-                date = DateTime.Now.ToString(),
+                date = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
                 langCode = AppSettings.GetLanguageCode
             };
 

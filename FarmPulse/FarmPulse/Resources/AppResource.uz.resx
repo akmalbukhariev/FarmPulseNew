@@ -205,6 +205,10 @@
     <value>Экин тури</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="CropYield" xml:space="preserve">
+    <value>Екин ҳосилдорлиги</value>
+    <comment>Page Index Insurance</comment>
+  </data>
   <data name="CropYieldData" xml:space="preserve">
     <value>Ҳосилдорлик маълумотлари</value>
     <comment>Page Crop yield data</comment>

@@ -120,8 +120,8 @@ namespace FarmPulse.ModelView
             if (response.result)
             {
                 foreach (GraphViewInfo info in response.values)
-                {
-                    if (info.chartInfoList.Count != 0 && info.name != "cropYeild")
+                {                                                    
+                    if (info.chartInfoList.Count != 0 && info.name != Constant.CropYield)
                     {
                         GraphViewDataItem newItem = new GraphViewDataItem();
                         newItem.Title = info.cropName;

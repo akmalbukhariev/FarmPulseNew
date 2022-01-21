@@ -213,7 +213,7 @@ namespace FarmPulse.ModelView
                             Tue_Text1 = wTuesday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wTuesday.dt).ToString("dd/MM/yyyy");
                             Tue_Text2 = wTuesday.main.temp_max.ToString() + " °C";
                             Tue_Text3 = wTuesday.main.temp_min.ToString() + " °C";
-                            Tue_Text4 = wTuesday.wind.speed.ToString() + " me/s";
+                            Tue_Text4 = wTuesday.wind.speed.ToString() + " m/s";
                             Tue_Text5 = wTuesday.rain._3h.ToString();
                             #endregion
 
@@ -221,7 +221,7 @@ namespace FarmPulse.ModelView
                             Wed_Text1 = wWednesday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wWednesday.dt).ToString("dd/MM/yyyy");
                             Wed_Text2 = wWednesday.main.temp_max.ToString() + " °C";
                             Wed_Text3 = wWednesday.main.temp_min.ToString() + " °C";
-                            Wed_Text4 = wWednesday.wind.speed.ToString() + " me/s";
+                            Wed_Text4 = wWednesday.wind.speed.ToString() + " m/s";
                             Wed_Text5 = wWednesday.rain._3h.ToString();
                             #endregion
 
@@ -237,7 +237,7 @@ namespace FarmPulse.ModelView
                             Fri_Text1 = wFriday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wFriday.dt).ToString("dd/MM/yyyy");
                             Fri_Text2 = wFriday.main.temp_max.ToString() + " °C";
                             Fri_Text3 = wFriday.main.temp_min.ToString() + " °C";
-                            Fri_Text4 = wFriday.wind.speed.ToString() + " me/s";
+                            Fri_Text4 = wFriday.wind.speed.ToString() + " m/s";
                             Fri_Text5 = wFriday.rain._3h.ToString();
                             #endregion
 
@@ -245,7 +245,7 @@ namespace FarmPulse.ModelView
                             Sat_Text1 = wSaturday.dt == 0 ? "-" : ControlApp.UnixTimeStampToDateTime((double)wSaturday.dt).ToString("dd/MM/yyyy");
                             Sat_Text2 = wSaturday.main.temp_max.ToString() + " °C";
                             Sat_Text3 = wSaturday.main.temp_min.ToString() + " °C";
-                            Sat_Text4 = wSaturday.wind.speed.ToString() + " me/s";
+                            Sat_Text4 = wSaturday.wind.speed.ToString() + " m/s";
                             Sat_Text5 = wSaturday.rain._3h.ToString();
                             #endregion
 

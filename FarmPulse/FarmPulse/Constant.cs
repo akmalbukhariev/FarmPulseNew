@@ -15,6 +15,7 @@ namespace FarmPulse
         public const String Submited = "Submitted";
         public const String Approved = "Approved";
         public const String Rejected = "Rejected";
+        public const String CropYield = "cropYield";
         public const String PAGE_FIELD_Message6 = "Your polygon intersects itself in points:";
         public const String PAGE_FIELD_Message7 = "Area of the polygon";
     }

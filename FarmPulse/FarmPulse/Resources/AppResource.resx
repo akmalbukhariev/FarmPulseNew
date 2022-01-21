@@ -205,6 +205,10 @@
     <value>Crop type</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="CropYield" xml:space="preserve">
+    <value>Crop yield</value>
+    <comment>Page Index Insurance</comment>
+  </data>
   <data name="CropYieldData" xml:space="preserve">
     <value>Crop yield data</value>
     <comment>Page Crop yield data</comment>

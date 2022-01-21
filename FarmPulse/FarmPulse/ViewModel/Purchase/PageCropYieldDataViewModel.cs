@@ -13,6 +13,23 @@ namespace FarmPulse.ModelView
         #region Properties 
         public bool ShowFieldNameBox { get => GetValue<bool>(); set => SetValue(value); }
         public string TextSelectFieldName { get => GetValue<string>(); set => SetValue(value); }
+
+        #region Title yesr property
+        public string TitleYear_1 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_2 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_3 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_4 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_5 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_6 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_7 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_8 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_9 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_10 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_11 { get => GetValue<string>(); set => SetValue(value); }
+        public string TitleYear_12 { get => GetValue<string>(); set => SetValue(value); }
+        #endregion
+
+        #region Year value
         public string Text_2010 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2011 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2012 { get => GetValue<string>(); set => SetValue(value); }
@@ -25,6 +42,7 @@ namespace FarmPulse.ModelView
         public string Text_2019 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2020 { get => GetValue<string>(); set => SetValue(value); }
         public string Text_2021 { get => GetValue<string>(); set => SetValue(value); }
+        #endregion
 
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
 
@@ -38,11 +56,30 @@ namespace FarmPulse.ModelView
             FieldList = new List<FieldInfo>();
 
             TextSelectFieldName = " ";
+            InitTitleYear();
         }
 
         public ICommand ClickSaveCommand => new Command(Save);
         public ICommand ClickSelectFieldCommand => new Command(SelectField);
         public ICommand ClickBackGroundBoxCommand => new Command(ClickBackGroundBox);
+
+        void InitTitleYear()
+        {
+            int endYear = Date.Year;
+            TitleYear_12 = endYear.ToString();
+            TitleYear_11 = (endYear - 1).ToString();
+            TitleYear_10 = (endYear - 2).ToString();
+            TitleYear_9 = (endYear - 3).ToString();
+            TitleYear_8 = (endYear - 4).ToString();
+            TitleYear_7 = (endYear - 5).ToString();
+            TitleYear_6 = (endYear - 6).ToString();
+            TitleYear_5 = (endYear - 7).ToString();
+            TitleYear_4 = (endYear - 8).ToString();
+            TitleYear_3 = (endYear - 9).ToString();
+            TitleYear_2 = (endYear - 10).ToString();
+            TitleYear_1 = (endYear - 11).ToString();
+        }
+
         /// <summary>
         /// Clean the model.
         /// </summary>

@@ -133,20 +133,33 @@ namespace FarmPulse.Control
 
             var barPaint = new SKPaint();
             barPaint.Color = barColor;
-            barPaint.TextSize = 20;
+            barPaint.TextSize = 30;
 
             var linePaint = new SKPaint();
             linePaint.Color = lineColor;
-            linePaint.TextSize = 20;
+            linePaint.TextSize = 30;
+            linePaint.StrokeWidth = 8;
 
-            float x1 = width / 2 - 20;
+            //uz = - 142
+            //en = + 20
+            //ru = - 134
+            //mn = 
+            float x1 = width / 2 + 20;
+
+            switch (AppSettings.GetLanguage())
+            {
+                case Constant.Uzbek: x1 = width / 2 - 142; break;
+                case Constant.Russian: x1 = width / 2 - 134; break;
+                //case Constant.Mongol: x1 = width / 2 - 142; break;
+            }
 
             canvas.DrawRect(x1, 20, 50, 15, barPaint);
             canvas.DrawText("NDVI", x1 + 52, 35, barPaint);
 
-            float x2 = x1 + 52 + 60;
-            canvas.DrawRect(x2, 20, 50, 15, linePaint);
-            canvas.DrawText("Crop yield", x2 + 52, 35, linePaint);
+            float x2 = x1 + 52 + 80;
+            //canvas.DrawRect(x2, 20, 50, 15, linePaint);
+            canvas.DrawLine(x2, 25, x2 + 50, 25, linePaint);
+            canvas.DrawText(RSC.CropYield, x2 + 52, 35, linePaint);
         }
 
         private void DrawLeftLegends(SKCanvas canvas, int width, int height)

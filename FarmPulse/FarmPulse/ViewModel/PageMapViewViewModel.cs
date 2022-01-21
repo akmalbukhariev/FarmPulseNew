@@ -16,6 +16,7 @@ namespace FarmPulse.ModelView
 
         public bool ShowTimePeriodBox { get => GetValue<bool>(); set => SetValue(value); }
         public bool ShowImages { get => GetValue<bool>(); set => SetValue(value); }
+        public bool GooglePlayServiceAvailable { get => GetValue<bool>(); set => SetValue(value); }
         public Color BtnSatelliteTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnHybridTextColor { get => GetValue<Color>(); set => SetValue(value); }
         public Color BtnNormalTextColor { get => GetValue<Color>(); set => SetValue(value); }
@@ -90,6 +91,8 @@ namespace FarmPulse.ModelView
 
             StartDate = DateTime.Now.AddDays(-20);
             EndDate = DateTime.Now;
+
+            GooglePlayServiceAvailable = !AppSettings.IsGooglePlayServiceAvailable;
         }
 
         public ICommand ClickBackBoxCommand => new Command(ClickBackBox);

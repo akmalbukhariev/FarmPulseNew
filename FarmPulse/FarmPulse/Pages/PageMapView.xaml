@@ -197,15 +197,10 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Frame>
-        <!--<BoxView BackgroundColor="Black"
+        <BoxView BackgroundColor="Black"
                  Opacity="0.5"
-                 IsVisible="{Binding ShowImages}"
-                 Grid.RowSpan="2">
-            <BoxView.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ClickBackShowImageBoxCommand}"
-                                      NumberOfTapsRequired="1"/>
-            </BoxView.GestureRecognizers>
-        </BoxView>--> 
+                 IsVisible="{Binding GooglePlayServiceAvailable}"
+                 Grid.RowSpan="2"/> 
     </Grid>
     
 </page:IPage>

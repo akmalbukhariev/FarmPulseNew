@@ -259,6 +259,15 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crop yield.
+        /// </summary>
+        internal static string CropYield {
+            get {
+                return ResourceManager.GetString("CropYield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Crop yield data.
         /// </summary>
         internal static string CropYieldData {

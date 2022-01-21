@@ -90,73 +90,73 @@
                     </ResourceDictionary>
                 </Grid.Resources>
                 <StackLayout Spacing="0">
-                    <Label Text="2010"
+                    <Label Text="{Binding TitleYear_1}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2010, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="1">
-                    <Label Text="2011"
+                    <Label Text="{Binding TitleYear_2}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2011, StringFormat='{0:F2}'}" 
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Column="2">
-                    <Label Text="2012"
+                    <Label Text="{Binding TitleYear_3}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2012, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1">
-                    <Label Text="2013"
+                    <Label Text="{Binding TitleYear_4}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2013, StringFormat='{0:F2}'}" 
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="1">
-                    <Label Text="2014"
+                    <Label Text="{Binding TitleYear_5}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2014, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="1" Grid.Column="2">
-                    <Label Text="2015"
+                    <Label Text="{Binding TitleYear_6}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2015, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2">
-                    <Label Text="2016"
+                    <Label Text="{Binding TitleYear_7}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2016, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="1">
-                    <Label Text="2017"
+                    <Label Text="{Binding TitleYear_8}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2017, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="2" Grid.Column="2">
-                    <Label Text="2018"
+                    <Label Text="{Binding TitleYear_9}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2018, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3">
-                    <Label Text="2019"
+                    <Label Text="{Binding TitleYear_10}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2019, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="1">
-                    <Label Text="2020"
+                    <Label Text="{Binding TitleYear_11}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2020, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>
                 </StackLayout>
                 <StackLayout Spacing="0" Grid.Row="3" Grid.Column="2">
-                    <Label Text="2021"
+                    <Label Text="{Binding TitleYear_12}"
                            Style="{StaticResource lbStyle}"/>
                     <view:EntryView Text="{Binding Text_2021, StringFormat='{0:F2}'}"  
                                     Style="{StaticResource edStyle}"/>

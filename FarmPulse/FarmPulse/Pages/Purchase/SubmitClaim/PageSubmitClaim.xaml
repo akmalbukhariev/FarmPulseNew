@@ -88,6 +88,7 @@
                         <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
                                Style="{StaticResource lbStyle}"/>
                         <view:EntryView Style="{StaticResource edStyle}"
+                                        Keyboard="Telephone"
                                         Text="{Binding PhoneNumber}"/>
                     </StackLayout>
                     <StackLayout Grid.Row="4" MinimumHeightRequest="150">

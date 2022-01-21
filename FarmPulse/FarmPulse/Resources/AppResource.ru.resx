@@ -205,6 +205,10 @@
     <value>Тип сельхозкультур</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="CropYield" xml:space="preserve">
+    <value>Урожайность</value>
+    <comment>Page Index Insurance</comment>
+  </data>
   <data name="CropYieldData" xml:space="preserve">
     <value>Данные об урожайности</value>
     <comment>Page Crop yield data</comment>
