@@ -14,6 +14,7 @@ namespace FarmPulse.ModelView
     {
         public bool ShowBox { get => GetValue<bool>(); set => SetValue(value); }
         public string TextSelectMetrics { get => GetValue<string>(); set => SetValue(value); }
+        //public string MetricsName { get => GetValue<string>(); set => SetValue(value); }
         public ObservableCollection<GraphViewDataItem> DataList { get => GetValue<ObservableCollection<GraphViewDataItem>>(); set => SetValue(value); }
 
         public MetricsInfo SelectedMetrics { get => GetValue<MetricsInfo>(); set => SetValue(value); }
@@ -59,6 +60,7 @@ namespace FarmPulse.ModelView
             {
                 SelectedMetrics = MetricsList[0];
                 TextSelectMetrics = SelectedMetrics.name;
+                //MetricsName = SelectedMetrics.name;
                 RefreshGraphViewData(FieldInfo.fieldId);
             }
         }
@@ -85,6 +87,7 @@ namespace FarmPulse.ModelView
                     {
                         GraphViewDataItem newItem = new GraphViewDataItem();
                         newItem.Title = info.cropName;
+                        newItem.MetricsName = TextSelectMetrics;
                         newItem.IndexMeanValue = RSC.IndexMeanValue;
                         newItem.ValueListForMultiple.Add(info.chartInfoList);
 

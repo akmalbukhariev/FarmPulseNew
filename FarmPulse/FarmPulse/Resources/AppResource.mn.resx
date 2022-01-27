@@ -118,483 +118,531 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Бидний тухай</value>
     <comment>Page Setting</comment>
   </data>
   <data name="ActualYield" xml:space="preserve">
-    <value>Actual Yield</value>
+    <value>Бодит ургац</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AddCropYield" xml:space="preserve">
-    <value>Add crop yield</value>
+    <value>Таримлын ургац нэмэх</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="AirTemperature" xml:space="preserve">
-    <value>Air temperature</value>
+    <value>Агаарын температур</value>
     <comment>Page Weather</comment>
   </data>
   <data name="AreaTonHa" xml:space="preserve">
-    <value>Area ton/ha</value>
+    <value>Талбайн хэмжээ тонн/га</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="AutoLogin" xml:space="preserve">
-    <value>Auto login</value>
+    <value>Автомат логин</value>
     <comment>Page Login</comment>
   </data>
   <data name="AutoLogMessage" xml:space="preserve">
-    <value>If you log in automatically, you do not need to enter your member ID and password next time. Do you want to use automatic login?</value>
+    <value>Автомат логин сонговол нэвтрэх бүртээ нэр, нууц үгээ шинээр оруулах шаардлагагүй</value>
     <comment>Page Login</comment>
   </data>
   <data name="AvailableImages" xml:space="preserve">
-    <value>Available Images</value>
+    <value>Хадгалагдсан зургууд</value>
     <comment>Page Map View</comment>
   </data>
   <data name="BackToHomeScreen" xml:space="preserve">
-    <value>Back to Home Screen</value>
+    <value>Нүүр хуудас руу буцах</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="BuyNow" xml:space="preserve">
-    <value>BUY NOW</value>
+    <value>ОДОО ДААТГУУЛАХ</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Цуцлах</value>
     <comment>ControlApp</comment>
   </data>
   <data name="ChlorophylleIndex" xml:space="preserve">
-    <value>Chlorophylle Index</value>
+    <value>Хлорофилийн индекс</value>
     <comment>Page Graph View</comment>
   </data>
+  <data name="Cloudy" xml:space="preserve">
+    <value>Үүлэрхэг</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>Батламж</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle1" xml:space="preserve">
-    <value>Your application has been submitted /n sucessfully.</value>
+    <value>Хүсэлт амжилттай илгээгдлээ.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmationTitle2" xml:space="preserve">
-    <value>Please note: The insurance agent as soon as /n will get in touch within 5 business days.</value>
+    <value>Анхаар: Даатгалын ажилтан ажлын 5 хоногт багтан холбогдоно.</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="ConfirmPhoneNumber" xml:space="preserve">
-    <value>Confirm phone number</value>
+    <value>Утасны дугаар дахин оруулах</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Cotton" xml:space="preserve">
-    <value>Cotton</value>
+    <value>Хөвөн</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Cover" xml:space="preserve">
-    <value>Cover</value>
+    <value>Хамрах хүрээ</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="CropInsurance" xml:space="preserve">
-    <value>Crop Insurance</value>
+    <value>Тариалангийн даатгал</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropMonitoring" xml:space="preserve">
-    <value>Crop Monitoring</value>
+    <value>Таримлын мониторинг</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropType" xml:space="preserve">
-    <value>Crop type</value>
+    <value>Таримлын төрөл</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="CropYield" xml:space="preserve">
+    <value>Тариалангийн ургац</value>
+    <comment>Page Index Insurance</comment>
+  </data>
   <data name="CropYieldData" xml:space="preserve">
-    <value>Crop yield data</value>
+    <value>Ургацын мэдээлэл</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="CurrentlyWeather" xml:space="preserve">
-    <value>CURRENT WEATHER</value>
+    <value>Цаг агаар одоо</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>Огноо</value>
     <comment>ControlApp</comment>
   </data>
   <data name="DateOfBirth" xml:space="preserve">
-    <value>Date of birth</value>
+    <value>Төрсөн огноо</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Demo" xml:space="preserve">
-    <value>Demo</value>
+    <value>Демо үзэх</value>
     <comment>Page Setting</comment>
   </data>
   <data name="DescriptionClaim" xml:space="preserve">
-    <value>Description the claim</value>
+    <value>Хүсэлтийн агуулга</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="DescriptionCropYieldData" xml:space="preserve">
-    <value>Please, enter the crop yield information in \n order to compare with insurance index \n values. Use ton/ha units.</value>
+    <value>Даатгалын индексийн утгатай харьцуулахын тулд ургацаа (тонн/га) оруулна уу.</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="EndDate" xml:space="preserve">
-    <value>End date</value>
+    <value>Сүүлийн огноо</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Алдаа</value>
     <comment>ControlApp</comment>
   </data>
   <data name="EstimateRate" xml:space="preserve">
-    <value>Estimate rates</value>
+    <value>Хураамж, нөхөн төлбөр</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FailedGetCountry" xml:space="preserve">
-    <value>Failed to get the country</value>
+    <value>Улс олдсонгүй</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetCropYielddata" xml:space="preserve">
-    <value>Failed to get crop yield data</value>
+    <value>Ургацын мэдээлэл олдсонгүй</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="FailedGetDemoUrl" xml:space="preserve">
-    <value>Failed to get demo video url!</value>
+    <value>Демо видео олдсонгүй!</value>
     <comment>Page Demo</comment>
   </data>
   <data name="FailedGetDistrict" xml:space="preserve">
-    <value>Failed to get the district</value>
+    <value>Сум олдсонгүй</value>
     <comment>Model Base</comment>
   </data>
   <data name="FailedGetField" xml:space="preserve">
-    <value>Failed to get field</value>
+    <value>Талбай олдсонгүй</value>
     <comment>Page Field</comment>
   </data>
   <data name="FailedGetGraphData" xml:space="preserve">
-    <value>Failed to get graph data</value>
+    <value>График өгөгдөл олдсонгүй</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetIndex" xml:space="preserve">
-    <value>Failed to get index</value>
+    <value>Индекс олдсонгүй</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="FailedGetRegion" xml:space="preserve">
-    <value>Failed to get the region</value>
+    <value>Аймаг олдсонгүй</value>
     <comment>Model Base</comment>
   </data>
   <data name="FAQ" xml:space="preserve">
-    <value>FAQ</value>
+    <value>Түгээмэл асуултууд</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="FarmerFieldName" xml:space="preserve">
-    <value>Farmer field name</value>
+    <value>Талбайн нэр</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerNameAndSurname" xml:space="preserve">
-    <value>Farmer Name and Surname</value>
+    <value>Тариаланчийн овог, нэр</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="FarmerPhoneNumber" xml:space="preserve">
-    <value>Farmer Phone number</value>
+    <value>Тариаланчийн утасны дугаар</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="FeelsLike" xml:space="preserve">
+    <value>Мэдрэгдсэн</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="FieldName" xml:space="preserve">
-    <value>Field Name</value>
+    <value>Талбайн нэр</value>
     <comment>Page Field</comment>
   </data>
   <data name="FindIdPassword" xml:space="preserve">
-    <value>Find ID/Password</value>
+    <value>Нэвтрэх нэр/нууц үг олох</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuracne" xml:space="preserve">
-    <value>Find Insuracne</value>
+    <value>Даатгалын дугаарыг олох</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindInsuranceMessage1" xml:space="preserve">
-    <value>Please fill out all information!</value>
+    <value>Бүх талбарыг бөглөнө үү!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsuranceMessage2" xml:space="preserve">
-    <value>Could not find the user!</value>
+    <value>Хэрэглэгч олдсонгүй!</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="FindInsurancePassword" xml:space="preserve">
-    <value>Find Insurance and Password</value>
+    <value>Даатгал ба нууц үг олох</value>
     <comment>Page Login</comment>
   </data>
   <data name="FindPassword" xml:space="preserve">
-    <value>Find Password</value>
+    <value>Нууц үг олох</value>
     <comment>Page Login</comment>
   </data>
   <data name="Forecast" xml:space="preserve">
-    <value>Forecast</value>
+    <value>Прогноз</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Fri" xml:space="preserve">
-    <value>Fri</value>
+    <value>Баасан</value>
     <comment>Page Weather</comment>
   </data>
+  <data name="GooglePlayServiceAvailable" xml:space="preserve">
+    <value>Google Play Service суулгана уу</value>
+    <comment>Page Field</comment>
+  </data>
   <data name="GraphView" xml:space="preserve">
-    <value>Graph View</value>
+    <value>График</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="GroundLevel" xml:space="preserve">
+    <value>Гадаргын түвшин</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Hectars" xml:space="preserve">
-    <value>Hectars</value>
+    <value>Хэмжээ, га</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="History" xml:space="preserve">
-    <value>History</value>
+    <value>Түүх</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="Humidity" xml:space="preserve">
+    <value>Чийгшил</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Hybrid" xml:space="preserve">
-    <value>Hybrid</value>
+    <value>Гибрид</value>
     <comment>Page Map View</comment>
   </data>
   <data name="IndexInsurance" xml:space="preserve">
-    <value>Index insurance</value>
+    <value>Индексжүүлсэн даатгал</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="IndexMeanValue" xml:space="preserve">
-    <value>Index mean value</value>
+    <value>Индексийн дундаж утга</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Insurance</value>
+    <value>Даатгалын тухай</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="InsuranceNumber" xml:space="preserve">
-    <value>Insurance Number</value>
+    <value>Даатгалын дугаар</value>
     <comment>Page Login</comment>
   </data>
   <data name="Internet" xml:space="preserve">
-    <value>Internet</value>
+    <value>Интернэт</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Хэл сонгох</value>
     <comment>Page Setting</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Нэвтрэх нэр</value>
     <comment>Page Login</comment>
   </data>
   <data name="LoginMessage" xml:space="preserve">
-    <value>Please check insurance number or password.</value>
+    <value>Даатгалын дугаар, эсвэл нууц үгээ шалга.</value>
     <comment>Page Login</comment>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Log out</value>
+    <value>Гарах</value>
     <comment>Page Setting</comment>
   </data>
   <data name="LogOutMessage" xml:space="preserve">
-    <value>Do you really want to exit?</value>
+    <value>Үнэхээр гарахыг хүсч байна уу?</value>
     <comment>Page Setting</comment>
   </data>
   <data name="MakeRequest" xml:space="preserve">
-    <value>Make an request</value>
+    <value>Хүсэлт гаргах</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="MapView" xml:space="preserve">
-    <value>Map View</value>
+    <value>Газрын зураг</value>
     <comment>Page Map View</comment>
   </data>
+  <data name="MaxTemperature" xml:space="preserve">
+    <value>Хамгийн их температур</value>
+    <comment>Page Weather</comment>
+  </data>
+  <data name="MinTemperature" xml:space="preserve">
+    <value>Хамгийн бага температур</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Mon" xml:space="preserve">
-    <value>Mon</value>
+    <value>Даваа</value>
     <comment>Page Weather</comment>
   </data>
   <data name="NDVIIndex" xml:space="preserve">
-    <value>NDVI Index</value>
+    <value>Ургамалжилтын нормчилсон (NDVI)</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No Internet.</value>
+    <value>Интернэт алга.</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>Хэвийн</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>ОК</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Нууц үг</value>
     <comment>Page Login</comment>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>Phone number</value>
+    <value>Утасны дугаар</value>
     <comment>Page Find Insurance</comment>
   </data>
+  <data name="PleaseSelectLanguage" xml:space="preserve">
+    <value>Хэлээ сонгоно уу</value>
+    <comment>Page Language</comment>
+  </data>
   <data name="PleaseWait" xml:space="preserve">
-    <value>Please wait...</value>
+    <value>Түр хүлээнэ үү...</value>
     <comment>ControlApp</comment>
   </data>
+  <data name="Pressure" xml:space="preserve">
+    <value>Даралт</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="Purchase" xml:space="preserve">
-    <value>Purchase</value>
+    <value>Даатгуулах цэс</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="PurchasedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get purchased history.</value>
+    <value>Даатгалын түүх олдсонгүй.</value>
     <comment>Page Purchase History </comment>
   </data>
   <data name="PurchaseInsurance" xml:space="preserve">
-    <value>Purchase an insurance</value>
+    <value>Даатгуулах хүсэлт илгээх</value>
     <comment>Page Purchase an insurance</comment>
   </data>
   <data name="Rain3h" xml:space="preserve">
-    <value>Rain 3 h</value>
+    <value>Бороо 3 цаг</value>
     <comment>Page Weather</comment>
   </data>
   <data name="RainToday" xml:space="preserve">
-    <value>Rain Today</value>
+    <value>Өнөөдөр бороо</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Sat" xml:space="preserve">
-    <value>Sat</value>
+    <value>Бямба</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Satellite" xml:space="preserve">
-    <value>Satellite</value>
+    <value>Хиймэл дагуул</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Хадгалах</value>
     <comment>Page Language</comment>
   </data>
   <data name="SaveAndNext" xml:space="preserve">
-    <value>Save and Next</value>
+    <value>Хадгалаад үргэлжлүүлэх</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveCropYielddata" xml:space="preserve">
-    <value>Save has field!</value>
+    <value>Хадгалж чадсангүй!</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SaveIdPassword" xml:space="preserve">
-    <value>Save ID/Password</value>
+    <value>Нэвтрэх нэр/нууц үг хадгалах</value>
     <comment>Page Login</comment>
   </data>
+  <data name="SeaLevel" xml:space="preserve">
+    <value>Далайн түвшин</value>
+    <comment>Page Weather</comment>
+  </data>
   <data name="SelectCountry" xml:space="preserve">
-    <value>Select country</value>
+    <value>Улс сонгох</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectCrop" xml:space="preserve">
-    <value>Select the crop</value>
+    <value>Таримал сонгох</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectDistrict" xml:space="preserve">
-    <value>Select district</value>
+    <value>Сум сонгох</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="SelectField" xml:space="preserve">
-    <value>Select the field</value>
+    <value>Талбай сонгох</value>
     <comment>Page Crop yield data</comment>
   </data>
   <data name="SelectIndex" xml:space="preserve">
-    <value>Select index</value>
+    <value>Индекс сонгох</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="SelectLanguage" xml:space="preserve">
-    <value>Select Language</value>
+    <value>Хэл сонгох</value>
     <comment>Page Language</comment>
   </data>
   <data name="SelectRegion" xml:space="preserve">
-    <value>Select region</value>
+    <value>Аймаг сонгох</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>Тохируулга</value>
     <comment>Page Field</comment>
   </data>
   <data name="ShowSubmitedHistory" xml:space="preserve">
-    <value>Show Submited History</value>
+    <value>Хүсэлтийн түүх харуулах</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SnowYestarday" xml:space="preserve">
-    <value>Snow Yestarday</value>
+    <value>Өчигдөр цас</value>
     <comment>Page Weather</comment>
   </data>
   <data name="StartDate" xml:space="preserve">
-    <value>Start date</value>
+    <value>Эхний огноо</value>
     <comment>Page Map View</comment>
   </data>
   <data name="StartNewClaim" xml:space="preserve">
-    <value>Start New Claim</value>
+    <value>Шинэ хүсэлт бичих</value>
     <comment>Page Confirmation</comment>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>Submit</value>
+    <value>Илгээх</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="SubmitedGetHistoryFailed" xml:space="preserve">
-    <value>Failed to get submited history.</value>
+    <value>Хүсэлтийн түүх олдсонгүй.</value>
     <comment>Page Submited History </comment>
   </data>
   <data name="SubmitFailed" xml:space="preserve">
-    <value>Submit has failed.</value>
+    <value>Илгээж чадсангүй.</value>
     <comment>Page Submit Claim</comment>
   </data>
+  <data name="SubmitMessage" xml:space="preserve">
+    <value>Утасны дугаараа шалгана уу</value>
+    <comment>Page Purchase</comment>
+  </data>
   <data name="SubmittingClaim" xml:space="preserve">
-    <value>Submitting Claim</value>
+    <value>Хүсэлтийг илгээж байна</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="SubmitYourClaim" xml:space="preserve">
-    <value>Submit your claim</value>
+    <value>Нөхөн төлбөрийн хүсэлт илгээх</value>
     <comment>Page Submit Claim</comment>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Success</value>
+    <value>Амжилт</value>
     <comment>ControlApp</comment>
   </data>
   <data name="Sun" xml:space="preserve">
-    <value>Sun</value>
+    <value>Ням</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Terrian" xml:space="preserve">
-    <value>Terrian</value>
+    <value>Гадаргын хэлбэр</value>
     <comment>Page Map View</comment>
   </data>
   <data name="ThereIsNotIMage" xml:space="preserve">
-    <value>There is not image</value>
+    <value>Зураг алга</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Thu" xml:space="preserve">
-    <value>Thu</value>
+    <value>Пүрэв</value>
     <comment>Page Weather</comment>
   </data>
   <data name="TimePeriod" xml:space="preserve">
-    <value>Time Period</value>
+    <value>Хугацаа</value>
     <comment>Page Map View</comment>
   </data>
   <data name="Tue" xml:space="preserve">
-    <value>Tue</value>
+    <value>Мягмар</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Weather" xml:space="preserve">
-    <value>Weather</value>
+    <value>Цаг агаар</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WeatherInformation" xml:space="preserve">
-    <value>Weather Information</value>
+    <value>Цаг агаарын мэдээ</value>
     <comment>Page Main</comment>
   </data>
   <data name="WeatherMessage1" xml:space="preserve">
-    <value>Coudl not get the weather information!</value>
+    <value>Цаг агаарын мэдээ олдсонгүй!</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wed" xml:space="preserve">
-    <value>Wed</value>
+    <value>Лхагва</value>
     <comment>Page Weather</comment>
   </data>
   <data name="Wheat" xml:space="preserve">
-    <value>Wheat</value>
+    <value>Буудай</value>
     <comment>Page Graph View</comment>
   </data>
   <data name="WindSpeed" xml:space="preserve">
-    <value>Wind speed</value>
+    <value>Салхины хурд</value>
     <comment>Page Weather</comment>
   </data>
   <data name="WuaVillage" xml:space="preserve">
-    <value>WUA/Village</value>
+    <value>Баг</value>
     <comment>Page Field</comment>
   </data>
   <data name="YourInsuranceNumber" xml:space="preserve">
-    <value>You'r insurance number is</value>
+    <value>Таны даатгалын дугаар</value>
     <comment>Page Find Insurance</comment>
   </data>
   <data name="YourPassword" xml:space="preserve">
-    <value>You'r password is</value>
+    <value>Таны нууц үг</value>
     <comment>Page Find Insurance</comment>
   </data>
 </root>

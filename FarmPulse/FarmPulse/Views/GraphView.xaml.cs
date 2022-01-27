@@ -158,6 +158,10 @@ namespace FarmPulse.Views
 
                 if (list.Count == 2)
                 {
+                    control.lbNDVI.IsVisible = true;
+                    control.boxNDVI.IsVisible = true;
+                    control.boxCropYield.IsVisible = true;
+                    control.lbCropYield.IsVisible = true;
                     foreach (GraphViewData item in list[1])
                     {
                         if (string.IsNullOrEmpty(item.value)) continue;
@@ -179,11 +183,34 @@ namespace FarmPulse.Views
                     YieldEntires = chartYieldDataList,
                     LabelTextSize = 17f,
                     LabelOrientation = Orientation.Vertical,
-                    IsAnimated = false
+                    IsAnimated = false,
+                    MetricsName = control.MetricsName
                 };
 
                 control.chart.Chart = farmBarLineChart; 
             }
+        }
+        #endregion
+
+        #region 
+        public static readonly BindableProperty MetricsNameProperty =
+            BindableProperty.Create(nameof(MetricsName),
+                                    typeof(string),
+                                    typeof(GraphView),
+                                    defaultBindingMode: BindingMode.TwoWay, 
+                                    propertyChanged: MetricsNamePropertyChanged);
+
+        public string MetricsName
+        {
+            get { return (string)GetValue(MetricsNameProperty); }
+            set { SetValue(MetricsNameProperty, value); }
+        }
+
+        private static void MetricsNamePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (GraphView)bindable;
+            if (control != null)
+                control.lbNDVI.Text = newValue.ToString();
         }
         #endregion
 

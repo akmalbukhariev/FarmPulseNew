@@ -53,7 +53,7 @@
                                     <Label Text="{Binding name}"
                                            Style="{StaticResource lbStyle2}"
                                            Grid.Column="1"/>
-                                    <Label Text="{Binding suiv_name}"
+                                    <Label Text="{Binding villageName}"
                                            Style="{StaticResource lbStyle2}"
                                            Grid.Row="1"
                                            Grid.Column="1"/>

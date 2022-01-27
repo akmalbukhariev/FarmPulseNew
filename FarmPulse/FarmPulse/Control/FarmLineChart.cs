@@ -12,6 +12,8 @@ namespace FarmPulse.Control
         public IEnumerable<ChartEntry> NdviEntires = new List<ChartEntry>();
         public IEnumerable<ChartEntry> YieldEntires = new List<ChartEntry>();
 
+        public string MetricsName = "NDVI";
+
         private bool initiated = false;
         private float _barMax;
         private float _barMin;
@@ -58,7 +60,7 @@ namespace FarmPulse.Control
         public override void DrawContent(SKCanvas canvas, int width, int height)
         {
             Init();
-
+            
             Entries = NdviEntires;
 
             var valueLableSizes = MeasureLabels(NdviEntires.Select(x => x.Label).ToArray());
@@ -85,7 +87,7 @@ namespace FarmPulse.Control
                 DrawLines(canvas, width, height);
                 DrawRightLegends(canvas, width, height);
 
-                DrawNDVICropYieldLegends(canvas, width, height);
+                //DrawNDVICropYieldLegends(canvas, width, height);
             }
         }
 
@@ -154,7 +156,7 @@ namespace FarmPulse.Control
             }
 
             canvas.DrawRect(x1, 20, 50, 15, barPaint);
-            canvas.DrawText("NDVI", x1 + 52, 35, barPaint);
+            canvas.DrawText(MetricsName, x1 + 52, 35, barPaint);
 
             float x2 = x1 + 52 + 80;
             //canvas.DrawRect(x2, 20, 50, 15, linePaint);

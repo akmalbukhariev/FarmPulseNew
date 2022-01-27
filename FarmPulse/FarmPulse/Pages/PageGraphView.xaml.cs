@@ -47,7 +47,7 @@ namespace FarmPulse.Pages
             if (model.SelectedMetrics != null)
             {
                 model.ShowBox = false;
-                model.TextSelectMetrics = model.SelectedMetrics.name;
+                model.TextSelectedMetrics = model.SelectedMetrics.name; 
                 model.RefreshGraphViewData(FieldInfo.fieldId);
             }
         }

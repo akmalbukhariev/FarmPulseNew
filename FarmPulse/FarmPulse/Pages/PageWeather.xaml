@@ -98,7 +98,8 @@
                                                             TextCel1="{Binding Mon_Text2}"
                                                             TextCel2="{Binding Mon_Text3}"
                                                             TextV1="{Binding Mon_Text4}"
-                                                            TextV2="{Binding Mon_Text5}"/>
+                                                            TextV2="{Binding Mon_Text5}"
+                                                            Grid.Row="{Binding Row0}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Tue}"
                                                             TextDate="{Binding Tue_Text1}"
                                                             ImageIconSource="{Binding Tue_Icon}"
@@ -106,7 +107,7 @@
                                                             TextCel2="{Binding Tue_Text3}"
                                                             TextV1="{Binding Tue_Text4}"
                                                             TextV2="{Binding Tue_Text5}"
-                                                            Grid.Row="1"/>
+                                                            Grid.Row="{Binding Row1}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Wed}"
                                                             TextDate="{Binding Wed_Text1}"
                                                             ImageIconSource="{Binding Wed_Icon}"
@@ -114,7 +115,7 @@
                                                             TextCel2="{Binding Wed_Text3}"
                                                             TextV1="{Binding Wed_Text4}"
                                                             TextV2="{Binding Wed_Text5}"
-                                                            Grid.Row="2"/>
+                                                            Grid.Row="{Binding Row2}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Thu}"
                                                             TextDate="{Binding Thu_Text1}"
                                                             ImageIconSource="{Binding Thu_Icon}"
@@ -122,7 +123,7 @@
                                                             TextCel2="{Binding Thu_Text3}"
                                                             TextV1="{Binding Thu_Text4}"
                                                             TextV2="{Binding Thu_Text5}"
-                                                            Grid.Row="3"/>
+                                                            Grid.Row="{Binding Row3}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Fri}"
                                                             TextDate="{Binding Fri_Text1}"
                                                             ImageIconSource="{Binding Fri_Icon}"
@@ -130,7 +131,7 @@
                                                             TextCel2="{Binding Fri_Text3}"
                                                             TextV1="{Binding Fri_Text4}"
                                                             TextV2="{Binding Fri_Text5}"
-                                                            Grid.Row="4"/>
+                                                            Grid.Row="{Binding Row4}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Sat}"
                                                             TextDate="{Binding Sat_Text1}"
                                                             ImageIconSource="{Binding Sat_Icon}"
@@ -138,7 +139,7 @@
                                                             TextCel2="{Binding Sat_Text3}"
                                                             TextV1="{Binding Sat_Text4}"
                                                             TextV2="{Binding Sat_Text5}"
-                                                            Grid.Row="5"/>
+                                                            Grid.Row="{Binding Row5}"/>
                                     <view:WheatherItemView2 TextDay="{x:Static resource:AppResource.Sun}"
                                                             TextDate="{Binding Sun_Text1}"
                                                             ImageIconSource="{Binding Sun_Icon}"
@@ -146,7 +147,7 @@
                                                             TextCel2="{Binding Sun_Text3}"
                                                             TextV1="{Binding Sun_Text4}"
                                                             TextV2="{Binding Sun_Text5}"
-                                                            Grid.Row="6"/>
+                                                            Grid.Row="{Binding Row6}"/>
                                 </Grid>
                              </ScrollView>
                 </xct:TabViewItem>

@@ -13,7 +13,36 @@ namespace FarmPulse.ModelView
         public string DateNow { get => GetValue<string>(); set => SetValue(value); }
         public string CurrentlyWeather { get => GetValue<string>(); set => SetValue(value); }
         public string Forecast { get => GetValue<string>(); set => SetValue(value); }
- 
+
+        /// <summary>
+        /// Monday
+        /// </summary>
+        public int Row0 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Tuesday
+        /// </summary>
+        public int Row1 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Wednesday
+        /// </summary>
+        public int Row2 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Thursday
+        /// </summary>
+        public int Row3 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Friday
+        /// </summary>
+        public int Row4 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Saturday
+        /// </summary>
+        public int Row5 { get => GetValue<int>(); set => SetValue(value); }
+        /// <summary>
+        /// Sunday
+        /// </summary>
+        public int Row6 { get => GetValue<int>(); set => SetValue(value); }
+
         #region Currently 
         public string Temp { get => GetValue<string>(); set => SetValue(value); }
         public string FeelsLike { get => GetValue<string>(); set => SetValue(value); }
@@ -101,6 +130,16 @@ namespace FarmPulse.ModelView
             CurrentlyWeather = "Currently weather";
             Forecast = "Forecast";
 
+            #region Row
+            Row0 = 0;
+            Row1 = 1;
+            Row2 = 2;
+            Row3 = 3;
+            Row4 = 4;
+            Row5 = 5;
+            Row6 = 6;
+            #endregion
+
             #region Current weather
             Temp = "-";
             FeelsLike = "-";
@@ -145,8 +184,71 @@ namespace FarmPulse.ModelView
             Fri_Text4 = "-";
             Fri_Text5 = "-";
             #endregion
+
+            PositionOfDay();
         }
-         
+
+        void PositionOfDay()
+        {
+            switch (Date.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    Row1 = 0;
+                    Row2 = 1;
+                    Row3 = 2;
+                    Row4 = 3;
+                    Row5 = 4;
+                    Row6 = 5;
+                    Row0 = 6;
+                    break;
+                case DayOfWeek.Tuesday:
+                    Row2 = 0;
+                    Row3 = 1;
+                    Row4 = 2;
+                    Row5 = 3;
+                    Row6 = 4;
+                    Row0 = 5;
+                    Row1 = 6;
+                    break;
+                case DayOfWeek.Wednesday:
+                    Row3 = 0;
+                    Row4 = 1;
+                    Row5 = 2;
+                    Row6 = 3;
+                    Row0 = 4;
+                    Row1 = 5;
+                    Row2 = 6;
+                    break;
+                case DayOfWeek.Thursday:
+                    Row4 = 0;
+                    Row5 = 1;
+                    Row6 = 2;
+                    Row0 = 3;
+                    Row1 = 4;
+                    Row2 = 5;
+                    Row3 = 6;
+                    break;
+                case DayOfWeek.Friday:
+                    Row5 = 0;
+                    Row6 = 1;
+                    Row0 = 2;
+                    Row1 = 3;
+                    Row2 = 4;
+                    Row3 = 5;
+                    Row4 = 6;
+                    break;
+                case DayOfWeek.Saturday:
+                    Row6 = 0;
+                    Row0 = 1;
+                    Row1 = 2;
+                    Row2 = 3;
+                    Row3 = 4;
+                    Row4 = 5;
+                    Row5 = 6;
+                    break;
+            }
+        }
+
         public async void RefreshModel()
         { 
             ControlApp.ShowLoadingView(RSC.PleaseWait);
@@ -184,7 +286,7 @@ namespace FarmPulse.ModelView
 
                         #region Forecast Weather
                         if (response2.Count != 0)
-                        {
+                        {  
                             ResponseForecastWeather wMonday = GetDayOfWeekWeather(response2, DayOfWeek.Monday);
                             ResponseForecastWeather wTuesday = GetDayOfWeekWeather(response2, DayOfWeek.Tuesday);
                             ResponseForecastWeather wWednesday = GetDayOfWeekWeather(response2, DayOfWeek.Wednesday);

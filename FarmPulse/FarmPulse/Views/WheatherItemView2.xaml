@@ -11,7 +11,7 @@
             <ResourceDictionary>
                 <Style x:Key="lbDayStyle" TargetType="Label">
                     <Setter Property="TextColor" Value="White"/>
-                    <Setter Property="FontSize" Value="25"/>
+                    <Setter Property="FontSize" Value="18"/>
                     <Setter Property="FontAttributes" Value="Bold"/>
                     <Setter Property="HorizontalTextAlignment" Value="Center"/>
                     <Setter Property="VerticalTextAlignment" Value="Center"/>

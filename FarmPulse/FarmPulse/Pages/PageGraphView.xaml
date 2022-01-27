@@ -14,7 +14,7 @@
             <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <view:GraphView Region="{Binding Title}"
+                        <view:GraphView Region="{Binding Title}" 
                                         MeanValue="{Binding IndexMeanValue}"
                                         ItemSource="{Binding ValueList}"/>
                     </DataTemplate>
@@ -35,7 +35,7 @@
                               SelectedItem="{Binding SelectedMetrics}"
                               SelectedIndexChanged="Picker_SelectedIndexChanged"
                               Grid.Row="1"/>-->
-        <Button Text="{Binding TextSelectMetrics}"
+        <Button Text="{Binding TextSelectedMetrics}"
                 TextColor="Black"
                 BackgroundColor="White"
                 Command="{Binding ClickSelectMetricsCommand}"

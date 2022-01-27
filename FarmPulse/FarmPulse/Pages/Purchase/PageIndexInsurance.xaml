@@ -15,10 +15,12 @@
                              BackgroundColor="#2F8F6E"/> 
         <ScrollView VerticalOptions="FillAndExpand"
                     Grid.Row="1">
-                <StackLayout BindableLayout.ItemsSource="{Binding DataList}">
+                <StackLayout BindableLayout.ItemsSource="{Binding DataList}"
+                             Spacing="20">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <view:GraphView Region="{Binding Title}"
+                                            MetricsName="{Binding MetricsName}"
                                             MeanValue="{Binding IndexMeanValue}"
                                             ItemSourceForMultiple="{Binding ValueListForMultiple}"/>
                         </DataTemplate>
