@@ -9,8 +9,8 @@ namespace FarmPulse.Control
 {
     class FarmLineChart : BarChart
     {
-        public IEnumerable<ChartEntry> NdviEntires = new List<ChartEntry>();
-        public IEnumerable<ChartEntry> YieldEntires = new List<ChartEntry>();
+        public List<ChartEntry> NdviEntires = new List<ChartEntry>();
+        public List<ChartEntry> YieldEntires = new List<ChartEntry>();
 
         public string MetricsName = "NDVI";
 
@@ -68,23 +68,37 @@ namespace FarmPulse.Control
             var itemSize = CalculateItemSize(width, height, footerHeight, 100);
             var origin = CalculateYOrigin(itemSize.Height, 100);
 
-            this.pointBarList.Clear();
-            var points = base.CalculatePoints(itemSize, origin, 100);
-            this.pointBarList.AddRange(points);
+            pointBarList.Clear();
+            var pointsBar = base.CalculatePoints(itemSize, origin, 100);
+            pointBarList.AddRange(pointsBar);
 
-            DrawBars(canvas, points, itemSize, origin, 10);
+            DrawBars(canvas, pointsBar, itemSize, origin, 10);
 
-            DrawBarAreas(canvas, points, itemSize, 100);
-            DrawFooter(canvas, NdviEntires.Select(x => x.Label).ToArray(), valueLableSizes, points, itemSize, height, footerHeight);
+            DrawBarAreas(canvas, pointsBar, itemSize, 100);
+            DrawFooter(canvas, NdviEntires.Select(x => x.Label).ToArray(), valueLableSizes, pointsBar, itemSize, height, footerHeight);
             DrawLeftLegends(canvas, width, height);
-            DrawAverageLine(canvas, width, height);
+            //DrawAverageLine(canvas, width, height);
 
             if (YieldEntires.Count() != 0)
             {
-                this.pointLineList.Clear();
-                var points1 = CalculateLinePoints(itemSize, origin, 100);
-                this.pointLineList.AddRange(points1);
+                pointLineList.Clear();
+                var pointsLine = CalculateLinePoints(itemSize, origin, 100);
+
+                int index = NdviEntires.FindIndex(item => item.Label.Equals(YieldEntires[0].Label));
+                SKPoint barPoint = pointsBar[index];
+                float diffX = barPoint.X - pointsLine[0].X;
+
+                pointsLine[0].X = barPoint.X;
+
+                for (int i = 1; i < pointsLine.Length; i++)
+                {
+                    pointsLine[i].X = pointsLine[i].X + diffX;
+                }
+
+                pointLineList.AddRange(pointsLine);
                 DrawLines(canvas, width, height);
+                //DrawPoints(canvas, pointsLine);
+                //DrawBarAreas(canvas, pointsLine, itemSize, origin);
                 DrawRightLegends(canvas, width, height);
 
                 //DrawNDVICropYieldLegends(canvas, width, height);
@@ -94,12 +108,12 @@ namespace FarmPulse.Control
         private void DrawLines(SKCanvas canvas, int width, int height)
         {
             SKPaint paint = new SKPaint();
-            var color = String.Format("#{0:X6}", "8FAADC");
+            var color = string.Format("#{0:X6}", "8FAADC");
             paint.Style = SKPaintStyle.Stroke;
             paint.Color = SKColor.Parse(color);
             paint.StrokeWidth = 7;
             paint.IsAntialias = true;
-
+              
             for (int i = 1; i < pointLineList.Count; i++)
             {
                 if (pointLineList.Count > i + 1)
@@ -113,12 +127,12 @@ namespace FarmPulse.Control
         {
             var result = new List<SKPoint>();
 
-            for (int i = 0; i < this.YieldEntires.Count(); i++)
+            for (int i = 0; i < YieldEntires.Count(); i++)
             {
-                var entry = this.YieldEntires.ElementAt(i);
+                var entry = YieldEntires.ElementAt(i);
 
-                var x = this.Margin + (itemSize.Width / 2) + (i * (itemSize.Width + this.Margin));
-                var y = headerHeight + (((_lineMax - entry.Value) / (_lineMax - _lineMin)) * itemSize.Height);
+                var x = Margin + (itemSize.Width / 2) + (i * (itemSize.Width + Margin));
+                var y = headerHeight + ((_lineMax - entry.Value) / (_lineMax - _lineMin) * itemSize.Height);
                 var point = new SKPoint(x, y);
                 result.Add(point);
             }
@@ -173,19 +187,19 @@ namespace FarmPulse.Control
             paint.Color = SKColors.Black;
             paint.TextSize = 20;
 
-            canvas.DrawText(_barMax.ToString(), 0, minPoint - 20, paint);
-            canvas.DrawText(_barMin.ToString(), 0, height - 70, paint);
+            canvas.DrawText(_barMax.ToString("0.00"), 0, minPoint - 20, paint);
+            canvas.DrawText(_barMin.ToString("0.00"), 0, height - 70, paint);
 
-            var step = maxPoint / 4;
-            var valueStep = _barMax / 4;
-            for (int i = 1; i < 4; i++)
-            {
-                var temp = (maxPoint - step * i);
-                if (minPoint < temp && Math.Abs(minPoint - temp) >= step)
-                {
-                    canvas.DrawText((valueStep * i).ToString(), 0, temp - 20, paint);
-                }
-            }
+            //var step = maxPoint / 4;
+            //var valueStep = _barMax / 4;
+            //for (int i = 1; i < 4; i++)
+            //{
+            //    var temp = (maxPoint - step * i);
+            //    if (minPoint < temp && Math.Abs(minPoint - temp) >= step)
+            //    {
+            //        canvas.DrawText((valueStep * i).ToString("0.00"), 0, temp - 20, paint);
+            //    }
+            //}
         }
 
         private void DrawRightLegends(SKCanvas canvas, int width, int height)
@@ -198,19 +212,19 @@ namespace FarmPulse.Control
             paint.Color = SKColors.Black;
             paint.TextSize = 20;
 
-            canvas.DrawText(_lineMax.ToString(), width - rightMargin, minPoint - 20, paint);
-            canvas.DrawText(_lineMin.ToString(), width - rightMargin, height - 70, paint);
+            canvas.DrawText(_lineMax.ToString("0.00"), width - rightMargin, minPoint - 20, paint);
+            canvas.DrawText(_lineMin.ToString("0.00"), width - rightMargin, height - 70, paint);
 
-            var step = maxPoint / 4;
-            var valueStep = _lineMax / 4;
-            for (int i = 1; i < 4; i++)
-            {
-                var temp = (maxPoint - step * i);
-                if (minPoint < temp && Math.Abs(minPoint - temp) >= step)
-                {
-                    canvas.DrawText((valueStep * i).ToString(), width - rightMargin, temp - 20, paint);
-                }
-            }
+            //var step = maxPoint / 4;
+            //var valueStep = _lineMax / 4;
+            //for (int i = 1; i < 4; i++)
+            //{
+            //    var temp = (maxPoint - step * i);
+            //    if (minPoint < temp && Math.Abs(minPoint - temp) >= step)
+            //    {
+            //        canvas.DrawText((valueStep * i).ToString("0.00"), width - rightMargin, temp - 20, paint);
+            //    }
+            //}
         }
 
         private void DrawAverageLine(SKCanvas canvas, int width, int height)

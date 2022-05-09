@@ -36,7 +36,13 @@ namespace FarmPulse.ModelView
             #endregion 
         }
 
-        public ICommand ClickRefreshCommand => new Command(RefreshFieldList);
+        public ICommand ClickRefreshCommand => new Command(PullRefresh);
+
+        void PullRefresh()
+        {
+            ControlApp.Vibrate();
+            RefreshFieldList();
+        }
 
         public async void RefreshFieldList()
         {

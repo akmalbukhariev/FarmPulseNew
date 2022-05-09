@@ -126,6 +126,27 @@ namespace FarmPulse.Control
             NotificationCenter.Current.Show(notification);
         }
 
+        public void Vibrate()
+        {
+            try
+            {
+                // Use default vibration length
+                Vibration.Vibrate();
+
+                // Or use specified time
+                var duration = TimeSpan.FromMilliseconds(100);
+                Vibration.Vibrate(duration);
+            }
+            catch (FeatureNotSupportedException ex)
+            {
+                // Feature not supported on device
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.
+            }
+        }
+
         public double DateTimeToUnixTimestamp(DateTime dateTime)
         {
             DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);

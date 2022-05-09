@@ -241,7 +241,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crop Monitoring.
+        ///   Looks up a localized string similar to Plant Growth Map.
         /// </summary>
         internal static string CropMonitoring {
             get {
@@ -259,7 +259,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crop yield.
+        ///   Looks up a localized string similar to Yield.
         /// </summary>
         internal static string CropYield {
             get {
@@ -619,7 +619,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index insurance.
+        ///   Looks up a localized string similar to Historical index values.
         /// </summary>
         internal static string IndexInsurance {
             get {
@@ -637,7 +637,7 @@ namespace FarmPulse.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Insurance.
+        ///   Looks up a localized string similar to Index insurance introduction.
         /// </summary>
         internal static string Insurance {
             get {

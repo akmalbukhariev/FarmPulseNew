@@ -8,32 +8,57 @@
             BackgroundColor="{StaticResource AppColor}">
 
     <ScrollView>
-        <Grid RowDefinitions="Auto,160,160,160"
-              ColumnDefinitions="*,300,*"
-              RowSpacing="30"
-              VerticalOptions="CenterAndExpand">
-            <Image Source="appLogo2"
-                   WidthRequest="220"
-                   Grid.Column="1"/>
-            <view:MainMenuItemView ImageBackSource="Ndvi_photo"
-                                   ImageIconSource="travel"
-                                   Text="{x:Static resource:AppResource.CropMonitoring}"
-                                   Command="{Binding ClickMonitorCommand}"
-                                   Grid.Row="1"
-                                   Grid.Column="1"/>
-            <view:MainMenuItemView ImageBackSource="Wheat_photo"
-                                   ImageIconSource="verified"
-                                   Text="{x:Static resource:AppResource.CropInsurance}"
-                                   Command="{Binding ClickInsuranceCommand}"
-                                   Grid.Row="2"
-                                   Grid.Column="1"/>
-            <view:MainMenuItemView ImageBackSource="Cloud_photo"
-                                   ImageIconSource="cloudy"
-                                   Text="{x:Static resource:AppResource.WeatherInformation}"
-                                   Command="{Binding ClickWeatherInformationCommand}"
-                                   Grid.Row="3"
-                                   Grid.Column="1"/> 
+        <Grid RowDefinitions="Auto,*">
+            <StackLayout Orientation="Horizontal"
+                         Margin="20,15,20,0">
+                <Image Source="setting"
+                       WidthRequest="40"
+                       HeightRequest="40"
+                       Aspect="AspectFit"
+                       HorizontalOptions="StartAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Setting_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="logout"
+                       WidthRequest="40"
+                       HeightRequest="40"
+                       Aspect="AspectFit"
+                       HorizontalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Logout_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Grid RowDefinitions="Auto,160,160,160"
+                  ColumnDefinitions="*,300,*"
+                  RowSpacing="30"
+                  VerticalOptions="CenterAndExpand"
+                  Grid.Row="1">
+                <Image Source="appLogo2"
+                       WidthRequest="220"
+                       Grid.Column="1"/>
+                <view:MainMenuItemView ImageBackSource="Ndvi_photo"
+                                       ImageIconSource="travel"
+                                       Text="{x:Static resource:AppResource.CropMonitoring}"
+                                       Command="{Binding ClickMonitorCommand}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"/>
+                <view:MainMenuItemView ImageBackSource="Wheat_photo"
+                                       ImageIconSource="verified"
+                                       Text="{x:Static resource:AppResource.CropInsurance}"
+                                       Command="{Binding ClickInsuranceCommand}"
+                                       Grid.Row="2"
+                                       Grid.Column="1"/>
+                <view:MainMenuItemView ImageBackSource="Cloud_photo"
+                                       ImageIconSource="cloudy"
+                                       Text="{x:Static resource:AppResource.WeatherInformation}"
+                                       Command="{Binding ClickWeatherInformationCommand}"
+                                       Grid.Row="3"
+                                       Grid.Column="1"/> 
+            </Grid>
         </Grid>
+
     </ScrollView>
 
 </page:IPage>

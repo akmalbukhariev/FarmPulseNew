@@ -7,168 +7,165 @@
             xmlns:control="clr-namespace:FarmPulse.Control"
             x:Class="FarmPulse.Pages.Purchase.SubmitClaim.PageSubmitClaim"
             BackgroundColor="{StaticResource AppColor}">
-
-    <Grid RowDefinitions="Auto,*">
-        <view:NavigationView Text="{x:Static resource:AppResource.SubmitYourClaim}"
+ 
+        <Grid RowDefinitions="Auto,*">
+            <view:NavigationView Text="{x:Static resource:AppResource.SubmitYourClaim}"
                              TextColor="Black"
                              BackgroundColor="#D3BCA2"/>
-        <Grid RowDefinitions="Auto,*,Auto,Auto"
-              ColumnDefinitions="*,330,*"
-              Grid.Row="1">
-            <Grid.Resources>
-                <ResourceDictionary>
-                    <Style x:Key="lbStyle" TargetType="Label">
-                        <Setter Property="TextColor" Value="Black"/>
-                        <Setter Property="FontSize" Value="15"/>
-                    </Style>
-                    <Style x:Key="edStyle" TargetType="view:EntryView">
-                        <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
-                        <Setter Property="CornerRadius" Value="7"/>
-                        <Setter Property="BorderWidth" Value="1"/>
-                        <Setter Property="BorderColor" Value="Gray"/>
-                        <Setter Property="BackgroundColorOfEntry" Value="White"/>
-                        <Setter Property="TextColor" Value="Black"/>
-                    </Style>
-                </ResourceDictionary>
-            </Grid.Resources>
-            <Image Source="appLogo2"
-                   WidthRequest="220"
-                   Grid.Column="1"/>
-            <ScrollView Grid.Row="1"  
-                        Grid.Column="1">
-                <Grid RowDefinitions="*,*,*,*,150" 
-                      RowSpacing="0"
-                      VerticalOptions="CenterAndExpand">
-                    <StackLayout>
-                        <Label Text="{x:Static resource:AppResource.FarmerFieldName}"
-                               Style="{StaticResource lbStyle}"/>
-                        <!--<control:CustomPicker x:Name="pickField" 
-                                              Image="show"
-                                              ChartSyle="True"
-                                              TextColor="Black"
-                                              TitleColor="Gray"
-                                              BackgroundColor="White"  
-                                              ItemsSource="{Binding FieldList}" 
-                                              ItemDisplayBinding="{Binding name}" 
-                                              SelectedItem="{Binding SelectedField}"
-                                              SelectedIndexChanged="pickField_SelectedIndexChanged"/>-->
-                        <Button Text="{Binding TextSelectFieldName}" 
-                                HeightRequest="45"
-                                ImageSource="Show"
-                                TextColor="Gray"
-                                BackgroundColor="White"
-                                BorderWidth="1"
-                                BorderColor="Gray"
-                                ContentLayout="Right,0"
-                                Command="{Binding ClickSelectFieldCommand}"/>
-                    </StackLayout>
-                    <Grid ColumnDefinitions="*,*" Grid.Row="1">
+            <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid RowDefinitions="Auto,*,Auto,Auto"
+                      ColumnDefinitions="*,330,*">
+                    <Grid.Resources>
+                        <ResourceDictionary>
+                            <Style x:Key="lbStyle" TargetType="Label">
+                                <Setter Property="TextColor" Value="Black"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </Style>
+                            <Style x:Key="edStyle" TargetType="view:EntryView">
+                                <Setter Property="PlaceHolderTextColor" Value="LightGray"/>
+                                <Setter Property="CornerRadius" Value="7"/>
+                                <Setter Property="BorderWidth" Value="1"/>
+                                <Setter Property="BorderColor" Value="Gray"/>
+                                <Setter Property="BackgroundColorOfEntry" Value="White"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </Style>
+                        </ResourceDictionary>
+                    </Grid.Resources>
+                    <Image Source="appLogo2"
+                           WidthRequest="220"
+                           Grid.Column="1"/>
+                    <Grid RowDefinitions="*,*,*,*,150"  
+                          Grid.Row="1" 
+                          Grid.Column="1"
+                          RowSpacing="0"
+                          VerticalOptions="CenterAndExpand">
                         <StackLayout>
-                            <Label Text="{x:Static resource:AppResource.CropType}"
-                                   FontAttributes="Bold"
-                                   Style="{StaticResource lbStyle}"/>
-                            <view:EntryView Style="{StaticResource edStyle}"
-                                            Text="{Binding CropType}"/>
+                            <Label Text="{x:Static resource:AppResource.FarmerFieldName}"
+                                   Style="{StaticResource lbStyle}"/> 
+                            <Button Text="{Binding TextSelectFieldName}" 
+                                    HeightRequest="45"
+                                    ImageSource="Show"
+                                    TextColor="Gray"
+                                    BackgroundColor="White"
+                                    BorderWidth="1"
+                                    BorderColor="Gray"
+                                    ContentLayout="Right,0"
+                                    Command="{Binding ClickSelectFieldCommand}"/>
                         </StackLayout>
-                        <StackLayout Grid.Column="1">
-                            <Label Text="{x:Static resource:AppResource.AreaTonHa}"
-                                   FontAttributes="Bold"
+                        <Grid ColumnDefinitions="*,*"
+                              Grid.Row="1">
+                            <StackLayout >
+                                <Label Text="{x:Static resource:AppResource.CropType}"
+                                       FontAttributes="Bold"
+                                       Style="{StaticResource lbStyle}"/>
+                                <view:EntryView Style="{StaticResource edStyle}"
+                                                Text="{Binding CropType}"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1">
+                                <Label Text="{x:Static resource:AppResource.AreaTonHa}"
+                                       FontAttributes="Bold"
+                                       Style="{StaticResource lbStyle}"/>
+                                <view:EntryView Style="{StaticResource edStyle}"
+                                            Text="{Binding AreaTon}"/>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout Grid.Row="2">
+                            <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
                                    Style="{StaticResource lbStyle}"/>
                             <view:EntryView Style="{StaticResource edStyle}"
-                                            Text="{Binding AreaTon}"/>
+                                            Text="{Binding Name}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3">
+                            <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
+                                   Style="{StaticResource lbStyle}"/>
+                            <view:EntryView Style="{StaticResource edStyle}"
+                                            Keyboard="Telephone"
+                                            Text="{Binding PhoneNumber}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" 
+                                     MinimumHeightRequest="150">
+                            <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
+                                   Style="{StaticResource lbStyle}"/> 
+                            <Grid x:Name="grMain"> 
+                                <BoxView x:Name="frontBoxView" BackgroundColor="Gray" />
+                                <control:CustomEditor Text="{Binding Description}" 
+                                                  BackgroundColor="White" 
+                                                  HeightRequest="150"
+                                                  Margin="1"/>
+                            </Grid>
                         </StackLayout>
                     </Grid>
-                    <StackLayout Grid.Row="2">
-                        <Label Text="{x:Static resource:AppResource.FarmerNameAndSurname}"
-                               Style="{StaticResource lbStyle}"/>
-                        <view:EntryView Style="{StaticResource edStyle}"
-                                        Text="{Binding Name}"/>
-                    </StackLayout>
-                    <StackLayout Grid.Row="3">
-                        <Label Text="{x:Static resource:AppResource.FarmerPhoneNumber}"
-                               Style="{StaticResource lbStyle}"/>
-                        <view:EntryView Style="{StaticResource edStyle}"
-                                        Keyboard="Telephone"
-                                        Text="{Binding PhoneNumber}"/>
-                    </StackLayout>
-                    <StackLayout Grid.Row="4" MinimumHeightRequest="150">
-                        <Label Text="{x:Static resource:AppResource.DescriptionClaim}"
-                               Style="{StaticResource lbStyle}"/>
-                        <view:EntryView Style="{StaticResource edStyle}"
-                                        Text="{Binding Description}"
-                                        HeightEntryView="150"/>
-                    </StackLayout>
+                    <Button Text="{x:Static resource:AppResource.Submit}"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            CornerRadius="30"
+                            BackgroundColor="#D3BCA2"
+                            BorderWidth="1"
+                            BorderColor="White"
+                            Margin="0,0,0,10"
+                            Command="{Binding ClickSubmitCommand}"
+                            Grid.Row="2"
+                            Grid.Column="1"/>
+                    <Button Text="{x:Static resource:AppResource.ShowSubmitedHistory}"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            CornerRadius="30"
+                            BackgroundColor="#D3BCA2"
+                            BorderWidth="1"
+                            BorderColor="White"
+                            Margin="0,0,0,20"
+                            Command="{Binding ClickSubmitedHistoryCommand}"
+                            Grid.Row="3"
+                            Grid.Column="1"/>
                 </Grid>
-            </ScrollView>
-            <Button Text="{x:Static resource:AppResource.Submit}"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    CornerRadius="30"
-                    BackgroundColor="#D3BCA2"
-                    BorderWidth="1"
-                    BorderColor="White"
-                    Margin="0,0,0,10"
-                    Command="{Binding ClickSubmitCommand}"
-                    Grid.Row="2"
-                    Grid.Column="1"/>
-            <Button Text="{x:Static resource:AppResource.ShowSubmitedHistory}"
-                    TextColor="Black"
-                    FontAttributes="Bold"
-                    CornerRadius="30"
-                    BackgroundColor="#D3BCA2"
-                    BorderWidth="1"
-                    BorderColor="White"
-                    Margin="0,0,0,20"
-                    Command="{Binding ClickSubmitedHistoryCommand}"
-                    Grid.Row="3"
-                    Grid.Column="1"/>
-        </Grid>
-        <BoxView BackgroundColor="Black"
-                 IsVisible="{Binding ShowFieldNameBox}"
-                 Opacity="0.5" 
-                 Grid.RowSpan="2">
-            <BoxView.GestureRecognizers>
-                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickBackGroundBoxCommand}"/>
-            </BoxView.GestureRecognizers>
-        </BoxView>
-        <Frame IsVisible="{Binding ShowFieldNameBox}"
-               WidthRequest="220"
-               HeightRequest="200"
-               BackgroundColor="White" 
-               Grid.RowSpan="2"
-               CornerRadius="10"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand">
-            <Grid RowDefinitions="Auto,Auto,Auto" 
-                  RowSpacing="0">
-                <Label Text="{x:Static resource:AppResource.SelectField}"
-                       FontSize="13"
-                       HorizontalTextAlignment="Center"
-                       FontAttributes="Bold"
-                       Margin="0,0,0,10"/>
-                <ListView x:Name="lsView"  
-                          HasUnevenRows="True" 
-                          ItemsSource="{Binding FieldList}"
-                          SelectedItem="{Binding SelectedField}"
-                          ItemSelected="lsView_ItemSelected"
-                          VerticalOptions="End"
-                          Grid.Row="1">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid Padding="2" Margin="0,5,0,5" 
-                                      HeightRequest="30">
-                                    <Label Text="{Binding name}"
-                                           FontSize="15"
-                                           TextColor="Black"
-                                           VerticalTextAlignment="Center"
-                                           HorizontalTextAlignment="Center"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <BoxView BackgroundColor="Black"
+                         IsVisible="{Binding ShowFieldNameBox}"
+                         Opacity="0.5">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickBackGroundBoxCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Frame IsVisible="{Binding ShowFieldNameBox}"
+                       WidthRequest="220"
+                       HeightRequest="200"
+                       BackgroundColor="White"
+                       CornerRadius="10"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Grid RowDefinitions="Auto,Auto,Auto" 
+                          RowSpacing="0">
+                        <Label Text="{x:Static resource:AppResource.SelectField}"
+                               FontSize="13"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               Margin="0,0,0,10"/>
+                        <ListView x:Name="lsView"  
+                                  HasUnevenRows="True" 
+                                  ItemsSource="{Binding FieldList}"
+                                  SelectedItem="{Binding SelectedField}"
+                                  ItemSelected="lsView_ItemSelected"
+                                  VerticalOptions="End"
+                                  Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="2" 
+                                              Margin="0,5,0,5" 
+                                              HeightRequest="30">
+                                            <Label Text="{Binding name}"
+                                                   FontSize="15"
+                                                   TextColor="Black"
+                                                   VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Center"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
             </Grid>
-        </Frame>
-    </Grid>
+        </ScrollView> 
+        </Grid> 
 </page:IPage>

@@ -41,6 +41,7 @@
                                            Command="{Binding ClickSubmitClaimCommand}"
                                            Grid.Row="2"/>
                     <view:PurchaseItemView ImageSource="quora"
+                                           IsVisible="False"
                                            Text="{x:Static resource:AppResource.FAQ}"
                                            Command="{Binding ClickFAQCommand}"
                                            Grid.Row="2"

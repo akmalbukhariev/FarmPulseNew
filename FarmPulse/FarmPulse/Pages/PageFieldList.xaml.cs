@@ -50,7 +50,13 @@ namespace FarmPulse.Pages
                     await Navigation.PushAsync(indexPage);
                 }
                 else
-                    await Navigation.PushAsync(new PageMapGraphTab(model.SelectedItem));
+                {
+                    PageMapView mapPage = new PageMapView();
+                    mapPage.FieldInfo = model.SelectedItem;
+                    mapPage.InitModel();
+                    await Navigation.PushAsync(mapPage);
+                    //await Navigation.PushAsync(new PageMapGraphTab(model.SelectedItem));
+                }
             }
         }
     }

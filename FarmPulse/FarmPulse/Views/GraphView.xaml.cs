@@ -147,7 +147,7 @@ namespace FarmPulse.Views
                     if (string.IsNullOrEmpty(item.value)) continue;
 
                     ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
-                    var color = String.Format("#{0:X6}", "548235");
+                    var color = string.Format("#{0:X6}", "548235");
                     chartEntry.Label = item.year.Replace("Text_", "");
                     chartEntry.ValueLabel = item.value;
                     chartEntry.Color = SKColor.Parse(color);
@@ -155,6 +155,8 @@ namespace FarmPulse.Views
 
                     chartDataList.Add(chartEntry);
                 }
+
+                control.chart.WidthRequest = chartDataList.Count * 20;
 
                 if (list.Count == 2)
                 {
@@ -167,7 +169,7 @@ namespace FarmPulse.Views
                         if (string.IsNullOrEmpty(item.value)) continue;
 
                         ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));//8FAADC
-                        var color1 = String.Format("#{0:X6}", "8FAADC");
+                        var color1 = string.Format("#{0:X6}", "8FAADC");
                         chartEntry.Label = item.year.Replace("Text_", "");
                         chartEntry.ValueLabel = item.value;
                         chartEntry.Color = SKColor.Parse(color1);
@@ -218,6 +220,7 @@ namespace FarmPulse.Views
         {
             InitializeComponent();
 
+            #region test
             //ChartEntry chartEntry1 = new ChartEntry(5);
             //var color = String.Format("#{0:X6}", "007A43");
             //chartEntry1.Color = SKColor.Parse(color);
@@ -249,6 +252,7 @@ namespace FarmPulse.Views
             //chartCotton.Add(chartEntry4);
 
             //chart.Chart = new BarChart { Entries = chartCotton };
+            #endregion
         }
     }
 }

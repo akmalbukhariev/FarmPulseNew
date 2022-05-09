@@ -198,7 +198,7 @@
     <comment>Page Main</comment>
   </data>
   <data name="CropMonitoring" xml:space="preserve">
-    <value>Crop Monitoring</value>
+    <value>Plant Growth Map</value>
     <comment>Page Main</comment>
   </data>
   <data name="CropType" xml:space="preserve">
@@ -206,7 +206,7 @@
     <comment>Page Submit Claim</comment>
   </data>
   <data name="CropYield" xml:space="preserve">
-    <value>Crop yield</value>
+    <value>Yield</value>
     <comment>Page Index Insurance</comment>
   </data>
   <data name="CropYieldData" xml:space="preserve">
@@ -366,7 +366,7 @@
     <comment>Page Map View</comment>
   </data>
   <data name="IndexInsurance" xml:space="preserve">
-    <value>Index insurance</value>
+    <value>Historical index values</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="IndexMeanValue" xml:space="preserve">
@@ -374,7 +374,7 @@
     <comment>Page Graph View</comment>
   </data>
   <data name="Insurance" xml:space="preserve">
-    <value>Insurance</value>
+    <value>Index insurance introduction</value>
     <comment>Page Purchase</comment>
   </data>
   <data name="InsuranceNumber" xml:space="preserve">

@@ -16,7 +16,7 @@
         <ScrollView VerticalOptions="FillAndExpand"
                     Grid.Row="1">
                 <StackLayout BindableLayout.ItemsSource="{Binding DataList}"
-                             Spacing="20">
+                             Spacing="0">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <view:GraphView Region="{Binding Title}"
@@ -30,20 +30,7 @@
         <BoxView BackgroundColor="#2F8F6E"
                  Grid.Row="2"/>
         <Grid ColumnDefinitions="*,1,*" 
-              Grid.Row="2">
-            <!--<control:CustomPicker Title="{x:Static resource:AppResource.SelectIndex}"
-                                  FontSize="14"
-                                  ChartSyle="False"
-                                  TitleColor="Black"
-                                  TextColor="Black"
-                                  BackgroundColor="White"
-                                  HorizontalTextAlignment="Center"
-                                  VerticalTextAlignment="Center"
-                                  Margin="20,5,20,5"
-                                  ItemsSource="{Binding MetricsList}"
-                                  ItemDisplayBinding="{Binding name}" 
-                                  SelectedItem="{Binding SelectedMetrics}"
-                                  SelectedIndexChanged="Picker_SelectedIndexChanged"/>-->
+              Grid.Row="2"> 
             <Button Text="{Binding TextSelectMetrics}"
                     TextColor="Black"
                     FontSize="13"
