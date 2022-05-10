@@ -149,12 +149,14 @@ namespace FarmPulse.Views
                     ChartEntry chartEntry = new ChartEntry(float.Parse(item.value));
                     var color = string.Format("#{0:X6}", "548235");
                     chartEntry.Label = item.year.Replace("Text_", "");
-                    chartEntry.ValueLabel = item.value;
+                    chartEntry.ValueLabel = item.value; 
                     chartEntry.Color = SKColor.Parse(color);
                     chartEntry.TextColor = SKColor.Parse(color);
 
                     chartDataList.Add(chartEntry);
                 }
+
+                chartDataList.Sort((a,b) => int.Parse(a.Label).CompareTo(int.Parse(b.Label)));
 
                 control.chart.WidthRequest = chartDataList.Count * 20;
 

@@ -206,7 +206,7 @@ namespace FarmPulse.Control
         {
             var minPoint = pointLineList.Min(p => p.Y);
             var maxPoint = pointLineList.Max(p => p.Y);
-            var rightMargin = 20;
+            var rightMargin = 40;
             
             var paint = new SKPaint();
             paint.Color = SKColors.Black;
