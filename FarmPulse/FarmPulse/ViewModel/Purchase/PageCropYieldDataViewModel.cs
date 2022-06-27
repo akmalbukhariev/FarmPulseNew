@@ -30,18 +30,18 @@ namespace FarmPulse.ModelView
         #endregion
 
         #region Year value
-        public string Text_2010 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2011 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2012 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2013 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2014 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2015 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2016 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2017 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2018 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2019 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2020 { get => GetValue<string>(); set => SetValue(value); }
-        public string Text_2021 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_1 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_2 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_3 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_4 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_5 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_6 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_7 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_8 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_9 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_10 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_11 { get => GetValue<string>(); set => SetValue(value); }
+        public string TextYear_12 { get => GetValue<string>(); set => SetValue(value); }
         #endregion
 
         public string CropType { get => GetValue<string>(); set => SetValue(value); }
@@ -85,22 +85,23 @@ namespace FarmPulse.ModelView
         /// </summary>
         public void Clean()
         {
-            Text_2010 = "";
-            Text_2011 = "";
-            Text_2012 = "";
-            Text_2013 = "";
-            Text_2014 = "";
-            Text_2015 = "";
-            Text_2016 = "";
-            Text_2017 = "";
-            Text_2018 = "";
-            Text_2019 = "";
-            Text_2020 = "";
-            Text_2021 = "";
+            TextYear_1 = "";
+            TextYear_2 = "";
+            TextYear_3 = "";
+            TextYear_4 = "";
+            TextYear_5 = "";
+            TextYear_6 = "";
+            TextYear_7 = "";
+            TextYear_8 = "";
+            TextYear_9 = "";
+            TextYear_10 = "";
+            TextYear_11 = "";
+            TextYear_12 = "";
 
             SelectedField = null;
             FieldList.Clear();
         }
+         
 
         /// <summary>
         /// Check the all parameters before submitting.
@@ -151,18 +152,18 @@ namespace FarmPulse.ModelView
         public async void RefreshModel()
         {
             #region Clean text year
-                Text_2010 = "";
-                Text_2011 = "";
-                Text_2012 = "";
-                Text_2013 = "";
-                Text_2014 = "";
-                Text_2015 = "";
-                Text_2016 = "";
-                Text_2017 = "";
-                Text_2018 = "";
-                Text_2019 = "";
-                Text_2020 = "";
-                Text_2021 = "";
+                TextYear_1 = "";
+                TextYear_2 = "";
+                TextYear_3 = "";
+                TextYear_4 = "";
+                TextYear_5 = "";
+                TextYear_6 = "";
+                TextYear_7 = "";
+                TextYear_8 = "";
+                TextYear_9 = "";
+                TextYear_10 = "";
+                TextYear_11 = "";
+                TextYear_12 = "";
             #endregion
             ControlApp.ShowLoadingView(RSC.PleaseWait);
 
@@ -179,21 +180,18 @@ namespace FarmPulse.ModelView
                 CropType = response.cropName;
                 foreach (CropYieldDataYearInfo item in response.values)
                 {
-                    switch (item.year.Trim())
-                    {
-                        case nameof(Text_2010): Text_2010 = item.value; break; //999
-                        case nameof(Text_2011): Text_2011 = item.value; break;
-                        case nameof(Text_2012): Text_2012 = item.value; break;
-                        case nameof(Text_2013): Text_2013 = item.value; break;
-                        case nameof(Text_2014): Text_2014 = item.value; break;
-                        case nameof(Text_2015): Text_2015 = item.value; break;
-                        case nameof(Text_2016): Text_2016 = item.value; break;
-                        case nameof(Text_2017): Text_2017 = item.value; break;
-                        case nameof(Text_2018): Text_2018 = item.value; break;
-                        case nameof(Text_2019): Text_2019 = item.value; break;
-                        case nameof(Text_2020): Text_2020 = item.value; break;
-                        case nameof(Text_2021): Text_2021 = item.value; break;
-                    } 
+                    if (item.year.Trim() == $"Text_{TitleYear_1}")      TextYear_1 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_2}") TextYear_2 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_3}") TextYear_3 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_4}") TextYear_4 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_5}") TextYear_5 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_6}") TextYear_6 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_7}") TextYear_7 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_8}") TextYear_8 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_9}") TextYear_9 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_10}") TextYear_10 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_11}") TextYear_11 = item.value;
+                    else if (item.year.Trim() == $"Text_{TitleYear_12}") TextYear_12 = item.value;
                 } 
             }
             else
@@ -223,18 +221,18 @@ namespace FarmPulse.ModelView
             };
 
             request.values = new List<CropYieldDataYearInfo>();
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2010), Text_2010));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2011), Text_2011));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2012), Text_2012));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2013), Text_2013));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2014), Text_2014));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2015), Text_2015));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2016), Text_2016));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2017), Text_2017));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2018), Text_2018));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2019), Text_2019));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2020), Text_2020));
-            request.values.Add(new CropYieldDataYearInfo(nameof(Text_2021), Text_2021));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_1}", TextYear_1));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_2}", TextYear_2));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_3}", TextYear_3));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_4}", TextYear_4));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_5}", TextYear_5));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_6}", TextYear_6));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_7}", TextYear_7));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_8}", TextYear_8));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_9}", TextYear_9));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_10}", TextYear_10));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_11}", TextYear_11));
+            request.values.Add(new CropYieldDataYearInfo($"Text_{TitleYear_12}", TextYear_12));
 
             ResponseCropYieldDataSave response = await HttpService.SaveCropYieldData(request);
             if (response.result)

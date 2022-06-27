@@ -21,7 +21,9 @@ namespace FarmPulse.Pages
             InitializeComponent();
             
             model = new PageLoginViewModel(Navigation);
-            BindingContext = model; 
+            BindingContext = model;
+
+            entPassword.Entry.IsPassword = true;
         }
 
         protected override void OnAppearing()

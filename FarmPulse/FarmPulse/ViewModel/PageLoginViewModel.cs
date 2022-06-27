@@ -19,8 +19,8 @@ namespace FarmPulse.ModelView
         public PageLoginViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            //InsuranceNumber = "998988";
-            //Password = "123";
+            //InsuranceNumber = "12345";
+            //Password = "1234";
         }
 
         public ICommand ClickLoginCommand => new Command(ClickLogin);

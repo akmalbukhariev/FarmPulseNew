@@ -29,7 +29,8 @@
                             BorderWidth="1"
                             BorderColor="#007A43"
                             BackgroundColorOfEntry="White"/>
-            <view:EntryView Text="{Binding Password}" 
+            <view:EntryView x:Name="entPassword" 
+                            Text="{Binding Password}" 
                             PlaceHoldingText="{x:Static resource:AppResource.Password}"
                             PlaceHolderTextColor="Gray"
                             TextColor="Black"

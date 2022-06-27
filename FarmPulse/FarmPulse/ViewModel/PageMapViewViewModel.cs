@@ -200,14 +200,21 @@ namespace FarmPulse.ModelView
         }
 
         public async void DownloadSatelliteImage()
-        {
+        {   
             if (!ControlApp.Instance.InternetOk())
                 return;
 
-            ControlApp.ShowLoadingView(RSC.PleaseWait);
-            CustomMap.OverlayImage = await HttpService.GetSatelliteImagery(SelectedItem.ImagePath);
-            CustomMap.SetOverlayImage();
-            ControlApp.CloseLoadingView();
+            try
+            {
+                ControlApp.ShowLoadingView(RSC.PleaseWait);
+                CustomMap.OverlayImage = await HttpService.GetSatelliteImagery(SelectedItem.ImagePath);
+                CustomMap.SetOverlayImage();
+                ControlApp.CloseLoadingView();
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert(RSC.Error, ex.Message, RSC.Ok);
+            }
         }
 
         private void ClickMapType(string type)

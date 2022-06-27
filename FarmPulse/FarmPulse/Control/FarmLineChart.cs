@@ -120,6 +120,10 @@ namespace FarmPulse.Control
                 {
                     canvas.DrawLine(pointLineList[i], pointLineList[i + 1], paint);
                 }
+                //else
+                //{
+                //    canvas.DrawLine(pointLineList[i - 1], pointLineList[i], paint);
+                //}
             }
         }
 

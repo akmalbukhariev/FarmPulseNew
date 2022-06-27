@@ -71,17 +71,11 @@ namespace FarmPulse.Pages
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            try
+            if (model.SelectedItem != null)
             {
-                if (model.SelectedItem != null)
-                {
-                    model.ShowImages = false;
-                    model.DownloadSatelliteImage();
-                }
-            }
-            catch (Exception ex)
-            {
-                
+                model.ShowImages = false;
+                model.ShowBackBoxView = false;
+                model.DownloadSatelliteImage();
             }
         }
     }
