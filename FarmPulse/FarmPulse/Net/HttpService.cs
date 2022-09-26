@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using RestSharp;
+using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace FarmPulse.Net
 {
@@ -19,7 +21,7 @@ namespace FarmPulse.Net
         #region Url
 
         #region Agro Monitoring
-        public static String APIKey = "b5efce714742cc3aba8062b29f8c86f1"; 
+        public static String APIKey = "0432cb7f5c2b8f2724c5ea2d4be58862";
         public static String URL_AGRO_SERVER = "http://api.agromonitoring.com/agro/1.0";
         public static String URL_CREATE_POLYGON = URL_AGRO_SERVER + "/polygons?appid=" + APIKey;
         public static String URL_POLYGON_INFO = URL_AGRO_SERVER + "/polygons";
@@ -126,7 +128,7 @@ namespace FarmPulse.Net
             Response response = new Response();
             try
             {
-                var receivedData = await RequestGetMethod(URL_GET_FIELD_LIST + userId);
+                var receivedData = await RequestGetMethod(URL_GET_FIELD_LIST + userId);  
                 response = JsonConvert.DeserializeObject<ResponseField>(receivedData, settings);
             }
             catch (JsonReaderException) { return CreateResponseObj<ResponseField>(); }
@@ -352,7 +354,9 @@ namespace FarmPulse.Net
             try
             {
                 var receivedData = await RequestGetMethod(URL_GET_FORECAST_WEATHER + strLatLon);
-                respondAllData = JsonConvert.DeserializeObject<List<ResponseForecastWeather>>(receivedData, settings);
+                var JDocument = JsonDocument.Parse(receivedData);
+                if (JDocument.RootElement.ValueKind == JsonValueKind.Array)
+                    respondAllData = JsonConvert.DeserializeObject<List<ResponseForecastWeather>>(receivedData, settings);
                 
             }
             catch (JsonReaderException) { return new List<ResponseForecastWeather>(); }
@@ -382,14 +386,21 @@ namespace FarmPulse.Net
             try
             {
                 string strRequest = string.Format("{0}={1}&end={2}&polyid={3}&appid={4}", URL_GET_SATELLITE_IMAGES, data.start, data.end, data.polyid, APIKey);
-                var result = await RequestGetMethod(strRequest); 
-                responseAlldata = (List<ResponseSatelliteImagesInfo>)JsonConvert.DeserializeObject(result, typeof(List<ResponseSatelliteImagesInfo>));
-                for (int i = 0; i < responseAlldata.Count; i++)
-                { 
-                    responseAlldata[i].Check();
-                } 
+                var receivedData = await RequestGetMethod(strRequest);
+
+                var JDocument = JsonDocument.Parse(receivedData);
+
+                if (JDocument.RootElement.ValueKind == JsonValueKind.Array)
+                {
+                    responseAlldata = JsonConvert.DeserializeObject< List<ResponseSatelliteImagesInfo>>(receivedData, settings);
+                    for (int i = 0; i < responseAlldata.Count; i++)
+                    {
+                        responseAlldata[i].Check();
+                    }
+                }
             }
-            catch (JsonReaderException) { return new List<ResponseSatelliteImagesInfo>(); }
+            catch (JsonReaderException){return new List<ResponseSatelliteImagesInfo>();
+            }
             catch (HttpRequestException) { return new List<ResponseSatelliteImagesInfo>(); }
 
             return responseAlldata;
